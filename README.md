@@ -1,9 +1,12 @@
-cangee
+
 rpush
 spring boot microservices
 opt 
-recuit
-grocery
+
+Progetti di Teo:
+cangjingge
+microservice-recruit
+grocery-micro-service
 
 # Struttura della tesi
 ## Introduzione
