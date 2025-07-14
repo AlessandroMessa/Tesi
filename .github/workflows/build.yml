@@ -39,7 +39,13 @@ jobs:
           und.exe create -languages Java -db understand.udb .
           und.exe -db understand.udb metrics -fmt csv -o understand-metrics.csv
 
-      - name: SonarQube analysis
+     - name: Setup Java 21 for SonarQube
+        uses: actions/setup-java@v3
+        with:
+          distribution: temurin
+          java-version: '21'
+
+      - name: SonarQube analysis (Java 21)
         env:
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
           SONAR_TOKEN:    ${{ secrets.SONAR_TOKEN }}
@@ -48,8 +54,8 @@ jobs:
           -Dsonar.host.url=${{ env.SONAR_HOST_URL }} `
           -Dsonar.login=${{ env.SONAR_TOKEN }}
 
-      - name: Upload Understand metrics
-        uses: actions/upload-artifact@v3
+ - name: Upload Understand metrics
+        uses: actions/upload-artifact@v4
         with:
           name: understand-metrics
           path: understand-metrics.csv
