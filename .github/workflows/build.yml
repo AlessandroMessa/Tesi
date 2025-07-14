@@ -2,59 +2,57 @@ name: build
 
 on:
   push:
-    branches: [ main, mall-cloud-alibaba ]
+    branches:
+      - main
+      - 'feature/**'
   pull_request:
-    branches: [ main, mall-cloud-alibaba ]
+    branches:
+      - main
+      - 'feature/**'
 
 jobs:
   build-and-analyze:
     runs-on: windows-latest
 
     steps:
-      - name: Checkout repository
+      - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Setup JDK 8 & cache Maven
+      - name: Setup Java 8 & cache Maven
         uses: actions/setup-java@v3
         with:
           distribution: temurin
           java-version: '8'
-          cache: 'maven'
+          cache: maven
 
       - name: Build with Maven
         run: mvn clean package -DskipTests
 
-      - name: Install SciTools Understand (via Chocolatey)
-        run: |
-          choco install scitools-understand -y
-        # se non hai Chocolatey, puoi prima installarlo:
-        #   Set-ExecutionPolicy Bypass -Scope Process -Force; `
-        #   iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
-
-      - name: Show Understand version
-        run: und.exe -version
+      - name: Install SciTools Understand
+        run: choco install scitools-understand -y
 
       - name: Run Understand analysis
         run: |
           und.exe create -languages Java -db understand.udb .
           und.exe -db understand.udb metrics -fmt csv -o understand-metrics.csv
 
-     - name: Setup Java 21 for SonarQube
+      - name: Setup Java 21 for SonarQube
         uses: actions/setup-java@v3
         with:
           distribution: temurin
           java-version: '21'
 
-      - name: SonarQube analysis (Java 21)
+      - name: Run SonarQube analysis
         env:
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
           SONAR_TOKEN:    ${{ secrets.SONAR_TOKEN }}
-        run: mvn sonar:sonar `
-          -Dsonar.projectKey=mall-cloud-alibaba `
-          -Dsonar.host.url=${{ env.SONAR_HOST_URL }} `
-          -Dsonar.login=${{ env.SONAR_TOKEN }}
+        run: |
+          mvn sonar:sonar ^
+            -Dsonar.projectKey=mall-cloud-alibaba ^
+            -Dsonar.host.url=${{ env.SONAR_HOST_URL }} ^
+            -Dsonar.login=${{ env.SONAR_TOKEN }}
 
- - name: Upload Understand metrics
+      - name: Upload Understand metrics
         uses: actions/upload-artifact@v4
         with:
           name: understand-metrics
