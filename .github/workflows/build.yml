@@ -1,39 +1,55 @@
-name: Build
+name: CI Windows – Build, SonarQube & Understand
 
 on:
   push:
-    branches:
-      - main
-
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
 
 jobs:
-  build:
-    name: Build and analyze
-    runs-on: ubuntu-latest
-    
+  build-and-analyze:
+    runs-on: windows-latest
+
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup JDK 8 & cache Maven
+        uses: actions/setup-java@v3
         with:
-          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
-      - name: Set up JDK 17
-        uses: actions/setup-java@v4
-        with:
-          java-version: 17
-          distribution: 'zulu' # Alternative distribution options are available.
-      - name: Cache SonarQube packages
-        uses: actions/cache@v4
-        with:
-          path: ~/.sonar/cache
-          key: ${{ runner.os }}-sonar
-          restore-keys: ${{ runner.os }}-sonar
-      - name: Cache Maven packages
-        uses: actions/cache@v4
-        with:
-          path: ~/.m2
-          key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
-          restore-keys: ${{ runner.os }}-m2
-      - name: Build and analyze
+          distribution: temurin
+          java-version: '8'
+          cache: 'maven'
+
+      - name: Build with Maven
+        run: mvn clean package -DskipTests
+
+      - name: Install SciTools Understand (via Chocolatey)
+        run: |
+          choco install scitools-understand -y
+        # se non hai Chocolatey, puoi prima installarlo:
+        #   Set-ExecutionPolicy Bypass -Scope Process -Force; `
+        #   iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+
+      - name: Show Understand version
+        run: und.exe -version
+
+      - name: Run Understand analysis
+        run: |
+          und.exe create -languages Java -db understand.udb .
+          und.exe -db understand.udb metrics -fmt csv -o understand-metrics.csv
+
+      - name: SonarQube analysis
         env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
-        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=Mall-cloud-alibaba -Dsonar.projectName='Mall-cloud-alibaba'
+          SONAR_TOKEN:    ${{ secrets.SONAR_TOKEN }}
+        run: mvn sonar:sonar `
+          -Dsonar.projectKey=mall-cloud-alibaba `
+          -Dsonar.host.url=${{ env.SONAR_HOST_URL }} `
+          -Dsonar.login=${{ env.SONAR_TOKEN }}
+
+      - name: Upload Understand metrics
+        uses: actions/upload-artifact@v3
+        with:
+          name: understand-metrics
+          path: understand-metrics.csv
