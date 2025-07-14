@@ -13,7 +13,10 @@ on:
 jobs:
   build-and-analyze:
     runs-on: windows-latest
-
+    defaults:
+      run:
+        working-directory: ./mall-cloud-alibaba-master
+    
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
