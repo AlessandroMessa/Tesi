@@ -1,10 +1,10 @@
-name: CI Windows – Build, SonarQube & Understand
+name: build
 
 on:
   push:
-    branches: [ main ]
+    branches: [ main, mall-cloud-alibaba ]
   pull_request:
-    branches: [ main ]
+    branches: [ main, mall-cloud-alibaba ]
 
 jobs:
   build-and-analyze:
