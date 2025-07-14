@@ -13,10 +13,7 @@ on:
 jobs:
   build-and-analyze:
     runs-on: windows-latest
-    defaults:
-      run:
-        working-directory: ./mall-cloud-alibaba-master
-    
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -29,15 +26,7 @@ jobs:
           cache: maven
 
       - name: Build with Maven
-        run: mvn clean package -DskipTests
-
-      - name: Install SciTools Understand
-        run: choco install scitools-understand -y
-
-      - name: Run Understand analysis
-        run: |
-          und.exe create -languages Java -db understand.udb .
-          und.exe -db understand.udb metrics -fmt csv -o understand-metrics.csv
+        run: mvn -B clean package -T1C -DskipTests
 
       - name: Setup Java 21 for SonarQube
         uses: actions/setup-java@v3
@@ -49,14 +38,7 @@ jobs:
         env:
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
           SONAR_TOKEN:    ${{ secrets.SONAR_TOKEN }}
-        run: |
-          mvn sonar:sonar ^
+        run: mvn sonar:sonar ^
             -Dsonar.projectKey=mall-cloud-alibaba ^
             -Dsonar.host.url=${{ env.SONAR_HOST_URL }} ^
             -Dsonar.login=${{ env.SONAR_TOKEN }}
-
-      - name: Upload Understand metrics
-        uses: actions/upload-artifact@v4
-        with:
-          name: understand-metrics
-          path: understand-metrics.csv
