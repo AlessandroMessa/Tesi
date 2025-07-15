@@ -38,10 +38,12 @@ jobs:
           java-version: '21'
 
       - name: Run SonarQube analysis
+        shell: pwsh
         env:
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
           SONAR_TOKEN:    ${{ secrets.SONAR_TOKEN }}
-        run: mvn sonar:sonar ^
-            -Dsonar.projectKey=mall-cloud-alibaba ^
-            -Dsonar.host.url=${{ env.SONAR_HOST_URL }} ^
-            -Dsonar.login=${{ env.SONAR_TOKEN }}
+        run: |
+          mvn sonar:sonar `
+          -Dsonar.projectKey=mall-cloud-alibaba `
+          -Dsonar.host.url=${{ env.SONAR_HOST_URL }} `
+          -Dsonar.login=${{ env.SONAR_TOKEN }}
