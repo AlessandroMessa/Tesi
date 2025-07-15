@@ -55,6 +55,8 @@
         <mall.version>0.0.1-SNAPSHOT</mall.version>
         <guava.version>29.0-jre</guava.version>
         <spring.boot.admin.version>2.1.6</spring.boot.admin.version>
+        <sonar.organization>alessandromessa</sonar.organization>
+        <sonar.host.url>https://sonarcloud.io</sonar.host.url>
     </properties>
 
     <dependencies>
