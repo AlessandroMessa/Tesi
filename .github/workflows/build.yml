@@ -36,6 +36,7 @@ jobs:
           restore-keys: ${{ runner.os }}-m2
 
       - name: Build and analyze
+        working-directory: ./mall-cloud-alibaba-master
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: |
