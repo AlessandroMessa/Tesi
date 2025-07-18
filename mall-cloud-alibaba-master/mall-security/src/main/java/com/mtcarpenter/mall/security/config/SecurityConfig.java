@@ -17,49 +17,49 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.access.intercept.FilterSecurityInterceptor;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
-
 /**
- * 对SpringSecurity的配置的扩展，支持自定义白名单资源路径和查询用户逻辑
- * Created by macro on 2019/11/5.
+ * Configurazione estesa di SpringSecurity con supporto per whitelist e gestione permessi dinamici.
  */
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired(required = false)
     private DynamicSecurityService dynamicSecurityService;
 
+    @Autowired(required = false)
+    private DynamicSecurityFilter dynamicSecurityFilter;
+
     @Override
     protected void configure(HttpSecurity httpSecurity) throws Exception {
         ExpressionUrlAuthorizationConfigurer<HttpSecurity>.ExpressionInterceptUrlRegistry registry = httpSecurity
                 .authorizeRequests();
-        //不需要保护的资源路径允许访问
+        
+        // Risorse pubbliche
         for (String url : ignoreUrlsConfig().getUrls()) {
             registry.antMatchers(url).permitAll();
         }
-        //允许跨域请求的OPTIONS请求
-        registry.antMatchers(HttpMethod.OPTIONS)
-                .permitAll();
-        // 任何请求需要身份认证
+
+        // Opzioni preflight per CORS
+        registry.antMatchers(HttpMethod.OPTIONS).permitAll();
+
+        // Altre richieste richiedono autenticazione
         registry.and()
                 .authorizeRequests()
                 .anyRequest()
                 .authenticated()
-                // 关闭跨站请求防护及不使用session
                 .and()
-                .csrf()
-                .disable()
+                .csrf().disable()
                 .sessionManagement()
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
-                // 自定义权限拒绝处理类
                 .and()
                 .exceptionHandling()
                 .accessDeniedHandler(restfulAccessDeniedHandler())
                 .authenticationEntryPoint(restAuthenticationEntryPoint())
-                // 自定义权限拦截器JWT过滤器
                 .and()
                 .addFilterBefore(jwtAuthenticationTokenFilter(), UsernamePasswordAuthenticationFilter.class);
-        //有动态权限配置时添加动态权限校验过滤器
-        if(dynamicSecurityService!=null){
-            registry.and().addFilterBefore(dynamicSecurityFilter(), FilterSecurityInterceptor.class);
+
+        // Aggiungi filtro di sicurezza dinamica solo se presente
+        if (dynamicSecurityService != null && dynamicSecurityFilter != null) {
+            registry.and().addFilterBefore(dynamicSecurityFilter, FilterSecurityInterceptor.class);
         }
     }
 
@@ -111,11 +111,18 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         return new DynamicAccessDecisionManager();
     }
 
-
     @ConditionalOnBean(name = "dynamicSecurityService")
     @Bean
-    public DynamicSecurityFilter dynamicSecurityFilter() {
-        return new DynamicSecurityFilter();
+    public DynamicSecurityFilter dynamicSecurityFilter(
+            IgnoreUrlsConfig ignoreUrlsConfig,
+            DynamicSecurityMetadataSource metadataSource,
+            DynamicAccessDecisionManager accessDecisionManager) {
+
+        return new DynamicSecurityFilter(
+                ignoreUrlsConfig.getUrls(),
+                metadataSource,
+                accessDecisionManager
+        );
     }
 
     @ConditionalOnBean(name = "dynamicSecurityService")
@@ -123,5 +130,4 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     public DynamicSecurityMetadataSource dynamicSecurityMetadataSource() {
         return new DynamicSecurityMetadataSource();
     }
-
 }
