@@ -1,1 +1,3 @@
 Inserisco in questa cartella tutti i file csv completi in modo da riorganizzarli dopo quando capirò che dati ha senso tenere
+
+- Forse nel ref 2 ho peggiorato le stats di alcune classi, occhio

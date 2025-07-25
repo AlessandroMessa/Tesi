@@ -1,0 +1,5 @@
+# ----- SciTools Understand -----
+# file di progetto
+*.und
+# file di database (Understand DB)
+*.udb
