@@ -14,8 +14,11 @@ import com.mtcarpenter.mall.mapper.UmsAdminPermissionRelationMapper;
 import com.mtcarpenter.mall.mapper.UmsAdminRoleRelationMapper;
 import com.mtcarpenter.mall.model.*;
 import com.mtcarpenter.mall.security.util.JwtTokenUtil;
+import com.mtcarpenter.mall.service.UmsAdminAuthService;
 import com.mtcarpenter.mall.service.UmsAdminCacheService;
-import com.mtcarpenter.mall.service.UmsAdminService;
+import com.mtcarpenter.mall.service.UmsAdminPermissionService;
+import com.mtcarpenter.mall.service.UmsAdminProfileService;
+import com.mtcarpenter.mall.service.UmsAdminRoleService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;
@@ -45,7 +48,10 @@ import java.util.stream.Collectors;
  * Created by macro on 2018/4/26.
  */
 @Service
-public class UmsAdminServiceImpl implements UmsAdminService {
+public class UmsAdminServiceImpl implements UmsAdminAuthService,
+               UmsAdminProfileService,
+               UmsAdminRoleService,
+               UmsAdminPermissionService {
     private static final Logger LOGGER = LoggerFactory.getLogger(UmsAdminServiceImpl.class);
     @Autowired
     private JwtTokenUtil jwtTokenUtil;

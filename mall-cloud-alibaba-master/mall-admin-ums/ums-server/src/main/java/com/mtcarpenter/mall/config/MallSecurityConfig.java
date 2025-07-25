@@ -3,7 +3,7 @@ package com.mtcarpenter.mall.config;
 import com.mtcarpenter.mall.model.UmsResource;
 import com.mtcarpenter.mall.security.component.DynamicSecurityService;
 import com.mtcarpenter.mall.security.config.SecurityConfig;
-import com.mtcarpenter.mall.service.UmsAdminService;
+import com.mtcarpenter.mall.service.UmsAdminAuthService;
 import com.mtcarpenter.mall.service.UmsResourceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -27,7 +27,7 @@ import java.util.concurrent.ConcurrentHashMap;
 public class MallSecurityConfig extends SecurityConfig {
 
     @Autowired
-    private UmsAdminService adminService;
+    private UmsAdminAuthService adminAuthService;
     @Autowired
     private UmsResourceService resourceService;
 
@@ -36,7 +36,7 @@ public class MallSecurityConfig extends SecurityConfig {
     @Override
     public UserDetailsService userDetailsService() {
         //获取登录用户信息
-        return username -> adminService.loadUserByUsername(username);
+        return username -> adminAuthService.loadUserByUsername(username);
     }
 
     @Bean

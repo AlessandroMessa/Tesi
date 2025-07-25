@@ -1,0 +1,7 @@
+Smell Type;TechDebt Index;Severity;Affected Type;Size;Affected Elements (complete);Incoming dependencies (Fan In);Outgoing Dependencies (Fan Out);Detection rule
+God Component;245;7;Package;152;com.mtcarpenter.mall.model;0;0;Lines of code > 7593
+Hublike Dependency;83;6;Package;11;com.mtcarpenter.mall.portal.service;4;6;Fan In + Fan Out > System's median (10)
+Hublike Dependency;43;6;Concrete Class;11;com.mtcarpenter.mall.domain.PromotionProduct;6;4;Fan In + Fan Out > System's median (10)
+Hublike Dependency;21;5;Interface;11;com.mtcarpenter.mall.service.UmsAdminService;4;6;Fan In + Fan Out > System's median (10)
+Cyclic Dependency;17;4;Package;2;com.mtcarpenter.mall.security.config, com.mtcarpenter.mall.security.component;0;0;Cycle Detection
+Cyclic Dependency;7;3;Implementation;2;com.mtcarpenter.mall.validator.FlagValidator, com.mtcarpenter.mall.validator.FlagValidatorClass;0;0;Cycle Detection

@@ -9,7 +9,7 @@ import com.mtcarpenter.mall.model.UmsAdminRoleRelationExample;
 import com.mtcarpenter.mall.model.UmsResource;
 import com.mtcarpenter.mall.security.service.RedisService;
 import com.mtcarpenter.mall.service.UmsAdminCacheService;
-import com.mtcarpenter.mall.service.UmsAdminService;
+import com.mtcarpenter.mall.service.UmsAdminProfileService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -24,7 +24,7 @@ import java.util.stream.Collectors;
 @Service
 public class UmsAdminCacheServiceImpl implements UmsAdminCacheService {
     @Autowired
-    private UmsAdminService adminService;
+    private UmsAdminProfileService profileService;
     @Autowired
     private RedisService redisService;
     @Autowired
@@ -46,7 +46,7 @@ public class UmsAdminCacheServiceImpl implements UmsAdminCacheService {
     private Long JWT_EXPIRATION;
     @Override
     public void delAdmin(Long adminId) {
-        UmsAdmin admin = adminService.getItem(adminId);
+        UmsAdmin admin = profileService.getItem(adminId);
         if (admin != null) {
             String key = REDIS_DATABASE + ":" + REDIS_KEY_ADMIN + ":" + admin.getUsername();
             redisService.del(key);
