@@ -1,7 +1,7 @@
 package com.mtcarpenter.mall.mapper;
 
-import com.mtcarpenter.mall.model.CmsPrefrenceArea;
-import com.mtcarpenter.mall.model.CmsPrefrenceAreaExample;
+import com.mtcarpenter.mall.cms.model.CmsPrefrenceArea;
+import com.mtcarpenter.mall.cms.model.CmsPrefrenceAreaExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 

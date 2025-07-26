@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.mtcarpenter.mall.mapper.PmsProductLadderMapper">
-  <resultMap id="BaseResultMap" type="com.mtcarpenter.mall.model.PmsProductLadder">
+  <resultMap id="BaseResultMap" type="com.mtcarpenter.mall.pms.model.PmsProductLadder">
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="product_id" jdbcType="BIGINT" property="productId" />
     <result column="count" jdbcType="INTEGER" property="count" />
@@ -99,7 +99,7 @@
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.mtcarpenter.mall.model.PmsProductLadder">
+  <insert id="insert" parameterType="com.mtcarpenter.mall.pms.model.PmsProductLadder">
     <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
       SELECT LAST_INSERT_ID()
     </selectKey>
@@ -108,7 +108,7 @@
     values (#{productId,jdbcType=BIGINT}, #{count,jdbcType=INTEGER}, #{discount,jdbcType=DECIMAL}, 
       #{price,jdbcType=DECIMAL})
   </insert>
-  <insert id="insertSelective" parameterType="com.mtcarpenter.mall.model.PmsProductLadder">
+  <insert id="insertSelective" parameterType="com.mtcarpenter.mall.pms.model.PmsProductLadder">
     <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
       SELECT LAST_INSERT_ID()
     </selectKey>
@@ -182,7 +182,7 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.mtcarpenter.mall.model.PmsProductLadder">
+  <update id="updateByPrimaryKeySelective" parameterType="com.mtcarpenter.mall.pms.model.PmsProductLadder">
     update pms_product_ladder
     <set>
       <if test="productId != null">
@@ -200,7 +200,7 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.mtcarpenter.mall.model.PmsProductLadder">
+  <update id="updateByPrimaryKey" parameterType="com.mtcarpenter.mall.pms.model.PmsProductLadder">
     update pms_product_ladder
     set product_id = #{productId,jdbcType=BIGINT},
       count = #{count,jdbcType=INTEGER},

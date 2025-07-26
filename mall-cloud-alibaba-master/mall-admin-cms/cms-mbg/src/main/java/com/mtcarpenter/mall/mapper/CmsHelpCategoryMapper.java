@@ -1,7 +1,7 @@
 package com.mtcarpenter.mall.mapper;
 
-import com.mtcarpenter.mall.model.CmsHelpCategory;
-import com.mtcarpenter.mall.model.CmsHelpCategoryExample;
+import com.mtcarpenter.mall.cms.model.CmsHelpCategory;
+import com.mtcarpenter.mall.cms.model.CmsHelpCategoryExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 

@@ -5,7 +5,6 @@ import com.alibaba.fastjson.JSON;
 import com.github.pagehelper.PageHelper;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import com.google.gson.reflect.TypeToken;
 import com.mtcarpenter.mall.common.CmsPrefrenceAreaProductRelationInput;
 import com.mtcarpenter.mall.common.CmsSubjectProductRelationInput;
 import com.mtcarpenter.mall.common.PmsProductOutput;

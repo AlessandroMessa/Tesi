@@ -1,5 +1,9 @@
 package com.mtcarpenter.mall.service.impl;
 
+import com.mtcarpenter.mall.cms.model.CmsPrefrenceArea;
+import com.mtcarpenter.mall.cms.model.CmsPrefrenceAreaExample;
+import com.mtcarpenter.mall.cms.model.CmsPrefrenceAreaProductRelation;
+import com.mtcarpenter.mall.cms.model.CmsPrefrenceAreaProductRelationExample;
 import com.mtcarpenter.mall.dao.CmsPrefrenceAreaProductRelationDao;
 import com.mtcarpenter.mall.mapper.CmsPrefrenceAreaMapper;
 import com.mtcarpenter.mall.mapper.CmsPrefrenceAreaProductRelationMapper;
