@@ -1,4 +1,4 @@
-package com.mtcarpenter.mall.model;
+package com.mtcarpenter.mall.model.pms.product.attribute;
 
 import java.util.ArrayList;
 import java.util.List;

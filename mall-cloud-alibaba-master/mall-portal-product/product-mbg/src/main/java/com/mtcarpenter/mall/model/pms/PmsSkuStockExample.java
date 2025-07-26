@@ -1,4 +1,4 @@
-package com.mtcarpenter.mall.model;
+package com.mtcarpenter.mall.model.pms;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;

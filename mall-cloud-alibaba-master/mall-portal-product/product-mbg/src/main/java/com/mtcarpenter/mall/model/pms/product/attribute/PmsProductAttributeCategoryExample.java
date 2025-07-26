@@ -1,16 +1,16 @@
-package com.mtcarpenter.mall.model;
+package com.mtcarpenter.mall.model.pms.product.attribute;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class PmsAlbumExample {
+public class PmsProductAttributeCategoryExample {
     protected String orderByClause;
 
     protected boolean distinct;
 
     protected List<Criteria> oredCriteria;
 
-    public PmsAlbumExample() {
+    public PmsProductAttributeCategoryExample() {
         oredCriteria = new ArrayList<Criteria>();
     }
 
@@ -234,263 +234,123 @@ public class PmsAlbumExample {
             return (Criteria) this;
         }
 
-        public Criteria andCoverPicIsNull() {
-            addCriterion("cover_pic is null");
+        public Criteria andAttributeCountIsNull() {
+            addCriterion("attribute_count is null");
             return (Criteria) this;
         }
 
-        public Criteria andCoverPicIsNotNull() {
-            addCriterion("cover_pic is not null");
+        public Criteria andAttributeCountIsNotNull() {
+            addCriterion("attribute_count is not null");
             return (Criteria) this;
         }
 
-        public Criteria andCoverPicEqualTo(String value) {
-            addCriterion("cover_pic =", value, "coverPic");
+        public Criteria andAttributeCountEqualTo(Integer value) {
+            addCriterion("attribute_count =", value, "attributeCount");
             return (Criteria) this;
         }
 
-        public Criteria andCoverPicNotEqualTo(String value) {
-            addCriterion("cover_pic <>", value, "coverPic");
+        public Criteria andAttributeCountNotEqualTo(Integer value) {
+            addCriterion("attribute_count <>", value, "attributeCount");
             return (Criteria) this;
         }
 
-        public Criteria andCoverPicGreaterThan(String value) {
-            addCriterion("cover_pic >", value, "coverPic");
+        public Criteria andAttributeCountGreaterThan(Integer value) {
+            addCriterion("attribute_count >", value, "attributeCount");
             return (Criteria) this;
         }
 
-        public Criteria andCoverPicGreaterThanOrEqualTo(String value) {
-            addCriterion("cover_pic >=", value, "coverPic");
+        public Criteria andAttributeCountGreaterThanOrEqualTo(Integer value) {
+            addCriterion("attribute_count >=", value, "attributeCount");
             return (Criteria) this;
         }
 
-        public Criteria andCoverPicLessThan(String value) {
-            addCriterion("cover_pic <", value, "coverPic");
+        public Criteria andAttributeCountLessThan(Integer value) {
+            addCriterion("attribute_count <", value, "attributeCount");
             return (Criteria) this;
         }
 
-        public Criteria andCoverPicLessThanOrEqualTo(String value) {
-            addCriterion("cover_pic <=", value, "coverPic");
+        public Criteria andAttributeCountLessThanOrEqualTo(Integer value) {
+            addCriterion("attribute_count <=", value, "attributeCount");
             return (Criteria) this;
         }
 
-        public Criteria andCoverPicLike(String value) {
-            addCriterion("cover_pic like", value, "coverPic");
+        public Criteria andAttributeCountIn(List<Integer> values) {
+            addCriterion("attribute_count in", values, "attributeCount");
             return (Criteria) this;
         }
 
-        public Criteria andCoverPicNotLike(String value) {
-            addCriterion("cover_pic not like", value, "coverPic");
+        public Criteria andAttributeCountNotIn(List<Integer> values) {
+            addCriterion("attribute_count not in", values, "attributeCount");
             return (Criteria) this;
         }
 
-        public Criteria andCoverPicIn(List<String> values) {
-            addCriterion("cover_pic in", values, "coverPic");
+        public Criteria andAttributeCountBetween(Integer value1, Integer value2) {
+            addCriterion("attribute_count between", value1, value2, "attributeCount");
             return (Criteria) this;
         }
 
-        public Criteria andCoverPicNotIn(List<String> values) {
-            addCriterion("cover_pic not in", values, "coverPic");
+        public Criteria andAttributeCountNotBetween(Integer value1, Integer value2) {
+            addCriterion("attribute_count not between", value1, value2, "attributeCount");
             return (Criteria) this;
         }
 
-        public Criteria andCoverPicBetween(String value1, String value2) {
-            addCriterion("cover_pic between", value1, value2, "coverPic");
+        public Criteria andParamCountIsNull() {
+            addCriterion("param_count is null");
             return (Criteria) this;
         }
 
-        public Criteria andCoverPicNotBetween(String value1, String value2) {
-            addCriterion("cover_pic not between", value1, value2, "coverPic");
+        public Criteria andParamCountIsNotNull() {
+            addCriterion("param_count is not null");
             return (Criteria) this;
         }
 
-        public Criteria andPicCountIsNull() {
-            addCriterion("pic_count is null");
+        public Criteria andParamCountEqualTo(Integer value) {
+            addCriterion("param_count =", value, "paramCount");
             return (Criteria) this;
         }
 
-        public Criteria andPicCountIsNotNull() {
-            addCriterion("pic_count is not null");
+        public Criteria andParamCountNotEqualTo(Integer value) {
+            addCriterion("param_count <>", value, "paramCount");
             return (Criteria) this;
         }
 
-        public Criteria andPicCountEqualTo(Integer value) {
-            addCriterion("pic_count =", value, "picCount");
+        public Criteria andParamCountGreaterThan(Integer value) {
+            addCriterion("param_count >", value, "paramCount");
             return (Criteria) this;
         }
 
-        public Criteria andPicCountNotEqualTo(Integer value) {
-            addCriterion("pic_count <>", value, "picCount");
+        public Criteria andParamCountGreaterThanOrEqualTo(Integer value) {
+            addCriterion("param_count >=", value, "paramCount");
             return (Criteria) this;
         }
 
-        public Criteria andPicCountGreaterThan(Integer value) {
-            addCriterion("pic_count >", value, "picCount");
+        public Criteria andParamCountLessThan(Integer value) {
+            addCriterion("param_count <", value, "paramCount");
             return (Criteria) this;
         }
 
-        public Criteria andPicCountGreaterThanOrEqualTo(Integer value) {
-            addCriterion("pic_count >=", value, "picCount");
+        public Criteria andParamCountLessThanOrEqualTo(Integer value) {
+            addCriterion("param_count <=", value, "paramCount");
             return (Criteria) this;
         }
 
-        public Criteria andPicCountLessThan(Integer value) {
-            addCriterion("pic_count <", value, "picCount");
+        public Criteria andParamCountIn(List<Integer> values) {
+            addCriterion("param_count in", values, "paramCount");
             return (Criteria) this;
         }
 
-        public Criteria andPicCountLessThanOrEqualTo(Integer value) {
-            addCriterion("pic_count <=", value, "picCount");
+        public Criteria andParamCountNotIn(List<Integer> values) {
+            addCriterion("param_count not in", values, "paramCount");
             return (Criteria) this;
         }
 
-        public Criteria andPicCountIn(List<Integer> values) {
-            addCriterion("pic_count in", values, "picCount");
+        public Criteria andParamCountBetween(Integer value1, Integer value2) {
+            addCriterion("param_count between", value1, value2, "paramCount");
             return (Criteria) this;
         }
 
-        public Criteria andPicCountNotIn(List<Integer> values) {
-            addCriterion("pic_count not in", values, "picCount");
-            return (Criteria) this;
-        }
-
-        public Criteria andPicCountBetween(Integer value1, Integer value2) {
-            addCriterion("pic_count between", value1, value2, "picCount");
-            return (Criteria) this;
-        }
-
-        public Criteria andPicCountNotBetween(Integer value1, Integer value2) {
-            addCriterion("pic_count not between", value1, value2, "picCount");
-            return (Criteria) this;
-        }
-
-        public Criteria andSortIsNull() {
-            addCriterion("sort is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andSortIsNotNull() {
-            addCriterion("sort is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andSortEqualTo(Integer value) {
-            addCriterion("sort =", value, "sort");
-            return (Criteria) this;
-        }
-
-        public Criteria andSortNotEqualTo(Integer value) {
-            addCriterion("sort <>", value, "sort");
-            return (Criteria) this;
-        }
-
-        public Criteria andSortGreaterThan(Integer value) {
-            addCriterion("sort >", value, "sort");
-            return (Criteria) this;
-        }
-
-        public Criteria andSortGreaterThanOrEqualTo(Integer value) {
-            addCriterion("sort >=", value, "sort");
-            return (Criteria) this;
-        }
-
-        public Criteria andSortLessThan(Integer value) {
-            addCriterion("sort <", value, "sort");
-            return (Criteria) this;
-        }
-
-        public Criteria andSortLessThanOrEqualTo(Integer value) {
-            addCriterion("sort <=", value, "sort");
-            return (Criteria) this;
-        }
-
-        public Criteria andSortIn(List<Integer> values) {
-            addCriterion("sort in", values, "sort");
-            return (Criteria) this;
-        }
-
-        public Criteria andSortNotIn(List<Integer> values) {
-            addCriterion("sort not in", values, "sort");
-            return (Criteria) this;
-        }
-
-        public Criteria andSortBetween(Integer value1, Integer value2) {
-            addCriterion("sort between", value1, value2, "sort");
-            return (Criteria) this;
-        }
-
-        public Criteria andSortNotBetween(Integer value1, Integer value2) {
-            addCriterion("sort not between", value1, value2, "sort");
-            return (Criteria) this;
-        }
-
-        public Criteria andDescriptionIsNull() {
-            addCriterion("description is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andDescriptionIsNotNull() {
-            addCriterion("description is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andDescriptionEqualTo(String value) {
-            addCriterion("description =", value, "description");
-            return (Criteria) this;
-        }
-
-        public Criteria andDescriptionNotEqualTo(String value) {
-            addCriterion("description <>", value, "description");
-            return (Criteria) this;
-        }
-
-        public Criteria andDescriptionGreaterThan(String value) {
-            addCriterion("description >", value, "description");
-            return (Criteria) this;
-        }
-
-        public Criteria andDescriptionGreaterThanOrEqualTo(String value) {
-            addCriterion("description >=", value, "description");
-            return (Criteria) this;
-        }
-
-        public Criteria andDescriptionLessThan(String value) {
-            addCriterion("description <", value, "description");
-            return (Criteria) this;
-        }
-
-        public Criteria andDescriptionLessThanOrEqualTo(String value) {
-            addCriterion("description <=", value, "description");
-            return (Criteria) this;
-        }
-
-        public Criteria andDescriptionLike(String value) {
-            addCriterion("description like", value, "description");
-            return (Criteria) this;
-        }
-
-        public Criteria andDescriptionNotLike(String value) {
-            addCriterion("description not like", value, "description");
-            return (Criteria) this;
-        }
-
-        public Criteria andDescriptionIn(List<String> values) {
-            addCriterion("description in", values, "description");
-            return (Criteria) this;
-        }
-
-        public Criteria andDescriptionNotIn(List<String> values) {
-            addCriterion("description not in", values, "description");
-            return (Criteria) this;
-        }
-
-        public Criteria andDescriptionBetween(String value1, String value2) {
-            addCriterion("description between", value1, value2, "description");
-            return (Criteria) this;
-        }
-
-        public Criteria andDescriptionNotBetween(String value1, String value2) {
-            addCriterion("description not between", value1, value2, "description");
+        public Criteria andParamCountNotBetween(Integer value1, Integer value2) {
+            addCriterion("param_count not between", value1, value2, "paramCount");
             return (Criteria) this;
         }
     }

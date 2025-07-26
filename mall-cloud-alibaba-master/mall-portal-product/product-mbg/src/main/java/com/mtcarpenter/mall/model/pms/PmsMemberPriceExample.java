@@ -1,17 +1,17 @@
-package com.mtcarpenter.mall.model;
+package com.mtcarpenter.mall.model.pms;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
-public class PmsProductVertifyRecordExample {
+public class PmsMemberPriceExample {
     protected String orderByClause;
 
     protected boolean distinct;
 
     protected List<Criteria> oredCriteria;
 
-    public PmsProductVertifyRecordExample() {
+    public PmsMemberPriceExample() {
         oredCriteria = new ArrayList<Criteria>();
     }
 
@@ -225,263 +225,193 @@ public class PmsProductVertifyRecordExample {
             return (Criteria) this;
         }
 
-        public Criteria andCreateTimeIsNull() {
-            addCriterion("create_time is null");
+        public Criteria andMemberLevelIdIsNull() {
+            addCriterion("member_level_id is null");
             return (Criteria) this;
         }
 
-        public Criteria andCreateTimeIsNotNull() {
-            addCriterion("create_time is not null");
+        public Criteria andMemberLevelIdIsNotNull() {
+            addCriterion("member_level_id is not null");
             return (Criteria) this;
         }
 
-        public Criteria andCreateTimeEqualTo(Date value) {
-            addCriterion("create_time =", value, "createTime");
+        public Criteria andMemberLevelIdEqualTo(Long value) {
+            addCriterion("member_level_id =", value, "memberLevelId");
             return (Criteria) this;
         }
 
-        public Criteria andCreateTimeNotEqualTo(Date value) {
-            addCriterion("create_time <>", value, "createTime");
+        public Criteria andMemberLevelIdNotEqualTo(Long value) {
+            addCriterion("member_level_id <>", value, "memberLevelId");
             return (Criteria) this;
         }
 
-        public Criteria andCreateTimeGreaterThan(Date value) {
-            addCriterion("create_time >", value, "createTime");
+        public Criteria andMemberLevelIdGreaterThan(Long value) {
+            addCriterion("member_level_id >", value, "memberLevelId");
             return (Criteria) this;
         }
 
-        public Criteria andCreateTimeGreaterThanOrEqualTo(Date value) {
-            addCriterion("create_time >=", value, "createTime");
+        public Criteria andMemberLevelIdGreaterThanOrEqualTo(Long value) {
+            addCriterion("member_level_id >=", value, "memberLevelId");
             return (Criteria) this;
         }
 
-        public Criteria andCreateTimeLessThan(Date value) {
-            addCriterion("create_time <", value, "createTime");
+        public Criteria andMemberLevelIdLessThan(Long value) {
+            addCriterion("member_level_id <", value, "memberLevelId");
             return (Criteria) this;
         }
 
-        public Criteria andCreateTimeLessThanOrEqualTo(Date value) {
-            addCriterion("create_time <=", value, "createTime");
+        public Criteria andMemberLevelIdLessThanOrEqualTo(Long value) {
+            addCriterion("member_level_id <=", value, "memberLevelId");
             return (Criteria) this;
         }
 
-        public Criteria andCreateTimeIn(List<Date> values) {
-            addCriterion("create_time in", values, "createTime");
+        public Criteria andMemberLevelIdIn(List<Long> values) {
+            addCriterion("member_level_id in", values, "memberLevelId");
             return (Criteria) this;
         }
 
-        public Criteria andCreateTimeNotIn(List<Date> values) {
-            addCriterion("create_time not in", values, "createTime");
+        public Criteria andMemberLevelIdNotIn(List<Long> values) {
+            addCriterion("member_level_id not in", values, "memberLevelId");
             return (Criteria) this;
         }
 
-        public Criteria andCreateTimeBetween(Date value1, Date value2) {
-            addCriterion("create_time between", value1, value2, "createTime");
+        public Criteria andMemberLevelIdBetween(Long value1, Long value2) {
+            addCriterion("member_level_id between", value1, value2, "memberLevelId");
             return (Criteria) this;
         }
 
-        public Criteria andCreateTimeNotBetween(Date value1, Date value2) {
-            addCriterion("create_time not between", value1, value2, "createTime");
+        public Criteria andMemberLevelIdNotBetween(Long value1, Long value2) {
+            addCriterion("member_level_id not between", value1, value2, "memberLevelId");
             return (Criteria) this;
         }
 
-        public Criteria andVertifyManIsNull() {
-            addCriterion("vertify_man is null");
+        public Criteria andMemberPriceIsNull() {
+            addCriterion("member_price is null");
             return (Criteria) this;
         }
 
-        public Criteria andVertifyManIsNotNull() {
-            addCriterion("vertify_man is not null");
+        public Criteria andMemberPriceIsNotNull() {
+            addCriterion("member_price is not null");
             return (Criteria) this;
         }
 
-        public Criteria andVertifyManEqualTo(String value) {
-            addCriterion("vertify_man =", value, "vertifyMan");
+        public Criteria andMemberPriceEqualTo(BigDecimal value) {
+            addCriterion("member_price =", value, "memberPrice");
             return (Criteria) this;
         }
 
-        public Criteria andVertifyManNotEqualTo(String value) {
-            addCriterion("vertify_man <>", value, "vertifyMan");
+        public Criteria andMemberPriceNotEqualTo(BigDecimal value) {
+            addCriterion("member_price <>", value, "memberPrice");
             return (Criteria) this;
         }
 
-        public Criteria andVertifyManGreaterThan(String value) {
-            addCriterion("vertify_man >", value, "vertifyMan");
+        public Criteria andMemberPriceGreaterThan(BigDecimal value) {
+            addCriterion("member_price >", value, "memberPrice");
             return (Criteria) this;
         }
 
-        public Criteria andVertifyManGreaterThanOrEqualTo(String value) {
-            addCriterion("vertify_man >=", value, "vertifyMan");
+        public Criteria andMemberPriceGreaterThanOrEqualTo(BigDecimal value) {
+            addCriterion("member_price >=", value, "memberPrice");
             return (Criteria) this;
         }
 
-        public Criteria andVertifyManLessThan(String value) {
-            addCriterion("vertify_man <", value, "vertifyMan");
+        public Criteria andMemberPriceLessThan(BigDecimal value) {
+            addCriterion("member_price <", value, "memberPrice");
             return (Criteria) this;
         }
 
-        public Criteria andVertifyManLessThanOrEqualTo(String value) {
-            addCriterion("vertify_man <=", value, "vertifyMan");
+        public Criteria andMemberPriceLessThanOrEqualTo(BigDecimal value) {
+            addCriterion("member_price <=", value, "memberPrice");
             return (Criteria) this;
         }
 
-        public Criteria andVertifyManLike(String value) {
-            addCriterion("vertify_man like", value, "vertifyMan");
+        public Criteria andMemberPriceIn(List<BigDecimal> values) {
+            addCriterion("member_price in", values, "memberPrice");
             return (Criteria) this;
         }
 
-        public Criteria andVertifyManNotLike(String value) {
-            addCriterion("vertify_man not like", value, "vertifyMan");
+        public Criteria andMemberPriceNotIn(List<BigDecimal> values) {
+            addCriterion("member_price not in", values, "memberPrice");
             return (Criteria) this;
         }
 
-        public Criteria andVertifyManIn(List<String> values) {
-            addCriterion("vertify_man in", values, "vertifyMan");
+        public Criteria andMemberPriceBetween(BigDecimal value1, BigDecimal value2) {
+            addCriterion("member_price between", value1, value2, "memberPrice");
             return (Criteria) this;
         }
 
-        public Criteria andVertifyManNotIn(List<String> values) {
-            addCriterion("vertify_man not in", values, "vertifyMan");
+        public Criteria andMemberPriceNotBetween(BigDecimal value1, BigDecimal value2) {
+            addCriterion("member_price not between", value1, value2, "memberPrice");
             return (Criteria) this;
         }
 
-        public Criteria andVertifyManBetween(String value1, String value2) {
-            addCriterion("vertify_man between", value1, value2, "vertifyMan");
+        public Criteria andMemberLevelNameIsNull() {
+            addCriterion("member_level_name is null");
             return (Criteria) this;
         }
 
-        public Criteria andVertifyManNotBetween(String value1, String value2) {
-            addCriterion("vertify_man not between", value1, value2, "vertifyMan");
+        public Criteria andMemberLevelNameIsNotNull() {
+            addCriterion("member_level_name is not null");
             return (Criteria) this;
         }
 
-        public Criteria andStatusIsNull() {
-            addCriterion("status is null");
+        public Criteria andMemberLevelNameEqualTo(String value) {
+            addCriterion("member_level_name =", value, "memberLevelName");
             return (Criteria) this;
         }
 
-        public Criteria andStatusIsNotNull() {
-            addCriterion("status is not null");
+        public Criteria andMemberLevelNameNotEqualTo(String value) {
+            addCriterion("member_level_name <>", value, "memberLevelName");
             return (Criteria) this;
         }
 
-        public Criteria andStatusEqualTo(Integer value) {
-            addCriterion("status =", value, "status");
+        public Criteria andMemberLevelNameGreaterThan(String value) {
+            addCriterion("member_level_name >", value, "memberLevelName");
             return (Criteria) this;
         }
 
-        public Criteria andStatusNotEqualTo(Integer value) {
-            addCriterion("status <>", value, "status");
+        public Criteria andMemberLevelNameGreaterThanOrEqualTo(String value) {
+            addCriterion("member_level_name >=", value, "memberLevelName");
             return (Criteria) this;
         }
 
-        public Criteria andStatusGreaterThan(Integer value) {
-            addCriterion("status >", value, "status");
+        public Criteria andMemberLevelNameLessThan(String value) {
+            addCriterion("member_level_name <", value, "memberLevelName");
             return (Criteria) this;
         }
 
-        public Criteria andStatusGreaterThanOrEqualTo(Integer value) {
-            addCriterion("status >=", value, "status");
+        public Criteria andMemberLevelNameLessThanOrEqualTo(String value) {
+            addCriterion("member_level_name <=", value, "memberLevelName");
             return (Criteria) this;
         }
 
-        public Criteria andStatusLessThan(Integer value) {
-            addCriterion("status <", value, "status");
+        public Criteria andMemberLevelNameLike(String value) {
+            addCriterion("member_level_name like", value, "memberLevelName");
             return (Criteria) this;
         }
 
-        public Criteria andStatusLessThanOrEqualTo(Integer value) {
-            addCriterion("status <=", value, "status");
+        public Criteria andMemberLevelNameNotLike(String value) {
+            addCriterion("member_level_name not like", value, "memberLevelName");
             return (Criteria) this;
         }
 
-        public Criteria andStatusIn(List<Integer> values) {
-            addCriterion("status in", values, "status");
+        public Criteria andMemberLevelNameIn(List<String> values) {
+            addCriterion("member_level_name in", values, "memberLevelName");
             return (Criteria) this;
         }
 
-        public Criteria andStatusNotIn(List<Integer> values) {
-            addCriterion("status not in", values, "status");
+        public Criteria andMemberLevelNameNotIn(List<String> values) {
+            addCriterion("member_level_name not in", values, "memberLevelName");
             return (Criteria) this;
         }
 
-        public Criteria andStatusBetween(Integer value1, Integer value2) {
-            addCriterion("status between", value1, value2, "status");
+        public Criteria andMemberLevelNameBetween(String value1, String value2) {
+            addCriterion("member_level_name between", value1, value2, "memberLevelName");
             return (Criteria) this;
         }
 
-        public Criteria andStatusNotBetween(Integer value1, Integer value2) {
-            addCriterion("status not between", value1, value2, "status");
-            return (Criteria) this;
-        }
-
-        public Criteria andDetailIsNull() {
-            addCriterion("detail is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andDetailIsNotNull() {
-            addCriterion("detail is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andDetailEqualTo(String value) {
-            addCriterion("detail =", value, "detail");
-            return (Criteria) this;
-        }
-
-        public Criteria andDetailNotEqualTo(String value) {
-            addCriterion("detail <>", value, "detail");
-            return (Criteria) this;
-        }
-
-        public Criteria andDetailGreaterThan(String value) {
-            addCriterion("detail >", value, "detail");
-            return (Criteria) this;
-        }
-
-        public Criteria andDetailGreaterThanOrEqualTo(String value) {
-            addCriterion("detail >=", value, "detail");
-            return (Criteria) this;
-        }
-
-        public Criteria andDetailLessThan(String value) {
-            addCriterion("detail <", value, "detail");
-            return (Criteria) this;
-        }
-
-        public Criteria andDetailLessThanOrEqualTo(String value) {
-            addCriterion("detail <=", value, "detail");
-            return (Criteria) this;
-        }
-
-        public Criteria andDetailLike(String value) {
-            addCriterion("detail like", value, "detail");
-            return (Criteria) this;
-        }
-
-        public Criteria andDetailNotLike(String value) {
-            addCriterion("detail not like", value, "detail");
-            return (Criteria) this;
-        }
-
-        public Criteria andDetailIn(List<String> values) {
-            addCriterion("detail in", values, "detail");
-            return (Criteria) this;
-        }
-
-        public Criteria andDetailNotIn(List<String> values) {
-            addCriterion("detail not in", values, "detail");
-            return (Criteria) this;
-        }
-
-        public Criteria andDetailBetween(String value1, String value2) {
-            addCriterion("detail between", value1, value2, "detail");
-            return (Criteria) this;
-        }
-
-        public Criteria andDetailNotBetween(String value1, String value2) {
-            addCriterion("detail not between", value1, value2, "detail");
+        public Criteria andMemberLevelNameNotBetween(String value1, String value2) {
+            addCriterion("member_level_name not between", value1, value2, "memberLevelName");
             return (Criteria) this;
         }
     }

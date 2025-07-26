@@ -1,16 +1,16 @@
-package com.mtcarpenter.mall.model;
+package com.mtcarpenter.mall.model.pms.product.attribute;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class PmsProductAttributeCategoryExample {
+public class PmsProductAttributeValueExample {
     protected String orderByClause;
 
     protected boolean distinct;
 
     protected List<Criteria> oredCriteria;
 
-    public PmsProductAttributeCategoryExample() {
+    public PmsProductAttributeValueExample() {
         oredCriteria = new ArrayList<Criteria>();
     }
 
@@ -164,193 +164,193 @@ public class PmsProductAttributeCategoryExample {
             return (Criteria) this;
         }
 
-        public Criteria andNameIsNull() {
-            addCriterion("name is null");
+        public Criteria andProductIdIsNull() {
+            addCriterion("product_id is null");
             return (Criteria) this;
         }
 
-        public Criteria andNameIsNotNull() {
-            addCriterion("name is not null");
+        public Criteria andProductIdIsNotNull() {
+            addCriterion("product_id is not null");
             return (Criteria) this;
         }
 
-        public Criteria andNameEqualTo(String value) {
-            addCriterion("name =", value, "name");
+        public Criteria andProductIdEqualTo(Long value) {
+            addCriterion("product_id =", value, "productId");
             return (Criteria) this;
         }
 
-        public Criteria andNameNotEqualTo(String value) {
-            addCriterion("name <>", value, "name");
+        public Criteria andProductIdNotEqualTo(Long value) {
+            addCriterion("product_id <>", value, "productId");
             return (Criteria) this;
         }
 
-        public Criteria andNameGreaterThan(String value) {
-            addCriterion("name >", value, "name");
+        public Criteria andProductIdGreaterThan(Long value) {
+            addCriterion("product_id >", value, "productId");
             return (Criteria) this;
         }
 
-        public Criteria andNameGreaterThanOrEqualTo(String value) {
-            addCriterion("name >=", value, "name");
+        public Criteria andProductIdGreaterThanOrEqualTo(Long value) {
+            addCriterion("product_id >=", value, "productId");
             return (Criteria) this;
         }
 
-        public Criteria andNameLessThan(String value) {
-            addCriterion("name <", value, "name");
+        public Criteria andProductIdLessThan(Long value) {
+            addCriterion("product_id <", value, "productId");
             return (Criteria) this;
         }
 
-        public Criteria andNameLessThanOrEqualTo(String value) {
-            addCriterion("name <=", value, "name");
+        public Criteria andProductIdLessThanOrEqualTo(Long value) {
+            addCriterion("product_id <=", value, "productId");
             return (Criteria) this;
         }
 
-        public Criteria andNameLike(String value) {
-            addCriterion("name like", value, "name");
+        public Criteria andProductIdIn(List<Long> values) {
+            addCriterion("product_id in", values, "productId");
             return (Criteria) this;
         }
 
-        public Criteria andNameNotLike(String value) {
-            addCriterion("name not like", value, "name");
+        public Criteria andProductIdNotIn(List<Long> values) {
+            addCriterion("product_id not in", values, "productId");
             return (Criteria) this;
         }
 
-        public Criteria andNameIn(List<String> values) {
-            addCriterion("name in", values, "name");
+        public Criteria andProductIdBetween(Long value1, Long value2) {
+            addCriterion("product_id between", value1, value2, "productId");
             return (Criteria) this;
         }
 
-        public Criteria andNameNotIn(List<String> values) {
-            addCriterion("name not in", values, "name");
+        public Criteria andProductIdNotBetween(Long value1, Long value2) {
+            addCriterion("product_id not between", value1, value2, "productId");
             return (Criteria) this;
         }
 
-        public Criteria andNameBetween(String value1, String value2) {
-            addCriterion("name between", value1, value2, "name");
+        public Criteria andProductAttributeIdIsNull() {
+            addCriterion("product_attribute_id is null");
             return (Criteria) this;
         }
 
-        public Criteria andNameNotBetween(String value1, String value2) {
-            addCriterion("name not between", value1, value2, "name");
+        public Criteria andProductAttributeIdIsNotNull() {
+            addCriterion("product_attribute_id is not null");
             return (Criteria) this;
         }
 
-        public Criteria andAttributeCountIsNull() {
-            addCriterion("attribute_count is null");
+        public Criteria andProductAttributeIdEqualTo(Long value) {
+            addCriterion("product_attribute_id =", value, "productAttributeId");
             return (Criteria) this;
         }
 
-        public Criteria andAttributeCountIsNotNull() {
-            addCriterion("attribute_count is not null");
+        public Criteria andProductAttributeIdNotEqualTo(Long value) {
+            addCriterion("product_attribute_id <>", value, "productAttributeId");
             return (Criteria) this;
         }
 
-        public Criteria andAttributeCountEqualTo(Integer value) {
-            addCriterion("attribute_count =", value, "attributeCount");
+        public Criteria andProductAttributeIdGreaterThan(Long value) {
+            addCriterion("product_attribute_id >", value, "productAttributeId");
             return (Criteria) this;
         }
 
-        public Criteria andAttributeCountNotEqualTo(Integer value) {
-            addCriterion("attribute_count <>", value, "attributeCount");
+        public Criteria andProductAttributeIdGreaterThanOrEqualTo(Long value) {
+            addCriterion("product_attribute_id >=", value, "productAttributeId");
             return (Criteria) this;
         }
 
-        public Criteria andAttributeCountGreaterThan(Integer value) {
-            addCriterion("attribute_count >", value, "attributeCount");
+        public Criteria andProductAttributeIdLessThan(Long value) {
+            addCriterion("product_attribute_id <", value, "productAttributeId");
             return (Criteria) this;
         }
 
-        public Criteria andAttributeCountGreaterThanOrEqualTo(Integer value) {
-            addCriterion("attribute_count >=", value, "attributeCount");
+        public Criteria andProductAttributeIdLessThanOrEqualTo(Long value) {
+            addCriterion("product_attribute_id <=", value, "productAttributeId");
             return (Criteria) this;
         }
 
-        public Criteria andAttributeCountLessThan(Integer value) {
-            addCriterion("attribute_count <", value, "attributeCount");
+        public Criteria andProductAttributeIdIn(List<Long> values) {
+            addCriterion("product_attribute_id in", values, "productAttributeId");
             return (Criteria) this;
         }
 
-        public Criteria andAttributeCountLessThanOrEqualTo(Integer value) {
-            addCriterion("attribute_count <=", value, "attributeCount");
+        public Criteria andProductAttributeIdNotIn(List<Long> values) {
+            addCriterion("product_attribute_id not in", values, "productAttributeId");
             return (Criteria) this;
         }
 
-        public Criteria andAttributeCountIn(List<Integer> values) {
-            addCriterion("attribute_count in", values, "attributeCount");
+        public Criteria andProductAttributeIdBetween(Long value1, Long value2) {
+            addCriterion("product_attribute_id between", value1, value2, "productAttributeId");
             return (Criteria) this;
         }
 
-        public Criteria andAttributeCountNotIn(List<Integer> values) {
-            addCriterion("attribute_count not in", values, "attributeCount");
+        public Criteria andProductAttributeIdNotBetween(Long value1, Long value2) {
+            addCriterion("product_attribute_id not between", value1, value2, "productAttributeId");
             return (Criteria) this;
         }
 
-        public Criteria andAttributeCountBetween(Integer value1, Integer value2) {
-            addCriterion("attribute_count between", value1, value2, "attributeCount");
+        public Criteria andValueIsNull() {
+            addCriterion("value is null");
             return (Criteria) this;
         }
 
-        public Criteria andAttributeCountNotBetween(Integer value1, Integer value2) {
-            addCriterion("attribute_count not between", value1, value2, "attributeCount");
+        public Criteria andValueIsNotNull() {
+            addCriterion("value is not null");
             return (Criteria) this;
         }
 
-        public Criteria andParamCountIsNull() {
-            addCriterion("param_count is null");
+        public Criteria andValueEqualTo(String value) {
+            addCriterion("value =", value, "value");
             return (Criteria) this;
         }
 
-        public Criteria andParamCountIsNotNull() {
-            addCriterion("param_count is not null");
+        public Criteria andValueNotEqualTo(String value) {
+            addCriterion("value <>", value, "value");
             return (Criteria) this;
         }
 
-        public Criteria andParamCountEqualTo(Integer value) {
-            addCriterion("param_count =", value, "paramCount");
+        public Criteria andValueGreaterThan(String value) {
+            addCriterion("value >", value, "value");
             return (Criteria) this;
         }
 
-        public Criteria andParamCountNotEqualTo(Integer value) {
-            addCriterion("param_count <>", value, "paramCount");
+        public Criteria andValueGreaterThanOrEqualTo(String value) {
+            addCriterion("value >=", value, "value");
             return (Criteria) this;
         }
 
-        public Criteria andParamCountGreaterThan(Integer value) {
-            addCriterion("param_count >", value, "paramCount");
+        public Criteria andValueLessThan(String value) {
+            addCriterion("value <", value, "value");
             return (Criteria) this;
         }
 
-        public Criteria andParamCountGreaterThanOrEqualTo(Integer value) {
-            addCriterion("param_count >=", value, "paramCount");
+        public Criteria andValueLessThanOrEqualTo(String value) {
+            addCriterion("value <=", value, "value");
             return (Criteria) this;
         }
 
-        public Criteria andParamCountLessThan(Integer value) {
-            addCriterion("param_count <", value, "paramCount");
+        public Criteria andValueLike(String value) {
+            addCriterion("value like", value, "value");
             return (Criteria) this;
         }
 
-        public Criteria andParamCountLessThanOrEqualTo(Integer value) {
-            addCriterion("param_count <=", value, "paramCount");
+        public Criteria andValueNotLike(String value) {
+            addCriterion("value not like", value, "value");
             return (Criteria) this;
         }
 
-        public Criteria andParamCountIn(List<Integer> values) {
-            addCriterion("param_count in", values, "paramCount");
+        public Criteria andValueIn(List<String> values) {
+            addCriterion("value in", values, "value");
             return (Criteria) this;
         }
 
-        public Criteria andParamCountNotIn(List<Integer> values) {
-            addCriterion("param_count not in", values, "paramCount");
+        public Criteria andValueNotIn(List<String> values) {
+            addCriterion("value not in", values, "value");
             return (Criteria) this;
         }
 
-        public Criteria andParamCountBetween(Integer value1, Integer value2) {
-            addCriterion("param_count between", value1, value2, "paramCount");
+        public Criteria andValueBetween(String value1, String value2) {
+            addCriterion("value between", value1, value2, "value");
             return (Criteria) this;
         }
 
-        public Criteria andParamCountNotBetween(Integer value1, Integer value2) {
-            addCriterion("param_count not between", value1, value2, "paramCount");
+        public Criteria andValueNotBetween(String value1, String value2) {
+            addCriterion("value not between", value1, value2, "value");
             return (Criteria) this;
         }
     }

@@ -1,17 +1,16 @@
-package com.mtcarpenter.mall.model;
+package com.mtcarpenter.mall.model.pms.album;
 
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PmsProductFullReductionExample {
+public class PmsAlbumPicExample {
     protected String orderByClause;
 
     protected boolean distinct;
 
     protected List<Criteria> oredCriteria;
 
-    public PmsProductFullReductionExample() {
+    public PmsAlbumPicExample() {
         oredCriteria = new ArrayList<Criteria>();
     }
 
@@ -165,183 +164,133 @@ public class PmsProductFullReductionExample {
             return (Criteria) this;
         }
 
-        public Criteria andProductIdIsNull() {
-            addCriterion("product_id is null");
+        public Criteria andAlbumIdIsNull() {
+            addCriterion("album_id is null");
             return (Criteria) this;
         }
 
-        public Criteria andProductIdIsNotNull() {
-            addCriterion("product_id is not null");
+        public Criteria andAlbumIdIsNotNull() {
+            addCriterion("album_id is not null");
             return (Criteria) this;
         }
 
-        public Criteria andProductIdEqualTo(Long value) {
-            addCriterion("product_id =", value, "productId");
+        public Criteria andAlbumIdEqualTo(Long value) {
+            addCriterion("album_id =", value, "albumId");
             return (Criteria) this;
         }
 
-        public Criteria andProductIdNotEqualTo(Long value) {
-            addCriterion("product_id <>", value, "productId");
+        public Criteria andAlbumIdNotEqualTo(Long value) {
+            addCriterion("album_id <>", value, "albumId");
             return (Criteria) this;
         }
 
-        public Criteria andProductIdGreaterThan(Long value) {
-            addCriterion("product_id >", value, "productId");
+        public Criteria andAlbumIdGreaterThan(Long value) {
+            addCriterion("album_id >", value, "albumId");
             return (Criteria) this;
         }
 
-        public Criteria andProductIdGreaterThanOrEqualTo(Long value) {
-            addCriterion("product_id >=", value, "productId");
+        public Criteria andAlbumIdGreaterThanOrEqualTo(Long value) {
+            addCriterion("album_id >=", value, "albumId");
             return (Criteria) this;
         }
 
-        public Criteria andProductIdLessThan(Long value) {
-            addCriterion("product_id <", value, "productId");
+        public Criteria andAlbumIdLessThan(Long value) {
+            addCriterion("album_id <", value, "albumId");
             return (Criteria) this;
         }
 
-        public Criteria andProductIdLessThanOrEqualTo(Long value) {
-            addCriterion("product_id <=", value, "productId");
+        public Criteria andAlbumIdLessThanOrEqualTo(Long value) {
+            addCriterion("album_id <=", value, "albumId");
             return (Criteria) this;
         }
 
-        public Criteria andProductIdIn(List<Long> values) {
-            addCriterion("product_id in", values, "productId");
+        public Criteria andAlbumIdIn(List<Long> values) {
+            addCriterion("album_id in", values, "albumId");
             return (Criteria) this;
         }
 
-        public Criteria andProductIdNotIn(List<Long> values) {
-            addCriterion("product_id not in", values, "productId");
+        public Criteria andAlbumIdNotIn(List<Long> values) {
+            addCriterion("album_id not in", values, "albumId");
             return (Criteria) this;
         }
 
-        public Criteria andProductIdBetween(Long value1, Long value2) {
-            addCriterion("product_id between", value1, value2, "productId");
+        public Criteria andAlbumIdBetween(Long value1, Long value2) {
+            addCriterion("album_id between", value1, value2, "albumId");
             return (Criteria) this;
         }
 
-        public Criteria andProductIdNotBetween(Long value1, Long value2) {
-            addCriterion("product_id not between", value1, value2, "productId");
+        public Criteria andAlbumIdNotBetween(Long value1, Long value2) {
+            addCriterion("album_id not between", value1, value2, "albumId");
             return (Criteria) this;
         }
 
-        public Criteria andFullPriceIsNull() {
-            addCriterion("full_price is null");
+        public Criteria andPicIsNull() {
+            addCriterion("pic is null");
             return (Criteria) this;
         }
 
-        public Criteria andFullPriceIsNotNull() {
-            addCriterion("full_price is not null");
+        public Criteria andPicIsNotNull() {
+            addCriterion("pic is not null");
             return (Criteria) this;
         }
 
-        public Criteria andFullPriceEqualTo(BigDecimal value) {
-            addCriterion("full_price =", value, "fullPrice");
+        public Criteria andPicEqualTo(String value) {
+            addCriterion("pic =", value, "pic");
             return (Criteria) this;
         }
 
-        public Criteria andFullPriceNotEqualTo(BigDecimal value) {
-            addCriterion("full_price <>", value, "fullPrice");
+        public Criteria andPicNotEqualTo(String value) {
+            addCriterion("pic <>", value, "pic");
             return (Criteria) this;
         }
 
-        public Criteria andFullPriceGreaterThan(BigDecimal value) {
-            addCriterion("full_price >", value, "fullPrice");
+        public Criteria andPicGreaterThan(String value) {
+            addCriterion("pic >", value, "pic");
             return (Criteria) this;
         }
 
-        public Criteria andFullPriceGreaterThanOrEqualTo(BigDecimal value) {
-            addCriterion("full_price >=", value, "fullPrice");
+        public Criteria andPicGreaterThanOrEqualTo(String value) {
+            addCriterion("pic >=", value, "pic");
             return (Criteria) this;
         }
 
-        public Criteria andFullPriceLessThan(BigDecimal value) {
-            addCriterion("full_price <", value, "fullPrice");
+        public Criteria andPicLessThan(String value) {
+            addCriterion("pic <", value, "pic");
             return (Criteria) this;
         }
 
-        public Criteria andFullPriceLessThanOrEqualTo(BigDecimal value) {
-            addCriterion("full_price <=", value, "fullPrice");
+        public Criteria andPicLessThanOrEqualTo(String value) {
+            addCriterion("pic <=", value, "pic");
             return (Criteria) this;
         }
 
-        public Criteria andFullPriceIn(List<BigDecimal> values) {
-            addCriterion("full_price in", values, "fullPrice");
+        public Criteria andPicLike(String value) {
+            addCriterion("pic like", value, "pic");
             return (Criteria) this;
         }
 
-        public Criteria andFullPriceNotIn(List<BigDecimal> values) {
-            addCriterion("full_price not in", values, "fullPrice");
+        public Criteria andPicNotLike(String value) {
+            addCriterion("pic not like", value, "pic");
             return (Criteria) this;
         }
 
-        public Criteria andFullPriceBetween(BigDecimal value1, BigDecimal value2) {
-            addCriterion("full_price between", value1, value2, "fullPrice");
+        public Criteria andPicIn(List<String> values) {
+            addCriterion("pic in", values, "pic");
             return (Criteria) this;
         }
 
-        public Criteria andFullPriceNotBetween(BigDecimal value1, BigDecimal value2) {
-            addCriterion("full_price not between", value1, value2, "fullPrice");
+        public Criteria andPicNotIn(List<String> values) {
+            addCriterion("pic not in", values, "pic");
             return (Criteria) this;
         }
 
-        public Criteria andReducePriceIsNull() {
-            addCriterion("reduce_price is null");
+        public Criteria andPicBetween(String value1, String value2) {
+            addCriterion("pic between", value1, value2, "pic");
             return (Criteria) this;
         }
 
-        public Criteria andReducePriceIsNotNull() {
-            addCriterion("reduce_price is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andReducePriceEqualTo(BigDecimal value) {
-            addCriterion("reduce_price =", value, "reducePrice");
-            return (Criteria) this;
-        }
-
-        public Criteria andReducePriceNotEqualTo(BigDecimal value) {
-            addCriterion("reduce_price <>", value, "reducePrice");
-            return (Criteria) this;
-        }
-
-        public Criteria andReducePriceGreaterThan(BigDecimal value) {
-            addCriterion("reduce_price >", value, "reducePrice");
-            return (Criteria) this;
-        }
-
-        public Criteria andReducePriceGreaterThanOrEqualTo(BigDecimal value) {
-            addCriterion("reduce_price >=", value, "reducePrice");
-            return (Criteria) this;
-        }
-
-        public Criteria andReducePriceLessThan(BigDecimal value) {
-            addCriterion("reduce_price <", value, "reducePrice");
-            return (Criteria) this;
-        }
-
-        public Criteria andReducePriceLessThanOrEqualTo(BigDecimal value) {
-            addCriterion("reduce_price <=", value, "reducePrice");
-            return (Criteria) this;
-        }
-
-        public Criteria andReducePriceIn(List<BigDecimal> values) {
-            addCriterion("reduce_price in", values, "reducePrice");
-            return (Criteria) this;
-        }
-
-        public Criteria andReducePriceNotIn(List<BigDecimal> values) {
-            addCriterion("reduce_price not in", values, "reducePrice");
-            return (Criteria) this;
-        }
-
-        public Criteria andReducePriceBetween(BigDecimal value1, BigDecimal value2) {
-            addCriterion("reduce_price between", value1, value2, "reducePrice");
-            return (Criteria) this;
-        }
-
-        public Criteria andReducePriceNotBetween(BigDecimal value1, BigDecimal value2) {
-            addCriterion("reduce_price not between", value1, value2, "reducePrice");
+        public Criteria andPicNotBetween(String value1, String value2) {
+            addCriterion("pic not between", value1, value2, "pic");
             return (Criteria) this;
         }
     }

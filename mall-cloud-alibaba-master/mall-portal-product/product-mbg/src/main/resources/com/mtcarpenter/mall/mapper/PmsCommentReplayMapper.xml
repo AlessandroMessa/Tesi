@@ -73,7 +73,7 @@
     <sql id="Base_Column_List">
     id, comment_id, member_nick_name, member_icon, content, create_time, type
   </sql>
-    <select id="selectByExample" parameterType="com.mtcarpenter.mall.model.PmsCommentReplayExample"
+    <select id="selectByExample" parameterType="com.mtcarpenter.mall.model.pms.comment.PmsCommentReplayExample"
             resultMap="BaseResultMap">
         select
         <if test="distinct">
@@ -98,7 +98,7 @@
     delete from pms_comment_replay
     where id = #{id,jdbcType=BIGINT}
   </delete>
-    <delete id="deleteByExample" parameterType="com.mtcarpenter.mall.model.PmsCommentReplayExample">
+    <delete id="deleteByExample" parameterType="com.mtcarpenter.mall.model.pms.comment.PmsCommentReplayExample">
         delete from pms_comment_replay
         <if test="_parameter != null">
             <include refid="Example_Where_Clause"/>
@@ -161,7 +161,7 @@
             </if>
         </trim>
     </insert>
-    <select id="countByExample" parameterType="com.mtcarpenter.mall.model.PmsCommentReplayExample"
+    <select id="countByExample" parameterType="com.mtcarpenter.mall.model.pms.comment.PmsCommentReplayExample"
             resultType="java.lang.Long">
         select count(*) from pms_comment_replay
         <if test="_parameter != null">

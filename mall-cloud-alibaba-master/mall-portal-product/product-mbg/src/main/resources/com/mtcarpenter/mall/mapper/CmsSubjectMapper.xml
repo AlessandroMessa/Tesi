@@ -86,7 +86,7 @@
   <sql id="Blob_Column_List">
     content
   </sql>
-  <select id="selectByExampleWithBLOBs" parameterType="com.mtcarpenter.mall.model.CmsSubjectExample" resultMap="ResultMapWithBLOBs">
+  <select id="selectByExampleWithBLOBs" parameterType="com.mtcarpenter.mall.model.cms.CmsSubjectExample" resultMap="ResultMapWithBLOBs">
     select
     <if test="distinct">
       distinct
@@ -102,7 +102,7 @@
       order by ${orderByClause}
     </if>
   </select>
-  <select id="selectByExample" parameterType="com.mtcarpenter.mall.model.CmsSubjectExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="com.mtcarpenter.mall.model.cms.CmsSubjectExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
@@ -128,7 +128,7 @@
     delete from cms_subject
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <delete id="deleteByExample" parameterType="com.mtcarpenter.mall.model.CmsSubjectExample">
+  <delete id="deleteByExample" parameterType="com.mtcarpenter.mall.model.cms.CmsSubjectExample">
     delete from cms_subject
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
@@ -251,7 +251,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.mtcarpenter.mall.model.CmsSubjectExample" resultType="java.lang.Long">
+  <select id="countByExample" parameterType="com.mtcarpenter.mall.model.cms.CmsSubjectExample" resultType="java.lang.Long">
     select count(*) from cms_subject
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />

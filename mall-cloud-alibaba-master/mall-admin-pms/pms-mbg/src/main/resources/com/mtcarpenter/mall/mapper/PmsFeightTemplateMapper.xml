@@ -72,7 +72,7 @@
   <sql id="Base_Column_List">
     id, name, charge_type, first_weight, first_fee, continue_weight, continme_fee, dest
   </sql>
-  <select id="selectByExample" parameterType="com.mtcarpenter.mall.model.PmsFeightTemplateExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="com.mtcarpenter.mall.model.pms.PmsFeightTemplateExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
@@ -96,7 +96,7 @@
     delete from pms_feight_template
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <delete id="deleteByExample" parameterType="com.mtcarpenter.mall.model.PmsFeightTemplateExample">
+  <delete id="deleteByExample" parameterType="com.mtcarpenter.mall.model.pms.PmsFeightTemplateExample">
     delete from pms_feight_template
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
@@ -165,7 +165,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.mtcarpenter.mall.model.PmsFeightTemplateExample" resultType="java.lang.Long">
+  <select id="countByExample" parameterType="com.mtcarpenter.mall.model.pms.PmsFeightTemplateExample" resultType="java.lang.Long">
     select count(*) from pms_feight_template
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />

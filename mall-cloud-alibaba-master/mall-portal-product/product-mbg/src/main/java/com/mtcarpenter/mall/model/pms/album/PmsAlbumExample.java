@@ -1,17 +1,16 @@
-package com.mtcarpenter.mall.model;
+package com.mtcarpenter.mall.model.pms.album;
 
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PmsFeightTemplateExample {
+public class PmsAlbumExample {
     protected String orderByClause;
 
     protected boolean distinct;
 
     protected List<Criteria> oredCriteria;
 
-    public PmsFeightTemplateExample() {
+    public PmsAlbumExample() {
         oredCriteria = new ArrayList<Criteria>();
     }
 
@@ -235,373 +234,263 @@ public class PmsFeightTemplateExample {
             return (Criteria) this;
         }
 
-        public Criteria andChargeTypeIsNull() {
-            addCriterion("charge_type is null");
+        public Criteria andCoverPicIsNull() {
+            addCriterion("cover_pic is null");
             return (Criteria) this;
         }
 
-        public Criteria andChargeTypeIsNotNull() {
-            addCriterion("charge_type is not null");
+        public Criteria andCoverPicIsNotNull() {
+            addCriterion("cover_pic is not null");
             return (Criteria) this;
         }
 
-        public Criteria andChargeTypeEqualTo(Integer value) {
-            addCriterion("charge_type =", value, "chargeType");
+        public Criteria andCoverPicEqualTo(String value) {
+            addCriterion("cover_pic =", value, "coverPic");
             return (Criteria) this;
         }
 
-        public Criteria andChargeTypeNotEqualTo(Integer value) {
-            addCriterion("charge_type <>", value, "chargeType");
+        public Criteria andCoverPicNotEqualTo(String value) {
+            addCriterion("cover_pic <>", value, "coverPic");
             return (Criteria) this;
         }
 
-        public Criteria andChargeTypeGreaterThan(Integer value) {
-            addCriterion("charge_type >", value, "chargeType");
+        public Criteria andCoverPicGreaterThan(String value) {
+            addCriterion("cover_pic >", value, "coverPic");
             return (Criteria) this;
         }
 
-        public Criteria andChargeTypeGreaterThanOrEqualTo(Integer value) {
-            addCriterion("charge_type >=", value, "chargeType");
+        public Criteria andCoverPicGreaterThanOrEqualTo(String value) {
+            addCriterion("cover_pic >=", value, "coverPic");
             return (Criteria) this;
         }
 
-        public Criteria andChargeTypeLessThan(Integer value) {
-            addCriterion("charge_type <", value, "chargeType");
+        public Criteria andCoverPicLessThan(String value) {
+            addCriterion("cover_pic <", value, "coverPic");
             return (Criteria) this;
         }
 
-        public Criteria andChargeTypeLessThanOrEqualTo(Integer value) {
-            addCriterion("charge_type <=", value, "chargeType");
+        public Criteria andCoverPicLessThanOrEqualTo(String value) {
+            addCriterion("cover_pic <=", value, "coverPic");
             return (Criteria) this;
         }
 
-        public Criteria andChargeTypeIn(List<Integer> values) {
-            addCriterion("charge_type in", values, "chargeType");
+        public Criteria andCoverPicLike(String value) {
+            addCriterion("cover_pic like", value, "coverPic");
             return (Criteria) this;
         }
 
-        public Criteria andChargeTypeNotIn(List<Integer> values) {
-            addCriterion("charge_type not in", values, "chargeType");
+        public Criteria andCoverPicNotLike(String value) {
+            addCriterion("cover_pic not like", value, "coverPic");
             return (Criteria) this;
         }
 
-        public Criteria andChargeTypeBetween(Integer value1, Integer value2) {
-            addCriterion("charge_type between", value1, value2, "chargeType");
+        public Criteria andCoverPicIn(List<String> values) {
+            addCriterion("cover_pic in", values, "coverPic");
             return (Criteria) this;
         }
 
-        public Criteria andChargeTypeNotBetween(Integer value1, Integer value2) {
-            addCriterion("charge_type not between", value1, value2, "chargeType");
+        public Criteria andCoverPicNotIn(List<String> values) {
+            addCriterion("cover_pic not in", values, "coverPic");
             return (Criteria) this;
         }
 
-        public Criteria andFirstWeightIsNull() {
-            addCriterion("first_weight is null");
+        public Criteria andCoverPicBetween(String value1, String value2) {
+            addCriterion("cover_pic between", value1, value2, "coverPic");
             return (Criteria) this;
         }
 
-        public Criteria andFirstWeightIsNotNull() {
-            addCriterion("first_weight is not null");
+        public Criteria andCoverPicNotBetween(String value1, String value2) {
+            addCriterion("cover_pic not between", value1, value2, "coverPic");
             return (Criteria) this;
         }
 
-        public Criteria andFirstWeightEqualTo(BigDecimal value) {
-            addCriterion("first_weight =", value, "firstWeight");
+        public Criteria andPicCountIsNull() {
+            addCriterion("pic_count is null");
             return (Criteria) this;
         }
 
-        public Criteria andFirstWeightNotEqualTo(BigDecimal value) {
-            addCriterion("first_weight <>", value, "firstWeight");
+        public Criteria andPicCountIsNotNull() {
+            addCriterion("pic_count is not null");
             return (Criteria) this;
         }
 
-        public Criteria andFirstWeightGreaterThan(BigDecimal value) {
-            addCriterion("first_weight >", value, "firstWeight");
+        public Criteria andPicCountEqualTo(Integer value) {
+            addCriterion("pic_count =", value, "picCount");
             return (Criteria) this;
         }
 
-        public Criteria andFirstWeightGreaterThanOrEqualTo(BigDecimal value) {
-            addCriterion("first_weight >=", value, "firstWeight");
+        public Criteria andPicCountNotEqualTo(Integer value) {
+            addCriterion("pic_count <>", value, "picCount");
             return (Criteria) this;
         }
 
-        public Criteria andFirstWeightLessThan(BigDecimal value) {
-            addCriterion("first_weight <", value, "firstWeight");
+        public Criteria andPicCountGreaterThan(Integer value) {
+            addCriterion("pic_count >", value, "picCount");
             return (Criteria) this;
         }
 
-        public Criteria andFirstWeightLessThanOrEqualTo(BigDecimal value) {
-            addCriterion("first_weight <=", value, "firstWeight");
+        public Criteria andPicCountGreaterThanOrEqualTo(Integer value) {
+            addCriterion("pic_count >=", value, "picCount");
             return (Criteria) this;
         }
 
-        public Criteria andFirstWeightIn(List<BigDecimal> values) {
-            addCriterion("first_weight in", values, "firstWeight");
+        public Criteria andPicCountLessThan(Integer value) {
+            addCriterion("pic_count <", value, "picCount");
             return (Criteria) this;
         }
 
-        public Criteria andFirstWeightNotIn(List<BigDecimal> values) {
-            addCriterion("first_weight not in", values, "firstWeight");
+        public Criteria andPicCountLessThanOrEqualTo(Integer value) {
+            addCriterion("pic_count <=", value, "picCount");
             return (Criteria) this;
         }
 
-        public Criteria andFirstWeightBetween(BigDecimal value1, BigDecimal value2) {
-            addCriterion("first_weight between", value1, value2, "firstWeight");
+        public Criteria andPicCountIn(List<Integer> values) {
+            addCriterion("pic_count in", values, "picCount");
             return (Criteria) this;
         }
 
-        public Criteria andFirstWeightNotBetween(BigDecimal value1, BigDecimal value2) {
-            addCriterion("first_weight not between", value1, value2, "firstWeight");
+        public Criteria andPicCountNotIn(List<Integer> values) {
+            addCriterion("pic_count not in", values, "picCount");
             return (Criteria) this;
         }
 
-        public Criteria andFirstFeeIsNull() {
-            addCriterion("first_fee is null");
+        public Criteria andPicCountBetween(Integer value1, Integer value2) {
+            addCriterion("pic_count between", value1, value2, "picCount");
             return (Criteria) this;
         }
 
-        public Criteria andFirstFeeIsNotNull() {
-            addCriterion("first_fee is not null");
+        public Criteria andPicCountNotBetween(Integer value1, Integer value2) {
+            addCriterion("pic_count not between", value1, value2, "picCount");
             return (Criteria) this;
         }
 
-        public Criteria andFirstFeeEqualTo(BigDecimal value) {
-            addCriterion("first_fee =", value, "firstFee");
+        public Criteria andSortIsNull() {
+            addCriterion("sort is null");
             return (Criteria) this;
         }
 
-        public Criteria andFirstFeeNotEqualTo(BigDecimal value) {
-            addCriterion("first_fee <>", value, "firstFee");
+        public Criteria andSortIsNotNull() {
+            addCriterion("sort is not null");
             return (Criteria) this;
         }
 
-        public Criteria andFirstFeeGreaterThan(BigDecimal value) {
-            addCriterion("first_fee >", value, "firstFee");
+        public Criteria andSortEqualTo(Integer value) {
+            addCriterion("sort =", value, "sort");
             return (Criteria) this;
         }
 
-        public Criteria andFirstFeeGreaterThanOrEqualTo(BigDecimal value) {
-            addCriterion("first_fee >=", value, "firstFee");
+        public Criteria andSortNotEqualTo(Integer value) {
+            addCriterion("sort <>", value, "sort");
             return (Criteria) this;
         }
 
-        public Criteria andFirstFeeLessThan(BigDecimal value) {
-            addCriterion("first_fee <", value, "firstFee");
+        public Criteria andSortGreaterThan(Integer value) {
+            addCriterion("sort >", value, "sort");
             return (Criteria) this;
         }
 
-        public Criteria andFirstFeeLessThanOrEqualTo(BigDecimal value) {
-            addCriterion("first_fee <=", value, "firstFee");
+        public Criteria andSortGreaterThanOrEqualTo(Integer value) {
+            addCriterion("sort >=", value, "sort");
             return (Criteria) this;
         }
 
-        public Criteria andFirstFeeIn(List<BigDecimal> values) {
-            addCriterion("first_fee in", values, "firstFee");
+        public Criteria andSortLessThan(Integer value) {
+            addCriterion("sort <", value, "sort");
             return (Criteria) this;
         }
 
-        public Criteria andFirstFeeNotIn(List<BigDecimal> values) {
-            addCriterion("first_fee not in", values, "firstFee");
+        public Criteria andSortLessThanOrEqualTo(Integer value) {
+            addCriterion("sort <=", value, "sort");
             return (Criteria) this;
         }
 
-        public Criteria andFirstFeeBetween(BigDecimal value1, BigDecimal value2) {
-            addCriterion("first_fee between", value1, value2, "firstFee");
+        public Criteria andSortIn(List<Integer> values) {
+            addCriterion("sort in", values, "sort");
             return (Criteria) this;
         }
 
-        public Criteria andFirstFeeNotBetween(BigDecimal value1, BigDecimal value2) {
-            addCriterion("first_fee not between", value1, value2, "firstFee");
+        public Criteria andSortNotIn(List<Integer> values) {
+            addCriterion("sort not in", values, "sort");
             return (Criteria) this;
         }
 
-        public Criteria andContinueWeightIsNull() {
-            addCriterion("continue_weight is null");
+        public Criteria andSortBetween(Integer value1, Integer value2) {
+            addCriterion("sort between", value1, value2, "sort");
             return (Criteria) this;
         }
 
-        public Criteria andContinueWeightIsNotNull() {
-            addCriterion("continue_weight is not null");
+        public Criteria andSortNotBetween(Integer value1, Integer value2) {
+            addCriterion("sort not between", value1, value2, "sort");
             return (Criteria) this;
         }
 
-        public Criteria andContinueWeightEqualTo(BigDecimal value) {
-            addCriterion("continue_weight =", value, "continueWeight");
+        public Criteria andDescriptionIsNull() {
+            addCriterion("description is null");
             return (Criteria) this;
         }
 
-        public Criteria andContinueWeightNotEqualTo(BigDecimal value) {
-            addCriterion("continue_weight <>", value, "continueWeight");
+        public Criteria andDescriptionIsNotNull() {
+            addCriterion("description is not null");
             return (Criteria) this;
         }
 
-        public Criteria andContinueWeightGreaterThan(BigDecimal value) {
-            addCriterion("continue_weight >", value, "continueWeight");
+        public Criteria andDescriptionEqualTo(String value) {
+            addCriterion("description =", value, "description");
             return (Criteria) this;
         }
 
-        public Criteria andContinueWeightGreaterThanOrEqualTo(BigDecimal value) {
-            addCriterion("continue_weight >=", value, "continueWeight");
+        public Criteria andDescriptionNotEqualTo(String value) {
+            addCriterion("description <>", value, "description");
             return (Criteria) this;
         }
 
-        public Criteria andContinueWeightLessThan(BigDecimal value) {
-            addCriterion("continue_weight <", value, "continueWeight");
+        public Criteria andDescriptionGreaterThan(String value) {
+            addCriterion("description >", value, "description");
             return (Criteria) this;
         }
 
-        public Criteria andContinueWeightLessThanOrEqualTo(BigDecimal value) {
-            addCriterion("continue_weight <=", value, "continueWeight");
+        public Criteria andDescriptionGreaterThanOrEqualTo(String value) {
+            addCriterion("description >=", value, "description");
             return (Criteria) this;
         }
 
-        public Criteria andContinueWeightIn(List<BigDecimal> values) {
-            addCriterion("continue_weight in", values, "continueWeight");
+        public Criteria andDescriptionLessThan(String value) {
+            addCriterion("description <", value, "description");
             return (Criteria) this;
         }
 
-        public Criteria andContinueWeightNotIn(List<BigDecimal> values) {
-            addCriterion("continue_weight not in", values, "continueWeight");
+        public Criteria andDescriptionLessThanOrEqualTo(String value) {
+            addCriterion("description <=", value, "description");
             return (Criteria) this;
         }
 
-        public Criteria andContinueWeightBetween(BigDecimal value1, BigDecimal value2) {
-            addCriterion("continue_weight between", value1, value2, "continueWeight");
+        public Criteria andDescriptionLike(String value) {
+            addCriterion("description like", value, "description");
             return (Criteria) this;
         }
 
-        public Criteria andContinueWeightNotBetween(BigDecimal value1, BigDecimal value2) {
-            addCriterion("continue_weight not between", value1, value2, "continueWeight");
+        public Criteria andDescriptionNotLike(String value) {
+            addCriterion("description not like", value, "description");
             return (Criteria) this;
         }
 
-        public Criteria andContinmeFeeIsNull() {
-            addCriterion("continme_fee is null");
+        public Criteria andDescriptionIn(List<String> values) {
+            addCriterion("description in", values, "description");
             return (Criteria) this;
         }
 
-        public Criteria andContinmeFeeIsNotNull() {
-            addCriterion("continme_fee is not null");
+        public Criteria andDescriptionNotIn(List<String> values) {
+            addCriterion("description not in", values, "description");
             return (Criteria) this;
         }
 
-        public Criteria andContinmeFeeEqualTo(BigDecimal value) {
-            addCriterion("continme_fee =", value, "continmeFee");
+        public Criteria andDescriptionBetween(String value1, String value2) {
+            addCriterion("description between", value1, value2, "description");
             return (Criteria) this;
         }
 
-        public Criteria andContinmeFeeNotEqualTo(BigDecimal value) {
-            addCriterion("continme_fee <>", value, "continmeFee");
-            return (Criteria) this;
-        }
-
-        public Criteria andContinmeFeeGreaterThan(BigDecimal value) {
-            addCriterion("continme_fee >", value, "continmeFee");
-            return (Criteria) this;
-        }
-
-        public Criteria andContinmeFeeGreaterThanOrEqualTo(BigDecimal value) {
-            addCriterion("continme_fee >=", value, "continmeFee");
-            return (Criteria) this;
-        }
-
-        public Criteria andContinmeFeeLessThan(BigDecimal value) {
-            addCriterion("continme_fee <", value, "continmeFee");
-            return (Criteria) this;
-        }
-
-        public Criteria andContinmeFeeLessThanOrEqualTo(BigDecimal value) {
-            addCriterion("continme_fee <=", value, "continmeFee");
-            return (Criteria) this;
-        }
-
-        public Criteria andContinmeFeeIn(List<BigDecimal> values) {
-            addCriterion("continme_fee in", values, "continmeFee");
-            return (Criteria) this;
-        }
-
-        public Criteria andContinmeFeeNotIn(List<BigDecimal> values) {
-            addCriterion("continme_fee not in", values, "continmeFee");
-            return (Criteria) this;
-        }
-
-        public Criteria andContinmeFeeBetween(BigDecimal value1, BigDecimal value2) {
-            addCriterion("continme_fee between", value1, value2, "continmeFee");
-            return (Criteria) this;
-        }
-
-        public Criteria andContinmeFeeNotBetween(BigDecimal value1, BigDecimal value2) {
-            addCriterion("continme_fee not between", value1, value2, "continmeFee");
-            return (Criteria) this;
-        }
-
-        public Criteria andDestIsNull() {
-            addCriterion("dest is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andDestIsNotNull() {
-            addCriterion("dest is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andDestEqualTo(String value) {
-            addCriterion("dest =", value, "dest");
-            return (Criteria) this;
-        }
-
-        public Criteria andDestNotEqualTo(String value) {
-            addCriterion("dest <>", value, "dest");
-            return (Criteria) this;
-        }
-
-        public Criteria andDestGreaterThan(String value) {
-            addCriterion("dest >", value, "dest");
-            return (Criteria) this;
-        }
-
-        public Criteria andDestGreaterThanOrEqualTo(String value) {
-            addCriterion("dest >=", value, "dest");
-            return (Criteria) this;
-        }
-
-        public Criteria andDestLessThan(String value) {
-            addCriterion("dest <", value, "dest");
-            return (Criteria) this;
-        }
-
-        public Criteria andDestLessThanOrEqualTo(String value) {
-            addCriterion("dest <=", value, "dest");
-            return (Criteria) this;
-        }
-
-        public Criteria andDestLike(String value) {
-            addCriterion("dest like", value, "dest");
-            return (Criteria) this;
-        }
-
-        public Criteria andDestNotLike(String value) {
-            addCriterion("dest not like", value, "dest");
-            return (Criteria) this;
-        }
-
-        public Criteria andDestIn(List<String> values) {
-            addCriterion("dest in", values, "dest");
-            return (Criteria) this;
-        }
-
-        public Criteria andDestNotIn(List<String> values) {
-            addCriterion("dest not in", values, "dest");
-            return (Criteria) this;
-        }
-
-        public Criteria andDestBetween(String value1, String value2) {
-            addCriterion("dest between", value1, value2, "dest");
-            return (Criteria) this;
-        }
-
-        public Criteria andDestNotBetween(String value1, String value2) {
-            addCriterion("dest not between", value1, value2, "dest");
+        public Criteria andDescriptionNotBetween(String value1, String value2) {
+            addCriterion("description not between", value1, value2, "description");
             return (Criteria) this;
         }
     }

@@ -116,7 +116,7 @@
   <sql id="Blob_Column_List">
     description, detail_desc, detail_html, detail_mobile_html
   </sql>
-  <select id="selectByExampleWithBLOBs" parameterType="com.mtcarpenter.mall.model.PmsProductExample" resultMap="ResultMapWithBLOBs">
+  <select id="selectByExampleWithBLOBs" parameterType="com.mtcarpenter.mall.model.pms.product.PmsProductExample" resultMap="ResultMapWithBLOBs">
     select
     <if test="distinct">
       distinct
@@ -132,7 +132,7 @@
       order by ${orderByClause}
     </if>
   </select>
-  <select id="selectByExample" parameterType="com.mtcarpenter.mall.model.PmsProductExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="com.mtcarpenter.mall.model.pms.product.PmsProductExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
@@ -158,7 +158,7 @@
     delete from pms_product
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <delete id="deleteByExample" parameterType="com.mtcarpenter.mall.model.PmsProductExample">
+  <delete id="deleteByExample" parameterType="com.mtcarpenter.mall.model.pms.product.PmsProductExample">
     delete from pms_product
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
@@ -453,7 +453,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.mtcarpenter.mall.model.PmsProductExample" resultType="java.lang.Long">
+  <select id="countByExample" parameterType="com.mtcarpenter.mall.model.pms.product.PmsProductExample" resultType="java.lang.Long">
     select count(*) from pms_product
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />

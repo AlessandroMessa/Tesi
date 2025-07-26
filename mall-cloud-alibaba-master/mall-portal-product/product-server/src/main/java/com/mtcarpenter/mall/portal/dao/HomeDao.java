@@ -2,7 +2,6 @@ package com.mtcarpenter.mall.portal.dao;
 
 //import com.mtcarpenter.mall.model.CmsSubject;
 
-import com.mtcarpenter.mall.model.CmsSubject;
 import com.mtcarpenter.mall.model.PmsBrand;
 import com.mtcarpenter.mall.model.PmsProduct;
 import com.mtcarpenter.mall.portal.domain.FlashPromotionProduct;

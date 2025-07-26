@@ -69,7 +69,7 @@
     <sql id="Base_Column_List">
     id, product_category_id, product_attribute_id
   </sql>
-    <select id="selectByExample" parameterType="com.mtcarpenter.mall.model.PmsProductCategoryAttributeRelationExample"
+    <select id="selectByExample" parameterType="com.mtcarpenter.mall.model.pms.product.category.PmsProductCategoryAttributeRelationExample"
             resultMap="BaseResultMap">
         select
         <if test="distinct">
@@ -94,7 +94,7 @@
     delete from pms_product_category_attribute_relation
     where id = #{id,jdbcType=BIGINT}
   </delete>
-    <delete id="deleteByExample" parameterType="com.mtcarpenter.mall.model.PmsProductCategoryAttributeRelationExample">
+    <delete id="deleteByExample" parameterType="com.mtcarpenter.mall.model.pms.product.category.PmsProductCategoryAttributeRelationExample">
         delete from pms_product_category_attribute_relation
         <if test="_parameter != null">
             <include refid="Example_Where_Clause"/>
@@ -131,7 +131,7 @@
             </if>
         </trim>
     </insert>
-    <select id="countByExample" parameterType="com.mtcarpenter.mall.model.PmsProductCategoryAttributeRelationExample"
+    <select id="countByExample" parameterType="com.mtcarpenter.mall.model.pms.product.category.PmsProductCategoryAttributeRelationExample"
             resultType="java.lang.Long">
         select count(*) from pms_product_category_attribute_relation
         <if test="_parameter != null">
