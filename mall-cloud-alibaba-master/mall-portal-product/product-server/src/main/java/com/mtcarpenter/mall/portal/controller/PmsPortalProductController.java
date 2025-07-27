@@ -1,5 +1,5 @@
-package com.mtcarpenter.mall.portal.controller;
 
+package com.mtcarpenter.mall.portal.controller;
 
 import com.mtcarpenter.mall.common.api.CommonPage;
 import com.mtcarpenter.mall.common.api.CommonResult;
@@ -8,7 +8,7 @@ import com.mtcarpenter.mall.domain.PromotionProduct;
 import com.mtcarpenter.mall.model.PmsProduct;
 import com.mtcarpenter.mall.portal.domain.PmsPortalProductDetail;
 import com.mtcarpenter.mall.portal.domain.PmsProductCategoryNode;
-import com.mtcarpenter.mall.portal.service.PmsPortalProductService;
+import com.mtcarpenter.mall.portal.service.*;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiOperation;
@@ -20,7 +20,7 @@ import java.util.List;
 
 /**
  * 前台商品管理Controller
- * Created by macro on 2020/4/6.
+ * Refactored to split responsibilities across multiple services.
  */
 @Controller
 @Api(tags = "PmsPortalProductController", description = "前台商品管理")
@@ -28,7 +28,17 @@ import java.util.List;
 public class PmsPortalProductController {
 
     @Autowired
-    private PmsPortalProductService portalProductService;
+    private ProductSearchService productSearchService;
+    @Autowired
+    private ProductCategoryService productCategoryService;
+    @Autowired
+    private ProductDetailService productDetailService;
+    @Autowired
+    private ProductCartService productCartService;
+    @Autowired
+    private PromotionService promotionService;
+    @Autowired
+    private StockService stockService;
 
     @ApiOperation(value = "综合搜索、筛选、排序")
     @ApiImplicitParam(name = "sort", value = "排序字段:0->按相关度；1->按新品；2->按销量；3->价格从低到高；4->价格从高到低",
@@ -41,7 +51,7 @@ public class PmsPortalProductController {
                                                        @RequestParam(required = false, defaultValue = "0") Integer pageNum,
                                                        @RequestParam(required = false, defaultValue = "5") Integer pageSize,
                                                        @RequestParam(required = false, defaultValue = "0") Integer sort) {
-        List<PmsProduct> productList = portalProductService.search(keyword, brandId, productCategoryId, pageNum, pageSize, sort);
+        List<PmsProduct> productList = productSearchService.search(keyword, brandId, productCategoryId, pageNum, pageSize, sort);
         return CommonResult.success(CommonPage.restPage(productList));
     }
 
@@ -49,7 +59,7 @@ public class PmsPortalProductController {
     @RequestMapping(value = "/categoryTreeList", method = RequestMethod.GET)
     @ResponseBody
     public CommonResult<List<PmsProductCategoryNode>> categoryTreeList() {
-        List<PmsProductCategoryNode> list = portalProductService.categoryTreeList();
+        List<PmsProductCategoryNode> list = productCategoryService.categoryTreeList();
         return CommonResult.success(list);
     }
 
@@ -57,17 +67,15 @@ public class PmsPortalProductController {
     @RequestMapping(value = "/detail/{id}", method = RequestMethod.GET)
     @ResponseBody
     public CommonResult<PmsPortalProductDetail> detail(@PathVariable Long id) {
-        PmsPortalProductDetail productDetail = portalProductService.detail(id);
+        PmsPortalProductDetail productDetail = productDetailService.detail(id);
         return CommonResult.success(productDetail);
     }
-
-
 
     @ApiOperation("获取商品详情")
     @RequestMapping(value = "/getPmsProductById/{productId}", method = RequestMethod.GET)
     @ResponseBody
     public CommonResult<PmsProduct> getPmsProductById(@PathVariable Long productId) {
-        PmsProduct pmsProduct = portalProductService.getPmsProductById(productId);
+        PmsProduct pmsProduct = productDetailService.getPmsProductById(productId);
         return CommonResult.success(pmsProduct);
     }
 
@@ -75,7 +83,7 @@ public class PmsPortalProductController {
     @RequestMapping(value = "/getProduct/{productId}", method = RequestMethod.GET)
     @ResponseBody
     public CommonResult<CartProduct> getCartProduct(@PathVariable Long productId) {
-        CartProduct cartProduct = portalProductService.getCartProduct(productId);
+        CartProduct cartProduct = productCartService.getCartProduct(productId);
         return CommonResult.success(cartProduct);
     }
 
@@ -83,7 +91,7 @@ public class PmsPortalProductController {
     @RequestMapping(value = "/getPromotionProductList", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult<List<PromotionProduct>> getPromotionProductList(@RequestBody List<Long> productIdList) {
-        List<PromotionProduct> promotionProductOutput = portalProductService.getPromotionProductList(productIdList);
+        List<PromotionProduct> promotionProductOutput = promotionService.getPromotionProductList(productIdList);
         return CommonResult.success(promotionProductOutput);
     }
 
@@ -92,9 +100,8 @@ public class PmsPortalProductController {
     @ResponseBody
     public CommonResult lockStock(@RequestParam(required = false) Long productSkuId,
                                   @RequestParam(required = false) Integer quantity) {
-        portalProductService.lockStock(productSkuId, quantity);
+        stockService.lockStock(productSkuId, quantity);
         return CommonResult.success(null);
     }
-
 
 }

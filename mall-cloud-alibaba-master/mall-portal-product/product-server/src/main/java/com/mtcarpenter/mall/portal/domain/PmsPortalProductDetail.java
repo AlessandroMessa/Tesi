@@ -31,4 +31,5 @@ public class PmsPortalProductDetail {
     private List<PmsProductFullReduction> productFullReductionList;
     @ApiModelProperty("商品可用优惠券")
     private List<SmsCoupon> couponList;
+
 }
