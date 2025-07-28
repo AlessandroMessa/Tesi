@@ -2,6 +2,8 @@ package com.mtcarpenter.mall.portal.service.order.impl;
 
 import cn.hutool.core.collection.CollUtil;
 import com.mtcarpenter.mall.client.*;
+import com.mtcarpenter.mall.client.coupon.CartCouponClient;
+import com.mtcarpenter.mall.client.coupon.CouponManagementClient;
 import com.mtcarpenter.mall.common.exception.Asserts;
 import com.mtcarpenter.mall.domain.CartPromotionItem;
 import com.mtcarpenter.mall.domain.SmsCouponHistoryDetail;
@@ -68,7 +70,7 @@ public class OrderGenerationServiceImpl implements OrderGenerationService {
     private CouponManagementClient couponManagementClient;
 
     @Autowired
-    private ProductFeign productFeign;
+    private InventoryClient inventoryClient;
     @Autowired
     private OrderCancellationService orderCancellationService;
 
@@ -507,7 +509,7 @@ public class OrderGenerationServiceImpl implements OrderGenerationService {
      */
     private void lockStock(List<CartPromotionItem> cartPromotionItemList) {
         for (CartPromotionItem cartPromotionItem : cartPromotionItemList) {
-            productFeign.lockStock(cartPromotionItem.getProductSkuId(), cartPromotionItem.getQuantity());
+            inventoryClient.lockStock(cartPromotionItem.getProductSkuId(), cartPromotionItem.getQuantity());
         }
     }
     /**

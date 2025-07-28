@@ -1,6 +1,5 @@
 package com.mtcarpenter.mall.portal;
 
-import com.mtcarpenter.mall.client.ProductFeign;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.openfeign.EnableFeignClients;

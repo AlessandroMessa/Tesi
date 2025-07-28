@@ -1,7 +1,7 @@
 package com.mtcarpenter.mall.portal.service.query.impl;
 
-import com.mtcarpenter.mall.client.CartCouponClient;
-import com.mtcarpenter.mall.client.CouponQueryClient;
+import com.mtcarpenter.mall.client.coupon.CartCouponClient;
+import com.mtcarpenter.mall.client.coupon.CouponQueryClient;
 import com.mtcarpenter.mall.common.api.CommonResult;
 import com.mtcarpenter.mall.common.api.ResultCode;
 import com.mtcarpenter.mall.domain.SmsCouponHistoryDetail;

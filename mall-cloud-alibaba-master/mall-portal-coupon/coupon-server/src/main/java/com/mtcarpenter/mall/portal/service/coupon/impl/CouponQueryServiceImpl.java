@@ -1,7 +1,7 @@
 package com.mtcarpenter.mall.portal.service.coupon.impl;
 
 import cn.hutool.core.collection.CollUtil;
-import com.mtcarpenter.mall.client.ProductFeign;
+import com.mtcarpenter.mall.client.ProductQueryClient;
 import com.mtcarpenter.mall.domain.CartPromotionItem;
 import com.mtcarpenter.mall.domain.SmsCouponHistoryDetail;
 import com.mtcarpenter.mall.mapper.SmsCouponHistoryMapper;
@@ -40,7 +40,7 @@ public class CouponQueryServiceImpl implements CouponQueryService {
     private SmsCouponProductCategoryRelationMapper couponProductCategoryRelationMapper;
 
     @Autowired
-    private ProductFeign productFeign;
+    private ProductQueryClient productQueryClient;
 
 
     /**
@@ -179,7 +179,7 @@ public class CouponQueryServiceImpl implements CouponQueryService {
             allCouponIds.addAll(couponIds);
         }
         //获取指定分类优惠券
-        PmsProduct product = productFeign.getPmsProductById(productId).getData();
+        PmsProduct product = productQueryClient.getPmsProductById(productId).getData();
         SmsCouponProductCategoryRelationExample cpcrExample = new SmsCouponProductCategoryRelationExample();
         cpcrExample.createCriteria().andProductCategoryIdEqualTo(product.getProductCategoryId());
         List<SmsCouponProductCategoryRelation> cpcrList = couponProductCategoryRelationMapper.selectByExample(cpcrExample);

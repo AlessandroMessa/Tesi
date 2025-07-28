@@ -1,4 +1,4 @@
-package com.mtcarpenter.mall.client;
+package com.mtcarpenter.mall.client.coupon;
 
 import com.mtcarpenter.mall.common.api.CommonResult;
 import org.springframework.web.bind.annotation.GetMapping;

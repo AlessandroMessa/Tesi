@@ -1,6 +1,6 @@
 package com.mtcarpenter.mall.portal.service.command.impl;
 
-import com.mtcarpenter.mall.client.CouponManagementClient;
+import com.mtcarpenter.mall.client.coupon.CouponManagementClient;
 import com.mtcarpenter.mall.model.UmsMember;
 import com.mtcarpenter.mall.portal.service.query.MemberQueryService;
 import com.mtcarpenter.mall.portal.service.command.UmsMemberCouponCommandService;

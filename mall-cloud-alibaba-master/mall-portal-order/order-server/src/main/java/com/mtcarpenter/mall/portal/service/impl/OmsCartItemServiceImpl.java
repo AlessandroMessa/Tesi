@@ -1,7 +1,7 @@
 package com.mtcarpenter.mall.portal.service.impl;
 
 import cn.hutool.core.collection.CollUtil;
-import com.mtcarpenter.mall.client.ProductFeign;
+import com.mtcarpenter.mall.client.CartProductClient;
 import com.mtcarpenter.mall.common.api.CommonResult;
 import com.mtcarpenter.mall.common.api.ResultCode;
 import com.mtcarpenter.mall.domain.CartProduct;
@@ -37,7 +37,7 @@ public class OmsCartItemServiceImpl implements OmsCartItemService {
     private OmsPromotionService promotionService;
 
     @Autowired
-    private ProductFeign productFeign;
+    private CartProductClient cartProductClient;
 
     @Autowired
     private MemberUtil memberUtil;
@@ -122,7 +122,7 @@ public class OmsCartItemServiceImpl implements OmsCartItemService {
 
     @Override
     public CartProduct getCartProduct(Long productId) {
-        CommonResult<CartProduct> result = productFeign.getCartProduct(productId);
+        CommonResult<CartProduct> result = cartProductClient.getCartProduct(productId);
         if (result.getCode() == ResultCode.SUCCESS.getCode()){
             return result.getData();
         }

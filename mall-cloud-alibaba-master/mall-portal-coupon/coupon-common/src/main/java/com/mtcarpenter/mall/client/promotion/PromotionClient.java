@@ -1,7 +1,6 @@
-package com.mtcarpenter.mall.client;
+package com.mtcarpenter.mall.client.promotion;
 
 import com.mtcarpenter.mall.common.api.CommonResult;
-import com.mtcarpenter.mall.model.SmsCoupon;
 import com.mtcarpenter.mall.model.SmsFlashPromotion;
 import com.mtcarpenter.mall.model.SmsFlashPromotionSession;
 import com.mtcarpenter.mall.model.SmsHomeAdvertise;
@@ -13,17 +12,6 @@ import java.util.Date;
 import java.util.List;
 
 public interface PromotionClient {
-
-    /**
-     * 商品可用优惠券
-     *
-     * @param productId
-     * @param productCategoryId
-     * @return
-     */
-    @RequestMapping(value = "/getAvailableCouponList", method = RequestMethod.GET)
-    CommonResult<List<SmsCoupon>> getAvailableCouponList(@RequestParam(value = "productId") Long productId,
-                                                         @RequestParam(value = "productCategoryId") Long productCategoryId);
 
 
     /**

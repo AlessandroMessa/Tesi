@@ -1,7 +1,7 @@
 package com.mtcarpenter.mall.portal.service.home.impl;
 
 import com.github.pagehelper.PageHelper;;
-import com.mtcarpenter.mall.client.PromotionClient;
+import com.mtcarpenter.mall.client.promotion.PromotionClient;
 import com.mtcarpenter.mall.client.SubjectFeign;
 import com.mtcarpenter.mall.mapper.*;
 import com.mtcarpenter.mall.model.*;

@@ -1,7 +1,7 @@
 package com.mtcarpenter.mall.portal.service.product.impl;
 
 import cn.hutool.core.collection.CollUtil;
-import com.mtcarpenter.mall.client.PromotionClient;
+import com.mtcarpenter.mall.client.coupon.CouponQueryClient;
 import com.mtcarpenter.mall.mapper.*;
 import com.mtcarpenter.mall.model.*;
 import com.mtcarpenter.mall.model.attribute.PmsProductAttributeExample;
@@ -35,7 +35,7 @@ public class ProductDetailServiceImpl implements ProductDetailService {
     @Autowired
     private PmsProductFullReductionMapper productFullReductionMapper;
     @Autowired
-    private PromotionClient promotionClient;
+    private CouponQueryClient couponQueryClient;
 
     @Override
     public PmsPortalProductDetail detail(Long id) {
@@ -80,7 +80,7 @@ public class ProductDetailServiceImpl implements ProductDetailService {
             result.setProductFullReductionList(productFullReductionList);
         }
         //商品可用优惠券
-        result.setCouponList(promotionClient.getAvailableCouponList(product.getId(), product.getProductCategoryId()).getData());
+        result.setCouponList(couponQueryClient.getAvailableCouponList(product.getId(), product.getProductCategoryId()).getData());
         return result;
     }
 
