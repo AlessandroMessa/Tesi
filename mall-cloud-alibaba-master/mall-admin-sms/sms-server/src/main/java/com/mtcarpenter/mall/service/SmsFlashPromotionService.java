@@ -1,6 +1,6 @@
 package com.mtcarpenter.mall.service;
 
-import com.mtcarpenter.mall.model.SmsFlashPromotion;
+import com.mtcarpenter.mall.model.flashpromotion.SmsFlashPromotion;
 
 import java.util.List;
 

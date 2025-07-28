@@ -1,7 +1,7 @@
 package com.mtcarpenter.mall.dao;
 
-import com.mtcarpenter.mall.model.UmsMenu;
-import com.mtcarpenter.mall.model.UmsResource;
+import com.mtcarpenter.mall.model.permission.UmsMenu;
+import com.mtcarpenter.mall.model.permission.UmsResource;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;

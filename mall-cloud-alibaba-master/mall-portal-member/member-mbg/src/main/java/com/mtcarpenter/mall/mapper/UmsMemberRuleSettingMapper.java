@@ -1,7 +1,7 @@
 package com.mtcarpenter.mall.mapper;
 
 import com.mtcarpenter.mall.model.UmsMemberRuleSetting;
-import com.mtcarpenter.mall.model.UmsMemberRuleSettingExample;
+import com.mtcarpenter.mall.model.member.UmsMemberRuleSettingExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 

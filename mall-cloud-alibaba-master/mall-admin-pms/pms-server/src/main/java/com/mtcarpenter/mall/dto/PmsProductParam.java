@@ -2,7 +2,12 @@ package com.mtcarpenter.mall.dto;
 
 import com.mtcarpenter.mall.common.CmsPrefrenceAreaProductRelationInput;
 import com.mtcarpenter.mall.common.CmsSubjectProductRelationInput;
-import com.mtcarpenter.mall.model.*;
+import com.mtcarpenter.mall.model.attribute.PmsProductAttributeValue;
+import com.mtcarpenter.mall.model.price.PmsMemberPrice;
+import com.mtcarpenter.mall.model.product.PmsProduct;
+import com.mtcarpenter.mall.model.product.PmsProductFullReduction;
+import com.mtcarpenter.mall.model.product.PmsProductLadder;
+import com.mtcarpenter.mall.model.stock.PmsSkuStock;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.EqualsAndHashCode;

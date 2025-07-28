@@ -7,6 +7,8 @@ import com.mtcarpenter.mall.common.api.CommonPage;
 import com.mtcarpenter.mall.mapper.OmsOrderItemMapper;
 import com.mtcarpenter.mall.mapper.OmsOrderMapper;
 import com.mtcarpenter.mall.model.*;
+import com.mtcarpenter.mall.model.order.OmsOrderExample;
+import com.mtcarpenter.mall.model.order.OmsOrderItemExample;
 import com.mtcarpenter.mall.portal.domain.OmsOrderDetail;
 import com.mtcarpenter.mall.portal.service.order.OrderQueryService;
 import com.mtcarpenter.mall.portal.util.MemberUtil;

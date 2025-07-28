@@ -1,6 +1,6 @@
 package com.mtcarpenter.mall.config;
 
-import com.mtcarpenter.mall.model.UmsResource;
+import com.mtcarpenter.mall.model.permission.UmsResource;
 import com.mtcarpenter.mall.security.component.DynamicSecurityService;
 import com.mtcarpenter.mall.security.config.SecurityConfig;
 import com.mtcarpenter.mall.service.admin.UmsAdminAuthService;

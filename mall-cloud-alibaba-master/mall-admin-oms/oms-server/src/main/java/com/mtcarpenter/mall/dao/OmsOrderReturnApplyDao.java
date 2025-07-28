@@ -2,7 +2,7 @@ package com.mtcarpenter.mall.dao;
 
 import com.mtcarpenter.mall.dto.OmsOrderReturnApplyResult;
 import com.mtcarpenter.mall.dto.OmsReturnApplyQueryParam;
-import com.mtcarpenter.mall.model.OmsOrderReturnApply;
+import com.mtcarpenter.mall.model.render.OmsOrderReturnApply;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;

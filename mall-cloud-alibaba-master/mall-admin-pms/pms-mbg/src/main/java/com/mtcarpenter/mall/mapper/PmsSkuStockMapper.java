@@ -1,7 +1,7 @@
 package com.mtcarpenter.mall.mapper;
 
-import com.mtcarpenter.mall.model.PmsSkuStock;
-import com.mtcarpenter.mall.model.PmsSkuStockExample;
+import com.mtcarpenter.mall.model.stock.PmsSkuStock;
+import com.mtcarpenter.mall.model.stock.PmsSkuStockExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 

@@ -1,6 +1,6 @@
 package com.mtcarpenter.mall.service;
 
-import com.mtcarpenter.mall.model.SmsCouponHistory;
+import com.mtcarpenter.mall.model.coupon.SmsCouponHistory;
 
 import java.util.List;
 

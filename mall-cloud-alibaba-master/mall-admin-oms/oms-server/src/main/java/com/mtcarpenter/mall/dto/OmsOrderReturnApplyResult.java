@@ -1,7 +1,7 @@
 package com.mtcarpenter.mall.dto;
 
-import com.mtcarpenter.mall.model.OmsCompanyAddress;
-import com.mtcarpenter.mall.model.OmsOrderReturnApply;
+import com.mtcarpenter.mall.model.shipping.OmsCompanyAddress;
+import com.mtcarpenter.mall.model.render.OmsOrderReturnApply;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
 import lombok.Setter;

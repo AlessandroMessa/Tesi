@@ -1,7 +1,7 @@
 package com.mtcarpenter.mall.mapper;
 
 import com.mtcarpenter.mall.model.SmsFlashPromotionProductRelation;
-import com.mtcarpenter.mall.model.SmsFlashPromotionProductRelationExample;
+import com.mtcarpenter.mall.model.flashprom.SmsFlashPromotionProductRelationExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 

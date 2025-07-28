@@ -12,6 +12,7 @@ import com.mtcarpenter.mall.mapper.OmsOrderMapper;
 import com.mtcarpenter.mall.mapper.OmsOrderSettingMapper;
 import com.mtcarpenter.mall.model.*;
 
+import com.mtcarpenter.mall.model.order.OmsOrderSettingExample;
 import com.mtcarpenter.mall.portal.dao.PortalOrderItemDao;
 import com.mtcarpenter.mall.portal.domain.ConfirmOrderResult;
 import com.mtcarpenter.mall.portal.domain.OrderParam;

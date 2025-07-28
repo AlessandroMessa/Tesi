@@ -1,6 +1,6 @@
 package com.mtcarpenter.mall.service;
 
-import com.mtcarpenter.mall.model.SmsHomeBrand;
+import com.mtcarpenter.mall.model.home.SmsHomeBrand;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;

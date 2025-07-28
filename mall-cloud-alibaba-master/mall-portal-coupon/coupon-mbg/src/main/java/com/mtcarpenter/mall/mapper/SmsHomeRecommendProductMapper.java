@@ -1,7 +1,7 @@
 package com.mtcarpenter.mall.mapper;
 
 import com.mtcarpenter.mall.model.SmsHomeRecommendProduct;
-import com.mtcarpenter.mall.model.SmsHomeRecommendProductExample;
+import com.mtcarpenter.mall.model.home.SmsHomeRecommendProductExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 

@@ -1,6 +1,6 @@
 package com.mtcarpenter.mall.dto;
 
-import com.mtcarpenter.mall.model.SmsFlashPromotionSession;
+import com.mtcarpenter.mall.model.flashpromotion.SmsFlashPromotionSession;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
 import lombok.Setter;

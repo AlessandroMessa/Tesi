@@ -2,7 +2,7 @@ package com.mtcarpenter.mall.controller;
 
 import com.mtcarpenter.mall.common.api.CommonPage;
 import com.mtcarpenter.mall.common.api.CommonResult;
-import com.mtcarpenter.mall.model.SmsHomeRecommendProduct;
+import com.mtcarpenter.mall.model.home.SmsHomeRecommendProduct;
 import com.mtcarpenter.mall.service.SmsHomeRecommendProductService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;

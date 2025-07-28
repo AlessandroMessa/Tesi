@@ -1,7 +1,7 @@
 package com.mtcarpenter.mall.mapper;
 
 import com.mtcarpenter.mall.model.PmsAlbumPic;
-import com.mtcarpenter.mall.model.PmsAlbumPicExample;
+import com.mtcarpenter.mall.model.album.PmsAlbumPicExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 

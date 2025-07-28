@@ -1,7 +1,7 @@
 package com.mtcarpenter.mall.mapper;
 
-import com.mtcarpenter.mall.model.UmsMemberReceiveAddress;
-import com.mtcarpenter.mall.model.UmsMemberReceiveAddressExample;
+import com.mtcarpenter.mall.model.member.UmsMemberReceiveAddress;
+import com.mtcarpenter.mall.model.member.UmsMemberReceiveAddressExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 

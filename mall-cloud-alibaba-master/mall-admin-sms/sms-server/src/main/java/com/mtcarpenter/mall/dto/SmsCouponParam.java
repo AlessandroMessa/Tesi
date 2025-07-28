@@ -1,8 +1,8 @@
 package com.mtcarpenter.mall.dto;
 
-import com.mtcarpenter.mall.model.SmsCoupon;
-import com.mtcarpenter.mall.model.SmsCouponProductCategoryRelation;
-import com.mtcarpenter.mall.model.SmsCouponProductRelation;
+import com.mtcarpenter.mall.model.coupon.SmsCoupon;
+import com.mtcarpenter.mall.model.coupon.SmsCouponProductCategoryRelation;
+import com.mtcarpenter.mall.model.coupon.SmsCouponProductRelation;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
 import lombok.Setter;

@@ -1,6 +1,6 @@
 package com.mtcarpenter.mall.dao;
 
-import com.mtcarpenter.mall.model.PmsMemberPrice;
+import com.mtcarpenter.mall.model.price.PmsMemberPrice;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;

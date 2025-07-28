@@ -1,7 +1,7 @@
 package com.mtcarpenter.mall.mapper;
 
-import com.mtcarpenter.mall.model.UmsMemberTag;
-import com.mtcarpenter.mall.model.UmsMemberTagExample;
+import com.mtcarpenter.mall.model.member.UmsMemberTag;
+import com.mtcarpenter.mall.model.member.UmsMemberTagExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 

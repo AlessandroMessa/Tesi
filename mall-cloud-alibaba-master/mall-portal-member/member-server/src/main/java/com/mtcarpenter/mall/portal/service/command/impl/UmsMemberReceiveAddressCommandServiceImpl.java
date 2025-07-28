@@ -3,7 +3,7 @@ package com.mtcarpenter.mall.portal.service.command.impl;
 import com.mtcarpenter.mall.mapper.UmsMemberReceiveAddressMapper;
 import com.mtcarpenter.mall.model.UmsMember;
 import com.mtcarpenter.mall.model.UmsMemberReceiveAddress;
-import com.mtcarpenter.mall.model.UmsMemberReceiveAddressExample;
+import com.mtcarpenter.mall.model.member.UmsMemberReceiveAddressExample;
 import com.mtcarpenter.mall.portal.service.command.UmsMemberReceiveAddressCommandService;
 import com.mtcarpenter.mall.portal.service.query.MemberQueryService;
 import org.springframework.beans.factory.annotation.Autowired;

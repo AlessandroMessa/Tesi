@@ -1,7 +1,7 @@
 package com.mtcarpenter.mall.mapper;
 
-import com.mtcarpenter.mall.model.PmsProductAttributeValue;
-import com.mtcarpenter.mall.model.PmsProductAttributeValueExample;
+import com.mtcarpenter.mall.model.attribute.PmsProductAttributeValue;
+import com.mtcarpenter.mall.model.attribute.PmsProductAttributeValueExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 

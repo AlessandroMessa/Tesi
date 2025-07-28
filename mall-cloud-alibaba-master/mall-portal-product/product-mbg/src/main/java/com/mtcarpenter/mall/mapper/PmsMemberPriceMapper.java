@@ -1,7 +1,7 @@
 package com.mtcarpenter.mall.mapper;
 
 import com.mtcarpenter.mall.model.PmsMemberPrice;
-import com.mtcarpenter.mall.model.PmsMemberPriceExample;
+import com.mtcarpenter.mall.model.price.PmsMemberPriceExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 

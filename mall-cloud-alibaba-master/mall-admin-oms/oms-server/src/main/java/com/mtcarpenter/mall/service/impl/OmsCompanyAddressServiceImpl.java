@@ -1,8 +1,8 @@
 package com.mtcarpenter.mall.service.impl;
 
 import com.mtcarpenter.mall.mapper.OmsCompanyAddressMapper;
-import com.mtcarpenter.mall.model.OmsCompanyAddress;
-import com.mtcarpenter.mall.model.OmsCompanyAddressExample;
+import com.mtcarpenter.mall.model.shipping.OmsCompanyAddress;
+import com.mtcarpenter.mall.model.shipping.OmsCompanyAddressExample;
 import com.mtcarpenter.mall.service.OmsCompanyAddressService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

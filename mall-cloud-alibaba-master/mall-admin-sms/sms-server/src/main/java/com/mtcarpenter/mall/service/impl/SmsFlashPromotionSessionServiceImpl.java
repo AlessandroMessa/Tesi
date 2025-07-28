@@ -2,8 +2,8 @@ package com.mtcarpenter.mall.service.impl;
 
 import com.mtcarpenter.mall.dto.SmsFlashPromotionSessionDetail;
 import com.mtcarpenter.mall.mapper.SmsFlashPromotionSessionMapper;
-import com.mtcarpenter.mall.model.SmsFlashPromotionSession;
-import com.mtcarpenter.mall.model.SmsFlashPromotionSessionExample;
+import com.mtcarpenter.mall.model.flashpromotion.SmsFlashPromotionSession;
+import com.mtcarpenter.mall.model.flashpromotion.SmsFlashPromotionSessionExample;
 import com.mtcarpenter.mall.service.SmsFlashPromotionProductRelationService;
 import com.mtcarpenter.mall.service.SmsFlashPromotionSessionService;
 import org.springframework.beans.BeanUtils;

@@ -1,25 +1,18 @@
 package com.mtcarpenter.mall.service.product.status.impl;
 
-import cn.hutool.core.collection.CollUtil;
 import com.mtcarpenter.mall.dao.PmsProductVertifyRecordDao;
-import com.mtcarpenter.mall.dto.PmsProductParam;
 import com.mtcarpenter.mall.mapper.PmsProductMapper;
-import com.mtcarpenter.mall.mapper.PmsSkuStockMapper;
-import com.mtcarpenter.mall.model.*;
+import com.mtcarpenter.mall.model.product.PmsProduct;
+import com.mtcarpenter.mall.model.product.PmsProductExample;
+import com.mtcarpenter.mall.model.product.PmsProductVertifyRecord;
 import com.mtcarpenter.mall.service.product.status.ProductStatusService;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.util.CollectionUtils;
-import org.springframework.util.StringUtils;
 
-import java.lang.reflect.Method;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import java.util.stream.Collectors;
+
 @Service
 public class ProductStatusServiceImpl implements ProductStatusService {
     @Autowired

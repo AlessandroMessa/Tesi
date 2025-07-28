@@ -1,6 +1,6 @@
 package com.mtcarpenter.mall.service.resource;
 
-import com.mtcarpenter.mall.model.UmsResource;
+import com.mtcarpenter.mall.model.permission.UmsResource;
 
 import java.util.List;
 

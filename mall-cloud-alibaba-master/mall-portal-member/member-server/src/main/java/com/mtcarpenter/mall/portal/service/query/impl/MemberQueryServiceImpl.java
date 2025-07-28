@@ -2,7 +2,7 @@ package com.mtcarpenter.mall.portal.service.query.impl;
 
 import com.mtcarpenter.mall.mapper.UmsMemberMapper;
 import com.mtcarpenter.mall.model.UmsMember;
-import com.mtcarpenter.mall.model.UmsMemberExample;
+import com.mtcarpenter.mall.model.member.UmsMemberExample;
 import com.mtcarpenter.mall.portal.domain.MemberDetails;
 import com.mtcarpenter.mall.portal.service.UmsMemberCacheService;
 import com.mtcarpenter.mall.portal.service.query.MemberQueryService;

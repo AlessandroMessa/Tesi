@@ -1,7 +1,7 @@
 package com.mtcarpenter.mall.service;
 
 import com.mtcarpenter.mall.dto.SmsFlashPromotionProduct;
-import com.mtcarpenter.mall.model.SmsFlashPromotionProductRelation;
+import com.mtcarpenter.mall.model.flashpromotion.SmsFlashPromotionProductRelation;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;

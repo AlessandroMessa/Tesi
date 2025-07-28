@@ -1,7 +1,7 @@
 package com.mtcarpenter.mall.mapper;
 
-import com.mtcarpenter.mall.model.OmsOrderItem;
-import com.mtcarpenter.mall.model.OmsOrderItemExample;
+import com.mtcarpenter.mall.model.order.OmsOrderItem;
+import com.mtcarpenter.mall.model.order.OmsOrderItemExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 

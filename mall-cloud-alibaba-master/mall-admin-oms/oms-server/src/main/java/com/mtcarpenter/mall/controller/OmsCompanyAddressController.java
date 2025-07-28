@@ -1,7 +1,7 @@
 package com.mtcarpenter.mall.controller;
 
 import com.mtcarpenter.mall.common.api.CommonResult;
-import com.mtcarpenter.mall.model.OmsCompanyAddress;
+import com.mtcarpenter.mall.model.shipping.OmsCompanyAddress;
 import com.mtcarpenter.mall.service.OmsCompanyAddressService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;

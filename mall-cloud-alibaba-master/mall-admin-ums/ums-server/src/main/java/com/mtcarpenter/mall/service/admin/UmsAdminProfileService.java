@@ -1,6 +1,6 @@
 package com.mtcarpenter.mall.service.admin;
 
-import com.mtcarpenter.mall.model.UmsAdmin;
+import com.mtcarpenter.mall.model.admin.UmsAdmin;
 import java.util.List;
 
 public interface UmsAdminProfileService {

@@ -2,7 +2,10 @@ package com.mtcarpenter.mall.controller;
 
 import com.mtcarpenter.mall.common.api.CommonPage;
 import com.mtcarpenter.mall.common.api.CommonResult;
-import com.mtcarpenter.mall.model.*;
+import com.mtcarpenter.mall.model.permission.UmsMenu;
+import com.mtcarpenter.mall.model.permission.UmsPermission;
+import com.mtcarpenter.mall.model.permission.UmsResource;
+import com.mtcarpenter.mall.model.role.UmsRole;
 import com.mtcarpenter.mall.service.role.UmsRoleService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;

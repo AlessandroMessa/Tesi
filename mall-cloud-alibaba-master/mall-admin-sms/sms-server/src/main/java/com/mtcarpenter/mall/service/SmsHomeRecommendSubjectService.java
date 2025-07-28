@@ -1,6 +1,6 @@
 package com.mtcarpenter.mall.service;
 
-import com.mtcarpenter.mall.model.SmsHomeRecommendSubject;
+import com.mtcarpenter.mall.model.home.SmsHomeRecommendSubject;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;

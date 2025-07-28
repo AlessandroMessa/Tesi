@@ -3,7 +3,7 @@ package com.mtcarpenter.mall.controller;
 import com.mtcarpenter.mall.common.api.CommonPage;
 import com.mtcarpenter.mall.common.api.CommonResult;
 import com.mtcarpenter.mall.dto.*;
-import com.mtcarpenter.mall.model.OmsOrder;
+import com.mtcarpenter.mall.model.order.OmsOrder;
 import com.mtcarpenter.mall.service.OmsOrderService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;

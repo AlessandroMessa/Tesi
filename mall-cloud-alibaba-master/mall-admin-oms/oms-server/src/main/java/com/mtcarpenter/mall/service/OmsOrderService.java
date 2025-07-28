@@ -1,7 +1,7 @@
 package com.mtcarpenter.mall.service;
 
 import com.mtcarpenter.mall.dto.*;
-import com.mtcarpenter.mall.model.OmsOrder;
+import com.mtcarpenter.mall.model.order.OmsOrder;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;

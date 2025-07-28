@@ -1,7 +1,7 @@
 package com.mtcarpenter.mall.service.impl;
 
 import com.mtcarpenter.mall.mapper.OmsOrderSettingMapper;
-import com.mtcarpenter.mall.model.OmsOrderSetting;
+import com.mtcarpenter.mall.model.order.OmsOrderSetting;
 import com.mtcarpenter.mall.service.OmsOrderSettingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

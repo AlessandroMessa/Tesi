@@ -5,7 +5,7 @@ import com.mtcarpenter.mall.mapper.SmsCouponHistoryMapper;
 import com.mtcarpenter.mall.mapper.SmsCouponMapper;
 import com.mtcarpenter.mall.model.SmsCoupon;
 import com.mtcarpenter.mall.model.SmsCouponHistory;
-import com.mtcarpenter.mall.model.SmsCouponHistoryExample;
+import com.mtcarpenter.mall.model.coupon.SmsCouponHistoryExample;
 import com.mtcarpenter.mall.portal.service.coupon.CouponRedemptionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

@@ -3,7 +3,7 @@ package com.mtcarpenter.mall.controller;
 import com.mtcarpenter.mall.common.api.CommonPage;
 import com.mtcarpenter.mall.common.api.CommonResult;
 import com.mtcarpenter.mall.dto.UmsMenuNode;
-import com.mtcarpenter.mall.model.UmsMenu;
+import com.mtcarpenter.mall.model.permission.UmsMenu;
 import com.mtcarpenter.mall.service.menu.UmsMenuService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;

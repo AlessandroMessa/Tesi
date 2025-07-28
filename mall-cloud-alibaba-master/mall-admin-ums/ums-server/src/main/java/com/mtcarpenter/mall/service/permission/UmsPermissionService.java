@@ -1,7 +1,7 @@
 package com.mtcarpenter.mall.service.permission;
 
 import com.mtcarpenter.mall.dto.UmsPermissionNode;
-import com.mtcarpenter.mall.model.UmsPermission;
+import com.mtcarpenter.mall.model.permission.UmsPermission;
 
 import java.util.List;
 

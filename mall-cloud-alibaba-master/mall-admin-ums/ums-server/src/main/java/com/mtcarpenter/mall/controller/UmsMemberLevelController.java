@@ -1,7 +1,7 @@
 package com.mtcarpenter.mall.controller;
 
 import com.mtcarpenter.mall.common.api.CommonResult;
-import com.mtcarpenter.mall.model.UmsMemberLevel;
+import com.mtcarpenter.mall.model.member.UmsMemberLevel;
 import com.mtcarpenter.mall.service.member.UmsMemberLevelService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;

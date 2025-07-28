@@ -1,6 +1,6 @@
 package com.mtcarpenter.mall.dao;
 
-import com.mtcarpenter.mall.model.SmsCouponProductRelation;
+import com.mtcarpenter.mall.model.coupon.SmsCouponProductRelation;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;

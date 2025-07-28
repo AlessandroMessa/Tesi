@@ -8,7 +8,7 @@ import com.mtcarpenter.mall.dto.SmsCouponParam;
 import com.mtcarpenter.mall.mapper.SmsCouponMapper;
 import com.mtcarpenter.mall.mapper.SmsCouponProductCategoryRelationMapper;
 import com.mtcarpenter.mall.mapper.SmsCouponProductRelationMapper;
-import com.mtcarpenter.mall.model.*;
+import com.mtcarpenter.mall.model.coupon.*;
 import com.mtcarpenter.mall.service.SmsCouponService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

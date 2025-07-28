@@ -2,7 +2,7 @@ package com.mtcarpenter.mall.service.product.query;
 
 import com.mtcarpenter.mall.common.PmsProductOutput;
 import com.mtcarpenter.mall.dto.PmsProductQueryParam;
-import com.mtcarpenter.mall.model.PmsProduct;
+import com.mtcarpenter.mall.model.product.PmsProduct;
 
 import java.util.List;
 

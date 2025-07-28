@@ -2,7 +2,7 @@ package com.mtcarpenter.mall.controller;
 
 import com.mtcarpenter.mall.common.api.CommonResult;
 import com.mtcarpenter.mall.dto.SmsFlashPromotionSessionDetail;
-import com.mtcarpenter.mall.model.SmsFlashPromotionSession;
+import com.mtcarpenter.mall.model.flashpromotion.SmsFlashPromotionSession;
 import com.mtcarpenter.mall.service.SmsFlashPromotionSessionService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;

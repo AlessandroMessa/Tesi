@@ -1,7 +1,7 @@
 package com.mtcarpenter.mall.mapper;
 
-import com.mtcarpenter.mall.model.UmsRolePermissionRelation;
-import com.mtcarpenter.mall.model.UmsRolePermissionRelationExample;
+import com.mtcarpenter.mall.model.role.UmsRolePermissionRelation;
+import com.mtcarpenter.mall.model.role.UmsRolePermissionRelationExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 

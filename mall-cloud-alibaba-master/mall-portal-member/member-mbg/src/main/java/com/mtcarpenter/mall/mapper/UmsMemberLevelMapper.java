@@ -1,7 +1,7 @@
 package com.mtcarpenter.mall.mapper;
 
 import com.mtcarpenter.mall.model.UmsMemberLevel;
-import com.mtcarpenter.mall.model.UmsMemberLevelExample;
+import com.mtcarpenter.mall.model.member.UmsMemberLevelExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 

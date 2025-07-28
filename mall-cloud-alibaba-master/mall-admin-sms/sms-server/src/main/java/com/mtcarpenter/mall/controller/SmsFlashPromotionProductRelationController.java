@@ -3,7 +3,7 @@ package com.mtcarpenter.mall.controller;
 import com.mtcarpenter.mall.common.api.CommonPage;
 import com.mtcarpenter.mall.common.api.CommonResult;
 import com.mtcarpenter.mall.dto.SmsFlashPromotionProduct;
-import com.mtcarpenter.mall.model.SmsFlashPromotionProductRelation;
+import com.mtcarpenter.mall.model.flashpromotion.SmsFlashPromotionProductRelation;
 import com.mtcarpenter.mall.service.SmsFlashPromotionProductRelationService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;

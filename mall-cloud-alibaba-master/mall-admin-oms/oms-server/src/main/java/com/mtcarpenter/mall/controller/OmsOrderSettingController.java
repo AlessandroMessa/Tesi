@@ -1,7 +1,7 @@
 package com.mtcarpenter.mall.controller;
 
 import com.mtcarpenter.mall.common.api.CommonResult;
-import com.mtcarpenter.mall.model.OmsOrderSetting;
+import com.mtcarpenter.mall.model.order.OmsOrderSetting;
 import com.mtcarpenter.mall.service.OmsOrderSettingService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;

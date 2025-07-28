@@ -1,6 +1,6 @@
 package com.mtcarpenter.mall.service;
 
-import com.mtcarpenter.mall.model.OmsOrderSetting;
+import com.mtcarpenter.mall.model.order.OmsOrderSetting;
 
 /**
  * 订单设置Service

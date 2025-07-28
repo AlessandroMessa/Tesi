@@ -3,7 +3,7 @@ package com.mtcarpenter.mall.portal.service.product.impl;
 import com.github.pagehelper.PageHelper;
 import com.mtcarpenter.mall.mapper.PmsProductMapper;
 import com.mtcarpenter.mall.model.PmsProduct;
-import com.mtcarpenter.mall.model.PmsProductExample;
+import com.mtcarpenter.mall.model.product.PmsProductExample;
 import com.mtcarpenter.mall.portal.service.product.ProductSearchService;
 import cn.hutool.core.util.StrUtil;
 import org.springframework.beans.factory.annotation.Autowired;

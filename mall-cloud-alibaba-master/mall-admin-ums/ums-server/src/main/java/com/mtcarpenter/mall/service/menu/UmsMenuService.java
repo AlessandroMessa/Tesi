@@ -1,7 +1,7 @@
 package com.mtcarpenter.mall.service.menu;
 
 import com.mtcarpenter.mall.dto.UmsMenuNode;
-import com.mtcarpenter.mall.model.UmsMenu;
+import com.mtcarpenter.mall.model.permission.UmsMenu;
 
 import java.util.List;
 

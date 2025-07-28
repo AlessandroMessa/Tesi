@@ -1,7 +1,7 @@
 package com.mtcarpenter.mall.mapper;
 
-import com.mtcarpenter.mall.model.PmsProductVertifyRecord;
-import com.mtcarpenter.mall.model.PmsProductVertifyRecordExample;
+import com.mtcarpenter.mall.model.product.PmsProductVertifyRecord;
+import com.mtcarpenter.mall.model.product.PmsProductVertifyRecordExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 

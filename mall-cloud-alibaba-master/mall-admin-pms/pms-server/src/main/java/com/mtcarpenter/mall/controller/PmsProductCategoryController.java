@@ -4,7 +4,7 @@ import com.mtcarpenter.mall.common.api.CommonPage;
 import com.mtcarpenter.mall.common.api.CommonResult;
 import com.mtcarpenter.mall.dto.PmsProductCategoryParam;
 import com.mtcarpenter.mall.dto.PmsProductCategoryWithChildrenItem;
-import com.mtcarpenter.mall.model.PmsProductCategory;
+import com.mtcarpenter.mall.model.product.PmsProductCategory;
 import com.mtcarpenter.mall.service.product.category.PmsProductCategoryService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;

@@ -3,7 +3,7 @@ package com.mtcarpenter.mall.service;
 import com.mtcarpenter.mall.dto.OmsOrderReturnApplyResult;
 import com.mtcarpenter.mall.dto.OmsReturnApplyQueryParam;
 import com.mtcarpenter.mall.dto.OmsUpdateStatusParam;
-import com.mtcarpenter.mall.model.OmsOrderReturnApply;
+import com.mtcarpenter.mall.model.render.OmsOrderReturnApply;
 
 import java.util.List;
 

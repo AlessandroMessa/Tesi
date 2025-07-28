@@ -1,7 +1,7 @@
 package com.mtcarpenter.mall.mapper;
 
-import com.mtcarpenter.mall.model.UmsGrowthChangeHistory;
-import com.mtcarpenter.mall.model.UmsGrowthChangeHistoryExample;
+import com.mtcarpenter.mall.model.loyalty.UmsGrowthChangeHistory;
+import com.mtcarpenter.mall.model.loyalty.UmsGrowthChangeHistoryExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 

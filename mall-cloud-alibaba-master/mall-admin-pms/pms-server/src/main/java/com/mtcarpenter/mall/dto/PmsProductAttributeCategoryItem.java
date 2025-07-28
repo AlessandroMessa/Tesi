@@ -1,7 +1,7 @@
 package com.mtcarpenter.mall.dto;
 
-import com.mtcarpenter.mall.model.PmsProductAttribute;
-import com.mtcarpenter.mall.model.PmsProductAttributeCategory;
+import com.mtcarpenter.mall.model.attribute.PmsProductAttribute;
+import com.mtcarpenter.mall.model.attribute.PmsProductAttributeCategory;
 import io.swagger.annotations.ApiModelProperty;
 
 import java.util.List;

@@ -5,7 +5,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import com.mtcarpenter.mall.dto.UmsAdminParam;
 import com.mtcarpenter.mall.dto.UpdateAdminPasswordParam;
-import com.mtcarpenter.mall.model.UmsAdmin;
+import com.mtcarpenter.mall.model.admin.UmsAdmin;
 
 public interface UmsAdminAuthService {
   /**

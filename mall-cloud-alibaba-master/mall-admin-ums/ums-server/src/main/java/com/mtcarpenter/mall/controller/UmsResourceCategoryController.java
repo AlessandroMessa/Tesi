@@ -1,7 +1,7 @@
 package com.mtcarpenter.mall.controller;
 
 import com.mtcarpenter.mall.common.api.CommonResult;
-import com.mtcarpenter.mall.model.UmsResourceCategory;
+import com.mtcarpenter.mall.model.permission.UmsResourceCategory;
 import com.mtcarpenter.mall.service.resource.UmsResourceCategoryService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;

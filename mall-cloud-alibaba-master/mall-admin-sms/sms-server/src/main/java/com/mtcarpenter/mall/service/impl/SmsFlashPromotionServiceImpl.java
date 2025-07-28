@@ -2,8 +2,8 @@ package com.mtcarpenter.mall.service.impl;
 
 import com.github.pagehelper.PageHelper;
 import com.mtcarpenter.mall.mapper.SmsFlashPromotionMapper;
-import com.mtcarpenter.mall.model.SmsFlashPromotion;
-import com.mtcarpenter.mall.model.SmsFlashPromotionExample;
+import com.mtcarpenter.mall.model.flashpromotion.SmsFlashPromotion;
+import com.mtcarpenter.mall.model.flashpromotion.SmsFlashPromotionExample;
 import com.mtcarpenter.mall.service.SmsFlashPromotionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

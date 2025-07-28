@@ -2,8 +2,8 @@ package com.mtcarpenter.mall.service.impl;
 
 import com.github.pagehelper.PageHelper;
 import com.mtcarpenter.mall.mapper.SmsHomeNewProductMapper;
-import com.mtcarpenter.mall.model.SmsHomeNewProduct;
-import com.mtcarpenter.mall.model.SmsHomeNewProductExample;
+import com.mtcarpenter.mall.model.home.SmsHomeNewProduct;
+import com.mtcarpenter.mall.model.home.SmsHomeNewProductExample;
 import com.mtcarpenter.mall.service.SmsHomeNewProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

@@ -7,7 +7,7 @@ import com.mtcarpenter.mall.common.api.ResultCode;
 import com.mtcarpenter.mall.domain.CartProduct;
 import com.mtcarpenter.mall.mapper.OmsCartItemMapper;
 import com.mtcarpenter.mall.model.OmsCartItem;
-import com.mtcarpenter.mall.model.OmsCartItemExample;
+import com.mtcarpenter.mall.model.cart.OmsCartItemExample;
 import com.mtcarpenter.mall.domain.CartPromotionItem;
 import com.mtcarpenter.mall.model.UmsMember;
 import com.mtcarpenter.mall.portal.service.OmsCartItemService;

@@ -3,7 +3,7 @@ package com.mtcarpenter.mall.controller;
 import com.mtcarpenter.mall.common.api.CommonPage;
 import com.mtcarpenter.mall.common.api.CommonResult;
 import com.mtcarpenter.mall.dto.SmsCouponParam;
-import com.mtcarpenter.mall.model.SmsCoupon;
+import com.mtcarpenter.mall.model.coupon.SmsCoupon;
 import com.mtcarpenter.mall.service.SmsCouponService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;

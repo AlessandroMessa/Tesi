@@ -1,7 +1,7 @@
 package com.mtcarpenter.mall.bo;
 
-import com.mtcarpenter.mall.model.UmsAdmin;
-import com.mtcarpenter.mall.model.UmsResource;
+import com.mtcarpenter.mall.model.admin.UmsAdmin;
+import com.mtcarpenter.mall.model.permission.UmsResource;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;

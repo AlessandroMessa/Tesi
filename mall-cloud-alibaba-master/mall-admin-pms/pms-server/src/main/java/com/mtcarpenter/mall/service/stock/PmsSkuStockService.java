@@ -1,6 +1,6 @@
 package com.mtcarpenter.mall.service.stock;
 
-import com.mtcarpenter.mall.model.PmsSkuStock;
+import com.mtcarpenter.mall.model.stock.PmsSkuStock;
 
 import java.util.List;
 

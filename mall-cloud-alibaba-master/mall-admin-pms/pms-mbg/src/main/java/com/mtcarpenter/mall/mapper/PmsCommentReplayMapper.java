@@ -1,7 +1,7 @@
 package com.mtcarpenter.mall.mapper;
 
-import com.mtcarpenter.mall.model.PmsCommentReplay;
-import com.mtcarpenter.mall.model.PmsCommentReplayExample;
+import com.mtcarpenter.mall.model.comment.PmsCommentReplay;
+import com.mtcarpenter.mall.model.comment.PmsCommentReplayExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 

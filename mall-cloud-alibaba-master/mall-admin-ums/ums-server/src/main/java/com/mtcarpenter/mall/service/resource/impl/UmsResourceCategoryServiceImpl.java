@@ -1,8 +1,8 @@
 package com.mtcarpenter.mall.service.resource.impl;
 
 import com.mtcarpenter.mall.mapper.UmsResourceCategoryMapper;
-import com.mtcarpenter.mall.model.UmsResourceCategory;
-import com.mtcarpenter.mall.model.UmsResourceCategoryExample;
+import com.mtcarpenter.mall.model.permission.UmsResourceCategory;
+import com.mtcarpenter.mall.model.permission.UmsResourceCategoryExample;
 import com.mtcarpenter.mall.service.resource.UmsResourceCategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

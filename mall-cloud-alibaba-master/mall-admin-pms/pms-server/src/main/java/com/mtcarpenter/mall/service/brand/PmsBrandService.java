@@ -1,7 +1,7 @@
 package com.mtcarpenter.mall.service.brand;
 
 import com.mtcarpenter.mall.dto.PmsBrandParam;
-import com.mtcarpenter.mall.model.PmsBrand;
+import com.mtcarpenter.mall.model.brand.PmsBrand;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;

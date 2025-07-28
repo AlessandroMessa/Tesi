@@ -1,6 +1,6 @@
 package com.mtcarpenter.mall.dao;
 
-import com.mtcarpenter.mall.model.PmsSkuStock;
+import com.mtcarpenter.mall.model.stock.PmsSkuStock;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;

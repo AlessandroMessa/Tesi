@@ -2,8 +2,8 @@ package com.mtcarpenter.mall.service.impl;
 
 import com.github.pagehelper.PageHelper;
 import com.mtcarpenter.mall.mapper.OmsOrderReturnReasonMapper;
-import com.mtcarpenter.mall.model.OmsOrderReturnReason;
-import com.mtcarpenter.mall.model.OmsOrderReturnReasonExample;
+import com.mtcarpenter.mall.model.render.OmsOrderReturnReason;
+import com.mtcarpenter.mall.model.render.OmsOrderReturnReasonExample;
 import com.mtcarpenter.mall.service.OmsOrderReturnReasonService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

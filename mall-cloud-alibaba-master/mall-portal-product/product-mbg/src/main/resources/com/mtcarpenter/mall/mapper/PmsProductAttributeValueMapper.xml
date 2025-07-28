@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.mtcarpenter.mall.mapper.PmsProductAttributeValueMapper">
-    <resultMap id="BaseResultMap" type="com.mtcarpenter.mall.model.PmsProductAttributeValue">
+    <resultMap id="BaseResultMap" type="com.mtcarpenter.mall.model.attribute.PmsProductAttributeValue">
         <id column="id" jdbcType="BIGINT" property="id"/>
         <result column="product_id" jdbcType="BIGINT" property="productId"/>
         <result column="product_attribute_id" jdbcType="BIGINT" property="productAttributeId"/>
@@ -70,7 +70,7 @@
     <sql id="Base_Column_List">
     id, product_id, product_attribute_id, value
   </sql>
-    <select id="selectByExample" parameterType="com.mtcarpenter.mall.model.PmsProductAttributeValueExample"
+    <select id="selectByExample" parameterType="com.mtcarpenter.mall.model.attribute.PmsProductAttributeValueExample"
             resultMap="BaseResultMap">
         select
         <if test="distinct">
@@ -95,13 +95,13 @@
     delete from pms_product_attribute_value
     where id = #{id,jdbcType=BIGINT}
   </delete>
-    <delete id="deleteByExample" parameterType="com.mtcarpenter.mall.model.PmsProductAttributeValueExample">
+    <delete id="deleteByExample" parameterType="com.mtcarpenter.mall.model.attribute.PmsProductAttributeValueExample">
         delete from pms_product_attribute_value
         <if test="_parameter != null">
             <include refid="Example_Where_Clause"/>
         </if>
     </delete>
-    <insert id="insert" parameterType="com.mtcarpenter.mall.model.PmsProductAttributeValue">
+    <insert id="insert" parameterType="com.mtcarpenter.mall.model.attribute.PmsProductAttributeValue">
         <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
             SELECT LAST_INSERT_ID()
         </selectKey>
@@ -110,7 +110,7 @@
         values (#{productId,jdbcType=BIGINT}, #{productAttributeId,jdbcType=BIGINT}, #{value,jdbcType=VARCHAR}
         )
     </insert>
-    <insert id="insertSelective" parameterType="com.mtcarpenter.mall.model.PmsProductAttributeValue">
+    <insert id="insertSelective" parameterType="com.mtcarpenter.mall.model.attribute.PmsProductAttributeValue">
         <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
             SELECT LAST_INSERT_ID()
         </selectKey>
@@ -138,7 +138,7 @@
             </if>
         </trim>
     </insert>
-    <select id="countByExample" parameterType="com.mtcarpenter.mall.model.PmsProductAttributeValueExample"
+    <select id="countByExample" parameterType="com.mtcarpenter.mall.model.attribute.PmsProductAttributeValueExample"
             resultType="java.lang.Long">
         select count(*) from pms_product_attribute_value
         <if test="_parameter != null">
@@ -175,7 +175,7 @@
             <include refid="Update_By_Example_Where_Clause"/>
         </if>
     </update>
-    <update id="updateByPrimaryKeySelective" parameterType="com.mtcarpenter.mall.model.PmsProductAttributeValue">
+    <update id="updateByPrimaryKeySelective" parameterType="com.mtcarpenter.mall.model.attribute.PmsProductAttributeValue">
         update pms_product_attribute_value
         <set>
             <if test="productId != null">
@@ -190,7 +190,7 @@
         </set>
         where id = #{id,jdbcType=BIGINT}
     </update>
-    <update id="updateByPrimaryKey" parameterType="com.mtcarpenter.mall.model.PmsProductAttributeValue">
+    <update id="updateByPrimaryKey" parameterType="com.mtcarpenter.mall.model.attribute.PmsProductAttributeValue">
     update pms_product_attribute_value
     set product_id = #{productId,jdbcType=BIGINT},
       product_attribute_id = #{productAttributeId,jdbcType=BIGINT},

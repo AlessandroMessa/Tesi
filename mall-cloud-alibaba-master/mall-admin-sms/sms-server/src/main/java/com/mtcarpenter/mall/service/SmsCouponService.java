@@ -1,7 +1,7 @@
 package com.mtcarpenter.mall.service;
 
 import com.mtcarpenter.mall.dto.SmsCouponParam;
-import com.mtcarpenter.mall.model.SmsCoupon;
+import com.mtcarpenter.mall.model.coupon.SmsCoupon;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;

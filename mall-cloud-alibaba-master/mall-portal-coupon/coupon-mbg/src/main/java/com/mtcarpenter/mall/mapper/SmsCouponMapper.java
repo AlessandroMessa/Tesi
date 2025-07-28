@@ -1,7 +1,7 @@
 package com.mtcarpenter.mall.mapper;
 
 import com.mtcarpenter.mall.model.SmsCoupon;
-import com.mtcarpenter.mall.model.SmsCouponExample;
+import com.mtcarpenter.mall.model.coupon.SmsCouponExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 

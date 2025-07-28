@@ -1,7 +1,7 @@
 package com.mtcarpenter.mall.dto;
 
 import com.mtcarpenter.mall.common.PmsProductOutput;
-import com.mtcarpenter.mall.model.SmsFlashPromotionProductRelation;
+import com.mtcarpenter.mall.model.flashpromotion.SmsFlashPromotionProductRelation;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
 import lombok.Setter;

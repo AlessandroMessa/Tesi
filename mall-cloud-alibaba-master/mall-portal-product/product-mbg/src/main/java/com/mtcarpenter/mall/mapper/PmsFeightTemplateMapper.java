@@ -1,7 +1,7 @@
 package com.mtcarpenter.mall.mapper;
 
 import com.mtcarpenter.mall.model.PmsFeightTemplate;
-import com.mtcarpenter.mall.model.PmsFeightTemplateExample;
+import com.mtcarpenter.mall.model.freight.PmsFeightTemplateExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 

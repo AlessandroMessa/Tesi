@@ -1,6 +1,6 @@
 package com.mtcarpenter.mall.dao;
 
-import com.mtcarpenter.mall.model.PmsProductVertifyRecord;
+import com.mtcarpenter.mall.model.product.PmsProductVertifyRecord;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;

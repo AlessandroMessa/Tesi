@@ -1,7 +1,7 @@
 package com.mtcarpenter.mall.mapper;
 
 import com.mtcarpenter.mall.model.OmsCartItem;
-import com.mtcarpenter.mall.model.OmsCartItemExample;
+import com.mtcarpenter.mall.model.cart.OmsCartItemExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 

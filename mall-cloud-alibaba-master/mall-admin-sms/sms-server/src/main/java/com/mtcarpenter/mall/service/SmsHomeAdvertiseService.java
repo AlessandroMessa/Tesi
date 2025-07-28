@@ -1,6 +1,6 @@
 package com.mtcarpenter.mall.service;
 
-import com.mtcarpenter.mall.model.SmsHomeAdvertise;
+import com.mtcarpenter.mall.model.home.SmsHomeAdvertise;
 
 import java.util.List;
 

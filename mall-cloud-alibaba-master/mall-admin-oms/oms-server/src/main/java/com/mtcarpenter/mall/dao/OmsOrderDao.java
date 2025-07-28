@@ -3,7 +3,7 @@ package com.mtcarpenter.mall.dao;
 import com.mtcarpenter.mall.dto.OmsOrderDeliveryParam;
 import com.mtcarpenter.mall.dto.OmsOrderDetail;
 import com.mtcarpenter.mall.dto.OmsOrderQueryParam;
-import com.mtcarpenter.mall.model.OmsOrder;
+import com.mtcarpenter.mall.model.order.OmsOrder;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;

@@ -5,6 +5,8 @@ import com.mtcarpenter.mall.mapper.OmsOrderItemMapper;
 import com.mtcarpenter.mall.mapper.OmsOrderMapper;
 import com.mtcarpenter.mall.mapper.OmsOrderSettingMapper;
 import com.mtcarpenter.mall.model.*;
+import com.mtcarpenter.mall.model.order.OmsOrderExample;
+import com.mtcarpenter.mall.model.order.OmsOrderItemExample;
 import com.mtcarpenter.mall.portal.component.CancelOrderSender;
 import com.mtcarpenter.mall.portal.dao.PortalOrderDao;
 import com.mtcarpenter.mall.portal.domain.OmsOrderDetail;

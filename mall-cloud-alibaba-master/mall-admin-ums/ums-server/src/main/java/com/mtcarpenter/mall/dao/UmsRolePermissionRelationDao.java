@@ -1,7 +1,7 @@
 package com.mtcarpenter.mall.dao;
 
-import com.mtcarpenter.mall.model.UmsPermission;
-import com.mtcarpenter.mall.model.UmsRolePermissionRelation;
+import com.mtcarpenter.mall.model.permission.UmsPermission;
+import com.mtcarpenter.mall.model.role.UmsRolePermissionRelation;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;

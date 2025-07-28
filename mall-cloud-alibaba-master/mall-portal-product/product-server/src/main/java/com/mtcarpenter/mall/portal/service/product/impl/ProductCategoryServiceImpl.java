@@ -2,7 +2,7 @@ package com.mtcarpenter.mall.portal.service.product.impl;
 
 import com.mtcarpenter.mall.mapper.PmsProductCategoryMapper;
 import com.mtcarpenter.mall.model.PmsProductCategory;
-import com.mtcarpenter.mall.model.PmsProductCategoryExample;
+import com.mtcarpenter.mall.model.attribute.PmsProductCategoryExample;
 import com.mtcarpenter.mall.portal.domain.PmsProductCategoryNode;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;

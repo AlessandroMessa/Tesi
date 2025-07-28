@@ -1,7 +1,7 @@
 package com.mtcarpenter.mall.mapper;
 
-import com.mtcarpenter.mall.model.PmsProductCategory;
-import com.mtcarpenter.mall.model.PmsProductCategoryExample;
+import com.mtcarpenter.mall.model.product.PmsProductCategory;
+import com.mtcarpenter.mall.model.product.PmsProductCategoryExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 

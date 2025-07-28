@@ -1,7 +1,7 @@
 package com.mtcarpenter.mall.mapper;
 
-import com.mtcarpenter.mall.model.UmsAdmin;
-import com.mtcarpenter.mall.model.UmsAdminExample;
+import com.mtcarpenter.mall.model.admin.UmsAdmin;
+import com.mtcarpenter.mall.model.admin.UmsAdminExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 

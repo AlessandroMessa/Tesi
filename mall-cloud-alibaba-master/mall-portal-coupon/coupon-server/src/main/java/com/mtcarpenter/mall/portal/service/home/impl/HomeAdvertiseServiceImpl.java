@@ -2,7 +2,7 @@ package com.mtcarpenter.mall.portal.service.home.impl;
 
 import com.mtcarpenter.mall.mapper.SmsHomeAdvertiseMapper;
 import com.mtcarpenter.mall.model.SmsHomeAdvertise;
-import com.mtcarpenter.mall.model.SmsHomeAdvertiseExample;
+import com.mtcarpenter.mall.model.home.SmsHomeAdvertiseExample;
 import com.mtcarpenter.mall.portal.service.home.HomeAdvertiseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

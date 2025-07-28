@@ -1,7 +1,7 @@
 package com.mtcarpenter.mall.mapper;
 
-import com.mtcarpenter.mall.model.UmsIntegrationConsumeSetting;
-import com.mtcarpenter.mall.model.UmsIntegrationConsumeSettingExample;
+import com.mtcarpenter.mall.model.loyalty.UmsIntegrationConsumeSetting;
+import com.mtcarpenter.mall.model.loyalty.UmsIntegrationConsumeSettingExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 

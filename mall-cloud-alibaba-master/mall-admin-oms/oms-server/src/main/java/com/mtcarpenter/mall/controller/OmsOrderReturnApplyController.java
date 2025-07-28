@@ -5,7 +5,7 @@ import com.mtcarpenter.mall.common.api.CommonResult;
 import com.mtcarpenter.mall.dto.OmsOrderReturnApplyResult;
 import com.mtcarpenter.mall.dto.OmsReturnApplyQueryParam;
 import com.mtcarpenter.mall.dto.OmsUpdateStatusParam;
-import com.mtcarpenter.mall.model.OmsOrderReturnApply;
+import com.mtcarpenter.mall.model.render.OmsOrderReturnApply;
 import com.mtcarpenter.mall.service.OmsOrderReturnApplyService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;

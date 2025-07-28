@@ -1,6 +1,6 @@
 package com.mtcarpenter.mall.dao;
 
-import com.mtcarpenter.mall.model.OmsOrderOperateHistory;
+import com.mtcarpenter.mall.model.order.OmsOrderOperateHistory;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;

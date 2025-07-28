@@ -1,6 +1,6 @@
 package com.mtcarpenter.mall.dao;
 
-import com.mtcarpenter.mall.model.PmsProductCategoryAttributeRelation;
+import com.mtcarpenter.mall.model.attribute.PmsProductCategoryAttributeRelation;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;

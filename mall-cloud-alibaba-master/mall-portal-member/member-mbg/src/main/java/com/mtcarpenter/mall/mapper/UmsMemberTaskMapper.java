@@ -1,7 +1,7 @@
 package com.mtcarpenter.mall.mapper;
 
 import com.mtcarpenter.mall.model.UmsMemberTask;
-import com.mtcarpenter.mall.model.UmsMemberTaskExample;
+import com.mtcarpenter.mall.model.member.UmsMemberTaskExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 

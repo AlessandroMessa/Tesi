@@ -1,8 +1,8 @@
 package com.mtcarpenter.mall.service.member.impl;
 
 import com.mtcarpenter.mall.mapper.UmsMemberLevelMapper;
-import com.mtcarpenter.mall.model.UmsMemberLevel;
-import com.mtcarpenter.mall.model.UmsMemberLevelExample;
+import com.mtcarpenter.mall.model.member.UmsMemberLevel;
+import com.mtcarpenter.mall.model.member.UmsMemberLevelExample;
 import com.mtcarpenter.mall.service.member.UmsMemberLevelService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

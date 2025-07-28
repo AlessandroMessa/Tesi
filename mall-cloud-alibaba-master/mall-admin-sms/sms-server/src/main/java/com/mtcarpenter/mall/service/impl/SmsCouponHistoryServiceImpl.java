@@ -2,8 +2,8 @@ package com.mtcarpenter.mall.service.impl;
 
 import com.github.pagehelper.PageHelper;
 import com.mtcarpenter.mall.mapper.SmsCouponHistoryMapper;
-import com.mtcarpenter.mall.model.SmsCouponHistory;
-import com.mtcarpenter.mall.model.SmsCouponHistoryExample;
+import com.mtcarpenter.mall.model.coupon.SmsCouponHistory;
+import com.mtcarpenter.mall.model.coupon.SmsCouponHistoryExample;
 import com.mtcarpenter.mall.service.SmsCouponHistoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

@@ -1,7 +1,7 @@
 package com.mtcarpenter.mall.mapper;
 
 import com.mtcarpenter.mall.model.UmsMemberStatisticsInfo;
-import com.mtcarpenter.mall.model.UmsMemberStatisticsInfoExample;
+import com.mtcarpenter.mall.model.member.UmsMemberStatisticsInfoExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 

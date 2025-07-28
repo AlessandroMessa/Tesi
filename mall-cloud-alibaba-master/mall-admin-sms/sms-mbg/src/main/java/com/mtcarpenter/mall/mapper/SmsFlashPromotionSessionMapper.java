@@ -1,7 +1,7 @@
 package com.mtcarpenter.mall.mapper;
 
-import com.mtcarpenter.mall.model.SmsFlashPromotionSession;
-import com.mtcarpenter.mall.model.SmsFlashPromotionSessionExample;
+import com.mtcarpenter.mall.model.flashpromotion.SmsFlashPromotionSession;
+import com.mtcarpenter.mall.model.flashpromotion.SmsFlashPromotionSessionExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 

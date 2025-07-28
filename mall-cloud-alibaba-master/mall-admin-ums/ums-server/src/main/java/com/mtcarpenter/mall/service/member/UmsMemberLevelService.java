@@ -1,6 +1,6 @@
 package com.mtcarpenter.mall.service.member;
 
-import com.mtcarpenter.mall.model.UmsMemberLevel;
+import com.mtcarpenter.mall.model.member.UmsMemberLevel;
 
 import java.util.List;
 

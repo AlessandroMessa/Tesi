@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.mtcarpenter.mall.mapper.PmsAlbumMapper">
-    <resultMap id="BaseResultMap" type="com.mtcarpenter.mall.model.PmsAlbum">
+    <resultMap id="BaseResultMap" type="com.mtcarpenter.mall.model.album.PmsAlbum">
         <id column="id" jdbcType="BIGINT" property="id"/>
         <result column="name" jdbcType="VARCHAR" property="name"/>
         <result column="cover_pic" jdbcType="VARCHAR" property="coverPic"/>
@@ -72,7 +72,7 @@
     <sql id="Base_Column_List">
     id, name, cover_pic, pic_count, sort, description
   </sql>
-    <select id="selectByExample" parameterType="com.mtcarpenter.mall.model.PmsAlbumExample" resultMap="BaseResultMap">
+    <select id="selectByExample" parameterType="com.mtcarpenter.mall.model.album.PmsAlbumExample" resultMap="BaseResultMap">
         select
         <if test="distinct">
             distinct
@@ -96,13 +96,13 @@
     delete from pms_album
     where id = #{id,jdbcType=BIGINT}
   </delete>
-    <delete id="deleteByExample" parameterType="com.mtcarpenter.mall.model.PmsAlbumExample">
+    <delete id="deleteByExample" parameterType="com.mtcarpenter.mall.model.album.PmsAlbumExample">
         delete from pms_album
         <if test="_parameter != null">
             <include refid="Example_Where_Clause"/>
         </if>
     </delete>
-    <insert id="insert" parameterType="com.mtcarpenter.mall.model.PmsAlbum">
+    <insert id="insert" parameterType="com.mtcarpenter.mall.model.album.PmsAlbum">
         <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
             SELECT LAST_INSERT_ID()
         </selectKey>
@@ -111,7 +111,7 @@
         values (#{name,jdbcType=VARCHAR}, #{coverPic,jdbcType=VARCHAR}, #{picCount,jdbcType=INTEGER},
         #{sort,jdbcType=INTEGER}, #{description,jdbcType=VARCHAR})
     </insert>
-    <insert id="insertSelective" parameterType="com.mtcarpenter.mall.model.PmsAlbum">
+    <insert id="insertSelective" parameterType="com.mtcarpenter.mall.model.album.PmsAlbum">
         <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
             SELECT LAST_INSERT_ID()
         </selectKey>
@@ -151,7 +151,7 @@
             </if>
         </trim>
     </insert>
-    <select id="countByExample" parameterType="com.mtcarpenter.mall.model.PmsAlbumExample" resultType="java.lang.Long">
+    <select id="countByExample" parameterType="com.mtcarpenter.mall.model.album.PmsAlbumExample" resultType="java.lang.Long">
         select count(*) from pms_album
         <if test="_parameter != null">
             <include refid="Example_Where_Clause"/>
@@ -195,7 +195,7 @@
             <include refid="Update_By_Example_Where_Clause"/>
         </if>
     </update>
-    <update id="updateByPrimaryKeySelective" parameterType="com.mtcarpenter.mall.model.PmsAlbum">
+    <update id="updateByPrimaryKeySelective" parameterType="com.mtcarpenter.mall.model.album.PmsAlbum">
         update pms_album
         <set>
             <if test="name != null">
@@ -216,7 +216,7 @@
         </set>
         where id = #{id,jdbcType=BIGINT}
     </update>
-    <update id="updateByPrimaryKey" parameterType="com.mtcarpenter.mall.model.PmsAlbum">
+    <update id="updateByPrimaryKey" parameterType="com.mtcarpenter.mall.model.album.PmsAlbum">
     update pms_album
     set name = #{name,jdbcType=VARCHAR},
       cover_pic = #{coverPic,jdbcType=VARCHAR},

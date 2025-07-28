@@ -1,2 +1,5 @@
 tree /F "percorso cartella" > model-structure.txt
 
+in ogni .model creo dei sottopackage.
+potrei trovare dei nuovi microservizi perché effettivamente ci sono in tutti i package originali delle classi relative alle stesse cose
+

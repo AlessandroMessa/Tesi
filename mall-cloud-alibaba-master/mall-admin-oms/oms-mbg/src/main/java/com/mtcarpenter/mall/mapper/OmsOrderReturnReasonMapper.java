@@ -1,7 +1,7 @@
 package com.mtcarpenter.mall.mapper;
 
-import com.mtcarpenter.mall.model.OmsOrderReturnReason;
-import com.mtcarpenter.mall.model.OmsOrderReturnReasonExample;
+import com.mtcarpenter.mall.model.render.OmsOrderReturnReason;
+import com.mtcarpenter.mall.model.render.OmsOrderReturnReasonExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 

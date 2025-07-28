@@ -1,6 +1,6 @@
 package com.mtcarpenter.mall.dto;
 
-import com.mtcarpenter.mall.model.UmsPermission;
+import com.mtcarpenter.mall.model.permission.UmsPermission;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
 import lombok.Setter;

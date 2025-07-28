@@ -1,6 +1,6 @@
 package com.mtcarpenter.mall.service.admin;
 
-import com.mtcarpenter.mall.model.UmsRole;
+import com.mtcarpenter.mall.model.role.UmsRole;
 import java.util.List;
 import org.springframework.transaction.annotation.Transactional;
 

@@ -1,6 +1,6 @@
 package com.mtcarpenter.mall.dto;
 
-import com.mtcarpenter.mall.model.PmsProductCategory;
+import com.mtcarpenter.mall.model.product.PmsProductCategory;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
 import lombok.Setter;
