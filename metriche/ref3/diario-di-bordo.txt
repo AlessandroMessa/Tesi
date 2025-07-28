@@ -11,3 +11,9 @@ Ho creato una cartella ref3-pt5-pesi4 dove tengo le metriche per ogni classe di 
 Nella tesi non credo parlerò di ogni parte ma riassumerò.
 
 Completati i pesi 4 mi sono comparsi altri 2 smells e il td dell'hub è salito a 92 però il size è sceso a 8, ora salterò un po' di step, arcan mi trova un peso 6 in un microservizio che non ho ancora toccato, parto da quello
+
+###################################FINE##############################
+dopo 6 iterazioni mi sono reso conto che bastava creare sotto package in ogni cartella .service
+questo perché prima creavo delle sottocartelle solo per le classi che spezzettavo, quindi l'hub rimaneva ma il size scendeva, quando ho creato subito le sottocartelle per il .service l'hub si è risolto perché le singole classi nelle sottocartelle da sole non componevano un hub.
+Se avessi fatto così all'inizio probabilmente avrei creato x hub (guardare da stats iniziali) di classe
+Alla fine ho risolto l'hub ma ho ottenuto 3 smells in più
