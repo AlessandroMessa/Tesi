@@ -1,9 +1,7 @@
 package com.mtcarpenter.mall.portal.service.order.impl;
 
 import cn.hutool.core.collection.CollUtil;
-import com.mtcarpenter.mall.client.CouponFeign;
-import com.mtcarpenter.mall.client.MemberFeign;
-import com.mtcarpenter.mall.client.ProductFeign;
+import com.mtcarpenter.mall.client.*;
 import com.mtcarpenter.mall.common.exception.Asserts;
 import com.mtcarpenter.mall.domain.CartPromotionItem;
 import com.mtcarpenter.mall.domain.SmsCouponHistoryDetail;
@@ -56,14 +54,18 @@ public class OrderGenerationServiceImpl implements OrderGenerationService {
     @Autowired
     private OmsOrderSettingMapper orderSettingMapper;
     @Autowired
-    private MemberFeign memberFeign;
+    private MemberAddressClient memberAddressClient;
+    @Autowired
+    private MemberIntegrationClient memberIntegrationClient;
 
     @Autowired
     private MemberUtil memberUtil;
     @Autowired
     private HttpServletRequest request;
     @Autowired
-    private CouponFeign couponFeign;
+    private CartCouponClient cartCouponClient;
+    @Autowired
+    private CouponManagementClient couponManagementClient;
 
     @Autowired
     private ProductFeign productFeign;
@@ -79,15 +81,15 @@ public class OrderGenerationServiceImpl implements OrderGenerationService {
         List<CartPromotionItem> cartPromotionItemList = cartItemService.listPromotion(currentMember.getId(), cartIds);
         result.setCartPromotionItemList(cartPromotionItemList);
         //获取用户收货地址列表
-        List<UmsMemberReceiveAddress> memberReceiveAddressList = memberFeign.list(currentMember.getId()).getData();
+        List<UmsMemberReceiveAddress> memberReceiveAddressList = memberAddressClient.list(currentMember.getId()).getData();
         result.setMemberReceiveAddressList(memberReceiveAddressList);
         //获取用户可用优惠券列表
-        List<SmsCouponHistoryDetail> couponHistoryDetailList = couponFeign.listCartPromotion(1, cartPromotionItemList, currentMember.getId()).getData();
+        List<SmsCouponHistoryDetail> couponHistoryDetailList = cartCouponClient.listCartPromotion(1, cartPromotionItemList, currentMember.getId()).getData();
         result.setCouponHistoryDetailList(couponHistoryDetailList);
         //获取用户积分
         result.setMemberIntegration(currentMember.getIntegration());
         //获取积分使用规则
-        UmsIntegrationConsumeSetting integrationConsumeSetting = memberFeign.integrationConsumeSetting(1L).getData();
+        UmsIntegrationConsumeSetting integrationConsumeSetting = memberIntegrationClient.integrationConsumeSetting(1L).getData();
         result.setIntegrationConsumeSetting(integrationConsumeSetting);
         //计算总金额、活动优惠、应付金额
         ConfirmOrderResult.CalcAmount calcAmount = calcCartAmount(cartPromotionItemList);
@@ -198,7 +200,7 @@ public class OrderGenerationServiceImpl implements OrderGenerationService {
         //订单类型：0->正常订单；1->秒杀订单
         order.setOrderType(0);
         //收货人信息：姓名、电话、邮编、地址
-        UmsMemberReceiveAddress address = memberFeign.getItem(orderParam.getMemberReceiveAddressId()).getData();
+        UmsMemberReceiveAddress address = memberAddressClient.getItem(orderParam.getMemberReceiveAddressId()).getData();
         order.setReceiverName(address.getName());
         order.setReceiverPhone(address.getPhoneNumber());
         order.setReceiverPostCode(address.getPostCode());
@@ -230,12 +232,12 @@ public class OrderGenerationServiceImpl implements OrderGenerationService {
         orderItemDao.insertList(orderItemList);
         //如使用优惠券更新优惠券使用状态
         if (orderParam.getCouponId() != null) {
-            couponFeign.updateCouponStatus(orderParam.getCouponId(), currentMember.getId(), 1);
+            couponManagementClient.updateCouponStatus(orderParam.getCouponId(), currentMember.getId(), 1);
         }
         //如使用积分需要扣除积分
         if (orderParam.getUseIntegration() != null) {
             order.setUseIntegration(orderParam.getUseIntegration());
-            memberFeign.updateIntegration(currentMember.getId(), -orderParam.getUseIntegration());
+            memberIntegrationClient.updateIntegration(currentMember.getId(), -orderParam.getUseIntegration());
         }
         //删除购物车中的下单商品
         deleteCartItemList(cartPromotionItemList, currentMember);
@@ -270,7 +272,7 @@ public class OrderGenerationServiceImpl implements OrderGenerationService {
      * @param couponId              使用优惠券id
      */
     private SmsCouponHistoryDetail getUseCoupon(List<CartPromotionItem> cartPromotionItemList, Long couponId) {
-        List<SmsCouponHistoryDetail> couponHistoryDetailList = couponFeign.listCartPromotion(1, cartPromotionItemList, memberUtil.getRedisUmsMember(request).getId()).getData();
+        List<SmsCouponHistoryDetail> couponHistoryDetailList = cartCouponClient.listCartPromotion(1, cartPromotionItemList, memberUtil.getRedisUmsMember(request).getId()).getData();
         for (SmsCouponHistoryDetail couponHistoryDetail : couponHistoryDetailList) {
             if (couponHistoryDetail.getCoupon().getId().equals(couponId)) {
                 return couponHistoryDetail;
@@ -396,7 +398,7 @@ public class OrderGenerationServiceImpl implements OrderGenerationService {
         }
         //根据积分使用规则判断是否可用
         //是否可与优惠券共用
-        UmsIntegrationConsumeSetting integrationConsumeSetting = memberFeign.integrationConsumeSetting(1L).getData();
+        UmsIntegrationConsumeSetting integrationConsumeSetting = memberIntegrationClient.integrationConsumeSetting(1L).getData();
         if (hasCoupon && integrationConsumeSetting.getCouponStatus().equals(0)) {
             //不可与优惠券共用
             return zeroAmount;

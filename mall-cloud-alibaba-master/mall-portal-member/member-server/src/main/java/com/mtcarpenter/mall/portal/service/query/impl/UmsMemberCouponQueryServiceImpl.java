@@ -1,6 +1,7 @@
 package com.mtcarpenter.mall.portal.service.query.impl;
 
-import com.mtcarpenter.mall.client.CouponFeign;
+import com.mtcarpenter.mall.client.CartCouponClient;
+import com.mtcarpenter.mall.client.CouponQueryClient;
 import com.mtcarpenter.mall.common.api.CommonResult;
 import com.mtcarpenter.mall.common.api.ResultCode;
 import com.mtcarpenter.mall.domain.SmsCouponHistoryDetail;
@@ -18,12 +19,14 @@ public class UmsMemberCouponQueryServiceImpl implements UmsMemberCouponQueryServ
     @Autowired
     private MemberQueryService memberService;
     @Autowired
-    private CouponFeign couponFeign;
+    private CouponQueryClient couponQueryClient;
+    @Autowired
+    private CartCouponClient cartCouponClient;
 
     @Override
     public List<SmsCoupon> list(Integer useStatus) {
         UmsMember currentMember = memberService.getCurrentMember();
-        CommonResult<List<SmsCoupon>> result = couponFeign.list(currentMember.getId(), useStatus);
+        CommonResult<List<SmsCoupon>> result = couponQueryClient.list(currentMember.getId(), useStatus);
         if (result.getCode() == ResultCode.SUCCESS.getCode()) {
             return result.getData();
         }
@@ -33,7 +36,7 @@ public class UmsMemberCouponQueryServiceImpl implements UmsMemberCouponQueryServ
     @Override
     public List<SmsCouponHistoryDetail> listCart(Integer type) {
         UmsMember currentMember = memberService.getCurrentMember();
-        CommonResult<List<SmsCouponHistoryDetail>> result = couponFeign.listCart(type, currentMember.getId());
+        CommonResult<List<SmsCouponHistoryDetail>> result = cartCouponClient.listCart(type, currentMember.getId());
         if (result.getCode() == ResultCode.SUCCESS.getCode()) {
             return result.getData();
         }
@@ -49,7 +52,7 @@ public class UmsMemberCouponQueryServiceImpl implements UmsMemberCouponQueryServ
     @Override
     public List<SmsCouponHistory> listHistory(Integer useStatus) {
         UmsMember currentMember = memberService.getCurrentMember();
-        CommonResult<List<SmsCouponHistory>> result = couponFeign.listHistory(currentMember.getId(), useStatus);
+        CommonResult<List<SmsCouponHistory>> result = couponQueryClient.listHistory(currentMember.getId(), useStatus);
         if (result.getCode() == ResultCode.SUCCESS.getCode()) {
             return result.getData();
         }

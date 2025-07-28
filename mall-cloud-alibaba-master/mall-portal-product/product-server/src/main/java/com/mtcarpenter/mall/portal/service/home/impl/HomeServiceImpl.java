@@ -1,7 +1,7 @@
 package com.mtcarpenter.mall.portal.service.home.impl;
 
-import com.github.pagehelper.PageHelper;
-import com.mtcarpenter.mall.client.CouponFeign;
+import com.github.pagehelper.PageHelper;;
+import com.mtcarpenter.mall.client.PromotionClient;
 import com.mtcarpenter.mall.client.SubjectFeign;
 import com.mtcarpenter.mall.mapper.*;
 import com.mtcarpenter.mall.model.*;
@@ -39,13 +39,13 @@ public class HomeServiceImpl implements HomeService {
     private SubjectFeign subjectFeign;
 
     @Autowired
-    private CouponFeign couponFeign;
+    private PromotionClient promotionClient;
 
     @Override
     public HomeContentResult content() {
         HomeContentResult result = new HomeContentResult();
         //获取首页广告
-        result.setAdvertiseList(couponFeign.getHomeAdvertiseList().getData());
+        result.setAdvertiseList(promotionClient.getHomeAdvertiseList().getData());
         //获取推荐品牌
         result.setBrandList(homeDao.getRecommendBrandList(0,6));
         //获取秒杀信息
@@ -108,15 +108,15 @@ public class HomeServiceImpl implements HomeService {
         HomeFlashPromotion homeFlashPromotion = new HomeFlashPromotion();
         //获取当前秒杀活动
         Date now = new Date();
-        SmsFlashPromotion flashPromotion = couponFeign.getFlashPromotion(now).getData();
+        SmsFlashPromotion flashPromotion = promotionClient.getFlashPromotion(now).getData();
         if (flashPromotion != null) {
             //获取当前秒杀场次
-            SmsFlashPromotionSession flashPromotionSession = couponFeign.getFlashPromotionSession(now).getData();
+            SmsFlashPromotionSession flashPromotionSession = promotionClient.getFlashPromotionSession(now).getData();
             if (flashPromotionSession != null) {
                 homeFlashPromotion.setStartTime(flashPromotionSession.getStartTime());
                 homeFlashPromotion.setEndTime(flashPromotionSession.getEndTime());
                 //获取下一个秒杀场次
-                SmsFlashPromotionSession nextSession = couponFeign.getNextFlashPromotionSession(homeFlashPromotion.getStartTime()).getData();
+                SmsFlashPromotionSession nextSession = promotionClient.getNextFlashPromotionSession(homeFlashPromotion.getStartTime()).getData();
                 if (nextSession != null) {
                     homeFlashPromotion.setNextStartTime(nextSession.getStartTime());
                     homeFlashPromotion.setNextEndTime(nextSession.getEndTime());

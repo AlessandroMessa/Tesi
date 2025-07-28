@@ -1,6 +1,6 @@
 package com.mtcarpenter.mall.portal.service.order.impl;
-import com.mtcarpenter.mall.client.CouponFeign;
-import com.mtcarpenter.mall.client.MemberFeign;
+import com.mtcarpenter.mall.client.CouponManagementClient;
+import com.mtcarpenter.mall.client.MemberIntegrationClient;
 import com.mtcarpenter.mall.mapper.OmsOrderItemMapper;
 import com.mtcarpenter.mall.mapper.OmsOrderMapper;
 import com.mtcarpenter.mall.mapper.OmsOrderSettingMapper;
@@ -34,10 +34,10 @@ public class OrderCancellationServiceImpl implements OrderCancellationService {
     private CancelOrderSender cancelOrderSender;
 
     @Autowired
-    private CouponFeign couponFeign;
+    private CouponManagementClient couponManagementClient;
 
     @Autowired
-    private MemberFeign memberFeign;
+    private MemberIntegrationClient memberIntegrationClient;
 
     @Override
     public Integer cancelTimeOutOrder() {
@@ -58,10 +58,10 @@ public class OrderCancellationServiceImpl implements OrderCancellationService {
             //解除订单商品库存锁定
             portalOrderDao.releaseSkuStockLock(timeOutOrder.getOrderItemList());
             //修改优惠券使用状态
-            couponFeign.updateCouponStatus(timeOutOrder.getCouponId(), timeOutOrder.getMemberId(), 0);
+            couponManagementClient.updateCouponStatus(timeOutOrder.getCouponId(), timeOutOrder.getMemberId(), 0);
             //返还使用积分
             if (timeOutOrder.getUseIntegration() != null) {
-                memberFeign.updateIntegration(timeOutOrder.getMemberId(), timeOutOrder.getUseIntegration());
+                memberIntegrationClient.updateIntegration(timeOutOrder.getMemberId(), timeOutOrder.getUseIntegration());
             }
         }
         return timeOutOrders.size();
@@ -98,10 +98,10 @@ public class OrderCancellationServiceImpl implements OrderCancellationService {
                 portalOrderDao.releaseSkuStockLock(orderItemList);
             }
             //修改优惠券使用状态
-            couponFeign.updateCouponStatus(cancelOrder.getCouponId(), cancelOrder.getMemberId(), 0);
+            couponManagementClient.updateCouponStatus(cancelOrder.getCouponId(), cancelOrder.getMemberId(), 0);
             //返还使用积分
             if (cancelOrder.getUseIntegration() != null) {
-                memberFeign.updateIntegration(cancelOrder.getMemberId(), cancelOrder.getUseIntegration());
+                memberIntegrationClient.updateIntegration(cancelOrder.getMemberId(), cancelOrder.getUseIntegration());
             }
         }
     }

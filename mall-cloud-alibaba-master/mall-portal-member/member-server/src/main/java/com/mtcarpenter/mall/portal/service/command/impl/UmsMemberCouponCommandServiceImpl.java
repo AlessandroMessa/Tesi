@@ -1,6 +1,6 @@
 package com.mtcarpenter.mall.portal.service.command.impl;
 
-import com.mtcarpenter.mall.client.CouponFeign;
+import com.mtcarpenter.mall.client.CouponManagementClient;
 import com.mtcarpenter.mall.model.UmsMember;
 import com.mtcarpenter.mall.portal.service.query.MemberQueryService;
 import com.mtcarpenter.mall.portal.service.command.UmsMemberCouponCommandService;
@@ -12,13 +12,13 @@ public class UmsMemberCouponCommandServiceImpl implements UmsMemberCouponCommand
     @Autowired
     private MemberQueryService memberService;
     @Autowired
-    private CouponFeign couponFeign;
+    private CouponManagementClient managementClient;
 
     @Override
     public void add(Long couponId) {
         UmsMember currentMember = memberService.getCurrentMember();
         // 远程接口 添加优惠券
-        couponFeign.add(couponId, currentMember.getId(), currentMember.getNickname());
+        managementClient.add(couponId, currentMember.getId(), currentMember.getNickname());
     }
 
 }
