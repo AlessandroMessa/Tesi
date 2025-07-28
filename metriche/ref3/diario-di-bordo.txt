@@ -1,0 +1,6 @@
+Ho iniziato a risolvere hublike di portal.service
+Ma durante gli step intermedi arcan ha trovato altri 6 smells (cdr. arcan-11smells). continuo a risolvere lo smell originale. 
+Seguite best practice di Arcan
+step: 
+1- diviso classe grande in più classi (service e impl)
+2- spostate classi in più package

@@ -1,23 +1,12 @@
-package com.mtcarpenter.mall.portal.service;
+package com.mtcarpenter.mall.portal.service.query;
 
 import com.mtcarpenter.mall.domain.SmsCouponHistoryDetail;
 import com.mtcarpenter.mall.model.SmsCoupon;
 import com.mtcarpenter.mall.model.SmsCouponHistory;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
-/**
- * 用户优惠券管理Service
- * Created by macro on 2018/8/29.
- */
-public interface UmsMemberCouponService {
-    /**
-     * 会员添加优惠券
-     */
-    @Transactional
-    void add(Long couponId);
-
+public interface UmsMemberCouponQueryService {
     /**
      * 获取优惠券列表
      *

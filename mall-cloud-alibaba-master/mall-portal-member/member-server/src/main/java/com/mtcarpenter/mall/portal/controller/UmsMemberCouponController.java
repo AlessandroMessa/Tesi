@@ -4,8 +4,9 @@ import com.mtcarpenter.mall.common.api.CommonResult;
 import com.mtcarpenter.mall.domain.SmsCouponHistoryDetail;
 import com.mtcarpenter.mall.model.SmsCoupon;
 import com.mtcarpenter.mall.model.SmsCouponHistory;
-import com.mtcarpenter.mall.portal.service.UmsMemberCouponService;
 import com.mtcarpenter.mall.portal.service.UmsMemberService;
+import com.mtcarpenter.mall.portal.service.command.UmsMemberCouponCommandService;
+import com.mtcarpenter.mall.portal.service.query.UmsMemberCouponQueryService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiOperation;
@@ -24,7 +25,9 @@ import java.util.List;
 @RequestMapping("/member/coupon")
 public class UmsMemberCouponController {
     @Autowired
-    private UmsMemberCouponService memberCouponService;
+    private UmsMemberCouponQueryService umsMemberCouponQueryService;
+    @Autowired
+    private UmsMemberCouponCommandService umsMemberCouponCommandService;
 
     @Autowired
     private UmsMemberService memberService;
@@ -33,7 +36,7 @@ public class UmsMemberCouponController {
     @RequestMapping(value = "/add/{couponId}", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult add(@PathVariable Long couponId) {
-        memberCouponService.add(couponId);
+        umsMemberCouponCommandService.add(couponId);
         return CommonResult.success(null, "领取成功");
     }
 
@@ -43,7 +46,7 @@ public class UmsMemberCouponController {
     @RequestMapping(value = "/listHistory", method = RequestMethod.GET)
     @ResponseBody
     public CommonResult<List<SmsCouponHistory>> listHistory(@RequestParam(value = "useStatus", required = false) Integer useStatus) {
-        List<SmsCouponHistory> couponHistoryList = memberCouponService.listHistory(useStatus);
+        List<SmsCouponHistory> couponHistoryList = umsMemberCouponQueryService.listHistory(useStatus);
         return CommonResult.success(couponHistoryList);
     }
 
@@ -54,7 +57,7 @@ public class UmsMemberCouponController {
     @RequestMapping(value = "/list", method = RequestMethod.GET)
     @ResponseBody
     public CommonResult<List<SmsCoupon>> list(@RequestParam(value = "useStatus", required = false) Integer useStatus) {
-        List<SmsCoupon> couponHistoryList = memberCouponService.list(useStatus);
+        List<SmsCoupon> couponHistoryList = umsMemberCouponQueryService.list(useStatus);
         return CommonResult.success(couponHistoryList);
     }
 
@@ -64,7 +67,7 @@ public class UmsMemberCouponController {
     @RequestMapping(value = "/list/cart/{type}", method = RequestMethod.GET)
     @ResponseBody
     public CommonResult<List<SmsCouponHistoryDetail>> listCart(@PathVariable Integer type) {
-        List<SmsCouponHistoryDetail> couponHistoryList = memberCouponService.listCart(type);
+        List<SmsCouponHistoryDetail> couponHistoryList = umsMemberCouponQueryService.listCart(type);
         return CommonResult.success(couponHistoryList);
     }
 }

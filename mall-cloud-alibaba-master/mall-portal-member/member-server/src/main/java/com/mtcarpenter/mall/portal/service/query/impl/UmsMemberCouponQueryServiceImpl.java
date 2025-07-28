@@ -1,4 +1,4 @@
-package com.mtcarpenter.mall.portal.service.impl;
+package com.mtcarpenter.mall.portal.service.query.impl;
 
 import com.mtcarpenter.mall.client.CouponFeign;
 import com.mtcarpenter.mall.common.api.CommonResult;
@@ -7,31 +7,18 @@ import com.mtcarpenter.mall.domain.SmsCouponHistoryDetail;
 import com.mtcarpenter.mall.model.SmsCoupon;
 import com.mtcarpenter.mall.model.SmsCouponHistory;
 import com.mtcarpenter.mall.model.UmsMember;
-import com.mtcarpenter.mall.portal.service.UmsMemberCouponService;
 import com.mtcarpenter.mall.portal.service.UmsMemberService;
+import com.mtcarpenter.mall.portal.service.query.UmsMemberCouponQueryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-
-/**
- * 会员优惠券管理Service实现类
- * Created by macro on 2018/8/29.
- */
 @Service
-public class UmsMemberCouponServiceImpl implements UmsMemberCouponService {
+public class UmsMemberCouponQueryServiceImpl implements UmsMemberCouponQueryService {
     @Autowired
     private UmsMemberService memberService;
     @Autowired
     private CouponFeign couponFeign;
-
-    @Override
-    public void add(Long couponId) {
-        UmsMember currentMember = memberService.getCurrentMember();
-        // 远程接口 添加优惠券
-        couponFeign.add(couponId, currentMember.getId(), currentMember.getNickname());
-    }
-
 
     @Override
     public List<SmsCoupon> list(Integer useStatus) {
@@ -68,6 +55,4 @@ public class UmsMemberCouponServiceImpl implements UmsMemberCouponService {
         }
         return null;
     }
-
-
 }
