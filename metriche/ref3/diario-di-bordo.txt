@@ -7,3 +7,5 @@ step:
 2- spostate classi in più package
 
 dopo la pt4 del refactoring da 11 smells siamo passati a 8 (in qualche modo) nel mentre l'hub è sceso a 59 di td (inizio 83) e size 9 ( inizio 11).
+Ho creato una cartella ref3-pt5-pesi4 dove tengo le metriche per ogni classe di peso 4 (il max peso rimasto).
+Nella tesi non credo parlerò di ogni parte ma riassumerò
