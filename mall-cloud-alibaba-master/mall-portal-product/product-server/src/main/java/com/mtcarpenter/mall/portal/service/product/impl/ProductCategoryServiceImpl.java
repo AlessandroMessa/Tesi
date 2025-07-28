@@ -1,4 +1,4 @@
-package com.mtcarpenter.mall.portal.service.impl;
+package com.mtcarpenter.mall.portal.service.product.impl;
 
 import com.mtcarpenter.mall.mapper.PmsProductCategoryMapper;
 import com.mtcarpenter.mall.model.PmsProductCategory;
@@ -7,7 +7,7 @@ import com.mtcarpenter.mall.portal.domain.PmsProductCategoryNode;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 import org.springframework.beans.factory.annotation.Autowired;
-import com.mtcarpenter.mall.portal.service.ProductCategoryService;
+import com.mtcarpenter.mall.portal.service.product.ProductCategoryService;
 
 import java.util.List;
 import java.util.stream.Collectors;

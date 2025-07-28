@@ -1,8 +1,8 @@
-package com.mtcarpenter.mall.portal.service.impl;
+package com.mtcarpenter.mall.portal.service.promotion.impl;
 
 import com.mtcarpenter.mall.domain.PromotionProduct;
 import com.mtcarpenter.mall.portal.dao.PortalProductDao;
-import com.mtcarpenter.mall.portal.service.PromotionService;
+import com.mtcarpenter.mall.portal.service.promotion.PromotionService;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;

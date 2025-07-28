@@ -1,4 +1,4 @@
-package com.mtcarpenter.mall.portal.service.impl;
+package com.mtcarpenter.mall.portal.service.brand.impl;
 
 import com.github.pagehelper.PageHelper;
 import com.mtcarpenter.mall.common.api.CommonPage;
@@ -8,7 +8,7 @@ import com.mtcarpenter.mall.model.PmsBrand;
 import com.mtcarpenter.mall.model.PmsProduct;
 import com.mtcarpenter.mall.model.PmsProductExample;
 import com.mtcarpenter.mall.portal.dao.HomeDao;
-import com.mtcarpenter.mall.portal.service.PortalBrandService;
+import com.mtcarpenter.mall.portal.service.brand.PortalBrandService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

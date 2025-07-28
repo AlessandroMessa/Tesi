@@ -1,4 +1,4 @@
-package com.mtcarpenter.mall.portal.service;
+package com.mtcarpenter.mall.portal.service.stock;
 
 public interface StockService {
     /**

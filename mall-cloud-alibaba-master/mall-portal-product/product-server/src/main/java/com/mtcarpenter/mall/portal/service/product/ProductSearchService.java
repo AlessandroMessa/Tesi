@@ -1,4 +1,4 @@
-package com.mtcarpenter.mall.portal.service;
+package com.mtcarpenter.mall.portal.service.product;
 
 import com.mtcarpenter.mall.model.PmsProduct;
 import java.util.List;

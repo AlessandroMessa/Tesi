@@ -1,6 +1,6 @@
-package com.mtcarpenter.mall.portal.service.impl;
+package com.mtcarpenter.mall.portal.service.product.impl;
 
-import com.mtcarpenter.mall.portal.service.PmsPortalProductService;
+import com.mtcarpenter.mall.portal.service.product.PmsPortalProductService;
 import org.springframework.stereotype.Service;
 
 

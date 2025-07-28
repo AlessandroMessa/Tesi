@@ -1,4 +1,4 @@
-package com.mtcarpenter.mall.portal.service;
+package com.mtcarpenter.mall.portal.service.promotion;
 
 import com.mtcarpenter.mall.domain.PromotionProduct;
 import java.util.List;

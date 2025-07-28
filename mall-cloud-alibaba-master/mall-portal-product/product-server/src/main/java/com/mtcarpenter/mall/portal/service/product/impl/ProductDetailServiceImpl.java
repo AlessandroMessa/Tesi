@@ -1,11 +1,11 @@
-package com.mtcarpenter.mall.portal.service.impl;
+package com.mtcarpenter.mall.portal.service.product.impl;
 
 import cn.hutool.core.collection.CollUtil;
 import com.mtcarpenter.mall.client.CouponFeign;
 import com.mtcarpenter.mall.mapper.*;
 import com.mtcarpenter.mall.model.*;
 import com.mtcarpenter.mall.portal.domain.PmsPortalProductDetail;
-import com.mtcarpenter.mall.portal.service.ProductDetailService;
+import com.mtcarpenter.mall.portal.service.product.ProductDetailService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

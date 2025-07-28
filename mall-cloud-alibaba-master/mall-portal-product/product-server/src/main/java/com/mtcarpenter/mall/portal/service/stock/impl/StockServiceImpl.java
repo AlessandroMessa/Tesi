@@ -1,8 +1,8 @@
-package com.mtcarpenter.mall.portal.service.impl;
+package com.mtcarpenter.mall.portal.service.stock.impl;
 
 import com.mtcarpenter.mall.mapper.PmsSkuStockMapper;
 import com.mtcarpenter.mall.model.PmsSkuStock;
-import com.mtcarpenter.mall.portal.service.StockService;
+import com.mtcarpenter.mall.portal.service.stock.StockService;
 import org.springframework.beans.factory.annotation.Autowired;
 
 public class StockServiceImpl implements StockService {

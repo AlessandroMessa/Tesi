@@ -1,4 +1,4 @@
-package com.mtcarpenter.mall.portal.service;
+package com.mtcarpenter.mall.portal.service.home;
 
 import com.mtcarpenter.mall.model.CmsSubject;
 import com.mtcarpenter.mall.model.PmsProduct;

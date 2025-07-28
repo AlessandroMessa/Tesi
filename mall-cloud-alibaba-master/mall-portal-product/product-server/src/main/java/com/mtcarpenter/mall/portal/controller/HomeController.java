@@ -5,7 +5,7 @@ import com.mtcarpenter.mall.model.CmsSubject;
 import com.mtcarpenter.mall.model.PmsProduct;
 import com.mtcarpenter.mall.model.PmsProductCategory;
 import com.mtcarpenter.mall.portal.domain.HomeContentResult;
-import com.mtcarpenter.mall.portal.service.HomeService;
+import com.mtcarpenter.mall.portal.service.home.HomeService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
