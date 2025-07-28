@@ -7,7 +7,7 @@ import com.mtcarpenter.mall.domain.SmsCouponHistoryDetail;
 import com.mtcarpenter.mall.model.SmsCoupon;
 import com.mtcarpenter.mall.model.SmsCouponHistory;
 import com.mtcarpenter.mall.model.UmsMember;
-import com.mtcarpenter.mall.portal.service.UmsMemberService;
+import com.mtcarpenter.mall.portal.service.member.MemberQueryService;
 import com.mtcarpenter.mall.portal.service.query.UmsMemberCouponQueryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,7 +16,7 @@ import java.util.List;
 @Service
 public class UmsMemberCouponQueryServiceImpl implements UmsMemberCouponQueryService {
     @Autowired
-    private UmsMemberService memberService;
+    private MemberQueryService memberService;
     @Autowired
     private CouponFeign couponFeign;
 

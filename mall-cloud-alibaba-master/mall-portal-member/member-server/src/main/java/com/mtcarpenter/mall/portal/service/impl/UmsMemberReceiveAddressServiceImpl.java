@@ -4,8 +4,8 @@ import com.mtcarpenter.mall.mapper.UmsMemberReceiveAddressMapper;
 import com.mtcarpenter.mall.model.UmsMember;
 import com.mtcarpenter.mall.model.UmsMemberReceiveAddress;
 import com.mtcarpenter.mall.model.UmsMemberReceiveAddressExample;
+import com.mtcarpenter.mall.portal.service.member.MemberQueryService;
 import com.mtcarpenter.mall.portal.service.UmsMemberReceiveAddressService;
-import com.mtcarpenter.mall.portal.service.UmsMemberService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
@@ -19,7 +19,7 @@ import java.util.List;
 @Service
 public class UmsMemberReceiveAddressServiceImpl implements UmsMemberReceiveAddressService {
     @Autowired
-    private UmsMemberService memberService;
+    private MemberQueryService memberService;
     @Autowired
     private UmsMemberReceiveAddressMapper addressMapper;
 

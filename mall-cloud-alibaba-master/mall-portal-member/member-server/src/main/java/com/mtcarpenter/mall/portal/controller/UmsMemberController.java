@@ -2,7 +2,10 @@ package com.mtcarpenter.mall.portal.controller;
 
 import com.mtcarpenter.mall.common.api.CommonResult;
 import com.mtcarpenter.mall.model.UmsMember;
-import com.mtcarpenter.mall.portal.service.UmsMemberService;
+import com.mtcarpenter.mall.portal.service.member.MemberAuthService;
+import com.mtcarpenter.mall.portal.service.member.MemberIntegrationService;
+import com.mtcarpenter.mall.portal.service.member.MemberQueryService;
+import com.mtcarpenter.mall.portal.service.member.MemberRegistrationService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,7 +34,13 @@ public class UmsMemberController {
     @Value("${jwt.tokenHead}")
     private String tokenHead;
     @Autowired
-    private UmsMemberService memberService;
+    private MemberAuthService memberAuthService;
+    @Autowired
+    private MemberQueryService memberQueryService;
+    @Autowired
+    private MemberIntegrationService memberIntegrationService;
+    @Autowired
+    private MemberRegistrationService memberRegistrationService;
 
     @ApiOperation("会员注册")
     @RequestMapping(value = "/register", method = RequestMethod.POST)
@@ -40,7 +49,7 @@ public class UmsMemberController {
                                  @RequestParam String password,
                                  @RequestParam String telephone,
                                  @RequestParam String authCode) {
-        memberService.register(username, password, telephone, authCode);
+        memberRegistrationService.register(username, password, telephone, authCode);
         return CommonResult.success(null, "注册成功");
     }
 
@@ -49,7 +58,7 @@ public class UmsMemberController {
     @ResponseBody
     public CommonResult login(@RequestParam String username,
                               @RequestParam String password) {
-        String token = memberService.login(username, password);
+        String token = memberAuthService.login(username, password);
         if (token == null) {
             return CommonResult.validateFailed("用户名或密码错误");
         }
@@ -66,7 +75,7 @@ public class UmsMemberController {
         if (principal == null) {
             return CommonResult.unauthorized(null);
         }
-        UmsMember member = memberService.getCurrentMember();
+        UmsMember member = memberQueryService.getCurrentMember();
         return CommonResult.success(member);
     }
 
@@ -74,7 +83,7 @@ public class UmsMemberController {
     @RequestMapping(value = "/getAuthCode", method = RequestMethod.GET)
     @ResponseBody
     public CommonResult getAuthCode(@RequestParam String telephone) {
-        String authCode = memberService.generateAuthCode(telephone);
+        String authCode = memberRegistrationService.generateAuthCode(telephone);
         return CommonResult.success(authCode, "获取验证码成功");
     }
 
@@ -84,7 +93,7 @@ public class UmsMemberController {
     public CommonResult updatePassword(@RequestParam String telephone,
                                        @RequestParam String password,
                                        @RequestParam String authCode) {
-        memberService.updatePassword(telephone, password, authCode);
+        memberRegistrationService.updatePassword(telephone, password, authCode);
         return CommonResult.success(null, "密码修改成功");
     }
 
@@ -94,7 +103,7 @@ public class UmsMemberController {
     @ResponseBody
     public CommonResult refreshToken(HttpServletRequest request) {
         String token = request.getHeader(tokenHeader);
-        String refreshToken = memberService.refreshToken(token);
+        String refreshToken = memberAuthService.refreshToken(token);
         if (refreshToken == null) {
             return CommonResult.failed("token已经过期！");
         }
@@ -109,8 +118,8 @@ public class UmsMemberController {
     @ResponseBody
     public CommonResult updateIntegration(@RequestParam("id") Long id,
                                           @RequestParam("integration") Integer integration) {
-        UmsMember member = memberService.getById(id);
-        memberService.updateIntegration(id, member.getIntegration() + integration);
+        UmsMember member = memberQueryService.getById(id);
+        memberIntegrationService.updateIntegration(id, member.getIntegration() + integration);
         return CommonResult.success(null);
     }
 

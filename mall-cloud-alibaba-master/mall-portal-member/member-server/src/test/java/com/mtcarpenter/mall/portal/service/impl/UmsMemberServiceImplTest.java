@@ -1,7 +1,7 @@
 package com.mtcarpenter.mall.portal.service.impl;
 
 
-import com.mtcarpenter.mall.portal.service.UmsMemberService;
+import com.mtcarpenter.mall.portal.service.member.MemberAuthService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,11 +19,11 @@ public class UmsMemberServiceImplTest  {
 
 
     @Autowired
-    private UmsMemberService umsMemberService;
+    private MemberAuthService memberAuthService;
 
     @Test
     public void test(){
-        String tset = umsMemberService.login("tset", "123456");
+        String tset = memberAuthService.login("tset", "123456");
         System.out.println(tset);
     }
 }

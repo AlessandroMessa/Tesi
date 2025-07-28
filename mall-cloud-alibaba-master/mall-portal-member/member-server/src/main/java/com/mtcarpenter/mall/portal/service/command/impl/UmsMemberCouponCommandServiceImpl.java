@@ -2,7 +2,7 @@ package com.mtcarpenter.mall.portal.service.command.impl;
 
 import com.mtcarpenter.mall.client.CouponFeign;
 import com.mtcarpenter.mall.model.UmsMember;
-import com.mtcarpenter.mall.portal.service.UmsMemberService;
+import com.mtcarpenter.mall.portal.service.member.MemberQueryService;
 import com.mtcarpenter.mall.portal.service.command.UmsMemberCouponCommandService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class UmsMemberCouponCommandServiceImpl implements UmsMemberCouponCommandService {
     @Autowired
-    private UmsMemberService memberService;
+    private MemberQueryService memberService;
     @Autowired
     private CouponFeign couponFeign;
 

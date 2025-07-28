@@ -3,8 +3,8 @@ package com.mtcarpenter.mall.portal.service.impl;
 import com.mtcarpenter.mall.model.UmsMember;
 import com.mtcarpenter.mall.portal.domain.MemberReadHistory;
 import com.mtcarpenter.mall.portal.repository.MemberReadHistoryRepository;
+import com.mtcarpenter.mall.portal.service.member.MemberQueryService;
 import com.mtcarpenter.mall.portal.service.MemberReadHistoryService;
-import com.mtcarpenter.mall.portal.service.UmsMemberService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -24,7 +24,7 @@ public class MemberReadHistoryServiceImpl implements MemberReadHistoryService {
     @Autowired
     private MemberReadHistoryRepository memberReadHistoryRepository;
     @Autowired
-    private UmsMemberService memberService;
+    private MemberQueryService memberService;
 
     @Override
     public int create(MemberReadHistory memberReadHistory) {

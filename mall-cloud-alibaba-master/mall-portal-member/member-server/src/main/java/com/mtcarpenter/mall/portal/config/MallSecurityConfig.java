@@ -1,6 +1,6 @@
 package com.mtcarpenter.mall.portal.config;
 
-import com.mtcarpenter.mall.portal.service.UmsMemberService;
+import com.mtcarpenter.mall.portal.service.member.MemberQueryService;
 import com.mtcarpenter.mall.security.config.SecurityConfig;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -19,12 +19,12 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 public class MallSecurityConfig extends SecurityConfig {
 
     @Autowired
-    private UmsMemberService memberService;
+    private MemberQueryService memberQueryService;
 
     @Override
     @Bean
     public UserDetailsService userDetailsService() {
         //获取登录用户信息
-        return username -> memberService.loadUserByUsername(username);
+        return username -> memberQueryService.loadUserByUsername(username);
     }
 }

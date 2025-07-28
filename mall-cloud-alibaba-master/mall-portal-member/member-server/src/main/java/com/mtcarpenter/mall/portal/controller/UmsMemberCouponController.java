@@ -4,7 +4,7 @@ import com.mtcarpenter.mall.common.api.CommonResult;
 import com.mtcarpenter.mall.domain.SmsCouponHistoryDetail;
 import com.mtcarpenter.mall.model.SmsCoupon;
 import com.mtcarpenter.mall.model.SmsCouponHistory;
-import com.mtcarpenter.mall.portal.service.UmsMemberService;
+import com.mtcarpenter.mall.portal.service.member.MemberAuthService;
 import com.mtcarpenter.mall.portal.service.command.UmsMemberCouponCommandService;
 import com.mtcarpenter.mall.portal.service.query.UmsMemberCouponQueryService;
 import io.swagger.annotations.Api;
@@ -30,7 +30,7 @@ public class UmsMemberCouponController {
     private UmsMemberCouponCommandService umsMemberCouponCommandService;
 
     @Autowired
-    private UmsMemberService memberService;
+    private MemberAuthService memberService;
 
     @ApiOperation("领取指定优惠券")
     @RequestMapping(value = "/add/{couponId}", method = RequestMethod.POST)
