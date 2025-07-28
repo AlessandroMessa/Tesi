@@ -1,16 +1,16 @@
-package com.mtcarpenter.mall.model;
+package com.mtcarpenter.mall.model.subject;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class CmsPrefrenceAreaProductRelationExample {
+public class CmsSubjectProductRelationExample {
     protected String orderByClause;
 
     protected boolean distinct;
 
     protected List<Criteria> oredCriteria;
 
-    public CmsPrefrenceAreaProductRelationExample() {
+    public CmsSubjectProductRelationExample() {
         oredCriteria = new ArrayList<Criteria>();
     }
 
@@ -164,63 +164,63 @@ public class CmsPrefrenceAreaProductRelationExample {
             return (Criteria) this;
         }
 
-        public Criteria andPrefrenceAreaIdIsNull() {
-            addCriterion("prefrence_area_id is null");
+        public Criteria andSubjectIdIsNull() {
+            addCriterion("subject_id is null");
             return (Criteria) this;
         }
 
-        public Criteria andPrefrenceAreaIdIsNotNull() {
-            addCriterion("prefrence_area_id is not null");
+        public Criteria andSubjectIdIsNotNull() {
+            addCriterion("subject_id is not null");
             return (Criteria) this;
         }
 
-        public Criteria andPrefrenceAreaIdEqualTo(Long value) {
-            addCriterion("prefrence_area_id =", value, "prefrenceAreaId");
+        public Criteria andSubjectIdEqualTo(Long value) {
+            addCriterion("subject_id =", value, "subjectId");
             return (Criteria) this;
         }
 
-        public Criteria andPrefrenceAreaIdNotEqualTo(Long value) {
-            addCriterion("prefrence_area_id <>", value, "prefrenceAreaId");
+        public Criteria andSubjectIdNotEqualTo(Long value) {
+            addCriterion("subject_id <>", value, "subjectId");
             return (Criteria) this;
         }
 
-        public Criteria andPrefrenceAreaIdGreaterThan(Long value) {
-            addCriterion("prefrence_area_id >", value, "prefrenceAreaId");
+        public Criteria andSubjectIdGreaterThan(Long value) {
+            addCriterion("subject_id >", value, "subjectId");
             return (Criteria) this;
         }
 
-        public Criteria andPrefrenceAreaIdGreaterThanOrEqualTo(Long value) {
-            addCriterion("prefrence_area_id >=", value, "prefrenceAreaId");
+        public Criteria andSubjectIdGreaterThanOrEqualTo(Long value) {
+            addCriterion("subject_id >=", value, "subjectId");
             return (Criteria) this;
         }
 
-        public Criteria andPrefrenceAreaIdLessThan(Long value) {
-            addCriterion("prefrence_area_id <", value, "prefrenceAreaId");
+        public Criteria andSubjectIdLessThan(Long value) {
+            addCriterion("subject_id <", value, "subjectId");
             return (Criteria) this;
         }
 
-        public Criteria andPrefrenceAreaIdLessThanOrEqualTo(Long value) {
-            addCriterion("prefrence_area_id <=", value, "prefrenceAreaId");
+        public Criteria andSubjectIdLessThanOrEqualTo(Long value) {
+            addCriterion("subject_id <=", value, "subjectId");
             return (Criteria) this;
         }
 
-        public Criteria andPrefrenceAreaIdIn(List<Long> values) {
-            addCriterion("prefrence_area_id in", values, "prefrenceAreaId");
+        public Criteria andSubjectIdIn(List<Long> values) {
+            addCriterion("subject_id in", values, "subjectId");
             return (Criteria) this;
         }
 
-        public Criteria andPrefrenceAreaIdNotIn(List<Long> values) {
-            addCriterion("prefrence_area_id not in", values, "prefrenceAreaId");
+        public Criteria andSubjectIdNotIn(List<Long> values) {
+            addCriterion("subject_id not in", values, "subjectId");
             return (Criteria) this;
         }
 
-        public Criteria andPrefrenceAreaIdBetween(Long value1, Long value2) {
-            addCriterion("prefrence_area_id between", value1, value2, "prefrenceAreaId");
+        public Criteria andSubjectIdBetween(Long value1, Long value2) {
+            addCriterion("subject_id between", value1, value2, "subjectId");
             return (Criteria) this;
         }
 
-        public Criteria andPrefrenceAreaIdNotBetween(Long value1, Long value2) {
-            addCriterion("prefrence_area_id not between", value1, value2, "prefrenceAreaId");
+        public Criteria andSubjectIdNotBetween(Long value1, Long value2) {
+            addCriterion("subject_id not between", value1, value2, "subjectId");
             return (Criteria) this;
         }
 

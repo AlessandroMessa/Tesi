@@ -1,4 +1,4 @@
-package com.mtcarpenter.mall.model;
+package com.mtcarpenter.mall.model.topic;
 
 import java.util.ArrayList;
 import java.util.Date;

@@ -1,11 +1,12 @@
-package com.mtcarpenter.mall.model;
+package com.mtcarpenter.mall.model.subject;
+
 
 import java.io.Serializable;
 
-public class CmsPrefrenceAreaProductRelation implements Serializable {
+public class CmsSubjectProductRelation implements Serializable {
     private static final long serialVersionUID = 1L;
     private Long id;
-    private Long prefrenceAreaId;
+    private Long subjectId;
     private Long productId;
 
     public Long getId() {
@@ -16,12 +17,12 @@ public class CmsPrefrenceAreaProductRelation implements Serializable {
         this.id = id;
     }
 
-    public Long getPrefrenceAreaId() {
-        return prefrenceAreaId;
+    public Long getSubjectId() {
+        return subjectId;
     }
 
-    public void setPrefrenceAreaId(Long prefrenceAreaId) {
-        this.prefrenceAreaId = prefrenceAreaId;
+    public void setSubjectId(Long subjectId) {
+        this.subjectId = subjectId;
     }
 
     public Long getProductId() {
@@ -39,7 +40,7 @@ public class CmsPrefrenceAreaProductRelation implements Serializable {
         sb.append(" [");
         sb.append("Hash = ").append(hashCode());
         sb.append(", id=").append(id);
-        sb.append(", prefrenceAreaId=").append(prefrenceAreaId);
+        sb.append(", subjectId=").append(subjectId);
         sb.append(", productId=").append(productId);
         sb.append(", serialVersionUID=").append(serialVersionUID);
         sb.append("]");

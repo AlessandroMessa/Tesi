@@ -1,16 +1,16 @@
-package com.mtcarpenter.mall.model;
+package com.mtcarpenter.mall.model.topic;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class CmsSubjectCategoryExample {
+public class CmsTopicCategoryExample {
     protected String orderByClause;
 
     protected boolean distinct;
 
     protected List<Criteria> oredCriteria;
 
-    public CmsSubjectCategoryExample() {
+    public CmsTopicCategoryExample() {
         oredCriteria = new ArrayList<Criteria>();
     }
 

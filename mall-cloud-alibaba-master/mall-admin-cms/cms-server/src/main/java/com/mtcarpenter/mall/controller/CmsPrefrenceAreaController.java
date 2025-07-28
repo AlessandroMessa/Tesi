@@ -2,7 +2,7 @@ package com.mtcarpenter.mall.controller;
 
 import com.mtcarpenter.mall.common.CmsPrefrenceAreaProductRelationInput;
 import com.mtcarpenter.mall.common.api.CommonResult;
-import com.mtcarpenter.mall.model.CmsPrefrenceArea;
+import com.mtcarpenter.mall.model.prefrence.CmsPrefrenceArea;
 import com.mtcarpenter.mall.service.CmsPrefrenceAreaService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;

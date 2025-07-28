@@ -1,4 +1,4 @@
-package com.mtcarpenter.mall.model;
+package com.mtcarpenter.mall.model.subject;
 
 import io.swagger.annotations.ApiModelProperty;
 

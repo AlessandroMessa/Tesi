@@ -1,16 +1,17 @@
-package com.mtcarpenter.mall.model;
+package com.mtcarpenter.mall.model.help;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
-public class CmsHelpCategoryExample {
+public class CmsHelpExample {
     protected String orderByClause;
 
     protected boolean distinct;
 
     protected List<Criteria> oredCriteria;
 
-    public CmsHelpCategoryExample() {
+    public CmsHelpExample() {
         oredCriteria = new ArrayList<Criteria>();
     }
 
@@ -164,73 +165,63 @@ public class CmsHelpCategoryExample {
             return (Criteria) this;
         }
 
-        public Criteria andNameIsNull() {
-            addCriterion("name is null");
+        public Criteria andCategoryIdIsNull() {
+            addCriterion("category_id is null");
             return (Criteria) this;
         }
 
-        public Criteria andNameIsNotNull() {
-            addCriterion("name is not null");
+        public Criteria andCategoryIdIsNotNull() {
+            addCriterion("category_id is not null");
             return (Criteria) this;
         }
 
-        public Criteria andNameEqualTo(String value) {
-            addCriterion("name =", value, "name");
+        public Criteria andCategoryIdEqualTo(Long value) {
+            addCriterion("category_id =", value, "categoryId");
             return (Criteria) this;
         }
 
-        public Criteria andNameNotEqualTo(String value) {
-            addCriterion("name <>", value, "name");
+        public Criteria andCategoryIdNotEqualTo(Long value) {
+            addCriterion("category_id <>", value, "categoryId");
             return (Criteria) this;
         }
 
-        public Criteria andNameGreaterThan(String value) {
-            addCriterion("name >", value, "name");
+        public Criteria andCategoryIdGreaterThan(Long value) {
+            addCriterion("category_id >", value, "categoryId");
             return (Criteria) this;
         }
 
-        public Criteria andNameGreaterThanOrEqualTo(String value) {
-            addCriterion("name >=", value, "name");
+        public Criteria andCategoryIdGreaterThanOrEqualTo(Long value) {
+            addCriterion("category_id >=", value, "categoryId");
             return (Criteria) this;
         }
 
-        public Criteria andNameLessThan(String value) {
-            addCriterion("name <", value, "name");
+        public Criteria andCategoryIdLessThan(Long value) {
+            addCriterion("category_id <", value, "categoryId");
             return (Criteria) this;
         }
 
-        public Criteria andNameLessThanOrEqualTo(String value) {
-            addCriterion("name <=", value, "name");
+        public Criteria andCategoryIdLessThanOrEqualTo(Long value) {
+            addCriterion("category_id <=", value, "categoryId");
             return (Criteria) this;
         }
 
-        public Criteria andNameLike(String value) {
-            addCriterion("name like", value, "name");
+        public Criteria andCategoryIdIn(List<Long> values) {
+            addCriterion("category_id in", values, "categoryId");
             return (Criteria) this;
         }
 
-        public Criteria andNameNotLike(String value) {
-            addCriterion("name not like", value, "name");
+        public Criteria andCategoryIdNotIn(List<Long> values) {
+            addCriterion("category_id not in", values, "categoryId");
             return (Criteria) this;
         }
 
-        public Criteria andNameIn(List<String> values) {
-            addCriterion("name in", values, "name");
+        public Criteria andCategoryIdBetween(Long value1, Long value2) {
+            addCriterion("category_id between", value1, value2, "categoryId");
             return (Criteria) this;
         }
 
-        public Criteria andNameNotIn(List<String> values) {
-            addCriterion("name not in", values, "name");
-            return (Criteria) this;
-        }
-
-        public Criteria andNameBetween(String value1, String value2) {
-            addCriterion("name between", value1, value2, "name");
-            return (Criteria) this;
-        }
-
-        public Criteria andNameNotBetween(String value1, String value2) {
-            addCriterion("name not between", value1, value2, "name");
+        public Criteria andCategoryIdNotBetween(Long value1, Long value2) {
+            addCriterion("category_id not between", value1, value2, "categoryId");
             return (Criteria) this;
         }
 
@@ -304,63 +295,73 @@ public class CmsHelpCategoryExample {
             return (Criteria) this;
         }
 
-        public Criteria andHelpCountIsNull() {
-            addCriterion("help_count is null");
+        public Criteria andTitleIsNull() {
+            addCriterion("title is null");
             return (Criteria) this;
         }
 
-        public Criteria andHelpCountIsNotNull() {
-            addCriterion("help_count is not null");
+        public Criteria andTitleIsNotNull() {
+            addCriterion("title is not null");
             return (Criteria) this;
         }
 
-        public Criteria andHelpCountEqualTo(Integer value) {
-            addCriterion("help_count =", value, "helpCount");
+        public Criteria andTitleEqualTo(String value) {
+            addCriterion("title =", value, "title");
             return (Criteria) this;
         }
 
-        public Criteria andHelpCountNotEqualTo(Integer value) {
-            addCriterion("help_count <>", value, "helpCount");
+        public Criteria andTitleNotEqualTo(String value) {
+            addCriterion("title <>", value, "title");
             return (Criteria) this;
         }
 
-        public Criteria andHelpCountGreaterThan(Integer value) {
-            addCriterion("help_count >", value, "helpCount");
+        public Criteria andTitleGreaterThan(String value) {
+            addCriterion("title >", value, "title");
             return (Criteria) this;
         }
 
-        public Criteria andHelpCountGreaterThanOrEqualTo(Integer value) {
-            addCriterion("help_count >=", value, "helpCount");
+        public Criteria andTitleGreaterThanOrEqualTo(String value) {
+            addCriterion("title >=", value, "title");
             return (Criteria) this;
         }
 
-        public Criteria andHelpCountLessThan(Integer value) {
-            addCriterion("help_count <", value, "helpCount");
+        public Criteria andTitleLessThan(String value) {
+            addCriterion("title <", value, "title");
             return (Criteria) this;
         }
 
-        public Criteria andHelpCountLessThanOrEqualTo(Integer value) {
-            addCriterion("help_count <=", value, "helpCount");
+        public Criteria andTitleLessThanOrEqualTo(String value) {
+            addCriterion("title <=", value, "title");
             return (Criteria) this;
         }
 
-        public Criteria andHelpCountIn(List<Integer> values) {
-            addCriterion("help_count in", values, "helpCount");
+        public Criteria andTitleLike(String value) {
+            addCriterion("title like", value, "title");
             return (Criteria) this;
         }
 
-        public Criteria andHelpCountNotIn(List<Integer> values) {
-            addCriterion("help_count not in", values, "helpCount");
+        public Criteria andTitleNotLike(String value) {
+            addCriterion("title not like", value, "title");
             return (Criteria) this;
         }
 
-        public Criteria andHelpCountBetween(Integer value1, Integer value2) {
-            addCriterion("help_count between", value1, value2, "helpCount");
+        public Criteria andTitleIn(List<String> values) {
+            addCriterion("title in", values, "title");
             return (Criteria) this;
         }
 
-        public Criteria andHelpCountNotBetween(Integer value1, Integer value2) {
-            addCriterion("help_count not between", value1, value2, "helpCount");
+        public Criteria andTitleNotIn(List<String> values) {
+            addCriterion("title not in", values, "title");
+            return (Criteria) this;
+        }
+
+        public Criteria andTitleBetween(String value1, String value2) {
+            addCriterion("title between", value1, value2, "title");
+            return (Criteria) this;
+        }
+
+        public Criteria andTitleNotBetween(String value1, String value2) {
+            addCriterion("title not between", value1, value2, "title");
             return (Criteria) this;
         }
 
@@ -424,63 +425,123 @@ public class CmsHelpCategoryExample {
             return (Criteria) this;
         }
 
-        public Criteria andSortIsNull() {
-            addCriterion("sort is null");
+        public Criteria andCreateTimeIsNull() {
+            addCriterion("create_time is null");
             return (Criteria) this;
         }
 
-        public Criteria andSortIsNotNull() {
-            addCriterion("sort is not null");
+        public Criteria andCreateTimeIsNotNull() {
+            addCriterion("create_time is not null");
             return (Criteria) this;
         }
 
-        public Criteria andSortEqualTo(Integer value) {
-            addCriterion("sort =", value, "sort");
+        public Criteria andCreateTimeEqualTo(Date value) {
+            addCriterion("create_time =", value, "createTime");
             return (Criteria) this;
         }
 
-        public Criteria andSortNotEqualTo(Integer value) {
-            addCriterion("sort <>", value, "sort");
+        public Criteria andCreateTimeNotEqualTo(Date value) {
+            addCriterion("create_time <>", value, "createTime");
             return (Criteria) this;
         }
 
-        public Criteria andSortGreaterThan(Integer value) {
-            addCriterion("sort >", value, "sort");
+        public Criteria andCreateTimeGreaterThan(Date value) {
+            addCriterion("create_time >", value, "createTime");
             return (Criteria) this;
         }
 
-        public Criteria andSortGreaterThanOrEqualTo(Integer value) {
-            addCriterion("sort >=", value, "sort");
+        public Criteria andCreateTimeGreaterThanOrEqualTo(Date value) {
+            addCriterion("create_time >=", value, "createTime");
             return (Criteria) this;
         }
 
-        public Criteria andSortLessThan(Integer value) {
-            addCriterion("sort <", value, "sort");
+        public Criteria andCreateTimeLessThan(Date value) {
+            addCriterion("create_time <", value, "createTime");
             return (Criteria) this;
         }
 
-        public Criteria andSortLessThanOrEqualTo(Integer value) {
-            addCriterion("sort <=", value, "sort");
+        public Criteria andCreateTimeLessThanOrEqualTo(Date value) {
+            addCriterion("create_time <=", value, "createTime");
             return (Criteria) this;
         }
 
-        public Criteria andSortIn(List<Integer> values) {
-            addCriterion("sort in", values, "sort");
+        public Criteria andCreateTimeIn(List<Date> values) {
+            addCriterion("create_time in", values, "createTime");
             return (Criteria) this;
         }
 
-        public Criteria andSortNotIn(List<Integer> values) {
-            addCriterion("sort not in", values, "sort");
+        public Criteria andCreateTimeNotIn(List<Date> values) {
+            addCriterion("create_time not in", values, "createTime");
             return (Criteria) this;
         }
 
-        public Criteria andSortBetween(Integer value1, Integer value2) {
-            addCriterion("sort between", value1, value2, "sort");
+        public Criteria andCreateTimeBetween(Date value1, Date value2) {
+            addCriterion("create_time between", value1, value2, "createTime");
             return (Criteria) this;
         }
 
-        public Criteria andSortNotBetween(Integer value1, Integer value2) {
-            addCriterion("sort not between", value1, value2, "sort");
+        public Criteria andCreateTimeNotBetween(Date value1, Date value2) {
+            addCriterion("create_time not between", value1, value2, "createTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andReadCountIsNull() {
+            addCriterion("read_count is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andReadCountIsNotNull() {
+            addCriterion("read_count is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andReadCountEqualTo(Integer value) {
+            addCriterion("read_count =", value, "readCount");
+            return (Criteria) this;
+        }
+
+        public Criteria andReadCountNotEqualTo(Integer value) {
+            addCriterion("read_count <>", value, "readCount");
+            return (Criteria) this;
+        }
+
+        public Criteria andReadCountGreaterThan(Integer value) {
+            addCriterion("read_count >", value, "readCount");
+            return (Criteria) this;
+        }
+
+        public Criteria andReadCountGreaterThanOrEqualTo(Integer value) {
+            addCriterion("read_count >=", value, "readCount");
+            return (Criteria) this;
+        }
+
+        public Criteria andReadCountLessThan(Integer value) {
+            addCriterion("read_count <", value, "readCount");
+            return (Criteria) this;
+        }
+
+        public Criteria andReadCountLessThanOrEqualTo(Integer value) {
+            addCriterion("read_count <=", value, "readCount");
+            return (Criteria) this;
+        }
+
+        public Criteria andReadCountIn(List<Integer> values) {
+            addCriterion("read_count in", values, "readCount");
+            return (Criteria) this;
+        }
+
+        public Criteria andReadCountNotIn(List<Integer> values) {
+            addCriterion("read_count not in", values, "readCount");
+            return (Criteria) this;
+        }
+
+        public Criteria andReadCountBetween(Integer value1, Integer value2) {
+            addCriterion("read_count between", value1, value2, "readCount");
+            return (Criteria) this;
+        }
+
+        public Criteria andReadCountNotBetween(Integer value1, Integer value2) {
+            addCriterion("read_count not between", value1, value2, "readCount");
             return (Criteria) this;
         }
     }

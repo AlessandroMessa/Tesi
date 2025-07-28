@@ -1,18 +1,19 @@
-package com.mtcarpenter.mall.model;
+package com.mtcarpenter.mall.model.help;
 
 import io.swagger.annotations.ApiModelProperty;
 
 import java.io.Serializable;
 
-public class CmsPrefrenceArea implements Serializable {
+public class CmsHelpCategory implements Serializable {
     private static final long serialVersionUID = 1L;
     private Long id;
     private String name;
-    private String subTitle;
-    private Integer sort;
+    @ApiModelProperty(value = "分类图标")
+    private String icon;
+    @ApiModelProperty(value = "专题数量")
+    private Integer helpCount;
     private Integer showStatus;
-    @ApiModelProperty(value = "展示图片")
-    private byte[] pic;
+    private Integer sort;
 
     public Long getId() {
         return id;
@@ -30,20 +31,20 @@ public class CmsPrefrenceArea implements Serializable {
         this.name = name;
     }
 
-    public String getSubTitle() {
-        return subTitle;
+    public String getIcon() {
+        return icon;
     }
 
-    public void setSubTitle(String subTitle) {
-        this.subTitle = subTitle;
+    public void setIcon(String icon) {
+        this.icon = icon;
     }
 
-    public Integer getSort() {
-        return sort;
+    public Integer getHelpCount() {
+        return helpCount;
     }
 
-    public void setSort(Integer sort) {
-        this.sort = sort;
+    public void setHelpCount(Integer helpCount) {
+        this.helpCount = helpCount;
     }
 
     public Integer getShowStatus() {
@@ -54,12 +55,12 @@ public class CmsPrefrenceArea implements Serializable {
         this.showStatus = showStatus;
     }
 
-    public byte[] getPic() {
-        return pic;
+    public Integer getSort() {
+        return sort;
     }
 
-    public void setPic(byte[] pic) {
-        this.pic = pic;
+    public void setSort(Integer sort) {
+        this.sort = sort;
     }
 
     @Override
@@ -70,10 +71,10 @@ public class CmsPrefrenceArea implements Serializable {
         sb.append("Hash = ").append(hashCode());
         sb.append(", id=").append(id);
         sb.append(", name=").append(name);
-        sb.append(", subTitle=").append(subTitle);
-        sb.append(", sort=").append(sort);
+        sb.append(", icon=").append(icon);
+        sb.append(", helpCount=").append(helpCount);
         sb.append(", showStatus=").append(showStatus);
-        sb.append(", pic=").append(pic);
+        sb.append(", sort=").append(sort);
         sb.append(", serialVersionUID=").append(serialVersionUID);
         sb.append("]");
         return sb.toString();

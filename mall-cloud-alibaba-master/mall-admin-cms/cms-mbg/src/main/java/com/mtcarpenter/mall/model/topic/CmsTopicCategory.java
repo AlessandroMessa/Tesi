@@ -1,10 +1,10 @@
-package com.mtcarpenter.mall.model;
+package com.mtcarpenter.mall.model.topic;
 
 import io.swagger.annotations.ApiModelProperty;
 
 import java.io.Serializable;
 
-public class CmsSubjectCategory implements Serializable {
+public class CmsTopicCategory implements Serializable {
     private static final long serialVersionUID = 1L;
     private Long id;
     private String name;

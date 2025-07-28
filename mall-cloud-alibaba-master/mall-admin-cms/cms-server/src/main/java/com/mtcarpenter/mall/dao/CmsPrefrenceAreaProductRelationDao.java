@@ -1,7 +1,6 @@
 package com.mtcarpenter.mall.dao;
 
-import com.mtcarpenter.mall.model.CmsPrefrenceAreaProductRelation;
-import com.mtcarpenter.mall.model.CmsSubjectProductRelation;
+import com.mtcarpenter.mall.model.prefrence.CmsPrefrenceAreaProductRelation;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;

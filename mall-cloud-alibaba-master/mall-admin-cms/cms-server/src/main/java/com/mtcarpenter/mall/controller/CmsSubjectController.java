@@ -2,8 +2,7 @@ package com.mtcarpenter.mall.controller;
 
 import com.mtcarpenter.mall.common.api.CommonPage;
 import com.mtcarpenter.mall.common.api.CommonResult;
-import com.mtcarpenter.mall.model.CmsSubject;
-import com.mtcarpenter.mall.model.CmsSubjectProductRelation;
+import com.mtcarpenter.mall.model.subject.CmsSubject;
 import com.mtcarpenter.mall.service.CmsSubjectService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;

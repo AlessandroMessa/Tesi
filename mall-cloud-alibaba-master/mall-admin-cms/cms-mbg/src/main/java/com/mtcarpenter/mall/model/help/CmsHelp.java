@@ -1,4 +1,4 @@
-package com.mtcarpenter.mall.model;
+package com.mtcarpenter.mall.model.help;
 
 import java.io.Serializable;
 import java.util.Date;

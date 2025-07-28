@@ -1,13 +1,13 @@
-package com.mtcarpenter.mall.model;
+package com.mtcarpenter.mall.model.topic;
 
 import java.io.Serializable;
 import java.util.Date;
 
-public class CmsSubjectComment implements Serializable {
+public class CmsTopicComment implements Serializable {
     private static final long serialVersionUID = 1L;
     private Long id;
-    private Long subjectId;
     private String memberNickName;
+    private Long topicId;
     private String memberIcon;
     private String content;
     private Date createTime;
@@ -21,20 +21,20 @@ public class CmsSubjectComment implements Serializable {
         this.id = id;
     }
 
-    public Long getSubjectId() {
-        return subjectId;
-    }
-
-    public void setSubjectId(Long subjectId) {
-        this.subjectId = subjectId;
-    }
-
     public String getMemberNickName() {
         return memberNickName;
     }
 
     public void setMemberNickName(String memberNickName) {
         this.memberNickName = memberNickName;
+    }
+
+    public Long getTopicId() {
+        return topicId;
+    }
+
+    public void setTopicId(Long topicId) {
+        this.topicId = topicId;
     }
 
     public String getMemberIcon() {
@@ -76,8 +76,8 @@ public class CmsSubjectComment implements Serializable {
         sb.append(" [");
         sb.append("Hash = ").append(hashCode());
         sb.append(", id=").append(id);
-        sb.append(", subjectId=").append(subjectId);
         sb.append(", memberNickName=").append(memberNickName);
+        sb.append(", topicId=").append(topicId);
         sb.append(", memberIcon=").append(memberIcon);
         sb.append(", content=").append(content);
         sb.append(", createTime=").append(createTime);

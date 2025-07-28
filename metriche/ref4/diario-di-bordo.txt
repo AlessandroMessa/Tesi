@@ -1,0 +1,2 @@
+tree /F "percorso cartella" > model-structure.txt
+

@@ -1,6 +1,6 @@
 package com.mtcarpenter.mall.service;
 
-import com.mtcarpenter.mall.model.CmsSubject;
+import com.mtcarpenter.mall.model.subject.CmsSubject;
 import com.mtcarpenter.mall.common.CmsSubjectProductRelationInput;
 
 import java.util.List;

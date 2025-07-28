@@ -1,16 +1,16 @@
-package com.mtcarpenter.mall.model;
+package com.mtcarpenter.mall.model.help;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class CmsTopicCategoryExample {
+public class CmsHelpCategoryExample {
     protected String orderByClause;
 
     protected boolean distinct;
 
     protected List<Criteria> oredCriteria;
 
-    public CmsTopicCategoryExample() {
+    public CmsHelpCategoryExample() {
         oredCriteria = new ArrayList<Criteria>();
     }
 
@@ -304,63 +304,63 @@ public class CmsTopicCategoryExample {
             return (Criteria) this;
         }
 
-        public Criteria andSubjectCountIsNull() {
-            addCriterion("subject_count is null");
+        public Criteria andHelpCountIsNull() {
+            addCriterion("help_count is null");
             return (Criteria) this;
         }
 
-        public Criteria andSubjectCountIsNotNull() {
-            addCriterion("subject_count is not null");
+        public Criteria andHelpCountIsNotNull() {
+            addCriterion("help_count is not null");
             return (Criteria) this;
         }
 
-        public Criteria andSubjectCountEqualTo(Integer value) {
-            addCriterion("subject_count =", value, "subjectCount");
+        public Criteria andHelpCountEqualTo(Integer value) {
+            addCriterion("help_count =", value, "helpCount");
             return (Criteria) this;
         }
 
-        public Criteria andSubjectCountNotEqualTo(Integer value) {
-            addCriterion("subject_count <>", value, "subjectCount");
+        public Criteria andHelpCountNotEqualTo(Integer value) {
+            addCriterion("help_count <>", value, "helpCount");
             return (Criteria) this;
         }
 
-        public Criteria andSubjectCountGreaterThan(Integer value) {
-            addCriterion("subject_count >", value, "subjectCount");
+        public Criteria andHelpCountGreaterThan(Integer value) {
+            addCriterion("help_count >", value, "helpCount");
             return (Criteria) this;
         }
 
-        public Criteria andSubjectCountGreaterThanOrEqualTo(Integer value) {
-            addCriterion("subject_count >=", value, "subjectCount");
+        public Criteria andHelpCountGreaterThanOrEqualTo(Integer value) {
+            addCriterion("help_count >=", value, "helpCount");
             return (Criteria) this;
         }
 
-        public Criteria andSubjectCountLessThan(Integer value) {
-            addCriterion("subject_count <", value, "subjectCount");
+        public Criteria andHelpCountLessThan(Integer value) {
+            addCriterion("help_count <", value, "helpCount");
             return (Criteria) this;
         }
 
-        public Criteria andSubjectCountLessThanOrEqualTo(Integer value) {
-            addCriterion("subject_count <=", value, "subjectCount");
+        public Criteria andHelpCountLessThanOrEqualTo(Integer value) {
+            addCriterion("help_count <=", value, "helpCount");
             return (Criteria) this;
         }
 
-        public Criteria andSubjectCountIn(List<Integer> values) {
-            addCriterion("subject_count in", values, "subjectCount");
+        public Criteria andHelpCountIn(List<Integer> values) {
+            addCriterion("help_count in", values, "helpCount");
             return (Criteria) this;
         }
 
-        public Criteria andSubjectCountNotIn(List<Integer> values) {
-            addCriterion("subject_count not in", values, "subjectCount");
+        public Criteria andHelpCountNotIn(List<Integer> values) {
+            addCriterion("help_count not in", values, "helpCount");
             return (Criteria) this;
         }
 
-        public Criteria andSubjectCountBetween(Integer value1, Integer value2) {
-            addCriterion("subject_count between", value1, value2, "subjectCount");
+        public Criteria andHelpCountBetween(Integer value1, Integer value2) {
+            addCriterion("help_count between", value1, value2, "helpCount");
             return (Criteria) this;
         }
 
-        public Criteria andSubjectCountNotBetween(Integer value1, Integer value2) {
-            addCriterion("subject_count not between", value1, value2, "subjectCount");
+        public Criteria andHelpCountNotBetween(Integer value1, Integer value2) {
+            addCriterion("help_count not between", value1, value2, "helpCount");
             return (Criteria) this;
         }
 
