@@ -1,6 +1,6 @@
 package com.mtcarpenter.mall.portal.component;
 
-import com.mtcarpenter.mall.portal.service.OmsPortalOrderService;
+import com.mtcarpenter.mall.portal.service.order.OrderCancellationService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.amqp.rabbit.annotation.RabbitHandler;
@@ -17,10 +17,10 @@ import org.springframework.stereotype.Component;
 public class CancelOrderReceiver {
     private static Logger LOGGER = LoggerFactory.getLogger(CancelOrderReceiver.class);
     @Autowired
-    private OmsPortalOrderService portalOrderService;
+    private OrderCancellationService orderCancellationService;
     @RabbitHandler
     public void handle(Long orderId){
-        portalOrderService.cancelOrder(orderId);
+        orderCancellationService.cancelOrder(orderId);
         LOGGER.info("process orderId:{}",orderId);
     }
 }

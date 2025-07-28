@@ -5,7 +5,7 @@ import com.mtcarpenter.mall.common.api.CommonResult;
 import com.mtcarpenter.mall.portal.domain.ConfirmOrderResult;
 import com.mtcarpenter.mall.portal.domain.OmsOrderDetail;
 import com.mtcarpenter.mall.portal.domain.OrderParam;
-import com.mtcarpenter.mall.portal.service.OmsPortalOrderService;
+import com.mtcarpenter.mall.portal.service.order.*;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiOperation;
@@ -25,13 +25,22 @@ import java.util.Map;
 @RequestMapping("/order")
 public class OmsPortalOrderController {
     @Autowired
-    private OmsPortalOrderService portalOrderService;
+    private OrderGenerationService orderGenerationService;
+    @Autowired
+    private OrderPaymentService orderPaymentService;
+    @Autowired
+    private OrderCancellationService orderCancellationService;
+    @Autowired
+    private OrderQueryService orderQueryService;
+    @Autowired
+    private OrderMutationService orderMutationService;
+
 
     @ApiOperation("根据购物车信息生成确认单信息")
     @RequestMapping(value = "/generateConfirmOrder", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult<ConfirmOrderResult> generateConfirmOrder(@RequestBody List<Long> cartIds) {
-        ConfirmOrderResult confirmOrderResult = portalOrderService.generateConfirmOrder(cartIds);
+        ConfirmOrderResult confirmOrderResult = orderGenerationService.generateConfirmOrder(cartIds);
         return CommonResult.success(confirmOrderResult);
     }
 
@@ -39,7 +48,7 @@ public class OmsPortalOrderController {
     @RequestMapping(value = "/generateOrder", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult generateOrder(@RequestBody OrderParam orderParam) {
-        Map<String, Object> result = portalOrderService.generateOrder(orderParam);
+        Map<String, Object> result = orderGenerationService.generateOrder(orderParam);
         return CommonResult.success(result, "下单成功");
     }
 
@@ -47,7 +56,7 @@ public class OmsPortalOrderController {
     @RequestMapping(value = "/paySuccess", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult paySuccess(@RequestParam Long orderId, @RequestParam Integer payType) {
-        Integer count = portalOrderService.paySuccess(orderId,payType);
+        Integer count = orderPaymentService.paySuccess(orderId,payType);
         return CommonResult.success(count, "支付成功");
     }
 
@@ -55,7 +64,7 @@ public class OmsPortalOrderController {
     @RequestMapping(value = "/cancelTimeOutOrder", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult cancelTimeOutOrder() {
-        portalOrderService.cancelTimeOutOrder();
+        orderCancellationService.cancelTimeOutOrder();
         return CommonResult.success(null);
     }
 
@@ -63,7 +72,7 @@ public class OmsPortalOrderController {
     @RequestMapping(value = "/cancelOrder", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult cancelOrder(Long orderId) {
-        portalOrderService.sendDelayMessageCancelOrder(orderId);
+        orderCancellationService.sendDelayMessageCancelOrder(orderId);
         return CommonResult.success(null);
     }
 
@@ -75,7 +84,7 @@ public class OmsPortalOrderController {
     public CommonResult<CommonPage<OmsOrderDetail>> list(@RequestParam Integer status,
                                                    @RequestParam(required = false, defaultValue = "1") Integer pageNum,
                                                    @RequestParam(required = false, defaultValue = "5") Integer pageSize) {
-        CommonPage<OmsOrderDetail> orderPage = portalOrderService.list(status,pageNum,pageSize);
+        CommonPage<OmsOrderDetail> orderPage = orderQueryService.list(status,pageNum,pageSize);
         return CommonResult.success(orderPage);
     }
 
@@ -83,7 +92,7 @@ public class OmsPortalOrderController {
     @RequestMapping(value = "/detail/{orderId}", method = RequestMethod.GET)
     @ResponseBody
     public CommonResult<OmsOrderDetail> detail(@PathVariable Long orderId) {
-        OmsOrderDetail orderDetail = portalOrderService.detail(orderId);
+        OmsOrderDetail orderDetail = orderQueryService.detail(orderId);
         return CommonResult.success(orderDetail);
     }
 
@@ -91,7 +100,7 @@ public class OmsPortalOrderController {
     @RequestMapping(value = "/cancelUserOrder", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult cancelUserOrder(Long orderId) {
-        portalOrderService.cancelOrder(orderId);
+        orderCancellationService.cancelOrder(orderId);
         return CommonResult.success(null);
     }
 
@@ -99,7 +108,7 @@ public class OmsPortalOrderController {
     @RequestMapping(value = "/confirmReceiveOrder", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult confirmReceiveOrder(Long orderId) {
-        portalOrderService.confirmReceiveOrder(orderId);
+        orderMutationService.confirmReceiveOrder(orderId);
         return CommonResult.success(null);
     }
 
@@ -107,7 +116,7 @@ public class OmsPortalOrderController {
     @RequestMapping(value = "/deleteOrder", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult deleteOrder(Long orderId) {
-        portalOrderService.deleteOrder(orderId);
+        orderMutationService.deleteOrder(orderId);
         return CommonResult.success(null);
     }
 }
