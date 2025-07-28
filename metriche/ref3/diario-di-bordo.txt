@@ -1,6 +1,9 @@
+Guardare le chat con chatgpt per degli spunti sulla tesi
 Ho iniziato a risolvere hublike di portal.service
 Ma durante gli step intermedi arcan ha trovato altri 6 smells (cdr. arcan-11smells). continuo a risolvere lo smell originale. 
 Seguite best practice di Arcan
 step: 
 1- diviso classe grande in più classi (service e impl)
 2- spostate classi in più package
+
+dopo la pt4 del refactoring da 11 smells siamo passati a 8 (in qualche modo) nel mentre l'hub è sceso a 59 di td (inizio 83) e size 9 ( inizio 11).

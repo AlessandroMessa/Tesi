@@ -1,50 +1,33 @@
-package com.mtcarpenter.mall.portal.service.impl;
-
+package com.mtcarpenter.mall.portal.service.coupon.impl;
 
 import cn.hutool.core.collection.CollUtil;
 import com.mtcarpenter.mall.client.ProductFeign;
-import com.mtcarpenter.mall.common.exception.Asserts;
 import com.mtcarpenter.mall.domain.CartPromotionItem;
 import com.mtcarpenter.mall.domain.SmsCouponHistoryDetail;
-import com.mtcarpenter.mall.mapper.*;
+import com.mtcarpenter.mall.mapper.SmsCouponHistoryMapper;
+import com.mtcarpenter.mall.mapper.SmsCouponMapper;
+import com.mtcarpenter.mall.mapper.SmsCouponProductCategoryRelationMapper;
+import com.mtcarpenter.mall.mapper.SmsCouponProductRelationMapper;
 import com.mtcarpenter.mall.model.*;
 import com.mtcarpenter.mall.portal.dao.SmsCouponHistoryDao;
-import com.mtcarpenter.mall.portal.service.CouponService;
-import com.mtcarpenter.mall.portal.util.DateUtil;
+import com.mtcarpenter.mall.portal.service.coupon.CouponQueryService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.util.CollectionUtils;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import java.util.Random;
 import java.util.stream.Collectors;
-
-/**
- * @author mtcarpenter
- * @github https://github.com/mtcarpenter/mall-cloud-alibaba
- * @desc 微信公众号：山间木匠
- */
 @Service
-public class CouponServiceImpl implements CouponService {
-
+public class CouponQueryServiceImpl implements CouponQueryService {
     @Autowired
     private SmsCouponMapper couponMapper;
     @Autowired
     private SmsCouponHistoryMapper couponHistoryMapper;
     @Autowired
     private SmsCouponHistoryDao couponHistoryDao;
-
-    @Autowired
-    private SmsHomeAdvertiseMapper advertiseMapper;
-
-    @Autowired
-    private SmsFlashPromotionSessionMapper promotionSessionMapper;
-    @Autowired
-    private SmsFlashPromotionMapper flashPromotionMapper;
 
     @Autowired
     private SmsCouponProductRelationMapper couponProductRelationMapper;
@@ -55,46 +38,6 @@ public class CouponServiceImpl implements CouponService {
     @Autowired
     private ProductFeign productFeign;
 
-
-    @Override
-    public void add(Long couponId, Long memberId, String nickName) {
-        //获取优惠券信息，判断数量
-        SmsCoupon coupon = couponMapper.selectByPrimaryKey(couponId);
-        if (coupon == null) {
-            Asserts.fail("优惠券不存在");
-        }
-        if (coupon.getCount() <= 0) {
-            Asserts.fail("优惠券已经领完了");
-        }
-        Date now = new Date();
-        if (now.before(coupon.getEnableTime())) {
-            Asserts.fail("优惠券还没到领取时间");
-        }
-        //判断用户领取的优惠券数量是否超过限制
-        SmsCouponHistoryExample couponHistoryExample = new SmsCouponHistoryExample();
-        couponHistoryExample.createCriteria().andCouponIdEqualTo(couponId).andMemberIdEqualTo(memberId);
-        long count = couponHistoryMapper.countByExample(couponHistoryExample);
-        if (count >= coupon.getPerLimit()) {
-            Asserts.fail("您已经领取过该优惠券");
-        }
-        //生成领取优惠券历史
-        SmsCouponHistory couponHistory = new SmsCouponHistory();
-        couponHistory.setCouponId(couponId);
-        couponHistory.setCouponCode(generateCouponCode(memberId));
-        couponHistory.setCreateTime(now);
-        couponHistory.setMemberId(memberId);
-        couponHistory.setMemberNickname(nickName);
-        //主动领取
-        couponHistory.setGetType(1);
-        //未使用
-        couponHistory.setUseStatus(0);
-        couponHistoryMapper.insert(couponHistory);
-        //修改优惠券表的数量、领取数量
-        coupon.setCount(coupon.getCount() - 1);
-        coupon.setReceiveCount(coupon.getReceiveCount() == null ? 1 : coupon.getReceiveCount() + 1);
-        couponMapper.updateByPrimaryKey(coupon);
-
-    }
 
     /**
      * 获取用户优惠券列表
@@ -183,30 +126,6 @@ public class CouponServiceImpl implements CouponService {
 
     }
 
-    /**
-     * 将优惠券信息更改为指定状态
-     *
-     * @param couponId
-     * @param memberId
-     * @param useStatus
-     */
-    @Override
-    public void updateCouponStatus(Long couponId, Long memberId, Integer useStatus) {
-        if (couponId == null) {
-            return;
-        }
-        //查询第一张优惠券
-        SmsCouponHistoryExample example = new SmsCouponHistoryExample();
-        example.createCriteria().andMemberIdEqualTo(memberId)
-                .andCouponIdEqualTo(couponId).andUseStatusEqualTo(useStatus == 0 ? 1 : 0);
-        List<SmsCouponHistory> couponHistoryList = couponHistoryMapper.selectByExample(example);
-        if (!CollectionUtils.isEmpty(couponHistoryList)) {
-            SmsCouponHistory couponHistory = couponHistoryList.get(0);
-            couponHistory.setUseTime(new Date());
-            couponHistory.setUseStatus(useStatus);
-            couponHistoryMapper.updateByPrimaryKeySelective(couponHistory);
-        }
-    }
 
     /**
      * 商品优惠券
@@ -218,79 +137,6 @@ public class CouponServiceImpl implements CouponService {
     @Override
     public List<SmsCoupon> getAvailableCouponList(Long productId, Long productCategoryId) {
         return couponHistoryDao.getAvailableCouponList(productId, productCategoryId);
-    }
-
-    /**
-     * 获取下一个场次
-     *
-     * @param date
-     * @return
-     */
-    @Override
-    public SmsFlashPromotionSession getNextFlashPromotionSession(Date date) {
-        SmsFlashPromotionSessionExample sessionExample = new SmsFlashPromotionSessionExample();
-        sessionExample.createCriteria()
-                .andStartTimeGreaterThan(date);
-        sessionExample.setOrderByClause("start_time asc");
-        List<SmsFlashPromotionSession> promotionSessionList = promotionSessionMapper.selectByExample(sessionExample);
-        if (!CollectionUtils.isEmpty(promotionSessionList)) {
-            return promotionSessionList.get(0);
-        }
-        return null;
-    }
-
-    /**
-     * 获取首页广告
-     *
-     * @return
-     */
-    @Override
-    public List<SmsHomeAdvertise> getHomeAdvertiseList() {
-        SmsHomeAdvertiseExample example = new SmsHomeAdvertiseExample();
-        example.createCriteria().andTypeEqualTo(1).andStatusEqualTo(1);
-        example.setOrderByClause("sort desc");
-        return advertiseMapper.selectByExample(example);
-    }
-
-    /**
-     * 根据时间获取秒杀活动
-     *
-     * @param date
-     * @return
-     */
-    @Override
-    public SmsFlashPromotion getFlashPromotion(Date date) {
-        Date currDate = DateUtil.getDate(date);
-        SmsFlashPromotionExample example = new SmsFlashPromotionExample();
-        example.createCriteria()
-                .andStatusEqualTo(1)
-                .andStartDateLessThanOrEqualTo(currDate)
-                .andEndDateGreaterThanOrEqualTo(currDate);
-        List<SmsFlashPromotion> flashPromotionList = flashPromotionMapper.selectByExample(example);
-        if (!CollectionUtils.isEmpty(flashPromotionList)) {
-            return flashPromotionList.get(0);
-        }
-        return null;
-    }
-
-    /**
-     * 根据时间获取秒杀场次
-     *
-     * @param date
-     * @return
-     */
-    @Override
-    public SmsFlashPromotionSession getFlashPromotionSession(Date date) {
-        Date currTime = DateUtil.getTime(date);
-        SmsFlashPromotionSessionExample sessionExample = new SmsFlashPromotionSessionExample();
-        sessionExample.createCriteria()
-                .andStartTimeLessThanOrEqualTo(currTime)
-                .andEndTimeGreaterThanOrEqualTo(currTime);
-        List<SmsFlashPromotionSession> promotionSessionList = promotionSessionMapper.selectByExample(sessionExample);
-        if (!CollectionUtils.isEmpty(promotionSessionList)) {
-            return promotionSessionList.get(0);
-        }
-        return null;
     }
 
     /**
@@ -354,25 +200,6 @@ public class CouponServiceImpl implements CouponService {
     }
 
 
-    /**
-     * 16位优惠码生成：时间戳后8位+4位随机数+用户id后4位
-     */
-    private String generateCouponCode(Long memberId) {
-        StringBuilder sb = new StringBuilder();
-        Long currentTimeMillis = System.currentTimeMillis();
-        String timeMillisStr = currentTimeMillis.toString();
-        sb.append(timeMillisStr.substring(timeMillisStr.length() - 8));
-        for (int i = 0; i < 4; i++) {
-            sb.append(new Random().nextInt(10));
-        }
-        String memberIdStr = memberId.toString();
-        if (memberIdStr.length() <= 4) {
-            sb.append(String.format("%04d", memberId));
-        } else {
-            sb.append(memberIdStr.substring(memberIdStr.length() - 4));
-        }
-        return sb.toString();
-    }
 
 
     private BigDecimal calcTotalAmount(List<CartPromotionItem> cartItemList) {

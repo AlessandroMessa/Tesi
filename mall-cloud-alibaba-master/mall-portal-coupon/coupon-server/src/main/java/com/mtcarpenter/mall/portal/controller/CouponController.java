@@ -5,7 +5,10 @@ import com.mtcarpenter.mall.common.api.CommonResult;
 import com.mtcarpenter.mall.domain.CartPromotionItem;
 import com.mtcarpenter.mall.domain.SmsCouponHistoryDetail;
 import com.mtcarpenter.mall.model.*;
-import com.mtcarpenter.mall.portal.service.CouponService;
+import com.mtcarpenter.mall.portal.service.coupon.CouponQueryService;
+import com.mtcarpenter.mall.portal.service.coupon.CouponRedemptionService;
+import com.mtcarpenter.mall.portal.service.home.HomeAdvertiseService;
+import com.mtcarpenter.mall.portal.service.promotion.FlashPromotionQueryService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiOperation;
@@ -26,7 +29,13 @@ import java.util.List;
 public class CouponController {
 
     @Autowired
-    private CouponService couponService;
+    private CouponRedemptionService couponRedemptionService;
+    @Autowired
+    private CouponQueryService couponQueryService;
+    @Autowired
+    private FlashPromotionQueryService flashPromotionQueryService;
+    @Autowired
+    private HomeAdvertiseService homeAdvertiseService;
 
     @Autowired
     private OrderFeign orderFeign;
@@ -36,7 +45,7 @@ public class CouponController {
     public CommonResult add(@PathVariable Long couponId,
                             @RequestParam("memberId") Long memberId,
                             @RequestParam("nickName") String nickName) {
-        couponService.add(couponId, memberId, nickName);
+        couponRedemptionService.add(couponId, memberId, nickName);
         return CommonResult.success(null, "领取成功");
     }
 
@@ -47,7 +56,7 @@ public class CouponController {
     @ResponseBody
     public CommonResult<List<SmsCouponHistory>> listHistory(@RequestParam(value = "memberId", required = false) Long memberId,
                                                             @RequestParam(value = "useStatus", required = false) Integer useStatus) {
-        List<SmsCouponHistory> couponHistoryList = couponService.listHistory(memberId, useStatus);
+        List<SmsCouponHistory> couponHistoryList = couponQueryService.listHistory(memberId, useStatus);
         return CommonResult.success(couponHistoryList);
     }
 
@@ -57,7 +66,7 @@ public class CouponController {
     @RequestMapping(value = "/list", method = RequestMethod.GET)
     public CommonResult<List<SmsCoupon>> list(@RequestParam(value = "memberId", required = false) Long memberId,
                                               @RequestParam(value = "useStatus", required = false) Integer useStatus) {
-        List<SmsCoupon> couponHistoryList = couponService.list(memberId, useStatus);
+        List<SmsCoupon> couponHistoryList = couponQueryService.list(memberId, useStatus);
         return CommonResult.success(couponHistoryList);
     }
 
@@ -68,7 +77,7 @@ public class CouponController {
     public CommonResult<List<SmsCouponHistoryDetail>> listCart(@PathVariable Integer type,
                                                                @RequestParam(value = "memberId", required = false) Long memberId) {
         List<CartPromotionItem> cartPromotionItemList = orderFeign.listPromotion(null).getData();
-        List<SmsCouponHistoryDetail> couponHistoryList = couponService.listCart(cartPromotionItemList, memberId, type);
+        List<SmsCouponHistoryDetail> couponHistoryList = couponQueryService.listCart(cartPromotionItemList, memberId, type);
         return CommonResult.success(couponHistoryList);
     }
 
@@ -79,7 +88,7 @@ public class CouponController {
     public CommonResult<List<SmsCouponHistoryDetail>> listCartPromotion(@PathVariable Integer type,
                                                                         List<CartPromotionItem> cartPromotionItemList,
                                                                         @RequestParam(value = "memberId", required = false) Long memberId) {
-        List<SmsCouponHistoryDetail> couponHistoryList = couponService.listCart(cartPromotionItemList, memberId, type);
+        List<SmsCouponHistoryDetail> couponHistoryList = couponQueryService.listCart(cartPromotionItemList, memberId, type);
         return CommonResult.success(couponHistoryList);
     }
 
@@ -95,7 +104,7 @@ public class CouponController {
     public CommonResult updateCouponStatus(@RequestParam(value = "couponId") Long couponId,
                                            @RequestParam(value = "memberId") Long memberId,
                                            @RequestParam(value = "useStatus") Integer useStatus) {
-        couponService.updateCouponStatus(couponId, memberId, useStatus);
+        couponRedemptionService.updateCouponStatus(couponId, memberId, useStatus);
         return CommonResult.success(null);
     }
 
@@ -111,7 +120,7 @@ public class CouponController {
     @RequestMapping(value = "/getAvailableCouponList", method = RequestMethod.GET)
     public CommonResult<List<SmsCoupon>> getAvailableCouponList(@RequestParam(value = "productId") Long productId,
                                                                 @RequestParam(value = "productCategoryId") Long productCategoryId) {
-        List<SmsCoupon> smsCouponList = couponService.getAvailableCouponList(productId, productCategoryId);
+        List<SmsCoupon> smsCouponList = couponQueryService.getAvailableCouponList(productId, productCategoryId);
         return CommonResult.success(smsCouponList);
     }
 
@@ -124,7 +133,7 @@ public class CouponController {
     @ApiOperation("获取下一个场次信息")
     @RequestMapping(value = "/getNextFlashPromotionSession", method = RequestMethod.GET)
     public CommonResult<SmsFlashPromotionSession> getNextFlashPromotionSession(@RequestParam(value = "date") Date date) {
-        SmsFlashPromotionSession smsFlashPromotionSession = couponService.getNextFlashPromotionSession(date);
+        SmsFlashPromotionSession smsFlashPromotionSession = flashPromotionQueryService.getNextFlashPromotionSession(date);
         return CommonResult.success(smsFlashPromotionSession);
     }
 
@@ -137,7 +146,7 @@ public class CouponController {
     @ApiOperation("获取首页广告")
     @RequestMapping(value = "/getHomeAdvertiseList", method = RequestMethod.GET)
     public CommonResult<List<SmsHomeAdvertise>> getHomeAdvertiseList() {
-        List<SmsHomeAdvertise> smsHomeAdvertise = couponService.getHomeAdvertiseList();
+        List<SmsHomeAdvertise> smsHomeAdvertise = homeAdvertiseService.getHomeAdvertiseList();
         return CommonResult.success(smsHomeAdvertise);
     }
 
@@ -151,7 +160,7 @@ public class CouponController {
     @ApiOperation("根据时间获取秒杀活动")
     @RequestMapping(value = "/getFlashPromotion", method = RequestMethod.GET)
     public CommonResult<SmsFlashPromotion> getFlashPromotion(@RequestParam(value = "date") Date date) {
-        SmsFlashPromotion smsFlashPromotion = couponService.getFlashPromotion(date);
+        SmsFlashPromotion smsFlashPromotion = flashPromotionQueryService.getFlashPromotion(date);
         return CommonResult.success(smsFlashPromotion);
     }
 
@@ -164,7 +173,7 @@ public class CouponController {
     @ApiOperation("根据时间获取秒杀场次")
     @RequestMapping(value = "/getFlashPromotionSession", method = RequestMethod.GET)
     public CommonResult<SmsFlashPromotionSession> getFlashPromotionSession(@RequestParam(value = "date") Date date) {
-        SmsFlashPromotionSession smsFlashPromotion = couponService.getFlashPromotionSession(date);
+        SmsFlashPromotionSession smsFlashPromotion = flashPromotionQueryService.getFlashPromotionSession(date);
         return CommonResult.success(smsFlashPromotion);
     }
 
@@ -172,7 +181,7 @@ public class CouponController {
     @RequestMapping(value = "/listByProduct/{productId}", method = RequestMethod.GET)
     @ResponseBody
     public CommonResult<List<SmsCoupon>> listByProduct(@PathVariable Long productId) {
-        List<SmsCoupon> couponHistoryList = couponService.listByProduct(productId);
+        List<SmsCoupon> couponHistoryList = couponQueryService.listByProduct(productId);
         return CommonResult.success(couponHistoryList);
     }
 
