@@ -1,9 +1,11 @@
 package com.mtcarpenter.mall.portal.service.order.impl;
 
 import cn.hutool.core.collection.CollUtil;
-import com.mtcarpenter.mall.client.*;
+import com.mtcarpenter.mall.client.address.MemberAddressClient;
 import com.mtcarpenter.mall.client.coupon.CartCouponClient;
 import com.mtcarpenter.mall.client.coupon.CouponManagementClient;
+import com.mtcarpenter.mall.client.integration.MemberIntegrationClient;
+import com.mtcarpenter.mall.client.inventory.InventoryClient;
 import com.mtcarpenter.mall.common.exception.Asserts;
 import com.mtcarpenter.mall.domain.CartPromotionItem;
 import com.mtcarpenter.mall.domain.SmsCouponHistoryDetail;

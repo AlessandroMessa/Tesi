@@ -1,4 +1,4 @@
-package com.mtcarpenter.mall.client;
+package com.mtcarpenter.mall.client.promotion;
 
 import com.mtcarpenter.mall.common.api.CommonResult;
 import com.mtcarpenter.mall.domain.PromotionProduct;

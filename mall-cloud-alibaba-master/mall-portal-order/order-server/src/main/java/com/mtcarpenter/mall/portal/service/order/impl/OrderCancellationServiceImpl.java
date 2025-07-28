@@ -1,6 +1,6 @@
 package com.mtcarpenter.mall.portal.service.order.impl;
 import com.mtcarpenter.mall.client.coupon.CouponManagementClient;
-import com.mtcarpenter.mall.client.MemberIntegrationClient;
+import com.mtcarpenter.mall.client.integration.MemberIntegrationClient;
 import com.mtcarpenter.mall.mapper.OmsOrderItemMapper;
 import com.mtcarpenter.mall.mapper.OmsOrderMapper;
 import com.mtcarpenter.mall.mapper.OmsOrderSettingMapper;

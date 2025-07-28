@@ -1,4 +1,4 @@
-package com.mtcarpenter.mall.client;
+package com.mtcarpenter.mall.client.integration;
 
 import com.mtcarpenter.mall.common.api.CommonResult;
 import com.mtcarpenter.mall.model.UmsIntegrationConsumeSetting;
