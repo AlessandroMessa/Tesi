@@ -1,4 +1,4 @@
-package com.mtcarpenter.mall.service.impl;
+package com.mtcarpenter.mall.service.product.category.impl;
 
 import com.github.pagehelper.PageHelper;
 import com.mtcarpenter.mall.dao.PmsProductCategoryAttributeRelationDao;
@@ -9,7 +9,7 @@ import com.mtcarpenter.mall.mapper.PmsProductCategoryAttributeRelationMapper;
 import com.mtcarpenter.mall.mapper.PmsProductCategoryMapper;
 import com.mtcarpenter.mall.mapper.PmsProductMapper;
 import com.mtcarpenter.mall.model.*;
-import com.mtcarpenter.mall.service.PmsProductCategoryService;
+import com.mtcarpenter.mall.service.product.category.PmsProductCategoryService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

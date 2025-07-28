@@ -1,4 +1,4 @@
-package com.mtcarpenter.mall.service;
+package com.mtcarpenter.mall.service.product.attribute;
 
 import com.mtcarpenter.mall.dto.PmsProductAttributeParam;
 import com.mtcarpenter.mall.dto.ProductAttrInfo;

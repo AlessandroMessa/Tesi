@@ -6,6 +6,8 @@ step:
 1- diviso classe grande in più classi (service e impl)
 2- spostate classi in più package
 
-dopo la pt4 del refactoring da 11 smells siamo passati a 8 (in qualche modo) nel mentre l'hub è sceso a 59 di td (inizio 83) e size 9 ( inizio 11).
+dopo la pt4 del refactoring da 11 smells siamo passati a 8 (in qualche modo) nel mentre l'hub è sceso a 53 di td (inizio 83) e size 9 ( inizio 11).
 Ho creato una cartella ref3-pt5-pesi4 dove tengo le metriche per ogni classe di peso 4 (il max peso rimasto).
-Nella tesi non credo parlerò di ogni parte ma riassumerò
+Nella tesi non credo parlerò di ogni parte ma riassumerò.
+
+Completati i pesi 4 mi sono comparsi altri 2 smells e il td dell'hub è salito a 92 però il size è sceso a 8, ora salterò un po' di step, arcan mi trova un peso 6 in un microservizio che non ho ancora toccato, parto da quello

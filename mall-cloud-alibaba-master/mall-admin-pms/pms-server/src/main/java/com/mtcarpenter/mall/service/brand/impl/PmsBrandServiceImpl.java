@@ -1,4 +1,4 @@
-package com.mtcarpenter.mall.service.impl;
+package com.mtcarpenter.mall.service.brand.impl;
 
 import com.github.pagehelper.PageHelper;
 import com.mtcarpenter.mall.dto.PmsBrandParam;
@@ -8,7 +8,7 @@ import com.mtcarpenter.mall.model.PmsBrand;
 import com.mtcarpenter.mall.model.PmsBrandExample;
 import com.mtcarpenter.mall.model.PmsProduct;
 import com.mtcarpenter.mall.model.PmsProductExample;
-import com.mtcarpenter.mall.service.PmsBrandService;
+import com.mtcarpenter.mall.service.brand.PmsBrandService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

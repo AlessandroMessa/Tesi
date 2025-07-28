@@ -1,28 +1,23 @@
-package com.mtcarpenter.mall.service.impl;
+package com.mtcarpenter.mall.service.product.update.impl;
 
 import cn.hutool.core.collection.CollUtil;
 import com.alibaba.fastjson.JSON;
-import com.github.pagehelper.PageHelper;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import com.google.gson.reflect.TypeToken;
+import com.mtcarpenter.mall.client.CmsPrefrenceAreaProductRelationClient;
+import com.mtcarpenter.mall.client.CmsSubjectProductRelationClient;
 import com.mtcarpenter.mall.common.CmsPrefrenceAreaProductRelationInput;
 import com.mtcarpenter.mall.common.CmsSubjectProductRelationInput;
-import com.mtcarpenter.mall.common.PmsProductOutput;
 import com.mtcarpenter.mall.common.api.CommonResult;
 import com.mtcarpenter.mall.common.api.ResultCode;
 import com.mtcarpenter.mall.dao.*;
 import com.mtcarpenter.mall.dto.PmsProductParam;
-import com.mtcarpenter.mall.dto.PmsProductQueryParam;
 import com.mtcarpenter.mall.dto.PmsProductResult;
 import com.mtcarpenter.mall.mapper.*;
 import com.mtcarpenter.mall.model.*;
-import com.mtcarpenter.mall.service.PmsProductService;
-import com.mtcarpenter.mall.client.CmsPrefrenceAreaProductRelationClient;
-import com.mtcarpenter.mall.client.CmsSubjectProductRelationClient;
+import com.mtcarpenter.mall.service.product.update.ProductUpdateService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
@@ -30,51 +25,41 @@ import org.springframework.util.StringUtils;
 
 import java.lang.reflect.Method;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
-/**
- * 商品管理Service实现类
- * Created by macro on 2018/4/26.
- */
 @Service
-public class PmsProductServiceImpl implements PmsProductService {
-    private static final Logger LOGGER = LoggerFactory.getLogger(PmsProductServiceImpl.class);
+public class ProductUpdateServiceImpl implements ProductUpdateService {
+    private static final Logger LOGGER = LoggerFactory.getLogger(ProductUpdateServiceImpl.class);
     @Autowired
-    private PmsProductMapper productMapper;
+    private PmsSkuStockMapper skuStockMapper;
+    @Autowired
+    private CmsSubjectProductRelationClient cmsSubjectProductRelationClient;
+    @Autowired
+    private CmsPrefrenceAreaProductRelationClient cmsPrefrenceAreaProductRelationClient;
+    @Autowired
+    private PmsProductLadderDao productLadderDao;
     @Autowired
     private PmsMemberPriceDao memberPriceDao;
     @Autowired
     private PmsMemberPriceMapper memberPriceMapper;
     @Autowired
-    private PmsProductLadderDao productLadderDao;
+    private PmsProductDao productDao;
     @Autowired
     private PmsProductLadderMapper productLadderMapper;
+    @Autowired
+    private PmsProductMapper productMapper;
     @Autowired
     private PmsProductFullReductionDao productFullReductionDao;
     @Autowired
     private PmsProductFullReductionMapper productFullReductionMapper;
     @Autowired
-    private PmsSkuStockDao skuStockDao;
-    @Autowired
-    private PmsSkuStockMapper skuStockMapper;
-    @Autowired
     private PmsProductAttributeValueDao productAttributeValueDao;
     @Autowired
     private PmsProductAttributeValueMapper productAttributeValueMapper;
-
     @Autowired
-    private CmsSubjectProductRelationClient cmsSubjectProductRelationClient;
-
-    @Autowired
-    private CmsPrefrenceAreaProductRelationClient cmsPrefrenceAreaProductRelationClient;
-
-    @Autowired
-    private PmsProductDao productDao;
-    @Autowired
-    private PmsProductVertifyRecordDao productVertifyRecordDao;
+    private PmsSkuStockDao skuStockDao;
 
     @Override
     public int create(PmsProductParam productParam) {
@@ -105,24 +90,6 @@ public class PmsProductServiceImpl implements PmsProductService {
         return count;
     }
 
-    private void handleSkuStockCode(List<PmsSkuStock> skuStockList, Long productId) {
-        if (CollectionUtils.isEmpty(skuStockList)) return;
-        for (int i = 0; i < skuStockList.size(); i++) {
-            PmsSkuStock skuStock = skuStockList.get(i);
-            if (StringUtils.isEmpty(skuStock.getSkuCode())) {
-                SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
-                StringBuilder sb = new StringBuilder();
-                //日期
-                sb.append(sdf.format(new Date()));
-                //四位商品id
-                sb.append(String.format("%04d", productId));
-                //三位索引id
-                sb.append(String.format("%03d", i + 1));
-                skuStock.setSkuCode(sb.toString());
-            }
-        }
-    }
-
     @Override
     public PmsProductResult getUpdateInfo(Long id) {
         PmsProductResult updateInfo = productDao.getUpdateInfo(id);
@@ -131,7 +98,7 @@ public class PmsProductServiceImpl implements PmsProductService {
         Gson gson = new Gson();
         // 关联主题
         if (listCommonResult.getCode() == ResultCode.SUCCESS.getCode()) {
-            List<CmsSubjectProductRelationInput> relationInputList = gson.fromJson(JSON.toJSONString(listCommonResult.getData()) ,
+            List<CmsSubjectProductRelationInput> relationInputList = gson.fromJson(JSON.toJSONString(listCommonResult.getData()),
                     new TypeToken<List<CmsSubjectProductRelationInput>>() {
                     }.getType());
             updateInfo.setSubjectProductRelationList(relationInputList);
@@ -151,9 +118,8 @@ public class PmsProductServiceImpl implements PmsProductService {
     public int update(Long id, PmsProductParam productParam) {
         int count;
         //更新商品信息
-        PmsProduct product = productParam;
-        product.setId(id);
-        productMapper.updateByPrimaryKeySelective(product);
+        productParam.setId(id);
+        productMapper.updateByPrimaryKeySelective(productParam);
         //会员价格
         PmsMemberPriceExample pmsMemberPriceExample = new PmsMemberPriceExample();
         pmsMemberPriceExample.createCriteria().andProductIdEqualTo(id);
@@ -227,115 +193,22 @@ public class PmsProductServiceImpl implements PmsProductService {
 
     }
 
-    @Override
-    public List<PmsProduct> list(PmsProductQueryParam productQueryParam, Integer pageSize, Integer pageNum) {
-        PageHelper.startPage(pageNum, pageSize);
-        PmsProductExample productExample = new PmsProductExample();
-        PmsProductExample.Criteria criteria = productExample.createCriteria();
-        criteria.andDeleteStatusEqualTo(0);
-        if (productQueryParam.getPublishStatus() != null) {
-            criteria.andPublishStatusEqualTo(productQueryParam.getPublishStatus());
+    private void handleSkuStockCode(List<PmsSkuStock> skuStockList, Long productId) {
+        if (CollectionUtils.isEmpty(skuStockList)) return;
+        for (int i = 0; i < skuStockList.size(); i++) {
+            PmsSkuStock skuStock = skuStockList.get(i);
+            if (StringUtils.isEmpty(skuStock.getSkuCode())) {
+                SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
+                StringBuilder sb = new StringBuilder();
+                //日期
+                sb.append(sdf.format(new Date()));
+                //四位商品id
+                sb.append(String.format("%04d", productId));
+                //三位索引id
+                sb.append(String.format("%03d", i + 1));
+                skuStock.setSkuCode(sb.toString());
+            }
         }
-        if (productQueryParam.getVerifyStatus() != null) {
-            criteria.andVerifyStatusEqualTo(productQueryParam.getVerifyStatus());
-        }
-        if (!StringUtils.isEmpty(productQueryParam.getKeyword())) {
-            criteria.andNameLike("%" + productQueryParam.getKeyword() + "%");
-        }
-        if (!StringUtils.isEmpty(productQueryParam.getProductSn())) {
-            criteria.andProductSnEqualTo(productQueryParam.getProductSn());
-        }
-        if (productQueryParam.getBrandId() != null) {
-            criteria.andBrandIdEqualTo(productQueryParam.getBrandId());
-        }
-        if (productQueryParam.getProductCategoryId() != null) {
-            criteria.andProductCategoryIdEqualTo(productQueryParam.getProductCategoryId());
-        }
-        return productMapper.selectByExample(productExample);
-    }
-
-    @Override
-    public int updateVerifyStatus(List<Long> ids, Integer verifyStatus, String detail) {
-        PmsProduct product = new PmsProduct();
-        product.setVerifyStatus(verifyStatus);
-        PmsProductExample example = new PmsProductExample();
-        example.createCriteria().andIdIn(ids);
-        List<PmsProductVertifyRecord> list = new ArrayList<>();
-        int count = productMapper.updateByExampleSelective(product, example);
-        //修改完审核状态后插入审核记录
-        for (Long id : ids) {
-            PmsProductVertifyRecord record = new PmsProductVertifyRecord();
-            record.setProductId(id);
-            record.setCreateTime(new Date());
-            record.setDetail(detail);
-            record.setStatus(verifyStatus);
-            record.setVertifyMan("test");
-            list.add(record);
-        }
-        productVertifyRecordDao.insertList(list);
-        return count;
-    }
-
-    @Override
-    public int updatePublishStatus(List<Long> ids, Integer publishStatus) {
-        PmsProduct record = new PmsProduct();
-        record.setPublishStatus(publishStatus);
-        PmsProductExample example = new PmsProductExample();
-        example.createCriteria().andIdIn(ids);
-        return productMapper.updateByExampleSelective(record, example);
-    }
-
-    @Override
-    public int updateRecommendStatus(List<Long> ids, Integer recommendStatus) {
-        PmsProduct record = new PmsProduct();
-        record.setRecommandStatus(recommendStatus);
-        PmsProductExample example = new PmsProductExample();
-        example.createCriteria().andIdIn(ids);
-        return productMapper.updateByExampleSelective(record, example);
-    }
-
-    @Override
-    public int updateNewStatus(List<Long> ids, Integer newStatus) {
-        PmsProduct record = new PmsProduct();
-        record.setNewStatus(newStatus);
-        PmsProductExample example = new PmsProductExample();
-        example.createCriteria().andIdIn(ids);
-        return productMapper.updateByExampleSelective(record, example);
-    }
-
-    @Override
-    public int updateDeleteStatus(List<Long> ids, Integer deleteStatus) {
-        PmsProduct record = new PmsProduct();
-        record.setDeleteStatus(deleteStatus);
-        PmsProductExample example = new PmsProductExample();
-        example.createCriteria().andIdIn(ids);
-        return productMapper.updateByExampleSelective(record, example);
-    }
-
-    @Override
-    public List<PmsProduct> list(String keyword) {
-        PmsProductExample productExample = new PmsProductExample();
-        PmsProductExample.Criteria criteria = productExample.createCriteria();
-        criteria.andDeleteStatusEqualTo(0);
-        if (!StringUtils.isEmpty(keyword)) {
-            criteria.andNameLike("%" + keyword + "%");
-            productExample.or().andDeleteStatusEqualTo(0).andProductSnLike("%" + keyword + "%");
-        }
-        return productMapper.selectByExample(productExample);
-    }
-
-    /**
-     * 根据 商品 id 过去商品信息
-     *
-     * @param productId
-     * @return
-     */
-    @Override
-    public PmsProductOutput getProductByProductId(Long productId) {
-        PmsProduct pmsProduct = productMapper.selectByPrimaryKey(productId);
-        PmsProductOutput pmsProductOutput = new PmsProductOutput();
-        BeanUtils.copyProperties(pmsProduct, pmsProductOutput);
-        return pmsProductOutput;
     }
 
     /**

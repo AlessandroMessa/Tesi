@@ -1,4 +1,4 @@
-package com.mtcarpenter.mall.service;
+package com.mtcarpenter.mall.service.product.category;
 
 import com.mtcarpenter.mall.dto.PmsProductCategoryParam;
 import com.mtcarpenter.mall.dto.PmsProductCategoryWithChildrenItem;

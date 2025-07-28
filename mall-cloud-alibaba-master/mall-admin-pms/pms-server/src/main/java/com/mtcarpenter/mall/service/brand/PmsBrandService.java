@@ -1,4 +1,4 @@
-package com.mtcarpenter.mall.service;
+package com.mtcarpenter.mall.service.brand;
 
 import com.mtcarpenter.mall.dto.PmsBrandParam;
 import com.mtcarpenter.mall.model.PmsBrand;

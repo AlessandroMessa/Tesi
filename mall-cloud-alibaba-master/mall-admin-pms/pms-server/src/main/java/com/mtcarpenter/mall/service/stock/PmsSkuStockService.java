@@ -1,4 +1,4 @@
-package com.mtcarpenter.mall.service;
+package com.mtcarpenter.mall.service.stock;
 
 import com.mtcarpenter.mall.model.PmsSkuStock;
 

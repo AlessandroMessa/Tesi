@@ -5,7 +5,7 @@ import com.mtcarpenter.mall.common.api.CommonResult;
 import com.mtcarpenter.mall.dto.PmsProductCategoryParam;
 import com.mtcarpenter.mall.dto.PmsProductCategoryWithChildrenItem;
 import com.mtcarpenter.mall.model.PmsProductCategory;
-import com.mtcarpenter.mall.service.PmsProductCategoryService;
+import com.mtcarpenter.mall.service.product.category.PmsProductCategoryService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,4 +1,4 @@
-package com.mtcarpenter.mall.service.impl;
+package com.mtcarpenter.mall.service.product.attribute.impl;
 
 import com.github.pagehelper.PageHelper;
 import com.mtcarpenter.mall.dao.PmsProductAttributeCategoryDao;
@@ -6,7 +6,7 @@ import com.mtcarpenter.mall.dto.PmsProductAttributeCategoryItem;
 import com.mtcarpenter.mall.mapper.PmsProductAttributeCategoryMapper;
 import com.mtcarpenter.mall.model.PmsProductAttributeCategory;
 import com.mtcarpenter.mall.model.PmsProductAttributeCategoryExample;
-import com.mtcarpenter.mall.service.PmsProductAttributeCategoryService;
+import com.mtcarpenter.mall.service.product.attribute.PmsProductAttributeCategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

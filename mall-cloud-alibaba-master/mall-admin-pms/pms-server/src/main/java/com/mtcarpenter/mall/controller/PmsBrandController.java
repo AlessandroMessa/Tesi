@@ -4,7 +4,7 @@ import com.mtcarpenter.mall.common.api.CommonPage;
 import com.mtcarpenter.mall.common.api.CommonResult;
 import com.mtcarpenter.mall.dto.PmsBrandParam;
 import com.mtcarpenter.mall.model.PmsBrand;
-import com.mtcarpenter.mall.service.PmsBrandService;
+import com.mtcarpenter.mall.service.brand.PmsBrandService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;

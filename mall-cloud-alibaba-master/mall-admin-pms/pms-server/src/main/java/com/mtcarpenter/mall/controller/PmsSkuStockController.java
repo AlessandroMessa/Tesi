@@ -2,7 +2,7 @@ package com.mtcarpenter.mall.controller;
 
 import com.mtcarpenter.mall.common.api.CommonResult;
 import com.mtcarpenter.mall.model.PmsSkuStock;
-import com.mtcarpenter.mall.service.PmsSkuStockService;
+import com.mtcarpenter.mall.service.stock.PmsSkuStockService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
