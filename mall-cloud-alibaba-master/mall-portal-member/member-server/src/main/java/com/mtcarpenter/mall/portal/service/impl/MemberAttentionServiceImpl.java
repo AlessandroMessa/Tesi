@@ -4,7 +4,7 @@ import com.mtcarpenter.mall.model.UmsMember;
 import com.mtcarpenter.mall.portal.domain.MemberBrandAttention;
 import com.mtcarpenter.mall.portal.repository.MemberBrandAttentionRepository;
 import com.mtcarpenter.mall.portal.service.MemberAttentionService;
-import com.mtcarpenter.mall.portal.service.member.MemberQueryService;
+import com.mtcarpenter.mall.portal.service.query.MemberQueryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;

@@ -1,11 +1,11 @@
-package com.mtcarpenter.mall.portal.service.member.impl;
+package com.mtcarpenter.mall.portal.service.query.impl;
 
 import com.mtcarpenter.mall.mapper.UmsMemberMapper;
 import com.mtcarpenter.mall.model.UmsMember;
 import com.mtcarpenter.mall.model.UmsMemberExample;
 import com.mtcarpenter.mall.portal.domain.MemberDetails;
 import com.mtcarpenter.mall.portal.service.UmsMemberCacheService;
-import com.mtcarpenter.mall.portal.service.member.MemberQueryService;
+import com.mtcarpenter.mall.portal.service.query.MemberQueryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContext;

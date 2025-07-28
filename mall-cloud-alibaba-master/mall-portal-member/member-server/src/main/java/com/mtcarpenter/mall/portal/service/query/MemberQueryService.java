@@ -1,4 +1,4 @@
-package com.mtcarpenter.mall.portal.service.member;
+package com.mtcarpenter.mall.portal.service.query;
 
 import com.mtcarpenter.mall.model.UmsMember;
 import org.springframework.security.core.userdetails.UserDetails;

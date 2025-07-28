@@ -1,6 +1,6 @@
 package com.mtcarpenter.mall.portal.config;
 
-import com.mtcarpenter.mall.portal.service.member.MemberQueryService;
+import com.mtcarpenter.mall.portal.service.query.MemberQueryService;
 import com.mtcarpenter.mall.security.config.SecurityConfig;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;

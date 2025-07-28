@@ -2,7 +2,8 @@ package com.mtcarpenter.mall.portal.controller;
 
 import com.mtcarpenter.mall.common.api.CommonResult;
 import com.mtcarpenter.mall.model.UmsMemberReceiveAddress;
-import com.mtcarpenter.mall.portal.service.UmsMemberReceiveAddressService;
+import com.mtcarpenter.mall.portal.service.command.UmsMemberReceiveAddressCommandService;
+import com.mtcarpenter.mall.portal.service.query.UmsMemberReceiveAddressQueryService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,13 +21,15 @@ import java.util.List;
 @RequestMapping("/member/address")
 public class UmsMemberReceiveAddressController {
     @Autowired
-    private UmsMemberReceiveAddressService memberReceiveAddressService;
+    private UmsMemberReceiveAddressQueryService umsMemberReceiveAddressQueryService;
+    @Autowired
+    private UmsMemberReceiveAddressCommandService umsMemberReceiveAddressCommandService;
 
     @ApiOperation("添加收货地址")
     @RequestMapping(value = "/add", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult add(@RequestBody UmsMemberReceiveAddress address) {
-        int count = memberReceiveAddressService.add(address);
+        int count = umsMemberReceiveAddressCommandService.add(address);
         if (count > 0) {
             return CommonResult.success(count);
         }
@@ -37,7 +40,7 @@ public class UmsMemberReceiveAddressController {
     @RequestMapping(value = "/delete/{id}", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult delete(@PathVariable Long id) {
-        int count = memberReceiveAddressService.delete(id);
+        int count = umsMemberReceiveAddressCommandService.delete(id);
         if (count > 0) {
             return CommonResult.success(count);
         }
@@ -48,7 +51,7 @@ public class UmsMemberReceiveAddressController {
     @RequestMapping(value = "/update/{id}", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult update(@PathVariable Long id, @RequestBody UmsMemberReceiveAddress address) {
-        int count = memberReceiveAddressService.update(id, address);
+        int count = umsMemberReceiveAddressCommandService.update(id, address);
         if (count > 0) {
             return CommonResult.success(count);
         }
@@ -59,7 +62,7 @@ public class UmsMemberReceiveAddressController {
     @RequestMapping(value = "/list", method = RequestMethod.GET)
     @ResponseBody
     public CommonResult<List<UmsMemberReceiveAddress>> list(@RequestParam(value = "memberId", required = false) Long memberId) {
-        List<UmsMemberReceiveAddress> addressList = memberReceiveAddressService.list(memberId);
+        List<UmsMemberReceiveAddress> addressList = umsMemberReceiveAddressQueryService.list(memberId);
         return CommonResult.success(addressList);
     }
 
@@ -67,7 +70,7 @@ public class UmsMemberReceiveAddressController {
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     @ResponseBody
     public CommonResult<UmsMemberReceiveAddress> getItem(@PathVariable Long id) {
-        UmsMemberReceiveAddress address = memberReceiveAddressService.getItem(id);
+        UmsMemberReceiveAddress address = umsMemberReceiveAddressQueryService.getItem(id);
         return CommonResult.success(address);
     }
 }

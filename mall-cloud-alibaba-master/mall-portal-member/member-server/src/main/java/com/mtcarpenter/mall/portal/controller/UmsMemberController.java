@@ -4,7 +4,7 @@ import com.mtcarpenter.mall.common.api.CommonResult;
 import com.mtcarpenter.mall.model.UmsMember;
 import com.mtcarpenter.mall.portal.service.member.MemberAuthService;
 import com.mtcarpenter.mall.portal.service.member.MemberIntegrationService;
-import com.mtcarpenter.mall.portal.service.member.MemberQueryService;
+import com.mtcarpenter.mall.portal.service.query.MemberQueryService;
 import com.mtcarpenter.mall.portal.service.member.MemberRegistrationService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;

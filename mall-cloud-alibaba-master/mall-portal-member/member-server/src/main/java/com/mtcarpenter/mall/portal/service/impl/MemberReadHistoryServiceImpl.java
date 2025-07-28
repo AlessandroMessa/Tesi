@@ -3,7 +3,7 @@ package com.mtcarpenter.mall.portal.service.impl;
 import com.mtcarpenter.mall.model.UmsMember;
 import com.mtcarpenter.mall.portal.domain.MemberReadHistory;
 import com.mtcarpenter.mall.portal.repository.MemberReadHistoryRepository;
-import com.mtcarpenter.mall.portal.service.member.MemberQueryService;
+import com.mtcarpenter.mall.portal.service.query.MemberQueryService;
 import com.mtcarpenter.mall.portal.service.MemberReadHistoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;

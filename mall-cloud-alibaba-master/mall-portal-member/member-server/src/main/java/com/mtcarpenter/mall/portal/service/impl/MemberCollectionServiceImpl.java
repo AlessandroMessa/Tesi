@@ -6,7 +6,7 @@ import com.mtcarpenter.mall.model.UmsMember;
 import com.mtcarpenter.mall.portal.domain.MemberProductCollection;
 import com.mtcarpenter.mall.portal.repository.MemberProductCollectionRepository;
 import com.mtcarpenter.mall.portal.service.MemberCollectionService;
-import com.mtcarpenter.mall.portal.service.member.MemberQueryService;
+import com.mtcarpenter.mall.portal.service.query.MemberQueryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;

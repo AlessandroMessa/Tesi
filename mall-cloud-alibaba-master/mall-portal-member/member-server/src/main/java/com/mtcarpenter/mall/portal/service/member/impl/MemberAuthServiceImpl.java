@@ -2,6 +2,7 @@ package com.mtcarpenter.mall.portal.service.member.impl;
 
 import com.mtcarpenter.mall.portal.service.UmsMemberCacheService;
 import com.mtcarpenter.mall.portal.service.member.MemberAuthService;
+import com.mtcarpenter.mall.portal.service.query.impl.MemberQueryServiceImpl;
 import com.mtcarpenter.mall.security.util.JwtTokenUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
@@ -14,7 +15,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-import org.springframework.util.StringUtils;
+
 @Slf4j
 @Service
 public class MemberAuthServiceImpl implements MemberAuthService {
