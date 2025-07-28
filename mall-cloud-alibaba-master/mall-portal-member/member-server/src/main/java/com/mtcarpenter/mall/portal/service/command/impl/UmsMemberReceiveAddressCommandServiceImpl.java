@@ -7,7 +7,9 @@ import com.mtcarpenter.mall.model.UmsMemberReceiveAddressExample;
 import com.mtcarpenter.mall.portal.service.command.UmsMemberReceiveAddressCommandService;
 import com.mtcarpenter.mall.portal.service.query.MemberQueryService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class UmsMemberReceiveAddressCommandServiceImpl implements UmsMemberReceiveAddressCommandService {
     @Autowired
     private MemberQueryService memberService;
