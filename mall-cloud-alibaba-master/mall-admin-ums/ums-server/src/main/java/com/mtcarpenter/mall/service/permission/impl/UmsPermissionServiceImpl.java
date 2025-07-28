@@ -1,10 +1,10 @@
-package com.mtcarpenter.mall.service.impl;
+package com.mtcarpenter.mall.service.permission.impl;
 
 import com.mtcarpenter.mall.dto.UmsPermissionNode;
 import com.mtcarpenter.mall.mapper.UmsPermissionMapper;
 import com.mtcarpenter.mall.model.UmsPermission;
 import com.mtcarpenter.mall.model.UmsPermissionExample;
-import com.mtcarpenter.mall.service.UmsPermissionService;
+import com.mtcarpenter.mall.service.permission.UmsPermissionService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

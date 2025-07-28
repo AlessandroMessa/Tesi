@@ -1,12 +1,12 @@
-package com.mtcarpenter.mall.service.impl;
+package com.mtcarpenter.mall.service.admin.impl;
 
 import cn.hutool.core.util.StrUtil;
 import com.github.pagehelper.PageHelper;
 import com.mtcarpenter.mall.mapper.UmsResourceMapper;
 import com.mtcarpenter.mall.model.UmsResource;
 import com.mtcarpenter.mall.model.UmsResourceExample;
-import com.mtcarpenter.mall.service.UmsAdminCacheService;
-import com.mtcarpenter.mall.service.UmsResourceService;
+import com.mtcarpenter.mall.service.admin.UmsAdminCacheService;
+import com.mtcarpenter.mall.service.resource.UmsResourceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -1,4 +1,4 @@
-package com.mtcarpenter.mall.service.impl;
+package com.mtcarpenter.mall.service.admin.impl;
 
 import cn.hutool.core.collection.CollUtil;
 import cn.hutool.core.util.StrUtil;
@@ -14,11 +14,11 @@ import com.mtcarpenter.mall.mapper.UmsAdminPermissionRelationMapper;
 import com.mtcarpenter.mall.mapper.UmsAdminRoleRelationMapper;
 import com.mtcarpenter.mall.model.*;
 import com.mtcarpenter.mall.security.util.JwtTokenUtil;
-import com.mtcarpenter.mall.service.UmsAdminAuthService;
-import com.mtcarpenter.mall.service.UmsAdminCacheService;
-import com.mtcarpenter.mall.service.UmsAdminPermissionService;
-import com.mtcarpenter.mall.service.UmsAdminProfileService;
-import com.mtcarpenter.mall.service.UmsAdminRoleService;
+import com.mtcarpenter.mall.service.admin.UmsAdminAuthService;
+import com.mtcarpenter.mall.service.admin.UmsAdminCacheService;
+import com.mtcarpenter.mall.service.admin.UmsAdminPermissionService;
+import com.mtcarpenter.mall.service.admin.UmsAdminProfileService;
+import com.mtcarpenter.mall.service.admin.UmsAdminRoleService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;

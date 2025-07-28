@@ -1,4 +1,4 @@
-package com.mtcarpenter.mall.service;
+package com.mtcarpenter.mall.service.admin;
 
 import com.mtcarpenter.mall.model.UmsAdmin;
 import java.util.List;

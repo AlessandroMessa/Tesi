@@ -1,10 +1,10 @@
-package com.mtcarpenter.mall.service.impl;
+package com.mtcarpenter.mall.service.menu.impl;
 
 import com.github.pagehelper.PageHelper;
 import com.mtcarpenter.mall.dto.UmsMenuNode;
 import com.mtcarpenter.mall.mapper.UmsMenuMapper;
 import com.mtcarpenter.mall.model.*;
-import com.mtcarpenter.mall.service.UmsMenuService;
+import com.mtcarpenter.mall.service.menu.UmsMenuService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

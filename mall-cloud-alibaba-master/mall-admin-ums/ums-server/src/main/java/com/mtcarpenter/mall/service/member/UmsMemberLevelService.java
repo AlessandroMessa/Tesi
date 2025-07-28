@@ -1,4 +1,4 @@
-package com.mtcarpenter.mall.service;
+package com.mtcarpenter.mall.service.member;
 
 import com.mtcarpenter.mall.model.UmsMemberLevel;
 

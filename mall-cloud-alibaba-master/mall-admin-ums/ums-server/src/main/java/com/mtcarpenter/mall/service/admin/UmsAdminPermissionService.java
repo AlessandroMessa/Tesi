@@ -1,4 +1,4 @@
-package com.mtcarpenter.mall.service;
+package com.mtcarpenter.mall.service.admin;
 
 import com.mtcarpenter.mall.model.UmsPermission;
 import com.mtcarpenter.mall.model.UmsResource;

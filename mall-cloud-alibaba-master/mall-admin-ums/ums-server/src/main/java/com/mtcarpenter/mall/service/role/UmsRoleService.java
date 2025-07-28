@@ -1,4 +1,4 @@
-package com.mtcarpenter.mall.service;
+package com.mtcarpenter.mall.service.role;
 
 import com.mtcarpenter.mall.model.UmsMenu;
 import com.mtcarpenter.mall.model.UmsPermission;

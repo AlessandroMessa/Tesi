@@ -1,4 +1,4 @@
-package com.mtcarpenter.mall.service;
+package com.mtcarpenter.mall.service.menu;
 
 import com.mtcarpenter.mall.dto.UmsMenuNode;
 import com.mtcarpenter.mall.model.UmsMenu;

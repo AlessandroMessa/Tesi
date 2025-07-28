@@ -2,7 +2,7 @@ package com.mtcarpenter.mall.controller;
 
 import com.mtcarpenter.mall.common.api.CommonResult;
 import com.mtcarpenter.mall.model.UmsResourceCategory;
-import com.mtcarpenter.mall.service.UmsResourceCategoryService;
+import com.mtcarpenter.mall.service.resource.UmsResourceCategoryService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;

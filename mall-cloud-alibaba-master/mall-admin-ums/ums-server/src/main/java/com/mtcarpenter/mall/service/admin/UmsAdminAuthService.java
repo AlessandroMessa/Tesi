@@ -1,4 +1,4 @@
-package com.mtcarpenter.mall.service;
+package com.mtcarpenter.mall.service.admin;
 
 
 import org.springframework.security.core.userdetails.UserDetails;

@@ -1,4 +1,4 @@
-package com.mtcarpenter.mall.service.impl;
+package com.mtcarpenter.mall.service.role.impl;
 
 import com.github.pagehelper.PageHelper;
 import com.mtcarpenter.mall.dao.UmsRoleDao;
@@ -8,8 +8,8 @@ import com.mtcarpenter.mall.mapper.UmsRoleMenuRelationMapper;
 import com.mtcarpenter.mall.mapper.UmsRolePermissionRelationMapper;
 import com.mtcarpenter.mall.mapper.UmsRoleResourceRelationMapper;
 import com.mtcarpenter.mall.model.*;
-import com.mtcarpenter.mall.service.UmsAdminCacheService;
-import com.mtcarpenter.mall.service.UmsRoleService;
+import com.mtcarpenter.mall.service.admin.UmsAdminCacheService;
+import com.mtcarpenter.mall.service.role.UmsRoleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;

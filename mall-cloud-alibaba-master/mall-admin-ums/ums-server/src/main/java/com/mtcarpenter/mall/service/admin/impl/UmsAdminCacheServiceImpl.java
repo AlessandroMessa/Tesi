@@ -1,4 +1,4 @@
-package com.mtcarpenter.mall.service.impl;
+package com.mtcarpenter.mall.service.admin.impl;
 
 import cn.hutool.core.collection.CollUtil;
 import com.mtcarpenter.mall.dao.UmsAdminRoleRelationDao;
@@ -8,8 +8,8 @@ import com.mtcarpenter.mall.model.UmsAdminRoleRelation;
 import com.mtcarpenter.mall.model.UmsAdminRoleRelationExample;
 import com.mtcarpenter.mall.model.UmsResource;
 import com.mtcarpenter.mall.security.service.RedisService;
-import com.mtcarpenter.mall.service.UmsAdminCacheService;
-import com.mtcarpenter.mall.service.UmsAdminProfileService;
+import com.mtcarpenter.mall.service.admin.UmsAdminCacheService;
+import com.mtcarpenter.mall.service.admin.UmsAdminProfileService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;

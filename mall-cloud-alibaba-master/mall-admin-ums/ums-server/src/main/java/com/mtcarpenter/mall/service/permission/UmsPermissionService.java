@@ -1,4 +1,4 @@
-package com.mtcarpenter.mall.service;
+package com.mtcarpenter.mall.service.permission;
 
 import com.mtcarpenter.mall.dto.UmsPermissionNode;
 import com.mtcarpenter.mall.model.UmsPermission;

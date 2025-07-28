@@ -4,7 +4,7 @@ import com.mtcarpenter.mall.common.api.CommonPage;
 import com.mtcarpenter.mall.common.api.CommonResult;
 import com.mtcarpenter.mall.model.UmsResource;
 import com.mtcarpenter.mall.security.component.DynamicSecurityMetadataSource;
-import com.mtcarpenter.mall.service.UmsResourceService;
+import com.mtcarpenter.mall.service.resource.UmsResourceService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;

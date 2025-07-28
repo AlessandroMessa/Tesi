@@ -3,7 +3,7 @@ package com.mtcarpenter.mall.controller;
 import com.mtcarpenter.mall.common.api.CommonPage;
 import com.mtcarpenter.mall.common.api.CommonResult;
 import com.mtcarpenter.mall.model.*;
-import com.mtcarpenter.mall.service.UmsRoleService;
+import com.mtcarpenter.mall.service.role.UmsRoleService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
