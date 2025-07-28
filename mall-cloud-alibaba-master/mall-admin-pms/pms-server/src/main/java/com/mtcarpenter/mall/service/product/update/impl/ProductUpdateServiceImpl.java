@@ -4,8 +4,10 @@ import cn.hutool.core.collection.CollUtil;
 import com.alibaba.fastjson.JSON;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import com.mtcarpenter.mall.client.CmsPrefrenceAreaProductRelationClient;
-import com.mtcarpenter.mall.client.CmsSubjectProductRelationClient;
+import com.mtcarpenter.mall.client.prefrence.PrefrenceAreaProductReadClient;
+import com.mtcarpenter.mall.client.prefrence.PrefrenceAreaProductWriteClient;
+import com.mtcarpenter.mall.client.subject.SubjectProductReadClient;
+import com.mtcarpenter.mall.client.subject.SubjectProductWriteClient;
 import com.mtcarpenter.mall.common.CmsPrefrenceAreaProductRelationInput;
 import com.mtcarpenter.mall.common.CmsSubjectProductRelationInput;
 import com.mtcarpenter.mall.common.api.CommonResult;
@@ -41,9 +43,13 @@ public class ProductUpdateServiceImpl implements ProductUpdateService {
     @Autowired
     private PmsSkuStockMapper skuStockMapper;
     @Autowired
-    private CmsSubjectProductRelationClient cmsSubjectProductRelationClient;
+    private SubjectProductWriteClient subjectProductWriteClient;
     @Autowired
-    private CmsPrefrenceAreaProductRelationClient cmsPrefrenceAreaProductRelationClient;
+    private SubjectProductReadClient subjectProductReadClient;
+    @Autowired
+    private PrefrenceAreaProductWriteClient prefrenceAreaProductWriteClient;
+    @Autowired
+    private PrefrenceAreaProductReadClient prefrenceAreaProductReadClient;
     @Autowired
     private PmsProductLadderDao productLadderDao;
     @Autowired
@@ -89,9 +95,9 @@ public class ProductUpdateServiceImpl implements ProductUpdateService {
         //添加商品参数,添加自定义商品规格
         relateAndInsertList(productAttributeValueDao, productParam.getProductAttributeValueList(), productId);
         //关联专题
-        cmsSubjectProductRelationClient.relateAndInsertList(productParam.getSubjectProductRelationList(), productId);
+        subjectProductWriteClient.relateAndInsertList(productParam.getSubjectProductRelationList(), productId);
         //关联优选
-        cmsPrefrenceAreaProductRelationClient.relateAndInsertList(productParam.getPrefrenceAreaProductRelationList(), productId);
+        prefrenceAreaProductWriteClient.relateAndInsertList(productParam.getPrefrenceAreaProductRelationList(), productId);
         count = 1;
         return count;
     }
@@ -100,7 +106,7 @@ public class ProductUpdateServiceImpl implements ProductUpdateService {
     public PmsProductResult getUpdateInfo(Long id) {
         PmsProductResult updateInfo = productDao.getUpdateInfo(id);
 
-        CommonResult<List<CmsSubjectProductRelationInput>> listCommonResult = cmsSubjectProductRelationClient.relationByProductId(id);
+        CommonResult<List<CmsSubjectProductRelationInput>> listCommonResult = subjectProductReadClient.relationByProductId(id);
         Gson gson = new Gson();
         // 关联主题
         if (listCommonResult.getCode() == ResultCode.SUCCESS.getCode()) {
@@ -110,7 +116,7 @@ public class ProductUpdateServiceImpl implements ProductUpdateService {
             updateInfo.setSubjectProductRelationList(relationInputList);
         }
         // 关联优选
-        CommonResult<List<CmsPrefrenceAreaProductRelationInput>> commonResult = cmsPrefrenceAreaProductRelationClient.relationByProductId(id);
+        CommonResult<List<CmsPrefrenceAreaProductRelationInput>> commonResult = prefrenceAreaProductReadClient.relationByProductId(id);
         if (commonResult.getCode() == ResultCode.SUCCESS.getCode()) {
             List<CmsPrefrenceAreaProductRelationInput> areaProductRelationInputs = gson.fromJson(JSON.toJSONString(commonResult.getData()),
                     new TypeToken<List<CmsPrefrenceAreaProductRelationInput>>() {
@@ -149,9 +155,9 @@ public class ProductUpdateServiceImpl implements ProductUpdateService {
         productAttributeValueMapper.deleteByExample(productAttributeValueExample);
         relateAndInsertList(productAttributeValueDao, productParam.getProductAttributeValueList(), id);
         //关联专题
-        cmsSubjectProductRelationClient.relateAndUpdateList(productParam.getSubjectProductRelationList(), id);
+        subjectProductWriteClient.relateAndUpdateList(productParam.getSubjectProductRelationList(), id);
         //关联优选
-        cmsPrefrenceAreaProductRelationClient.relateAndUpdateList(productParam.getPrefrenceAreaProductRelationList(), id);
+        prefrenceAreaProductWriteClient.relateAndUpdateList(productParam.getPrefrenceAreaProductRelationList(), id);
         count = 1;
         return count;
     }

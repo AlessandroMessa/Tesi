@@ -1,4 +1,4 @@
-package com.mtcarpenter.mall.client;
+package com.mtcarpenter.mall.client.prefrence;
 
 import com.mtcarpenter.mall.common.CmsPrefrenceAreaProductRelationInput;
 import com.mtcarpenter.mall.common.api.CommonResult;
@@ -9,15 +9,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
-
-/**
- * @author mtcarpenter
- * @github https://github.com/mtcarpenter/mall-cloud-alibaba
- * @desc 微信公众号：山间木匠
- */
 @FeignClient(name = "mall-admin-cms", path = "prefrenceArea")
-public interface CmsPrefrenceAreaProductRelationClient {
-
+public interface PrefrenceAreaProductWriteClient {
     /**
      * 批量关联商品
      *
@@ -27,7 +20,6 @@ public interface CmsPrefrenceAreaProductRelationClient {
     @RequestMapping(value = "/relateAndInsertList", method = RequestMethod.POST)
     CommonResult relateAndInsertList(@RequestBody List<CmsPrefrenceAreaProductRelationInput> productRelationInput, @RequestParam("productId") Long productId);
 
-
     /**
      * 批量更新关联商品
      *
@@ -36,14 +28,4 @@ public interface CmsPrefrenceAreaProductRelationClient {
      */
     @RequestMapping(value = "/relateAndUpdateList", method = RequestMethod.POST)
     CommonResult relateAndUpdateList(@RequestBody List<CmsPrefrenceAreaProductRelationInput> productRelationInputs, @RequestParam("productId") Long productId);
-
-
-    /**
-     * 通过id查询关联专题
-     *
-     * @param productId
-     * @return
-     */
-    @RequestMapping(value = "/relationByProductId", method = RequestMethod.GET)
-    CommonResult<List<CmsPrefrenceAreaProductRelationInput>> relationByProductId(@RequestParam("productId") Long productId);
 }
