@@ -1,6 +1,5 @@
 package com.stalary.pf.recruit.data.dto;
 
-import com.stalary.pf.recruit.data.vo.HR;
 import lombok.Data;
 
 /**
@@ -40,17 +39,6 @@ public class User {
     private Long firstId;
 
     private String code;
-
-    public User(HR hr) {
-        this.username = hr.getUsername();
-        this.nickname = hr.getNickname();
-        this.password = hr.getPassword();
-        this.phone = hr.getPhone();
-        this.email = hr.getEmail();
-        this.firstId = hr.getCompanyId();
-        this.code = hr.getCode();
-        this.role = 1;
-    }
 
     public User() {
     }
