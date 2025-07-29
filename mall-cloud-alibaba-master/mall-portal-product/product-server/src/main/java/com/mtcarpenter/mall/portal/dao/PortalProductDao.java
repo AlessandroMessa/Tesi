@@ -1,7 +1,7 @@
 package com.mtcarpenter.mall.portal.dao;
 
 
-import com.mtcarpenter.mall.domain.CartProduct;
+import com.mtcarpenter.mall.domain.cart.CartProduct;
 import com.mtcarpenter.mall.domain.PromotionProduct;
 import org.apache.ibatis.annotations.Param;
 

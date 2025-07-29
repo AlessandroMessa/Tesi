@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.mtcarpenter.mall.portal.dao.PortalProductDao">
-    <resultMap id="cartProductMap" type="com.mtcarpenter.mall.domain.CartProduct" autoMapping="true">
+    <resultMap id="cartProductMap" type="com.mtcarpenter.mall.domain.cart.CartProduct" autoMapping="true">
         <id column="id" jdbcType="BIGINT" property="id"/>
         <collection property="productAttributeList" columnPrefix="attr_"
                     resultMap="com.mtcarpenter.mall.mapper.PmsProductAttributeMapper.BaseResultMap">

@@ -1,6 +1,6 @@
 package com.mtcarpenter.mall.portal.service;
 
-import com.mtcarpenter.mall.domain.CartProduct;
+import com.mtcarpenter.mall.domain.cart.CartProduct;
 import com.mtcarpenter.mall.model.OmsCartItem;
 import com.mtcarpenter.mall.domain.CartPromotionItem;
 import org.springframework.transaction.annotation.Transactional;

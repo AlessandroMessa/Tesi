@@ -1,6 +1,6 @@
 package com.mtcarpenter.mall.portal.controller;
 
-import com.mtcarpenter.mall.domain.CartProduct;
+import com.mtcarpenter.mall.domain.cart.CartProduct;
 import com.mtcarpenter.mall.common.api.CommonResult;
 import com.mtcarpenter.mall.model.OmsCartItem;
 import com.mtcarpenter.mall.domain.CartPromotionItem;

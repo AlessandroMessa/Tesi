@@ -1,6 +1,6 @@
 package com.mtcarpenter.mall.portal.service.product;
 
-import com.mtcarpenter.mall.domain.CartProduct;
+import com.mtcarpenter.mall.domain.cart.CartProduct;
 
 public interface ProductCartService {
     /**

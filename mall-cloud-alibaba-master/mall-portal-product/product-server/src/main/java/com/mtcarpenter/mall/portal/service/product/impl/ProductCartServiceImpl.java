@@ -1,6 +1,6 @@
 package com.mtcarpenter.mall.portal.service.product.impl;
 
-import com.mtcarpenter.mall.domain.CartProduct;
+import com.mtcarpenter.mall.domain.cart.CartProduct;
 import com.mtcarpenter.mall.portal.dao.PortalProductDao;
 import com.mtcarpenter.mall.portal.service.product.ProductCartService;
 import org.springframework.beans.factory.annotation.Autowired;

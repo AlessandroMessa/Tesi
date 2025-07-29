@@ -4,7 +4,7 @@ import cn.hutool.core.collection.CollUtil;
 import com.mtcarpenter.mall.client.cart.CartProductClient;
 import com.mtcarpenter.mall.common.api.CommonResult;
 import com.mtcarpenter.mall.common.api.ResultCode;
-import com.mtcarpenter.mall.domain.CartProduct;
+import com.mtcarpenter.mall.domain.cart.CartProduct;
 import com.mtcarpenter.mall.mapper.OmsCartItemMapper;
 import com.mtcarpenter.mall.model.OmsCartItem;
 import com.mtcarpenter.mall.model.cart.OmsCartItemExample;
