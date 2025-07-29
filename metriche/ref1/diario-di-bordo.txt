@@ -1,0 +1,4 @@
+ho fatto il refactoring del primo smell. automaticamente ho risolto un altro smell. avevano i package in comune.
+User (dto) usava HR (vo) 
+Candidate (vo) usava UserInfo (vo).
+Dep inversion su User.
