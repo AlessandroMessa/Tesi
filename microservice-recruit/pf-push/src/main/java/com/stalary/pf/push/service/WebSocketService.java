@@ -1,13 +1,10 @@
-/**
- * @(#)WebSocketService.java, 2018-06-07.
- * <p>
- * Copyright 2018 Stalary.
- */
 package com.stalary.pf.push.service;
 
 import com.alibaba.fastjson.JSONObject;
 import com.google.common.cache.Cache;
 import com.google.common.cache.CacheBuilder;
+import com.stalary.pf.push.constant.PushConstants;
+import com.stalary.pf.push.model.WsMessage;
 import lombok.Data;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
@@ -21,17 +18,11 @@ import javax.websocket.server.PathParam;
 import javax.websocket.server.ServerEndpoint;
 import java.util.concurrent.TimeUnit;
 
-/**
- * WebSocketService
- *
- * @author lirongqian
- * @since 2018/06/07
- */
 @Service
 @ServerEndpoint("/push/ws/{userId}")
 @Slf4j
 @Data
-public class WebSocketService {
+public class WebSocketService implements WebSocketSender {
 
     private static StringRedisTemplate redis;
 
@@ -48,16 +39,12 @@ public class WebSocketService {
             .build();
 
     private Long userId;
-
     private Session session;
-
     private String message;
 
     @OnOpen
-    public void onOpen(
-            Session session,
-            @PathParam("userId") Long userId) {
-        log.info("userId: " + userId + " webSocket开始连接");
+    public void onOpen(Session session, @PathParam("userId") Long userId) {
+        log.info("userId: {} webSocket开始连接", userId);
         this.userId = userId;
         this.session = session;
         WebSocketService present = sessionCache.getIfPresent(userId);
@@ -68,9 +55,8 @@ public class WebSocketService {
         } else {
             sessionCache.put(userId, this);
         }
-        log.info("sessionCache: " + sessionCache.asMap().keySet());
+        log.info("sessionCache: {}", sessionCache.asMap().keySet());
     }
-
 
     @OnClose
     public void onClose() {
@@ -84,52 +70,44 @@ public class WebSocketService {
 
     @OnMessage
     public void onMessage(String message) {
-        log.info("【webSocket】收到客户端发来的消息:{}", message);
+        log.info("【webSocket】收到客户端发来的消息: {}", message);
     }
 
-    /**
-     * 向客户端发送消息
-     **/
+    @Override
     @SneakyThrows
-    void sendMessage(Long userId, String message) {
+    public void sendMessage(Long userId, String message) {
         WebSocketService socket = sessionCache.getIfPresent(userId);
-        // socket连接时直接发送消息
         if (socket != null && socket.getSession() != null) {
-            socket.session
-                    .getBasicRemote()
-                    .sendText(message);
-            // 更新消息的信息，进行缓存
+            socket.session.getBasicRemote().sendText(message);
             socket.setMessage(message);
             sessionCache.put(userId, socket);
-            log.info("【webSocket】 send message: userId: " + userId + " : message:" + message);
+            log.info("【webSocket】 send message: userId: {}, message: {}", userId, message);
         } else {
-            // 未连接时暂存消息
             WebSocketService webSocketService = new WebSocketService();
             webSocketService.setUserId(userId);
             webSocketService.setMessage(message);
             sessionCache.put(userId, webSocketService);
-            log.info("save: userId: " + userId + " : message:" + message);
+            log.info("save: userId: {}, message: {}", userId, message);
         }
     }
 
     public void messageBroadcast(Long userId, String message) {
         log.info("message broadcast userId {}, message {}", userId, message);
-        redis.convertAndSend(MessageService.MESSAGE_CHANNEL, JSONObject.toJSONString(new MessageService.WsMessage(userId, message)));
+        redis.convertAndSend(PushConstants.MESSAGE_CHANNEL, JSONObject.toJSONString(new WsMessage(userId, message)));
     }
 
     private void closeBroadcast(Long userId) {
         log.info("close broadcast userId {}", userId);
-        redis.convertAndSend(MessageService.CLOSE_CHANNEL, String.valueOf(userId));
+        redis.convertAndSend(PushConstants.CLOSE_CHANNEL, String.valueOf(userId));
     }
 
-    void close(Long userId) {
-        log.info("userId: " + userId + " webSocket关闭连接");
+    @Override
+    public void close(Long userId) {
+        log.info("userId: {} webSocket关闭连接", userId);
         WebSocketService present = sessionCache.getIfPresent(userId);
         if (present != null) {
-            // 退出时清空session
             present.setSession(null);
             sessionCache.put(userId, present);
         }
     }
-
 }

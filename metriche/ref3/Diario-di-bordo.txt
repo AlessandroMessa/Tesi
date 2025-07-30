@@ -1,0 +1,2 @@
+chat è un po' confuso, ho spostato result enum in un package common invece dello stesso di ResponseMessage per separare le responsabilità.
+Potrebbe esserci un hublike dep in Common ora però… niente tutto a posto
