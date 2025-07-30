@@ -1,0 +1,2 @@
+Hublike su com.ruoyi.system.domain
+questa volta non posso fare come ref 2, semplicemente devo creare sotto package per domain
