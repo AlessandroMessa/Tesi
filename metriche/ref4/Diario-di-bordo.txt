@@ -1,0 +1,44 @@
+Guardare su chat gpt perché è più veloce da spiegare:
+
+📘 Rimozione di una dipendenza ciclica tra MessageService e WebSocketService
+Nel progetto iniziale, era presente una dipendenza ciclica tra due classi appartenenti allo stesso package (com.stalary.pf.push.service):
+
+MessageService dipendeva da WebSocketService per l'invio e la chiusura delle connessioni WebSocket;
+
+WebSocketService, a sua volta, accedeva a membri statici e a una classe interna (WsMessage) definiti all'interno di MessageService, completando il ciclo.
+
+Questa situazione rappresenta un tipico cyclic dependency smell, in cui due componenti si dipendono a vicenda, rendendo il sistema rigido, difficile da testare e poco manutenibile. Questo smell è spesso associato anche a un hub-like dependency, quando una classe centrale è usata da molti altri componenti.
+
+🔧 Strategie di refactoring adottate (secondo Arcan)
+Per rimuovere la dipendenza ciclica, sono state applicate le seguenti tecniche di refactoring suggerite nel manuale Arcan:
+
+1. 🔄 Introduce Interface
+È stata creata un’interfaccia WebSocketSender che espone solo le operazioni necessarie (sendMessage e close), permettendo a MessageService di dipendere da un’astrazione e non dall’implementazione concreta WebSocketService.
+
+Vantaggio: riduce il coupling e permette un migliore isolamento per test e mocking.
+
+2. ✂️ Extract Class
+La classe interna MessageService.WsMessage è stata estratta e spostata in una nuova entità autonoma chiamata WsMessage, nel package model. In questo modo, WebSocketService non ha più bisogno di riferirsi a MessageService per creare o deserializzare i messaggi.
+
+Vantaggio: migliora la riusabilità e rimuove la dipendenza indiretta dalla classe contenitrice.
+
+3. 🧱 Extract Constant Class
+Le costanti statiche MESSAGE_CHANNEL e CLOSE_CHANNEL, precedentemente definite in MessageService, sono state spostate in una nuova classe dedicata PushConstants.
+
+Vantaggio: centralizza le costanti e separa le responsabilità, favorendo il Single Responsibility Principle (SRP).
+
+✅ Risultato del refactoring
+Il ciclo di dipendenza tra le due classi è stato eliminato.
+
+Le classi sono ora più coese e meno accoppiate, in linea con i principi dell’architettura modulare.
+
+Il codice è diventato più facilmente testabile e conforme alle best practice di progettazione orientata agli oggetti.
+
+📌 Esempio architetturale risultante
+plaintext
+Copia
+Modifica
+[MessageService] --> [WebSocketSender (interface)] --> [WebSocketService (concreta)]
+                             ↑
+                         [WsMessage]
+                         [PushConstants]
