@@ -1,2 +1,12 @@
 Hublike su com.ruoyi.system.domain
 questa volta non posso fare come ref 2, semplicemente devo creare sotto package per domain
+
+Rifattorizzazione del dominio interno del modulo ruoyi-system
+All'interno del modulo ruoyi-system, l’analisi statica condotta con Arcan ha evidenziato la presenza di uno smell architetturale di tipo Hub-Like Dependency nel pacchetto com.ruoyi.system.domain. Tale pacchetto conteneva tutte le entità di dominio associate al sistema, accorpando in un unico punto classi relative a configurazioni (SysConfig), menu (SysMenu), notifiche (SysNotice), autorizzazioni (SysRoleDept, SysRoleMenu), gestione dei post e assegnazioni (SysPost, SysUserPost, SysUserRole), e oggetti specifici per la view (MetaVo, RouterVo, TreeSelect).
+
+Questa struttura monolitica violava il principio di separazione dei contesti e causava un forte accoppiamento tra componenti, riducendo la manutenibilità e l’estendibilità del modulo.
+
+Per risolvere il problema è stata applicata una strategia di tipo Split Unit, suddividendo le classi in sottopacchetti coesi in base alla loro responsabilità funzionale. Sono stati introdotti nuovi pacchetti interni come domain.config, domain.menu, domain.role, domain.notice, domain.user e domain.vo, ognuno dei quali contiene ora un sottoinsieme coerente e indipendente del dominio.
+
+Questo refactoring ha permesso di eliminare la dipendenza a stella sul pacchetto domain, distribuendo le responsabilità in modo più modulare e migliorando la qualità architetturale complessiva del modulo. Anche se non si è proceduto all’estrazione in microservizi indipendenti, la nuova struttura ha reso il codice più leggibile, mantenibile e conforme ai principi di progettazione modulare.
+
