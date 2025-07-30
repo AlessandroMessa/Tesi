@@ -8,7 +8,7 @@ import org.apache.velocity.VelocityContext;
 import com.alibaba.fastjson2.JSON;
 import com.alibaba.fastjson2.JSONObject;
 import com.ruoyi.common.core.constant.GenConstants;
-import com.ruoyi.common.core.utils.DateUtils;
+import com.ruoyi.common.core.utils.date.DateUtils;
 import com.ruoyi.common.core.utils.StringUtils;
 import com.ruoyi.gen.domain.GenTable;
 import com.ruoyi.gen.domain.GenTableColumn;

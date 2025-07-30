@@ -1,4 +1,4 @@
-package com.ruoyi.common.core.utils;
+package com.ruoyi.common.core.utils.date;
 
 import java.lang.management.ManagementFactory;
 import java.text.ParseException;
