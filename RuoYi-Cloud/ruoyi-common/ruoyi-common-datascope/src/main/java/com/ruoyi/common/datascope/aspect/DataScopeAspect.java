@@ -13,9 +13,9 @@ import com.ruoyi.common.core.utils.StringUtils;
 import com.ruoyi.common.core.web.domain.BaseEntity;
 import com.ruoyi.common.datascope.annotation.DataScope;
 import com.ruoyi.common.security.utils.SecurityUtils;
-import com.ruoyi.system.api.domain.SysRole;
-import com.ruoyi.system.api.domain.SysUser;
-import com.ruoyi.system.api.model.LoginUser;
+import com.ruoyi.system.api.role.domain.SysRole;
+import com.ruoyi.system.api.user.domain.SysUser;
+import com.ruoyi.system.api.user.model.LoginUser;
 
 /**
  * 数据过滤处理

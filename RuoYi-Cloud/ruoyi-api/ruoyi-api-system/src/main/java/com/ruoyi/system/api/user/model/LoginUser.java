@@ -1,8 +1,8 @@
-package com.ruoyi.system.api.model;
+package com.ruoyi.system.api.user.model;
 
 import java.io.Serializable;
 import java.util.Set;
-import com.ruoyi.system.api.domain.SysUser;
+import com.ruoyi.system.api.user.domain.SysUser;
 
 /**
  * 用户信息

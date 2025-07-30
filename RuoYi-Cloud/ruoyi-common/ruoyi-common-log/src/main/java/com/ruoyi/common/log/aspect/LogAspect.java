@@ -29,7 +29,7 @@ import com.ruoyi.common.log.enums.BusinessStatus;
 import com.ruoyi.common.log.filter.PropertyPreExcludeFilter;
 import com.ruoyi.common.log.service.AsyncLogService;
 import com.ruoyi.common.security.utils.SecurityUtils;
-import com.ruoyi.system.api.domain.SysOperLog;
+import com.ruoyi.system.api.log.domain.SysOperLog;
 
 /**
  * 操作日志记录处理

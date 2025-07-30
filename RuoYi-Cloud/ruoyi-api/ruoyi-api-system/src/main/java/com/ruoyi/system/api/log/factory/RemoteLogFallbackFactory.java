@@ -1,13 +1,13 @@
-package com.ruoyi.system.api.factory;
+package com.ruoyi.system.api.log.factory;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.cloud.openfeign.FallbackFactory;
 import org.springframework.stereotype.Component;
 import com.ruoyi.common.core.domain.R;
-import com.ruoyi.system.api.RemoteLogService;
-import com.ruoyi.system.api.domain.SysLogininfor;
-import com.ruoyi.system.api.domain.SysOperLog;
+import com.ruoyi.system.api.log.service.RemoteLogService;
+import com.ruoyi.system.api.log.domain.SysLogininfor;
+import com.ruoyi.system.api.log.domain.SysOperLog;
 
 /**
  * 日志服务降级处理

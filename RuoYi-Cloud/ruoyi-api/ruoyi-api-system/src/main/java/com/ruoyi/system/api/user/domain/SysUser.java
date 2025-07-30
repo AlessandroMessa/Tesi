@@ -1,8 +1,11 @@
-package com.ruoyi.system.api.domain;
+package com.ruoyi.system.api.user.domain;
 
 import java.util.Date;
 import java.util.List;
 import javax.validation.constraints.*;
+
+import com.ruoyi.system.api.dept.domain.SysDept;
+import com.ruoyi.system.api.role.domain.SysRole;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 import com.ruoyi.common.core.annotation.Excel;

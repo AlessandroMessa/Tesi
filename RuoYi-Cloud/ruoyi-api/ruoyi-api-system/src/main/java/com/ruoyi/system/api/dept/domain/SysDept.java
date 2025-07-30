@@ -1,4 +1,4 @@
-package com.ruoyi.system.api.domain;
+package com.ruoyi.system.api.dept.domain;
 
 import java.util.ArrayList;
 import java.util.List;

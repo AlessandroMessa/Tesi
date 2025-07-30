@@ -6,8 +6,8 @@ import com.ruoyi.common.core.constant.Constants;
 import com.ruoyi.common.core.constant.SecurityConstants;
 import com.ruoyi.common.core.utils.StringUtils;
 import com.ruoyi.common.core.utils.ip.IpUtils;
-import com.ruoyi.system.api.RemoteLogService;
-import com.ruoyi.system.api.domain.SysLogininfor;
+import com.ruoyi.system.api.log.service.RemoteLogService;
+import com.ruoyi.system.api.log.domain.SysLogininfor;
 
 /**
  * 记录日志方法

@@ -1,4 +1,4 @@
-package com.ruoyi.system.api.domain;
+package com.ruoyi.system.api.log.domain;
 
 import java.util.Date;
 import com.fasterxml.jackson.annotation.JsonFormat;

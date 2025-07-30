@@ -2,7 +2,7 @@ package com.ruoyi.common.security.auth;
 
 import com.ruoyi.common.security.annotation.RequiresPermissions;
 import com.ruoyi.common.security.annotation.RequiresRoles;
-import com.ruoyi.system.api.model.LoginUser;
+import com.ruoyi.system.api.user.model.LoginUser;
 
 /**
  * Token 权限验证工具类

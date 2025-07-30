@@ -1,4 +1,4 @@
-package com.ruoyi.system.api;
+package com.ruoyi.system.api.user.service;
 
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,9 +10,9 @@ import org.springframework.web.bind.annotation.RequestHeader;
 import com.ruoyi.common.core.constant.SecurityConstants;
 import com.ruoyi.common.core.constant.ServiceNameConstants;
 import com.ruoyi.common.core.domain.R;
-import com.ruoyi.system.api.domain.SysUser;
-import com.ruoyi.system.api.factory.RemoteUserFallbackFactory;
-import com.ruoyi.system.api.model.LoginUser;
+import com.ruoyi.system.api.user.domain.SysUser;
+import com.ruoyi.system.api.user.factory.RemoteUserFallbackFactory;
+import com.ruoyi.system.api.user.model.LoginUser;
 
 /**
  * 用户服务

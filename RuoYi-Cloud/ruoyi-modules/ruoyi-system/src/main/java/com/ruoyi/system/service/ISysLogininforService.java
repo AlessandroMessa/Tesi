@@ -1,7 +1,7 @@
 package com.ruoyi.system.service;
 
 import java.util.List;
-import com.ruoyi.system.api.domain.SysLogininfor;
+import com.ruoyi.system.api.log.domain.SysLogininfor;
 
 /**
  * 系统访问日志情况信息 服务层

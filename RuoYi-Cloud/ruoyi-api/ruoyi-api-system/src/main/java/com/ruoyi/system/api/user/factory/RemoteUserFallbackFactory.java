@@ -1,13 +1,13 @@
-package com.ruoyi.system.api.factory;
+package com.ruoyi.system.api.user.factory;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.cloud.openfeign.FallbackFactory;
 import org.springframework.stereotype.Component;
 import com.ruoyi.common.core.domain.R;
-import com.ruoyi.system.api.RemoteUserService;
-import com.ruoyi.system.api.domain.SysUser;
-import com.ruoyi.system.api.model.LoginUser;
+import com.ruoyi.system.api.user.service.RemoteUserService;
+import com.ruoyi.system.api.user.domain.SysUser;
+import com.ruoyi.system.api.user.model.LoginUser;
 
 /**
  * 用户服务降级处理

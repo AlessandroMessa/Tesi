@@ -11,7 +11,7 @@ import com.ruoyi.common.core.domain.R;
 import com.ruoyi.common.core.utils.StringUtils;
 import com.ruoyi.common.core.utils.file.FileUtils;
 import com.ruoyi.file.service.ISysFileService;
-import com.ruoyi.system.api.domain.SysFile;
+import com.ruoyi.system.api.file.domain.SysFile;
 
 /**
  * 文件请求处理

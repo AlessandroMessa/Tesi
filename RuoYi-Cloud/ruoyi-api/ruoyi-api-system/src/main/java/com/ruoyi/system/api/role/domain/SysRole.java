@@ -1,4 +1,4 @@
-package com.ruoyi.system.api.domain;
+package com.ruoyi.system.api.role.domain;
 
 import java.util.Set;
 import javax.validation.constraints.NotBlank;

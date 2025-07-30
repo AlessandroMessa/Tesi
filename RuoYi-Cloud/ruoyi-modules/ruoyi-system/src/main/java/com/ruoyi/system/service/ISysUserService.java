@@ -1,7 +1,7 @@
 package com.ruoyi.system.service;
 
 import java.util.List;
-import com.ruoyi.system.api.domain.SysUser;
+import com.ruoyi.system.api.user.domain.SysUser;
 
 /**
  * 用户 业务层
