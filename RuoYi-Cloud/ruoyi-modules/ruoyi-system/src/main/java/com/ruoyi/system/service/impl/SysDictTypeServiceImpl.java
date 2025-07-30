@@ -5,13 +5,16 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 import javax.annotation.PostConstruct;
+
+import com.ruoyi.common.security.service.invalidator.DictCacheInvalidatorService;
+import com.ruoyi.common.security.service.reader.DictCacheReaderService;
+import com.ruoyi.common.security.service.writer.DictCacheWriterService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import com.ruoyi.common.core.constant.UserConstants;
 import com.ruoyi.common.core.exception.ServiceException;
 import com.ruoyi.common.core.utils.StringUtils;
-import com.ruoyi.common.security.utils.DictUtils;
 import com.ruoyi.system.api.dict.domain.SysDictData;
 import com.ruoyi.system.api.dict.domain.SysDictType;
 import com.ruoyi.system.mapper.SysDictDataMapper;
@@ -31,6 +34,12 @@ public class SysDictTypeServiceImpl implements ISysDictTypeService
 
     @Autowired
     private SysDictDataMapper dictDataMapper;
+    @Autowired
+    private DictCacheReaderService dictCacheReaderService;
+    @Autowired
+    private DictCacheWriterService dictCacheWriterService;
+    @Autowired
+    private DictCacheInvalidatorService dictCacheInvalidatorService;
 
     /**
      * 项目启动时，初始化字典到缓存
@@ -73,7 +82,7 @@ public class SysDictTypeServiceImpl implements ISysDictTypeService
     @Override
     public List<SysDictData> selectDictDataByType(String dictType)
     {
-        List<SysDictData> dictDatas = DictUtils.getDictCache(dictType);
+        List<SysDictData> dictDatas = dictCacheReaderService.getDictCache(dictType);
         if (StringUtils.isNotEmpty(dictDatas))
         {
             return dictDatas;
@@ -81,7 +90,7 @@ public class SysDictTypeServiceImpl implements ISysDictTypeService
         dictDatas = dictDataMapper.selectDictDataByType(dictType);
         if (StringUtils.isNotEmpty(dictDatas))
         {
-            DictUtils.setDictCache(dictType, dictDatas);
+            dictCacheWriterService.setDictCache(dictType, dictDatas);
             return dictDatas;
         }
         return null;
@@ -127,7 +136,7 @@ public class SysDictTypeServiceImpl implements ISysDictTypeService
                 throw new ServiceException(String.format("%1$s已分配,不能删除", dictType.getDictName()));
             }
             dictTypeMapper.deleteDictTypeById(dictId);
-            DictUtils.removeDictCache(dictType.getDictType());
+            dictCacheInvalidatorService.removeDictCache(dictType.getDictType());
         }
     }
 
@@ -142,7 +151,7 @@ public class SysDictTypeServiceImpl implements ISysDictTypeService
         Map<String, List<SysDictData>> dictDataMap = dictDataMapper.selectDictDataList(dictData).stream().collect(Collectors.groupingBy(SysDictData::getDictType));
         for (Map.Entry<String, List<SysDictData>> entry : dictDataMap.entrySet())
         {
-            DictUtils.setDictCache(entry.getKey(), entry.getValue().stream().sorted(Comparator.comparing(SysDictData::getDictSort)).collect(Collectors.toList()));
+            dictCacheWriterService.setDictCache(entry.getKey(), entry.getValue().stream().sorted(Comparator.comparing(SysDictData::getDictSort)).collect(Collectors.toList()));
         }
     }
 
@@ -152,7 +161,7 @@ public class SysDictTypeServiceImpl implements ISysDictTypeService
     @Override
     public void clearDictCache()
     {
-        DictUtils.clearDictCache();
+        dictCacheInvalidatorService.clearDictCache();
     }
 
     /**
@@ -177,7 +186,7 @@ public class SysDictTypeServiceImpl implements ISysDictTypeService
         int row = dictTypeMapper.insertDictType(dict);
         if (row > 0)
         {
-            DictUtils.setDictCache(dict.getDictType(), null);
+            dictCacheWriterService.setDictCache(dict.getDictType(), null);
         }
         return row;
     }
@@ -198,7 +207,7 @@ public class SysDictTypeServiceImpl implements ISysDictTypeService
         if (row > 0)
         {
             List<SysDictData> dictDatas = dictDataMapper.selectDictDataByType(dict.getDictType());
-            DictUtils.setDictCache(dict.getDictType(), dictDatas);
+            dictCacheWriterService.setDictCache(dict.getDictType(), dictDatas);
         }
         return row;
     }

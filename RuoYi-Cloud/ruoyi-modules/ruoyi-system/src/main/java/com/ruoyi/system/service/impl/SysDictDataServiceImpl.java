@@ -1,9 +1,10 @@
 package com.ruoyi.system.service.impl;
 
 import java.util.List;
+
+import com.ruoyi.common.security.service.writer.DictCacheWriterService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.ruoyi.common.security.utils.DictUtils;
 import com.ruoyi.system.api.dict.domain.SysDictData;
 import com.ruoyi.system.mapper.SysDictDataMapper;
 import com.ruoyi.system.service.ISysDictDataService;
@@ -18,6 +19,8 @@ public class SysDictDataServiceImpl implements ISysDictDataService
 {
     @Autowired
     private SysDictDataMapper dictDataMapper;
+    @Autowired
+    private DictCacheWriterService dictCacheWriterService;
 
     /**
      * 根据条件分页查询字典数据
@@ -69,7 +72,7 @@ public class SysDictDataServiceImpl implements ISysDictDataService
             SysDictData data = selectDictDataById(dictCode);
             dictDataMapper.deleteDictDataById(dictCode);
             List<SysDictData> dictDatas = dictDataMapper.selectDictDataByType(data.getDictType());
-            DictUtils.setDictCache(data.getDictType(), dictDatas);
+            dictCacheWriterService.setDictCache(data.getDictType(), dictDatas);
         }
     }
 
@@ -86,7 +89,7 @@ public class SysDictDataServiceImpl implements ISysDictDataService
         if (row > 0)
         {
             List<SysDictData> dictDatas = dictDataMapper.selectDictDataByType(data.getDictType());
-            DictUtils.setDictCache(data.getDictType(), dictDatas);
+            dictCacheWriterService.setDictCache(data.getDictType(), dictDatas);
         }
         return row;
     }
@@ -104,7 +107,7 @@ public class SysDictDataServiceImpl implements ISysDictDataService
         if (row > 0)
         {
             List<SysDictData> dictDatas = dictDataMapper.selectDictDataByType(data.getDictType());
-            DictUtils.setDictCache(data.getDictType(), dictDatas);
+            dictCacheWriterService.setDictCache(data.getDictType(), dictDatas);
         }
         return row;
     }

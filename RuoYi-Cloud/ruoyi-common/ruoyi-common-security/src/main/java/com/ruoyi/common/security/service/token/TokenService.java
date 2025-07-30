@@ -1,4 +1,4 @@
-package com.ruoyi.common.security.service;
+package com.ruoyi.common.security.service.token;
 
 import java.util.HashMap;
 import java.util.Map;

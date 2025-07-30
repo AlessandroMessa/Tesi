@@ -30,7 +30,7 @@ import com.ruoyi.common.log.annotation.Log;
 import com.ruoyi.common.log.enums.BusinessType;
 import com.ruoyi.common.security.annotation.InnerAuth;
 import com.ruoyi.common.security.annotation.RequiresPermissions;
-import com.ruoyi.common.security.service.TokenService;
+import com.ruoyi.common.security.service.token.TokenService;
 import com.ruoyi.common.security.utils.SecurityUtils;
 import com.ruoyi.system.api.dept.domain.SysDept;
 import com.ruoyi.system.api.role.domain.SysRole;
