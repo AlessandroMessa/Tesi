@@ -7,7 +7,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.ruoyi.common.core.constant.UserConstants;
 import com.ruoyi.common.core.utils.StringUtils;
 import com.ruoyi.system.api.dept.domain.SysDept;
-import com.ruoyi.system.domain.SysMenu;
+import com.ruoyi.system.domain.menu.SysMenu;
 
 /**
  * Treeselect树结构实体类

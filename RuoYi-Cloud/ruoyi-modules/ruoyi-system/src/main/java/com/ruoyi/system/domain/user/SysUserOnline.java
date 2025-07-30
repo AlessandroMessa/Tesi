@@ -1,4 +1,4 @@
-package com.ruoyi.system.domain;
+package com.ruoyi.system.domain.user;
 
 /**
  * 当前在线会话

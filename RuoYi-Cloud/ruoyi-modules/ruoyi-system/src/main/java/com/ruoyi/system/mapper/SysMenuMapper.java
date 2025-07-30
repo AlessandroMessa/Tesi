@@ -2,7 +2,7 @@ package com.ruoyi.system.mapper;
 
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
-import com.ruoyi.system.domain.SysMenu;
+import com.ruoyi.system.domain.menu.SysMenu;
 
 /**
  * 菜单表 数据层

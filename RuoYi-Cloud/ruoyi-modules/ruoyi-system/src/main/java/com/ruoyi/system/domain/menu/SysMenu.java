@@ -1,4 +1,4 @@
-package com.ruoyi.system.domain;
+package com.ruoyi.system.domain.menu;
 
 import java.util.ArrayList;
 import java.util.List;

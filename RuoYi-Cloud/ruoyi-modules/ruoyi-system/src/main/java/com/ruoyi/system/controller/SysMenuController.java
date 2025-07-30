@@ -19,7 +19,7 @@ import com.ruoyi.common.log.annotation.Log;
 import com.ruoyi.common.log.enums.BusinessType;
 import com.ruoyi.common.security.annotation.RequiresPermissions;
 import com.ruoyi.common.security.utils.SecurityUtils;
-import com.ruoyi.system.domain.SysMenu;
+import com.ruoyi.system.domain.menu.SysMenu;
 import com.ruoyi.system.service.ISysMenuService;
 
 /**

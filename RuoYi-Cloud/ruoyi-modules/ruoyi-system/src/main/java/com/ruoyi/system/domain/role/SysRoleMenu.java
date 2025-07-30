@@ -1,30 +1,20 @@
-package com.ruoyi.system.domain;
+package com.ruoyi.system.domain.role;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
 /**
- * 用户和角色关联 sys_user_role
+ * 角色和菜单关联 sys_role_menu
  * 
  * @author ruoyi
  */
-public class SysUserRole
+public class SysRoleMenu
 {
-    /** 用户ID */
-    private Long userId;
-    
     /** 角色ID */
     private Long roleId;
-
-    public Long getUserId()
-    {
-        return userId;
-    }
-
-    public void setUserId(Long userId)
-    {
-        this.userId = userId;
-    }
+    
+    /** 菜单ID */
+    private Long menuId;
 
     public Long getRoleId()
     {
@@ -36,11 +26,21 @@ public class SysUserRole
         this.roleId = roleId;
     }
 
+    public Long getMenuId()
+    {
+        return menuId;
+    }
+
+    public void setMenuId(Long menuId)
+    {
+        this.menuId = menuId;
+    }
+
     @Override
     public String toString() {
         return new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)
-            .append("userId", getUserId())
             .append("roleId", getRoleId())
+            .append("menuId", getMenuId())
             .toString();
     }
 }

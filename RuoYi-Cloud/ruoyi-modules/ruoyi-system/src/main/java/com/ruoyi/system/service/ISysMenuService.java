@@ -2,7 +2,7 @@ package com.ruoyi.system.service;
 
 import java.util.List;
 import java.util.Set;
-import com.ruoyi.system.domain.SysMenu;
+import com.ruoyi.system.domain.menu.SysMenu;
 import com.ruoyi.system.domain.vo.RouterVo;
 import com.ruoyi.system.domain.vo.TreeSelect;
 

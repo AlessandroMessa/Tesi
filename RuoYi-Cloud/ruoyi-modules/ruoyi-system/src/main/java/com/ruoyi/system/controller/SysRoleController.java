@@ -23,7 +23,7 @@ import com.ruoyi.common.security.utils.SecurityUtils;
 import com.ruoyi.system.api.dept.domain.SysDept;
 import com.ruoyi.system.api.role.domain.SysRole;
 import com.ruoyi.system.api.user.domain.SysUser;
-import com.ruoyi.system.domain.SysUserRole;
+import com.ruoyi.system.domain.user.SysUserRole;
 import com.ruoyi.system.service.ISysDeptService;
 import com.ruoyi.system.service.ISysRoleService;
 import com.ruoyi.system.service.ISysUserService;

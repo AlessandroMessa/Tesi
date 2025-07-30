@@ -16,7 +16,7 @@ import com.ruoyi.common.core.utils.StringUtils;
 import com.ruoyi.common.security.utils.SecurityUtils;
 import com.ruoyi.system.api.role.domain.SysRole;
 import com.ruoyi.system.api.user.domain.SysUser;
-import com.ruoyi.system.domain.SysMenu;
+import com.ruoyi.system.domain.menu.SysMenu;
 import com.ruoyi.system.domain.vo.MetaVo;
 import com.ruoyi.system.domain.vo.RouterVo;
 import com.ruoyi.system.domain.vo.TreeSelect;
