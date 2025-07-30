@@ -1,0 +1,35 @@
+Notare che dopo ogni ref anche il td degli altri smells scende
+
+Problema architetturale: Cyclic Dependency tra package
+Durante l’analisi del sistema con Arcan, è stata individuata una dipendenza ciclica tra i package:
+
+com.stalary.pf.message.exception
+
+com.stalary.pf.message.data.vo
+
+Questa dipendenza si manifesta nel seguente modo:
+
+La classe ExceptionHandle (in exception) utilizza ResponseMessage (in vo)
+
+A sua volta, la classe ResponseMessage richiama il metodo statico enumError(...), che dipende da ResultEnum, situato originariamente nel package exception
+
+Questa situazione crea un ciclo architetturale che viola i principi di separazione dei moduli e aumenta l'accoppiamento tra componenti, rendendo il sistema meno manutenibile e più fragile rispetto all’evoluzione.
+
+🛠 Refactoring applicato: Isolamento delle dipendenze comuni
+Per risolvere lo smell, è stato eseguito un refactoring architetturale seguendo le linee guida di Arcan:
+
+È stato spostato il file ResultEnum dal package exception a un nuovo package dedicato:
+👉 com.stalary.pf.message.data.enums
+
+Questo ha permesso di centralizzare la definizione dei codici di errore in un modulo di sola lettura e privo di dipendenze da altri package più alti.
+
+Le classi ResponseMessage e MyException continuano ad accedere a ResultEnum, ma da un modulo esterno e condiviso, evitando il ciclo.
+
+✅ Risultato ottenuto
+Dopo il refactoring:
+
+Il ciclo tra exception e vo è stato completamente rimosso
+
+La nuova struttura favorisce la modularità, la leggibilità e la facilità di manutenzione
+
+Il package data.enums agisce da modulo condiviso e stabile, in accordo con i principi SOLID e l’architettura a microservizi.

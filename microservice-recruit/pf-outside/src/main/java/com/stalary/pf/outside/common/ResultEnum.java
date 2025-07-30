@@ -1,4 +1,4 @@
-package com.stalary.pf.outside.exception;
+package com.stalary.pf.outside.common;
 
 import lombok.Getter;
 

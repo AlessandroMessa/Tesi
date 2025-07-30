@@ -6,7 +6,7 @@ import com.qiniu.storage.Configuration;
 import com.qiniu.storage.UploadManager;
 import com.qiniu.util.Auth;
 import com.stalary.pf.outside.exception.MyException;
-import com.stalary.pf.outside.exception.ResultEnum;
+import com.stalary.pf.outside.common.ResultEnum;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;

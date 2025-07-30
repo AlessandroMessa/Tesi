@@ -10,7 +10,7 @@ import com.aliyuncs.profile.DefaultProfile;
 import com.aliyuncs.profile.IClientProfile;
 import com.stalary.pf.outside.data.Constant;
 import com.stalary.pf.outside.exception.MyException;
-import com.stalary.pf.outside.exception.ResultEnum;
+import com.stalary.pf.outside.common.ResultEnum;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.springframework.data.redis.core.StringRedisTemplate;

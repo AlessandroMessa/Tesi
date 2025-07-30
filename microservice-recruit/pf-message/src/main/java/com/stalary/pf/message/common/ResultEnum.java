@@ -1,4 +1,4 @@
-package com.stalary.pf.message.data.enums;
+package com.stalary.pf.message.common;
 
 import lombok.Getter;
 

@@ -1,6 +1,6 @@
 package com.stalary.pf.message.data.vo;
 
-import com.stalary.pf.message.data.enums.ResultEnum;
+import com.stalary.pf.message.common.ResultEnum;
 import lombok.Data;
 
 /**
