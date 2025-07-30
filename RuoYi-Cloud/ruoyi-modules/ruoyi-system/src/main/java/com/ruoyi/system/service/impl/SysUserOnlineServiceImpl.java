@@ -1,7 +1,7 @@
 package com.ruoyi.system.service.impl;
 
 import org.springframework.stereotype.Service;
-import com.ruoyi.common.core.utils.StringUtils;
+import com.ruoyi.common.core.utils.string.StringUtils;
 import com.ruoyi.system.api.user.model.LoginUser;
 import com.ruoyi.system.domain.user.SysUserOnline;
 import com.ruoyi.system.service.ISysUserOnlineService;

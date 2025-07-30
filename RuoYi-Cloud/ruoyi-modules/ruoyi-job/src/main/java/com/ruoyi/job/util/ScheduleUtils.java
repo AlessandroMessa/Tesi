@@ -14,8 +14,8 @@ import com.ruoyi.common.core.constant.Constants;
 import com.ruoyi.common.core.constant.ScheduleConstants;
 import com.ruoyi.common.core.exception.job.TaskException;
 import com.ruoyi.common.core.exception.job.TaskException.Code;
-import com.ruoyi.common.core.utils.SpringUtils;
-import com.ruoyi.common.core.utils.StringUtils;
+import com.ruoyi.common.core.utils.spring.SpringUtils;
+import com.ruoyi.common.core.utils.string.StringUtils;
 import com.ruoyi.job.domain.model.SysJob;
 
 /**

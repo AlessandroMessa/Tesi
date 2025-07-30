@@ -3,7 +3,7 @@ package com.ruoyi.common.core.web.domain;
 import java.util.HashMap;
 import java.util.Objects;
 import com.ruoyi.common.core.constant.HttpStatus;
-import com.ruoyi.common.core.utils.StringUtils;
+import com.ruoyi.common.core.utils.string.StringUtils;
 
 /**
  * 操作消息提醒

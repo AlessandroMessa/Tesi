@@ -1,4 +1,4 @@
-package com.ruoyi.common.core.utils;
+package com.ruoyi.common.core.utils.spring;
 
 import org.springframework.aop.framework.AopContext;
 import org.springframework.beans.BeansException;

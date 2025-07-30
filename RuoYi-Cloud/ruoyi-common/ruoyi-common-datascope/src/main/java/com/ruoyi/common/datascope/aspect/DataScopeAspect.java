@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 import com.ruoyi.common.core.constant.UserConstants;
 import com.ruoyi.common.core.context.SecurityContextHolder;
 import com.ruoyi.common.core.text.Convert;
-import com.ruoyi.common.core.utils.StringUtils;
+import com.ruoyi.common.core.utils.string.StringUtils;
 import com.ruoyi.common.core.web.domain.BaseEntity;
 import com.ruoyi.common.datascope.annotation.DataScope;
 import com.ruoyi.common.security.utils.SecurityUtils;

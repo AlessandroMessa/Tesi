@@ -12,7 +12,7 @@ import com.google.code.kaptcha.Producer;
 import com.ruoyi.common.core.constant.CacheConstants;
 import com.ruoyi.common.core.constant.Constants;
 import com.ruoyi.common.core.exception.CaptchaException;
-import com.ruoyi.common.core.utils.StringUtils;
+import com.ruoyi.common.core.utils.string.StringUtils;
 import com.ruoyi.common.core.utils.sign.Base64;
 import com.ruoyi.common.core.utils.uuid.IdUtils;
 import com.ruoyi.common.core.web.domain.AjaxResult;

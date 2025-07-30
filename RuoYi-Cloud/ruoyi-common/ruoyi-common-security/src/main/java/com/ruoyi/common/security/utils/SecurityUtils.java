@@ -5,8 +5,8 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import com.ruoyi.common.core.constant.SecurityConstants;
 import com.ruoyi.common.core.constant.TokenConstants;
 import com.ruoyi.common.core.context.SecurityContextHolder;
-import com.ruoyi.common.core.utils.ServletUtils;
-import com.ruoyi.common.core.utils.StringUtils;
+import com.ruoyi.common.core.utils.servlet.ServletUtils;
+import com.ruoyi.common.core.utils.string.StringUtils;
 import com.ruoyi.system.api.user.model.LoginUser;
 
 /**

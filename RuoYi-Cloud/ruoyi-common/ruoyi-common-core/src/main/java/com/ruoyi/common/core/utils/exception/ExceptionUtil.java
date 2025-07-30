@@ -1,7 +1,9 @@
-package com.ruoyi.common.core.utils;
+package com.ruoyi.common.core.utils.exception;
 
 import java.io.PrintWriter;
 import java.io.StringWriter;
+
+import com.ruoyi.common.core.utils.string.StringUtils;
 import org.apache.commons.lang3.exception.ExceptionUtils;
 
 /**

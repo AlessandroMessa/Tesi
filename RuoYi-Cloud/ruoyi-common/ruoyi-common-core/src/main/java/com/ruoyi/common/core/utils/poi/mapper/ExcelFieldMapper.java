@@ -3,7 +3,7 @@ package com.ruoyi.common.core.utils.poi.mapper;
 import com.ruoyi.common.core.annotation.Excel;
 import com.ruoyi.common.core.annotation.Excels;
 import com.ruoyi.common.core.annotation.Excel.Type;
-import com.ruoyi.common.core.utils.StringUtils;
+import com.ruoyi.common.core.utils.string.StringUtils;
 import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.reflect.FieldUtils;
 

@@ -2,7 +2,7 @@ package com.ruoyi.common.core.utils.uuid;
 
 import java.util.concurrent.atomic.AtomicInteger;
 import com.ruoyi.common.core.utils.date.DateUtils;
-import com.ruoyi.common.core.utils.StringUtils;
+import com.ruoyi.common.core.utils.string.StringUtils;
 
 /**
  * @author ruoyi 序列生成类

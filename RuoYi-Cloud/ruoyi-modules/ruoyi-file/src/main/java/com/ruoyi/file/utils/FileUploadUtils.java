@@ -11,7 +11,7 @@ import com.ruoyi.common.core.exception.file.FileNameLengthLimitExceededException
 import com.ruoyi.common.core.exception.file.FileSizeLimitExceededException;
 import com.ruoyi.common.core.exception.file.InvalidExtensionException;
 import com.ruoyi.common.core.utils.date.DateUtils;
-import com.ruoyi.common.core.utils.StringUtils;
+import com.ruoyi.common.core.utils.string.StringUtils;
 import com.ruoyi.common.core.utils.file.FileTypeUtils;
 import com.ruoyi.common.core.utils.file.MimeTypeUtils;
 import com.ruoyi.common.core.utils.uuid.Seq;

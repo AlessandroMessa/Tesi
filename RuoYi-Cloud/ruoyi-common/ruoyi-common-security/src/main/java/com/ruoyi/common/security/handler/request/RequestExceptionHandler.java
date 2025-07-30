@@ -2,7 +2,7 @@ package com.ruoyi.common.security.handler.request;
 
 import javax.servlet.http.HttpServletRequest;
 import com.ruoyi.common.core.text.Convert;
-import com.ruoyi.common.core.utils.StringUtils;
+import com.ruoyi.common.core.utils.string.StringUtils;
 import com.ruoyi.common.core.utils.html.EscapeUtil;
 import com.ruoyi.common.core.web.domain.AjaxResult;
 import org.slf4j.Logger;

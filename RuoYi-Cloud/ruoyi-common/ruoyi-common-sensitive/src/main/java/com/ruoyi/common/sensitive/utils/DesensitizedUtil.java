@@ -1,6 +1,6 @@
 package com.ruoyi.common.sensitive.utils;
 
-import com.ruoyi.common.core.utils.StringUtils;
+import com.ruoyi.common.core.utils.string.StringUtils;
 
 /**
  * 脱敏工具类

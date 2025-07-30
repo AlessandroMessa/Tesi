@@ -1,4 +1,4 @@
-package com.ruoyi.common.core.utils;
+package com.ruoyi.common.core.utils.jwt;
 
 import java.util.Map;
 import com.ruoyi.common.core.constant.SecurityConstants;

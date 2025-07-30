@@ -1,7 +1,7 @@
 package com.ruoyi.common.core.utils.sql;
 
 import com.ruoyi.common.core.exception.UtilException;
-import com.ruoyi.common.core.utils.StringUtils;
+import com.ruoyi.common.core.utils.string.StringUtils;
 
 /**
  * sql操作工具类

@@ -1,4 +1,4 @@
-package com.ruoyi.common.core.utils;
+package com.ruoyi.common.core.utils.page;
 
 import com.github.pagehelper.PageHelper;
 import com.ruoyi.common.core.utils.sql.SqlUtil;

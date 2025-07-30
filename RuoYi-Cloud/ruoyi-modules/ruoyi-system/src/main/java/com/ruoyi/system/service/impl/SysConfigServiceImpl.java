@@ -9,7 +9,7 @@ import com.ruoyi.common.core.constant.CacheConstants;
 import com.ruoyi.common.core.constant.UserConstants;
 import com.ruoyi.common.core.exception.ServiceException;
 import com.ruoyi.common.core.text.Convert;
-import com.ruoyi.common.core.utils.StringUtils;
+import com.ruoyi.common.core.utils.string.StringUtils;
 import com.ruoyi.common.redis.service.RedisService;
 import com.ruoyi.system.domain.config.SysConfig;
 import com.ruoyi.system.mapper.SysConfigMapper;

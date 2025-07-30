@@ -1,6 +1,6 @@
 package com.ruoyi.common.core.utils.poi.image;
 
-import com.ruoyi.common.core.utils.StringUtils;
+import com.ruoyi.common.core.utils.string.StringUtils;
 import com.ruoyi.common.core.utils.file.FileTypeUtils;
 import com.ruoyi.common.core.utils.file.ImageUtils;
 import org.apache.poi.ss.usermodel.*;

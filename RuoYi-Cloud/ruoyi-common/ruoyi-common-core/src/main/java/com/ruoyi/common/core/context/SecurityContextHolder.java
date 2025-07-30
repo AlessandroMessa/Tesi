@@ -5,7 +5,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import com.alibaba.ttl.TransmittableThreadLocal;
 import com.ruoyi.common.core.constant.SecurityConstants;
 import com.ruoyi.common.core.text.Convert;
-import com.ruoyi.common.core.utils.StringUtils;
+import com.ruoyi.common.core.utils.string.StringUtils;
 
 /**
  * 获取当前线程变量中的 用户id、用户名称、Token等信息 

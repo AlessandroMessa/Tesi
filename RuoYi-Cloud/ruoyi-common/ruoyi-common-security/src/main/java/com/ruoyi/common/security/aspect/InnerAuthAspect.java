@@ -7,8 +7,8 @@ import org.springframework.core.Ordered;
 import org.springframework.stereotype.Component;
 import com.ruoyi.common.core.constant.SecurityConstants;
 import com.ruoyi.common.core.exception.InnerAuthException;
-import com.ruoyi.common.core.utils.ServletUtils;
-import com.ruoyi.common.core.utils.StringUtils;
+import com.ruoyi.common.core.utils.servlet.ServletUtils;
+import com.ruoyi.common.core.utils.string.StringUtils;
 import com.ruoyi.common.security.annotation.InnerAuth;
 
 /**

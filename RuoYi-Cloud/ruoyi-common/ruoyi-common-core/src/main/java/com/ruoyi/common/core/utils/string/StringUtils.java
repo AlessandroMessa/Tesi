@@ -1,4 +1,4 @@
-package com.ruoyi.common.core.utils;
+package com.ruoyi.common.core.utils.string;
 
 import java.util.Collection;
 import java.util.List;

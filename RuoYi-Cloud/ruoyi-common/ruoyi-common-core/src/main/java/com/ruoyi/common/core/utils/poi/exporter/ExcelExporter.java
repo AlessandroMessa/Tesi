@@ -2,7 +2,7 @@ package com.ruoyi.common.core.utils.poi.exporter;
 
 import com.ruoyi.common.core.annotation.Excel;
 import com.ruoyi.common.core.text.Convert;
-import com.ruoyi.common.core.utils.StringUtils;
+import com.ruoyi.common.core.utils.string.StringUtils;
 import com.ruoyi.common.core.utils.poi.ExcelHandlerAdapter;
 import com.ruoyi.common.core.utils.poi.image.ExcelImageHandler;
 import com.ruoyi.common.core.utils.poi.mapper.ExcelFieldMapper;

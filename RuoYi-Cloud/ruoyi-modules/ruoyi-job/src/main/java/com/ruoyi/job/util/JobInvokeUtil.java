@@ -4,8 +4,8 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.LinkedList;
 import java.util.List;
-import com.ruoyi.common.core.utils.SpringUtils;
-import com.ruoyi.common.core.utils.StringUtils;
+import com.ruoyi.common.core.utils.spring.SpringUtils;
+import com.ruoyi.common.core.utils.string.StringUtils;
 import com.ruoyi.job.domain.model.SysJob;
 
 /**
