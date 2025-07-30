@@ -1,7 +1,7 @@
 package com.ruoyi.job.mapper;
 
 import java.util.List;
-import com.ruoyi.job.domain.SysJob;
+import com.ruoyi.job.domain.model.SysJob;
 
 /**
  * 调度任务信息 数据层

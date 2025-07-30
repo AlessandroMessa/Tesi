@@ -1,7 +1,7 @@
 package com.ruoyi.job.mapper;
 
 import java.util.List;
-import com.ruoyi.job.domain.SysJobLog;
+import com.ruoyi.job.domain.dto.SysJobLogDTO;
 
 /**
  * 调度任务日志信息 数据层
@@ -16,14 +16,14 @@ public interface SysJobLogMapper
      * @param jobLog 调度日志信息
      * @return 调度任务日志集合
      */
-    public List<SysJobLog> selectJobLogList(SysJobLog jobLog);
+    public List<SysJobLogDTO> selectJobLogList(SysJobLogDTO jobLog);
 
     /**
      * 查询所有调度任务日志
      *
      * @return 调度任务日志列表
      */
-    public List<SysJobLog> selectJobLogAll();
+    public List<SysJobLogDTO> selectJobLogAll();
 
     /**
      * 通过调度任务日志ID查询调度信息
@@ -31,7 +31,7 @@ public interface SysJobLogMapper
      * @param jobLogId 调度任务日志ID
      * @return 调度任务日志对象信息
      */
-    public SysJobLog selectJobLogById(Long jobLogId);
+    public SysJobLogDTO selectJobLogById(Long jobLogId);
 
     /**
      * 新增任务日志
@@ -39,7 +39,7 @@ public interface SysJobLogMapper
      * @param jobLog 调度日志信息
      * @return 结果
      */
-    public int insertJobLog(SysJobLog jobLog);
+    public int insertJobLog(SysJobLogDTO jobLog);
 
     /**
      * 批量删除调度日志信息

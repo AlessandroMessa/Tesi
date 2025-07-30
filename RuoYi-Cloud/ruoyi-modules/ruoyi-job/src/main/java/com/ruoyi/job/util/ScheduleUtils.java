@@ -16,7 +16,7 @@ import com.ruoyi.common.core.exception.job.TaskException;
 import com.ruoyi.common.core.exception.job.TaskException.Code;
 import com.ruoyi.common.core.utils.SpringUtils;
 import com.ruoyi.common.core.utils.StringUtils;
-import com.ruoyi.job.domain.SysJob;
+import com.ruoyi.job.domain.model.SysJob;
 
 /**
  * 定时任务工具类

@@ -1,6 +1,8 @@
 package com.ruoyi.job.util;
 
 import java.util.Date;
+
+import com.ruoyi.job.domain.dto.SysJobLogDTO;
 import org.quartz.Job;
 import org.quartz.JobExecutionContext;
 import org.slf4j.Logger;
@@ -10,8 +12,7 @@ import com.ruoyi.common.core.utils.ExceptionUtil;
 import com.ruoyi.common.core.utils.SpringUtils;
 import com.ruoyi.common.core.utils.StringUtils;
 import com.ruoyi.common.core.utils.bean.BeanUtils;
-import com.ruoyi.job.domain.SysJob;
-import com.ruoyi.job.domain.SysJobLog;
+import com.ruoyi.job.domain.model.SysJob;
 import com.ruoyi.job.service.ISysJobLogService;
 
 /**
@@ -71,7 +72,7 @@ public abstract class AbstractQuartzJob implements Job
         Date startTime = threadLocal.get();
         threadLocal.remove();
 
-        final SysJobLog sysJobLog = new SysJobLog();
+        final SysJobLogDTO sysJobLog = new SysJobLogDTO();
         sysJobLog.setJobName(sysJob.getJobName());
         sysJobLog.setJobGroup(sysJob.getJobGroup());
         sysJobLog.setInvokeTarget(sysJob.getInvokeTarget());

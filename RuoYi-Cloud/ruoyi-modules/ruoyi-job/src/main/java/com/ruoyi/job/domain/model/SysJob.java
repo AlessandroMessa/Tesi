@@ -1,4 +1,4 @@
-package com.ruoyi.job.domain;
+package com.ruoyi.job.domain.model;
 
 import java.util.Date;
 import javax.validation.constraints.NotBlank;

@@ -6,7 +6,7 @@ import java.util.LinkedList;
 import java.util.List;
 import com.ruoyi.common.core.utils.SpringUtils;
 import com.ruoyi.common.core.utils.StringUtils;
-import com.ruoyi.job.domain.SysJob;
+import com.ruoyi.job.domain.model.SysJob;
 
 /**
  * 任务执行工具

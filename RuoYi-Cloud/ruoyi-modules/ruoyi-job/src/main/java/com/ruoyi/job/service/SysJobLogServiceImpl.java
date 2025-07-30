@@ -1,9 +1,10 @@
 package com.ruoyi.job.service;
 
 import java.util.List;
+
+import com.ruoyi.job.domain.dto.SysJobLogDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.ruoyi.job.domain.SysJobLog;
 import com.ruoyi.job.mapper.SysJobLogMapper;
 
 /**
@@ -24,7 +25,7 @@ public class SysJobLogServiceImpl implements ISysJobLogService
      * @return 调度任务日志集合
      */
     @Override
-    public List<SysJobLog> selectJobLogList(SysJobLog jobLog)
+    public List<SysJobLogDTO> selectJobLogList(SysJobLogDTO jobLog)
     {
         return jobLogMapper.selectJobLogList(jobLog);
     }
@@ -36,7 +37,7 @@ public class SysJobLogServiceImpl implements ISysJobLogService
      * @return 调度任务日志对象信息
      */
     @Override
-    public SysJobLog selectJobLogById(Long jobLogId)
+    public SysJobLogDTO selectJobLogById(Long jobLogId)
     {
         return jobLogMapper.selectJobLogById(jobLogId);
     }
@@ -47,7 +48,7 @@ public class SysJobLogServiceImpl implements ISysJobLogService
      * @param jobLog 调度日志信息
      */
     @Override
-    public void addJobLog(SysJobLog jobLog)
+    public void addJobLog(SysJobLogDTO jobLog)
     {
         jobLogMapper.insertJobLog(jobLog);
     }

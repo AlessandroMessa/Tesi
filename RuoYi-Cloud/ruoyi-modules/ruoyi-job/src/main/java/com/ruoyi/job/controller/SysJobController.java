@@ -23,7 +23,7 @@ import com.ruoyi.common.log.annotation.Log;
 import com.ruoyi.common.log.enums.BusinessType;
 import com.ruoyi.common.security.annotation.RequiresPermissions;
 import com.ruoyi.common.security.utils.SecurityUtils;
-import com.ruoyi.job.domain.SysJob;
+import com.ruoyi.job.domain.model.SysJob;
 import com.ruoyi.job.service.ISysJobService;
 import com.ruoyi.job.util.CronUtils;
 import com.ruoyi.job.util.ScheduleUtils;

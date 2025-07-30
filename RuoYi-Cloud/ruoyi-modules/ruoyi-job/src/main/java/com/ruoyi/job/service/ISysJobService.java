@@ -3,7 +3,7 @@ package com.ruoyi.job.service;
 import java.util.List;
 import org.quartz.SchedulerException;
 import com.ruoyi.common.core.exception.job.TaskException;
-import com.ruoyi.job.domain.SysJob;
+import com.ruoyi.job.domain.model.SysJob;
 
 /**
  * 定时任务调度信息信息 服务层

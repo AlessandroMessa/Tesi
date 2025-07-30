@@ -3,7 +3,7 @@ package com.ruoyi.job.util;
 import org.quartz.DisallowConcurrentExecution;
 import org.quartz.JobExecutionContext;
 
-import com.ruoyi.job.domain.SysJob;
+import com.ruoyi.job.domain.model.SysJob;
 
 /**
  * 定时任务处理（禁止并发执行）

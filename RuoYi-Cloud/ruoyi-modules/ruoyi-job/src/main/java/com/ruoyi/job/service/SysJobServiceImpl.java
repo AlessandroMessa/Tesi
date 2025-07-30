@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import com.ruoyi.common.core.constant.ScheduleConstants;
 import com.ruoyi.common.core.exception.job.TaskException;
-import com.ruoyi.job.domain.SysJob;
+import com.ruoyi.job.domain.model.SysJob;
 import com.ruoyi.job.mapper.SysJobMapper;
 import com.ruoyi.job.util.CronUtils;
 import com.ruoyi.job.util.ScheduleUtils;

@@ -1,7 +1,7 @@
 package com.ruoyi.job.service;
 
 import java.util.List;
-import com.ruoyi.job.domain.SysJobLog;
+import com.ruoyi.job.domain.dto.SysJobLogDTO;
 
 /**
  * 定时任务调度日志信息信息 服务层
@@ -16,7 +16,7 @@ public interface ISysJobLogService
      * @param jobLog 调度日志信息
      * @return 调度任务日志集合
      */
-    public List<SysJobLog> selectJobLogList(SysJobLog jobLog);
+    public List<SysJobLogDTO> selectJobLogList(SysJobLogDTO jobLog);
 
     /**
      * 通过调度任务日志ID查询调度信息
@@ -24,14 +24,14 @@ public interface ISysJobLogService
      * @param jobLogId 调度任务日志ID
      * @return 调度任务日志对象信息
      */
-    public SysJobLog selectJobLogById(Long jobLogId);
+    public SysJobLogDTO selectJobLogById(Long jobLogId);
 
     /**
      * 新增任务日志
      * 
      * @param jobLog 调度日志信息
      */
-    public void addJobLog(SysJobLog jobLog);
+    public void addJobLog(SysJobLogDTO jobLog);
 
     /**
      * 批量删除调度日志信息
