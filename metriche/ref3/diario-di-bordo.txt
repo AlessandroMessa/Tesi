@@ -1,0 +1,12 @@
+non ho il riassunto di chat.
+DictUtils:
+Accoppiamento forte a RedisService tramite SpringUtils (anti-pattern).
+
+Responsabilità miste: accesso al cache + costruzione della cache key + logica di conversione JSON.
+
+Difficile da testare perché tutto è statico e dipende da contesto Spring.
+
+quindi ho trasformato dictUtils in service e poi ho spezzettato. dopo di che ho spostato tutto in sottopackage in service
+l'hub su com.ruoyi.common.security è andata via 
+	ma com.ruoyi.job.domain si è presentato.
+il td è sceso
