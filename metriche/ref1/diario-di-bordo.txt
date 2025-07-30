@@ -1,2 +1,6 @@
-Parto dai cyclic perché sono in numero maggiore, in ogni ref metterò più smells, a partire da quelli che impattano di più, 
-qui ne faccio solo uno perché è quello con il td molto alto, e vedo se risolvo altri smells nel mentre
+parto da hublike in com.ruoyi.system.api. 
+Noto che ci sono molte classi che dove si può fare split unit e creare dei sotto package.
+Creo
+- un package service per le interfacce
+- dei sotto package per il package domain
+- dei sotto package per il package factory
