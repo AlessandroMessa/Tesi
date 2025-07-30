@@ -1,4 +1,4 @@
-package com.stalary.pf.message.exception;
+package com.stalary.pf.message.data.enums;
 
 import lombok.Getter;
 

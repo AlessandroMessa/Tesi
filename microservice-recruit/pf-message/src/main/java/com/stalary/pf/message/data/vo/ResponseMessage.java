@@ -1,9 +1,7 @@
 package com.stalary.pf.message.data.vo;
 
-import com.stalary.pf.message.exception.ResultEnum;
-import lombok.AllArgsConstructor;
+import com.stalary.pf.message.data.enums.ResultEnum;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 /**
  * @model ResponseMessage

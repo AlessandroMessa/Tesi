@@ -1,5 +1,6 @@
 package com.stalary.pf.message.exception;
 
+import com.stalary.pf.message.data.enums.ResultEnum;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 
