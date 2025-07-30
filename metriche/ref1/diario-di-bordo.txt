@@ -1,6 +1,29 @@
 parto da hublike in com.ruoyi.system.api. 
 Noto che ci sono molte classi che dove si può fare split unit e creare dei sotto package.
-Creo
-- un package service per le interfacce
-- dei sotto package per il package domain
-- dei sotto package per il package factory
+
+
+Rifattorizzazione del pacchetto system.api tramite strategia Split Unit
+Nel corso dell’analisi architetturale con Arcan è emerso che il package com.ruoyi.system.api presentava uno smell di tipo Hub-Like Dependency, con un numero elevato di dipendenze in entrata e in uscita. Tale pacchetto fungeva da punto centrale per numerose interfacce Feign, modelli di dominio, classi di fallback e DTO condivisi, accoppiando fortemente diversi microservizi tra loro.
+
+Per affrontare il problema è stata adottata la strategia di refactoring Split Unit, suddividendo il contenuto di system.api in sottopacchetti tematici, ciascuno responsabile di una specifica area funzionale:
+
+user per la gestione utenti (RemoteUserService, SysUser, SysRole, SysDept)
+
+file per la gestione dei file remoti
+
+log per la registrazione delle operazioni e login
+
+altri package residuali mantenuti per dati comuni (es. dizionari)
+
+A seguito della riorganizzazione, il pacchetto system.api ha smesso di comportarsi da hub e il numero totale di "Architectural Smells" rilevati da Arcan è passato da 26 a 20, indicando un miglioramento strutturale.
+
+Individuazione di microservizi candidati all’estrazione
+Durante la rifattorizzazione è emersa inoltre la possibilità di estrarre tre veri e propri microservizi API separati, in base ai bounded context rilevati:
+
+ruoyi-api-user: responsabile della gestione utenti, ruoli e dipartimenti.
+
+ruoyi-api-file: responsabile delle operazioni di file storage.
+
+ruoyi-api-log: dedicato alla registrazione e tracciamento delle operazioni.
+
+Questi moduli hanno mostrato alta coesione interna e bassa dipendenza dagli altri domini, rendendoli ottimi candidati per essere trasformati in microservizi indipendenti, separati logicamente e anche a livello di build (es. moduli Maven distinti).
