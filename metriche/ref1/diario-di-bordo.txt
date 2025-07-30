@@ -1,0 +1,2 @@
+Parto dai cyclic perché sono in numero maggiore, in ogni ref metterò più smells, a partire da quelli che impattano di più, 
+qui ne faccio solo uno perché è quello con il td molto alto, e vedo se risolvo altri smells nel mentre
