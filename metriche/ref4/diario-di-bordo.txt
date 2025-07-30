@@ -1,0 +1,52 @@
+🧩 Refactoring della classe SysJobLog per rimuovere uno Hub-Like Dependency
+🔍 Contesto iniziale
+La classe SysJobLog, appartenente al package com.ruoyi.job.domain, era segnalata da Arcan come affetta da uno smell architetturale di tipo Hub-Like Dependency con un peso elevato. Questo perché:
+
+Conteneva molte responsabilità, tra cui:
+
+Modello di dominio per la persistenza
+
+Dati di trasferimento per il controller
+
+Supporto all’esportazione Excel (@Excel)
+
+Dipendeva da più moduli (BaseEntity, annotazioni Excel, ToStringBuilder, ecc.)
+
+Era utilizzata in oltre 27 punti diversi del sistema
+
+🛠️ Strategia di refactoring adottata
+Per ridurre il coupling e isolare le responsabilità, sono stati applicati i seguenti interventi:
+
+✅ 1. Creazione di un DTO
+È stata creata la classe SysJobLogDTO nel package com.ruoyi.job.domain.dto
+
+Contiene solo i campi strettamente necessari per il trasferimento dei dati tra il service e il controller
+
+Usata nei metodi list, getInfo, export, ecc.
+
+✅ 2. Separazione dell’esportazione Excel
+È stata introdotta una nuova classe SysJobLogExportVO nel package com.ruoyi.job.domain.export
+
+Contiene esclusivamente i campi annotati con @Excel, usati per la generazione del file
+
+Utilizzata solo nel metodo export del controller
+
+✅ 3. Conversione DTO → ExportVO
+All’interno del controller è stato definito un metodo toExportVO() per convertire i dati del DTO nel formato compatibile con Excel
+
+✅ Risultati del refactoring
+Dopo l’analisi con Arcan:
+
+Lo smell Hub-Like Dependency è stato completamente rimosso dalla classe SysJobLog
+
+La responsabilità della classe è stata ridotta al solo dominio, eliminando annotazioni e dipendenze superflue
+
+I riferimenti esterni sono stati redistribuiti in modo semantico (DTO e ExportVO), rispettando i principi di separazione delle responsabilità
+
+AS da 18 a 18 
+tolto smell obiettivo ma aggiunti:
+2 hub
+	-com.ruoyi.common.security.auth
+	-com.ruoyi.common.core.context
+tolti 2 cyclic:
+	-
