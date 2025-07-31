@@ -1,0 +1,26 @@
+Elenco del percorso delle cartelle
+Numero di serie del volume: 58A2-4C1E
+C:\USERS\UTENTE\DESKTOP\TESI\TESI\RUOYI-CLOUD\RUOYI-MODULES\RUOYI-SYSTEM\SRC\MAIN\RESOURCES
+¦   banner.txt
+¦   bootstrap.yml
+¦   logback.xml
+¦   resources-microservice.txt
+¦   
++---mapper
+    +---system
+            SysConfigMapper.xml
+            SysDeptMapper.xml
+            SysDictDataMapper.xml
+            SysDictTypeMapper.xml
+            SysLogininforMapper.xml
+            SysMenuMapper.xml
+            SysNoticeMapper.xml
+            SysOperLogMapper.xml
+            SysPostMapper.xml
+            SysRoleDeptMapper.xml
+            SysRoleMapper.xml
+            SysRoleMenuMapper.xml
+            SysUserMapper.xml
+            SysUserPostMapper.xml
+            SysUserRoleMapper.xml
+            

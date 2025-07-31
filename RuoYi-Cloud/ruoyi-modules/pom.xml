@@ -13,6 +13,12 @@
         <module>ruoyi-gen</module>
         <module>ruoyi-job</module>
         <module>ruoyi-file</module>
+        <module>ruoyi-user</module>
+        <module>ruoyi-access</module>
+        <module>ruoyi-org</module>
+        <module>ruoyi-config</module>
+        <module>ruoyi-log</module>
+        <module>ruoyi-notice</module>
     </modules>
 
     <artifactId>ruoyi-modules</artifactId>
