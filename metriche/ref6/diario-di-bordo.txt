@@ -1,1 +1,63 @@
 farò a meno del grafo di UnderStand perché secondo me è useless, non fa vedere le dipendenze interne ai package
+
+📌 Rifattorizzazione dello smell "Hub-Like Dependency" in BaseController
+Contesto
+Nel progetto RuoYi-Cloud, la classe BaseController situata nel package com.ruoyi.common.core.web.controller rappresentava un classico esempio di smell Hub-Like Dependency. Essa presentava un peso di 18 secondo l'analisi effettuata tramite Arcan e risultava centralizzante, in quanto veniva estesa da gran parte dei controller web del sistema e conteneva numerose responsabilità:
+
+Conversione automatica di date (@InitBinder);
+
+Gestione della paginazione e dell’ordinamento (metodi startPage, startOrderBy, getDataTable);
+
+Costruzione di risposte HTTP standard (AjaxResult);
+
+Logging;
+
+Utility varie.
+
+Questa struttura violava i principi di Single Responsibility e Separation of Concerns, generando un alto grado di accoppiamento e un punto centrale fragile nella logica web dell’applicazione.
+
+Obiettivo del refactoring
+L’obiettivo era eliminare lo smell Hub-Like Dependency riducendo le responsabilità della classe BaseController, senza compromettere la retrocompatibilità o introdurre duplicazione di codice nei controller applicativi.
+
+Strategia di rifattorizzazione
+Abbiamo applicato una strategia basata sulla separazione delle responsabilità attraverso l’estrazione di componenti specializzati. In particolare, sono state create tre nuove classi:
+
+PaginationSupport: per la gestione della paginazione e dell’ordinamento.
+
+AjaxResponseBuilder: per la creazione di risposte standard di tipo AjaxResult.
+
+DateBinderConfigurator: per la configurazione di conversioni automatiche di tipo Date.
+
+Queste classi sono state collocate in package dedicati, ad esempio:
+
+Copia
+Modifica
+com.ruoyi.common.core.support.pagination
+com.ruoyi.common.core.support.response
+com.ruoyi.common.core.support.binder
+In seguito, BaseController è stato semplificato radicalmente: non implementa più logica direttamente, ma funge solo da facciata leggera che delegata alle tre classi helper. Questo ha permesso di mantenere retrocompatibilità totale con i controller esistenti, evitando la necessità di modificarli.
+
+Valutazione post-rifattorizzazione
+La nuova versione di BaseController:
+
+non presenta più responsabilità multiple;
+
+non contiene codice logico diretto;
+
+non dipende da numerose utility o componenti esterni;
+
+non ha più un ruolo accentratore all’interno del package controller.
+
+Dal punto di vista dell’analisi Arcan, la classe non risulta più uno hub significativo, contribuendo alla riduzione del debito tecnico architetturale nel modulo common-core.
+
+Conclusione
+Questa rifattorizzazione ha permesso di:
+
+rimuovere efficacemente lo smell Hub-Like Dependency;
+
+migliorare la manutenibilità e testabilità del sistema;
+
+rispettare i principi di progettazione come SRP, Low Coupling, e Composizione over Ereditarietà.
+
+Questa strategia può essere applicata anche ad altre classi simili (es. ExcelUtil, OmsPortalOrderServiceImpl, ecc.) per proseguire nella riduzione sistematica del debito architetturale.
+
