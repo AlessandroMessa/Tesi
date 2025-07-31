@@ -1,0 +1,12 @@
+ID;Smell Type;TechDebt Index;Severity;Affected Type;Affected Elements;Size;Affected Elements (complete);Incoming dependencies (Fan In);Outgoing Dependencies (Fan Out);Adaptive threshold of total fan in and fan out;Detection rule;detectionValue;detectionThreshold
+13714;Unstable Dependency;79;6;Package;com.ruoyi.system.service;7;com.ruoyi.system.service;2;7;com.ruoyi.system.service;Instability gap > 20 %;0.9;0.2
+13726;Unstable Dependency;53;6;Package;com.ruoyi.gateway;6;com.ruoyi.gateway;0;5;com.ruoyi.gateway;Instability gap > 20 %;1;0.2
+13761;Hublike Dependency;44;6;Package;com.ruoyi.common.core.web.controller;8;com.ruoyi.common.core.web.controller;3;4;com.ruoyi.common.core.web.controller;Fan In + Fan Out > System's median (7);7;7
+13748;Hublike Dependency;38;6;Package;com.ruoyi.common.security.auth;8;com.ruoyi.common.security.auth;3;4;com.ruoyi.common.security.auth;Fan In + Fan Out > System's median (7);7;7
+13737;Unstable Dependency;28;6;Package;com.ruoyi.gateway.service;6;com.ruoyi.gateway.service;3;7;com.ruoyi.gateway.service;Instability gap > 20 %;0.6;0.2
+13675;Cyclic Dependency;21;4;Package;com.ruoyi.common.security.config, com.ruoyi.common.security.annotation, com.ruoyi.common.security.interceptor, com.ruoyi.common.security.auth;4;com.ruoyi.common.security.config, com.ruoyi.common.security.annotation, com.ruoyi.common.security.interceptor, com.ruoyi.common.security.auth;0;0;;Cycle Detection;0;0
+13696;Cyclic Dependency;13;4;Package;com.ruoyi.job.util, com.ruoyi.job.service;2;com.ruoyi.job.util, com.ruoyi.job.service;0;0;;Cycle Detection;0;0
+13689;Cyclic Dependency;9;4;Package;com.ruoyi.gateway.handler, com.ruoyi.gateway.config, com.ruoyi.gateway.service;3;com.ruoyi.gateway.handler, com.ruoyi.gateway.config, com.ruoyi.gateway.service;0;0;;Cycle Detection;0;0
+13683;Cyclic Dependency;8;4;Package;com.ruoyi.common.sensitive.config, com.ruoyi.common.sensitive.annotation;2;com.ruoyi.common.sensitive.config, com.ruoyi.common.sensitive.annotation;0;0;;Cycle Detection;0;0
+13708;Cyclic Dependency;7;3;Implementation;com.ruoyi.common.sensitive.annotation.Sensitive, com.ruoyi.common.sensitive.config.SensitiveJsonSerializer;2;com.ruoyi.common.sensitive.annotation.Sensitive, com.ruoyi.common.sensitive.config.SensitiveJsonSerializer;0;0;;Cycle Detection;0;0
+13702;Cyclic Dependency;7;4;Implementation;com.ruoyi.common.core.xss.XssValidator, com.ruoyi.common.core.xss.Xss;2;com.ruoyi.common.core.xss.XssValidator, com.ruoyi.common.core.xss.Xss;0;0;;Cycle Detection;0;0

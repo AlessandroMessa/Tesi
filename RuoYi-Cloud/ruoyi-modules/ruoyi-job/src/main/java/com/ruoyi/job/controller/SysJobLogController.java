@@ -60,7 +60,7 @@ public class SysJobLogController extends BaseController
                 .collect(Collectors.toList());
 
         ExcelUtil<SysJobLogExportVO> util = new ExcelUtil<>(SysJobLogExportVO.class);
-        util.exportExcel(response, exportList, "调度日志");
+        util.exportExcel(response, exportList, "调度日志","title");
     }
 
     /**

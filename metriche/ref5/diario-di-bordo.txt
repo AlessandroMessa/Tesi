@@ -1,0 +1,22 @@
+Per risolvere lo smell di tipo Hub-Like Dependency individuato da Arcan nella classe ExcelUtil, è stato applicato un refactoring modulare seguendo i suggerimenti della documentazione Arcan (Split Class, Move Method e Introduce Interface).
+
+In particolare, ExcelUtil è stata suddivisa in più classi con singole responsabilità, ad esempio: ExcelExporter, ExcelImporter, ExcelStatisticsTracker, ExcelStyleFactory, ecc. Questo ha permesso di rimuovere l'accoppiamento eccessivo e di ridurre il numero di dipendenze dirette.
+
+Tuttavia, l'analisi post-refactoring ha evidenziato la comparsa di altri smell minori, dovuti al fatto che tutte le nuove classi erano collocate nello stesso package utils.poi, creando una nuova forma di accoppiamento interno.
+
+Per ridurre ulteriormente questo coupling strutturale, è stato applicato un refactoring a livello di package: le classi sono state riorganizzate in sottopackage semantici, come utils.poi.string, utils.poi.servlet, utils.poi.exporter, ecc. Questa suddivisione ha permesso di:
+
+migliorare la coesione dei moduli
+
+ridurre il package coupling
+
+rendere più leggibile e mantenibile l’architettura del progetto
+
+L’impatto positivo della riorganizzazione è stato confermato da una nuova analisi con Arcan, che ha mostrato una diminuzione del numero e dell'intensità degli smell architetturali.
+
+Da 18 a 11 smells:
+	- Hublike da 5 a 2
+		- ad esempio gen table usava utils.poi.StringUtils
+		- core.context
+		- e ovviamente poi.ExcelUtil
+	- Cyclic da 10 a 4
