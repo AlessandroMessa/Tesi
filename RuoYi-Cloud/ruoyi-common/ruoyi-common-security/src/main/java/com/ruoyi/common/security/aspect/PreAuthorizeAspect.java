@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 import com.ruoyi.common.security.annotation.RequiresLogin;
 import com.ruoyi.common.security.annotation.RequiresPermissions;
 import com.ruoyi.common.security.annotation.RequiresRoles;
-import com.ruoyi.common.security.auth.AuthUtil;
+import com.ruoyi.common.security.auth.util.AuthUtil;
 
 /**
  * 基于 Spring Aop 的注解鉴权

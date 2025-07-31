@@ -12,7 +12,7 @@ import com.ruoyi.auth.service.SysLoginService;
 import com.ruoyi.common.core.domain.R;
 import com.ruoyi.common.core.utils.jwt.JwtUtils;
 import com.ruoyi.common.core.utils.string.StringUtils;
-import com.ruoyi.common.security.auth.AuthUtil;
+import com.ruoyi.common.security.auth.util.AuthUtil;
 import com.ruoyi.common.security.service.token.TokenService;
 import com.ruoyi.common.security.utils.SecurityUtils;
 import com.ruoyi.system.api.user.model.LoginUser;

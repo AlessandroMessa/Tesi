@@ -1,4 +1,4 @@
-package com.ruoyi.common.security.auth;
+package com.ruoyi.common.security.auth.logic;
 
 import java.util.Collection;
 import java.util.HashSet;

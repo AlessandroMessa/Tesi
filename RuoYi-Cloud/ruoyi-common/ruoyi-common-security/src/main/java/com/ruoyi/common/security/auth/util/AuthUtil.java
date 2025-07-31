@@ -1,7 +1,8 @@
-package com.ruoyi.common.security.auth;
+package com.ruoyi.common.security.auth.util;
 
 import com.ruoyi.common.security.annotation.RequiresPermissions;
 import com.ruoyi.common.security.annotation.RequiresRoles;
+import com.ruoyi.common.security.auth.logic.AuthLogic;
 import com.ruoyi.system.api.user.model.LoginUser;
 
 /**
