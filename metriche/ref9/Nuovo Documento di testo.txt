@@ -1,1 +1,0 @@
-Dopo aver risolto i cicli con maggiore impatto, sono rimasti tre casi di Cyclic Dependency a basso impatto e severità. Essendo analoghi nella struttura e nel refactoring richiesto, sono stati affrontati con una singola iterazione semplificata, mediante tecniche standard come il Move Class e l’introduzione di interfacce, al fine di eliminare i legami circolari residui.

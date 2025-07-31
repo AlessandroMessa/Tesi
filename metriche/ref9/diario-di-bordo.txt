@@ -1,0 +1,85 @@
+Dopo aver risolto i cicli con maggiore impatto, sono rimasti tre casi di Cyclic Dependency a basso impatto e severità. Essendo analoghi nella struttura e nel refactoring richiesto, sono stati affrontati con una singola iterazione semplificata, mediante tecniche standard come il Move Class e l’introduzione di interfacce, al fine di eliminare i legami circolari residui.
+
+Rifattoring degli ultimi due Cyclic Dependency Smells
+✅ 2. Ciclo tra com.ruoyi.job.service e com.ruoyi.job.util
+🔍 Problema rilevato
+Il package job.util conteneva classi come AbstractQuartzJob, che facevano uso diretto di ISysJobLogService, generando un ciclo:
+
+Copia codice
+job.util → job.service → job.util
+🛠️ Soluzione applicata
+È stato spostato AbstractQuartzJob (e le sue sottoclassi) da util a un nuovo package:
+
+Copia codice
+com.ruoyi.job.execution
+Il package util è stato riorganizzato in sottopacchetti più specifici (util.cron, util.invoke, ecc.), mantenendolo unidirezionale rispetto agli altri layer.
+
+✅ Risultato
+Il ciclo è stato rimosso
+
+La semantica architetturale è migliorata grazie alla chiara separazione tra utility e logica esecutiva
+
+✅ 3. Ciclo triangolare nel modulo Gateway: config ↔ handler ↔ service
+🔍 Problema rilevato
+Nel modulo ruoyi-gateway era presente un ciclo tra:
+
+scss
+Copia codice
+RouterFunctionConfiguration (config)
+→ ValidateCodeHandler (handler)
+→ ValidateCodeServiceImpl (service)
+→ CaptchaProperties (config)
+🛠️ Soluzioni applicate
+È stato creato un nuovo package modulare:
+
+Copia codice
+com.ruoyi.gateway.captcha
+contenente:
+
+captcha.config: CaptchaProperties, CaptchaConfig
+
+captcha.service, captcha.service.impl
+
+captcha.handler
+
+captcha.filter
+
+captcha.support: KaptchaTextCreator
+
+Le dipendenze sono state rese unidirezionali:
+
+RouterFunctionConfiguration dipende da ValidateCodeHandler
+
+CaptchaProperties è stato isolato in un package dedicato al dominio captcha
+
+✅ Risultato
+Il ciclo architetturale è stato spezzato
+
+Il modulo Captcha è diventato modulare, coeso e isolato
+
+Gateway config non è più accoppiato con service o handler
+
+🧱 Considerazioni architetturali: Captcha come microservizio
+Grazie alla riorganizzazione modulare di Captcha, è ora architetturalmente possibile estrarlo come microservizio autonomo, perché:
+
+📌 Motivi che giustificano l’estrazione:
+Criterio	Stato attuale del modulo captcha
+Isolabilità funzionale	Tutte le classi sono nel package captcha
+Dipendenze esterne minime	Nessuna dipendenza verso altri moduli gateway
+Routing già definito	L’endpoint /code può diventare remoto
+Configurazione dedicata	CaptchaProperties è separato dal resto
+Riutilizzabilità	Potrebbe servire anche ad app mobile, altri front-end
+
+🧩 Estrarlo in futuro significherebbe:
+Spostare tutto il package com.ruoyi.gateway.captcha in un nuovo microservizio ruoyi-captcha-service
+
+Esporre un'API REST (es. POST /api/captcha/verify, GET /api/captcha/image)
+
+Chiamare quel microservizio dal Gateway tramite HTTP o load-balanced FeignClient
+
+✍️ Testo suggerito per la tesi
+Dopo la riorganizzazione modulare della logica Captcha, il dominio funzionale è stato isolato all'interno di un package dedicato, strutturato secondo un approccio feature-based. Tale refactoring non solo ha permesso di eliminare una Cyclic Dependency architetturale, ma ha anche portato il modulo Captcha a un elevato livello di coesione e autonomia.
+Di conseguenza, si apre la possibilità di evolvere questa funzionalità in un microservizio indipendente, che potrebbe essere esposto tramite API REST e consumato dal Gateway o da altri client, favorendo così una futura scalabilità del sistema.
+
+L'ultimo cyclic dependency rilevato da Arcan è stato quello tra l'annotazione custom @Xss e il validatore XssValidator. Tale ciclo è una conseguenza diretta dell'utilizzo del framework Bean Validation (JSR 380), che impone questa relazione bidirezionale tra annotazioni e validatori. In questo caso, pur essendo architettonicamente un ciclo, il refactoring risulterebbe eccessivo e artificioso rispetto al beneficio ottenuto.
+Si è quindi scelto di accettare e documentare questo ciclo, considerandolo un trade-off consapevole, coerente con il funzionamento del framework. Inoltre, il technical debt associato era basso (TD = 7), confermando la scarsa priorità di intervento.
