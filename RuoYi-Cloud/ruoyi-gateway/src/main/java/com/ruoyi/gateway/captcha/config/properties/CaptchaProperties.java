@@ -1,4 +1,4 @@
-package com.ruoyi.gateway.config.properties;
+package com.ruoyi.gateway.captcha.config.properties;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.cloud.context.config.annotation.RefreshScope;

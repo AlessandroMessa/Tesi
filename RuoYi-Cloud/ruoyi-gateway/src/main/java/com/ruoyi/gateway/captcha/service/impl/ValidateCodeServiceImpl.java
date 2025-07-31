@@ -1,4 +1,4 @@
-package com.ruoyi.gateway.service.impl;
+package com.ruoyi.gateway.captcha.service.impl;
 
 import java.awt.image.BufferedImage;
 import java.io.IOException;
@@ -17,8 +17,8 @@ import com.ruoyi.common.core.utils.sign.Base64;
 import com.ruoyi.common.core.utils.uuid.IdUtils;
 import com.ruoyi.common.core.web.domain.AjaxResult;
 import com.ruoyi.common.redis.service.RedisService;
-import com.ruoyi.gateway.config.properties.CaptchaProperties;
-import com.ruoyi.gateway.service.ValidateCodeService;
+import com.ruoyi.gateway.captcha.config.properties.CaptchaProperties;
+import com.ruoyi.gateway.captcha.service.ValidateCodeService;
 
 /**
  * 验证码实现处理

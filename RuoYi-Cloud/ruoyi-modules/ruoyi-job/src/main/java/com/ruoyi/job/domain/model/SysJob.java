@@ -11,7 +11,7 @@ import com.ruoyi.common.core.annotation.Excel.ColumnType;
 import com.ruoyi.common.core.constant.ScheduleConstants;
 import com.ruoyi.common.core.utils.string.StringUtils;
 import com.ruoyi.common.core.web.domain.BaseEntity;
-import com.ruoyi.job.util.CronUtils;
+import com.ruoyi.job.util.Cron.CronUtils;
 
 /**
  * 定时任务调度表 sys_job

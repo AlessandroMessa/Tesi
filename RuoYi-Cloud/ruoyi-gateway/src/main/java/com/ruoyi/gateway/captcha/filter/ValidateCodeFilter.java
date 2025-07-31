@@ -1,4 +1,4 @@
-package com.ruoyi.gateway.filter;
+package com.ruoyi.gateway.captcha.filter;
 
 import java.nio.CharBuffer;
 import java.nio.charset.StandardCharsets;
@@ -14,8 +14,8 @@ import com.alibaba.fastjson2.JSON;
 import com.alibaba.fastjson2.JSONObject;
 import com.ruoyi.common.core.utils.servlet.ServletUtils;
 import com.ruoyi.common.core.utils.string.StringUtils;
-import com.ruoyi.gateway.config.properties.CaptchaProperties;
-import com.ruoyi.gateway.service.ValidateCodeService;
+import com.ruoyi.gateway.captcha.config.properties.CaptchaProperties;
+import com.ruoyi.gateway.captcha.service.ValidateCodeService;
 import reactor.core.publisher.Flux;
 
 /**

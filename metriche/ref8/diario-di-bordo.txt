@@ -1,0 +1,46 @@
+ Refactoring degli Architectural Smells: Cyclic Dependencies
+📌 Contesto
+Durante l’analisi architetturale del progetto RuoYi-Cloud tramite Arcan, sono stati rilevati inizialmente 5 casi di Cyclic Dependency, distribuiti tra package e classi. Questo tipo di architectural smell mina la modularità del sistema, aumenta il coupling e riduce la manutenibilità del codice.
+
+🎯 Obiettivo
+L’obiettivo è stato quello di:
+
+Rimuovere i cicli tra moduli/pacchetti/classi.
+
+Ridurre l’accoppiamento bidirezionale.
+
+Migliorare l’instabilità dei moduli, con il potenziale effetto di ridurre anche gli Unstable Dependencies (smell dipendenti).
+
+✅ Primo intervento: com.ruoyi.common.sensitive.config ↔ com.ruoyi.common.sensitive.annotation
+Il primo ciclo scelto per il refactoring coinvolgeva due componenti:
+
+L’annotazione @Sensitive nel package annotation
+
+Il serializzatore SensitiveJsonSerializer nel package config
+
+🔁 Problema
+Entrambe le classi si referenziavano a vicenda:
+
+L’annotazione usava @JsonSerialize(using = SensitiveJsonSerializer.class)
+
+Il serializzatore leggeva l’annotazione tramite property.getAnnotation(Sensitive.class)
+
+🔨 Soluzione applicata
+È stato applicato un refactoring in stile Dependency Inversion:
+
+È stata introdotta una nuova utility di risoluzione riflessiva:
+
+java
+Copia
+Modifica
+SensitiveAnnotationResolver
+collocata in un package intermedio (util), che ha isolato la riflessione sull’annotazione.
+
+SensitiveJsonSerializer ora dipende da SensitiveAnnotationResolver e non più direttamente dall’annotazione @Sensitive.
+
+✅ Il ciclo è stato così spezzato con successo.
+
+📉 Risultato ottenuto
+Dopo il refactoring, l’analisi Arcan ha mostrato una riduzione dei cicli da 5 a 3.
+
+Questo dimostra che la rimozione di un ciclo centrale può portare anche alla rimozione indiretta di altri cicli, migliorando la qualità architetturale complessiva.

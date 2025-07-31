@@ -25,8 +25,8 @@ import com.ruoyi.common.security.annotation.RequiresPermissions;
 import com.ruoyi.common.security.utils.SecurityUtils;
 import com.ruoyi.job.domain.model.SysJob;
 import com.ruoyi.job.service.ISysJobService;
-import com.ruoyi.job.util.CronUtils;
-import com.ruoyi.job.util.ScheduleUtils;
+import com.ruoyi.job.util.Cron.CronUtils;
+import com.ruoyi.job.util.schedule.ScheduleUtils;
 
 /**
  * 调度任务信息操作处理

@@ -1,5 +1,6 @@
-package com.ruoyi.job.util;
+package com.ruoyi.job.execution;
 
+import com.ruoyi.job.util.jobinvoke.JobInvokeUtil;
 import org.quartz.DisallowConcurrentExecution;
 import org.quartz.JobExecutionContext;
 

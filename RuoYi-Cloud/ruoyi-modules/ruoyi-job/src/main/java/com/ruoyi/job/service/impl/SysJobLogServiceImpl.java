@@ -1,8 +1,9 @@
-package com.ruoyi.job.service;
+package com.ruoyi.job.service.impl;
 
 import java.util.List;
 
 import com.ruoyi.job.domain.dto.SysJobLogDTO;
+import com.ruoyi.job.service.ISysJobLogService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.ruoyi.job.mapper.SysJobLogMapper;

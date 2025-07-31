@@ -1,4 +1,4 @@
-package com.ruoyi.gateway.config;
+package com.ruoyi.gateway.captcha.support;
 
 import java.util.Random;
 import com.google.code.kaptcha.text.impl.DefaultTextCreator;

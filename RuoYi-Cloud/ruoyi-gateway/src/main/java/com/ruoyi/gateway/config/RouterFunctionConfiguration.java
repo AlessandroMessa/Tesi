@@ -7,7 +7,7 @@ import org.springframework.http.MediaType;
 import org.springframework.web.reactive.function.server.RequestPredicates;
 import org.springframework.web.reactive.function.server.RouterFunction;
 import org.springframework.web.reactive.function.server.RouterFunctions;
-import com.ruoyi.gateway.handler.ValidateCodeHandler;
+import com.ruoyi.gateway.captcha.handler.ValidateCodeHandler;
 
 /**
  * 路由配置信息

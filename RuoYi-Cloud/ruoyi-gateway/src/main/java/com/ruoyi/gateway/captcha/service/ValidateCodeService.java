@@ -1,4 +1,4 @@
-package com.ruoyi.gateway.service;
+package com.ruoyi.gateway.captcha.service;
 
 import java.io.IOException;
 import com.ruoyi.common.core.exception.CaptchaException;
