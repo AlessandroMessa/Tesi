@@ -3,7 +3,7 @@ package com.ruoyi.access.service;
 import java.util.List;
 import java.util.Set;
 import com.ruoyi.system.api.role.domain.SysRole;
-import com.ruoyi.system.domain.user.SysUserRole;
+import com.ruoyi.system.api.user.domain.SysUserRole;
 
 /**
  * 角色业务层

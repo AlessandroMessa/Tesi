@@ -2,7 +2,7 @@ package com.ruoyi.user.mapper;
 
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
-import com.ruoyi.user.domain.SysUserRole;
+import com.ruoyi.system.api.user.domain.SysUserRole;
 
 /**
  * 用户与角色关联表 数据层
