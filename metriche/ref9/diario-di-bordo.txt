@@ -1,5 +1,10 @@
 Dopo aver risolto i cicli con maggiore impatto, sono rimasti tre casi di Cyclic Dependency a basso impatto e severità. Essendo analoghi nella struttura e nel refactoring richiesto, sono stati affrontati con una singola iterazione semplificata, mediante tecniche standard come il Move Class e l’introduzione di interfacce, al fine di eliminare i legami circolari residui.
 
+EFFETTI COLLATERALI:
+La riorganizzazione modulare della funzionalità Captcha ha avuto anche un effetto positivo indiretto: la rimozione dello Unstable Dependency precedentemente rilevato da Arcan nel package com.ruoyi.gateway.service.
+Prima del refactoring, il package service dipendeva da componenti volatili come config e handler, violando il principio di stabilità delle dipendenze (Stable Dependencies Principle).
+Con il trasferimento della logica captcha in un package dedicato (gateway.captcha), queste dipendenze sono state rimosse, rendendo gateway.service stabile e allineato ai principi architetturali.
+
 Rifattoring degli ultimi due Cyclic Dependency Smells
 ✅ 2. Ciclo tra com.ruoyi.job.service e com.ruoyi.job.util
 🔍 Problema rilevato

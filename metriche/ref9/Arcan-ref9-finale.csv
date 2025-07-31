@@ -1,0 +1,4 @@
+ID;Smell Type;TechDebt Index;Severity;Affected Type;Affected Elements;Size;Affected Elements (complete);Incoming dependencies (Fan In);Outgoing Dependencies (Fan Out);Adaptive threshold of total fan in and fan out;Detection rule;detectionValue;detectionThreshold
+12626;Unstable Dependency;79;6;Package;com.ruoyi.system.service;7;com.ruoyi.system.service;2;7;com.ruoyi.system.service;Instability gap > 20 %;0.9;0.2
+12638;Unstable Dependency;43;6;Package;com.ruoyi.gateway;4;com.ruoyi.gateway;0;3;com.ruoyi.gateway;Instability gap > 20 %;1;0.2
+12620;Cyclic Dependency;7;4;Abstraction;com.ruoyi.common.core.xss.XssValidator, com.ruoyi.common.core.xss.Xss;2;com.ruoyi.common.core.xss.XssValidator, com.ruoyi.common.core.xss.Xss;0;0;;Cycle Detection;0;0
