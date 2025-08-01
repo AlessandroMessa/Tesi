@@ -19,7 +19,7 @@ import com.ruoyi.common.log.enums.BusinessType;
 import com.ruoyi.common.security.annotation.RequiresPermissions;
 import com.ruoyi.common.security.utils.SecurityUtils;
 import com.ruoyi.system.domain.notice.SysNotice;
-import com.ruoyi.system.service.ISysNoticeService;
+import com.ruoyi.system.service.notice.ISysNoticeService;
 
 /**
  * 公告 信息操作处理

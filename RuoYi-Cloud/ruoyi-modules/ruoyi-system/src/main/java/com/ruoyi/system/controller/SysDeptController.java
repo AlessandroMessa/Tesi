@@ -21,7 +21,7 @@ import com.ruoyi.common.log.enums.BusinessType;
 import com.ruoyi.common.security.annotation.RequiresPermissions;
 import com.ruoyi.common.security.utils.SecurityUtils;
 import com.ruoyi.system.api.dept.domain.SysDept;
-import com.ruoyi.system.service.ISysDeptService;
+import com.ruoyi.system.service.dept.ISysDeptService;
 
 /**
  * 部门信息

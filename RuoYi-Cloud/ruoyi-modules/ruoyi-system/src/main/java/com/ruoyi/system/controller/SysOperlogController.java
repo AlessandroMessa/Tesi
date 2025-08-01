@@ -19,7 +19,7 @@ import com.ruoyi.common.log.enums.BusinessType;
 import com.ruoyi.common.security.annotation.InnerAuth;
 import com.ruoyi.common.security.annotation.RequiresPermissions;
 import com.ruoyi.system.api.log.domain.SysOperLog;
-import com.ruoyi.system.service.ISysOperLogService;
+import com.ruoyi.system.service.log.ISysOperLogService;
 
 /**
  * 操作日志记录

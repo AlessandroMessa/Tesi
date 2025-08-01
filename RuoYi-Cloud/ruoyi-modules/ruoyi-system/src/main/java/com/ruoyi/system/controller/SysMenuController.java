@@ -20,7 +20,7 @@ import com.ruoyi.common.log.enums.BusinessType;
 import com.ruoyi.common.security.annotation.RequiresPermissions;
 import com.ruoyi.common.security.utils.SecurityUtils;
 import com.ruoyi.system.domain.menu.SysMenu;
-import com.ruoyi.system.service.ISysMenuService;
+import com.ruoyi.system.service.menu.ISysMenuService;
 
 /**
  * 菜单信息

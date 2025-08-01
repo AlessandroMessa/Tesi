@@ -21,7 +21,7 @@ import com.ruoyi.common.redis.service.RedisService;
 import com.ruoyi.common.security.annotation.RequiresPermissions;
 import com.ruoyi.system.api.user.model.LoginUser;
 import com.ruoyi.system.domain.user.SysUserOnline;
-import com.ruoyi.system.service.ISysUserOnlineService;
+import com.ruoyi.system.service.user.ISysUserOnlineService;
 
 /**
  * 在线用户监控

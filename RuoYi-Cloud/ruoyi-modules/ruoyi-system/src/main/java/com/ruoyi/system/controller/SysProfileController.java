@@ -26,7 +26,7 @@ import com.ruoyi.system.api.file.service.RemoteFileService;
 import com.ruoyi.system.api.file.domain.SysFile;
 import com.ruoyi.system.api.user.domain.SysUser;
 import com.ruoyi.system.api.user.model.LoginUser;
-import com.ruoyi.system.service.ISysUserService;
+import com.ruoyi.system.service.user.ISysUserService;
 
 /**
  * 个人信息 业务处理
