@@ -2,9 +2,9 @@ package com.ruoyi.access.service;
 
 import java.util.List;
 import java.util.Set;
-import com.ruoyi.access.domain.menu.SysMenu;
-import com.ruoyi.system.api.vo.RouterVo;
-import com.ruoyi.system.api.vo.TreeSelect;
+import com.ruoyi.system.domain.menu.SysMenu;
+import com.ruoyi.system.domain.vo.RouterVo;
+import com.ruoyi.system.domain.vo.TreeSelect;
 
 /**
  * 菜单 业务层

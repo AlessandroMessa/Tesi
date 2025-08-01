@@ -16,14 +16,14 @@ import com.ruoyi.common.datascope.annotation.DataScope;
 import com.ruoyi.common.security.utils.SecurityUtils;
 import com.ruoyi.system.api.role.domain.SysRole;
 import com.ruoyi.system.api.user.domain.SysUser;
-import com.ruoyi.access.domain.role.SysRoleDept;
-import com.ruoyi.access.domain.role.SysRoleMenu;
-import com.ruoyi.system.api.user.domain.SysUserRole;
-import com.ruoyi.access.mapper.SysRoleDeptMapper;
-import com.ruoyi.access.mapper.SysRoleMapper;
-import com.ruoyi.access.mapper.SysRoleMenuMapper;
-
-import com.ruoyi.access.service.ISysRoleService;
+import com.ruoyi.system.domain.role.SysRoleDept;
+import com.ruoyi.system.domain.role.SysRoleMenu;
+import com.ruoyi.system.domain.user.SysUserRole;
+import com.ruoyi.system.mapper.SysRoleDeptMapper;
+import com.ruoyi.system.mapper.SysRoleMapper;
+import com.ruoyi.system.mapper.SysRoleMenuMapper;
+import com.ruoyi.system.mapper.SysUserRoleMapper;
+import com.ruoyi.system.service.ISysRoleService;
 
 /**
  * 角色 业务层处理
